@@ -9,9 +9,6 @@
     @include block-shadow2;
     li {
       margin-bottom: 1.6rem;
-      &.hide {
-        display: none;
-      }
     }
     h3 {
       font-weight: 500;
@@ -29,6 +26,9 @@
       @include block-shadow2;
       li {
         margin-bottom: 4.8rem;
+        &.hide {
+          display: none;
+        }
       }
       p {
         font-size: 1.7rem;

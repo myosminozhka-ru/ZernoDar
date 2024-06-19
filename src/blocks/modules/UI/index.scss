@@ -135,6 +135,10 @@
   padding: 1.6rem;
   border-radius: 1.6rem;
   background-color: $paleblue;
+  transition: background 200ms;
+  &:hover {
+    background-color: $palegreen;
+  }
   @include tab {
     padding: 1.1rem;
     font-size: 1.4rem;
@@ -150,12 +154,26 @@
   padding: 1.6rem;
   border-radius: 1.6rem;
   background-color: $paleblue;
+  transition: background 200ms;
   svg {
     width: 2rem;
     height: 2rem;
     object-fit: contain;
     flex-shrink: 0;
     margin-left: 1rem;
+    transition: transform 200ms;
+  }
+  &:active {
+    color: $black;
+  }
+  &.open {
+    svg {
+      transform: rotate(-180deg);
+      transform-origin: center;
+    }
+  }
+  &:hover {
+    background-color: $palegreen;
   }
 }
 .open-more2 {
@@ -171,6 +189,9 @@
     object-fit: contain;
     flex-shrink: 0;
     transition: transform 200ms;
+  }
+  &:active {
+    color: $black;
   }
   &.open {
     svg {
