@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'TRY Grtsk';
+  src: url('../fonts/TryGrtsk/TRYGrtsk-Bold.ttf');
+  src: local('TRYGrtsk Bold'), local('TRYGrtsk-Bold'),
+      url('../fonts/TryGrtsk/TRYGrtsk-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TRY Grtsk';
+  src: url('../fonts/TryGrtsk/TRYGrtsk-SemiBold.ttf');
+  src: local('TRYGrtsk SemiBold'), local('TRYGrtsk-SemiBold'),
+      url('../fonts/TryGrtsk/TRYGrtsk-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TRY Grtsk';
+  src: url('../fonts/TryGrtsk/TRYGrtsk-Medium.ttf');
+  src: local('TRYGrtsk Medium'), local('TRYGrtsk-Medium'),
+      url('../fonts/TryGrtsk/TRYGrtsk-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TRY Grtsk';
+  src: url('../fonts/TryGrtsk/TRYGrtsk-Regular.ttf');
+  src: local('TRYGrtsk Regular'), local('TRYGrtsk-Regular'),
+      url('../fonts/TryGrtsk/TRYGrtsk-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TRY Grtsk';
+  src: url('../fonts/TryGrtsk/TRYGrtsk-Light.ttf');
+  src: local('TRYGrtsk Light'), local('TRYGrtsk-Light'),
+      url('../fonts/TryGrtsk/TRYGrtsk-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}

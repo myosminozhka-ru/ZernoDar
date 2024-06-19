@@ -1,0 +1,38 @@
+.card-ad-wrapper {
+  padding: 0 3.2rem;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.2rem;
+  }
+  &__left {
+    flex-grow: 1;
+  }
+  &__right {
+    flex-shrink: 0;
+    width: 57.6rem;
+  }
+  &__user-mob {
+    display: none;
+  }
+  @include tab {
+    padding: 0;
+    &__inner {
+      display: block;
+    }
+    &__left {
+      flex-grow: 1;
+    }
+    &__right {
+      width: 100%;
+      display: none;
+    }
+    &__user-mob {
+      display: block;
+    }
+    &__ordering {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}

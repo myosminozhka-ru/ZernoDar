@@ -1,0 +1,107 @@
+.card-ad-relative {
+  margin-bottom: 4.8rem;
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: $darkgrey;
+    margin-bottom: 5rem;
+  }
+  &__dot {
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 100%;
+    background-color: $darkgrey;
+  }
+  &__table {
+    margin-top: 2.4rem;
+  }
+  &__thead {
+    margin-bottom: 2rem;
+  }
+  &__thead,
+  &__tbody {
+    border-radius: 2.4rem;
+    background-color: $white;
+    @include block-shadow2;
+  }
+  &__tr {
+    display: flex;
+    border-bottom: 1px solid #F6F6F6;
+    &:last-child {
+      border: 0;
+    }
+  }
+  &__td {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  &__content {
+    margin-top: 2.4rem;
+    padding: 2.4rem;
+    border-radius: 2rem;
+    background-color: $white;
+    @include block-shadow2;
+  }
+  @include tab {
+    &__head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 3.2rem 2.4rem;
+      margin: 0;
+    }
+    &__dot {
+      display: none;
+    }
+    &__mtitle {
+      padding: 0 2.4rem;
+      font-size: 1.7rem;
+      margin-bottom: 2.4rem;
+    }
+    &__thead {
+      display: none;
+    }
+    &__tbody {
+      padding: 0 2.4rem;
+      border-radius: 1.2rem;
+    }
+    &__td {
+      display: none;
+      padding: 2.4rem 0;
+      font-size: 1.7rem;
+      &:nth-child(1) {
+        display: flex;
+        text-align: left;
+
+      }
+      &:nth-child(2) {
+        display: flex;
+        justify-content: flex-end;
+        text-align: right;
+      }
+    }
+  }
+  @include mob {
+    &__head {
+      font-size: 1.2rem;
+      padding: 3.2rem 1.6rem;
+    }
+    &__mtitle {
+      padding: 0 1.6rem;
+      font-size: 1.8rem;
+      margin-bottom: 2.4rem;
+    }
+    &__tbody {
+      padding: 0 1.6rem;
+    }
+    &__td {
+      padding: 2.4rem 0;
+      font-size: 1.2rem;
+    }
+  }
+}

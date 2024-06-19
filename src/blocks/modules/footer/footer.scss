@@ -1,0 +1,182 @@
+.footer {
+  margin-bottom: 3.2rem;
+  &__inner {
+    border-radius: 3.2rem;
+    background-color: $palegreen;
+    display: flex;
+    gap: 12.3rem;
+    padding: 3.2rem;
+  }
+  &__col {
+    &:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: auto;
+    }
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1.6rem;
+    color: $green;
+
+    svg {
+      width: 2.6rem;
+      height: 4rem;
+      object-fit: contain;
+      margin-right: 0.5rem;
+    }
+  }
+  &__docs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.8rem;
+  }
+  &__c {
+    font-size: 1.4rem;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  &__soc {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.8rem;
+    }
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+  }
+  &__created {
+    font-size: 1.4rem;
+    text-align: right;
+  }
+  &__bottom {
+    display: none;
+  }
+  @include tab {
+    border-radius: 2rem 2rem 0 0;
+    background-color: $palegreen;
+    &__inner {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2.4rem 1rem;
+      padding: 2.4rem 0;
+    }
+    &__col {
+      &:first-child {
+        width: 100%;
+      }
+      &:last-child {
+        margin-left: 0;
+      }
+    }
+    &__logo {
+      font-size: 1.7rem;
+      margin-bottom: 0;
+      color: $black;
+  
+      svg {
+        width: 2.1rem;
+        height: 3.1rem;
+        margin-right: 0.4rem;
+      }
+    }
+    &__docs {
+      margin-bottom: 0;
+    }
+    &__c {
+      font-size: 1.4rem;
+      padding: 2.4rem;
+      text-align: center;
+    }
+    &__list {
+      font-size: 1.4rem;
+    }
+    &__soc {
+      gap: 0.8rem;
+      a {
+        justify-content: flex-start;
+      }
+    }
+    &__created {
+      font-size: 1.4rem;
+      text-align: left;
+    }
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+      padding: 0.8rem 2.4rem 2.4rem;
+      border-bottom: 1px solid $darkgrey;
+    }
+  }
+  @include mob {
+    margin-bottom: 0;
+    &__inner {
+      padding: 1.6rem 0;
+      gap: 2.4rem 0rem;
+    }
+    &__col {
+      width: 50%;
+      &:first-child {
+        width: 100%;
+      }
+      &:last-child {
+        width: 100%;
+      }
+    }
+    &__logo {
+      font-size: 1.3rem;
+  
+      svg {
+        width: 1.5rem;
+        height: 2.3rem;
+        margin-right: 0.3rem;
+      }
+    }
+    &__docs {
+      margin-bottom: 0;
+    }
+    &__c {
+      font-size: 1.2rem;
+      padding-bottom: 1.6rem;
+    }
+    &__list {
+      font-size: 1.2rem;
+    }
+    &__soc {
+      a {
+        font-size: 1.2rem;
+      }
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    &__created {
+      font-size: 1.2rem;
+    }
+    &__bottom {
+      padding: 0.8rem 1.6rem 2.4rem;
+    }
+  }
+}

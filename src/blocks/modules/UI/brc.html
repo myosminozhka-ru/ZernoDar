@@ -1,0 +1,24 @@
+<div class="brc">
+  <div class="container container--full">
+    <div class="brc__inner">
+      <ul class="brc__list">
+        <li>
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#left-circle"></use>
+          </svg>
+          <a href="/">Главная</a>
+        </li>
+        @@for (var i = 0; i < text.length; i++) {
+          <li>
+            <a href="#" class="link">`+text[i]+`</a>
+          </li>
+        }
+      </ul>
+      <div class="brc__arrow">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#curve-arrow-right"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

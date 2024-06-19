@@ -1,0 +1,336 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba($color: $bckgrnd, $alpha: 1);
+  // transition: transform 200ms, background 200ms;
+  transition: background-color .25s ease-in-out;
+
+  &.scroll {
+    transform: translateY(-100%);
+    transform: translateY(0%);
+  }
+  &.down {
+    transform: translateY(0%);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding: 2.4rem 0;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-right: 4rem;
+
+    svg {
+      color: $orange;
+      width: 2.6rem;
+      height: 4rem;
+      object-fit: contain;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__actions {
+    margin-left: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  &__act {
+    width: 5rem;
+    height: 5rem;
+    padding: 1.2rem;
+
+    svg {
+      @include img-contain;
+    }
+
+    &.trig-open-search.hide {
+      display: none;
+    }
+  }
+
+  &__add-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $white;
+    background-color: $orange;
+    padding: 1.4rem 1.6rem;
+    border-radius: 1.6rem;
+    transition: all 200ms;
+    margin-left: 2.4rem;
+    &:hover {
+      background-color: #FF9B08;
+    }
+  }
+
+  &__burger-wrap {
+    display: none;
+  }
+
+  @include tab {
+    border-bottom: 1.62px solid $palegreen;
+    &__logo {
+      font-size: 1.7rem;
+      margin-right: 0;
+  
+      svg {
+        width: 2.1rem;
+        height: 3.1rem;
+        margin-right: 0.4rem;
+      }
+    }
+  
+    &__actions {
+      gap: 1.2rem;
+      margin-left: auto;
+    }
+  
+    &__act {
+      width: 3.2rem;
+      height: 3.2rem;
+      padding: 0.6rem;
+      &.trig-open-search.hide {
+        display: inline-block;
+      }
+    }
+  
+    &__add-btn {
+      display: none;
+    }
+
+    &__burger-wrap {
+      display: block;
+      padding: 0.6rem;
+      margin-left: 1.2rem;
+    }
+
+    &__burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 1.6rem;
+      height: 1.3rem;
+      position: relative;
+      &:before,
+      &:after,
+      & div {
+        background: $black;
+        content: "";
+        display: block;
+        height: 0.2rem;
+        border-radius: 0.2rem;
+        transition: 0.5s;
+      }
+      &.active:before {
+        transform: translateY(0.6rem) rotate(135deg);
+      }
+      &.active:after {
+        transform: translateY(-0.6rem) rotate(-135deg);
+      }
+      &.active div {
+        transform: scale(0);
+      }
+    }
+  }
+
+
+  @include mob {
+  
+    &__inner {
+      padding: 1.6rem 0;
+    }
+    &__logo {
+      font-size: 1.3rem;
+      margin-right: 0;
+  
+      svg {
+        width: 1.5rem;
+        height: 2.3rem;
+        margin-right: 0.3rem;
+      }
+    }
+  
+    &__actions {
+      gap: 0.8rem;
+    }
+  
+    &__act {
+      width: 2.4rem;
+      height: 2.4rem;
+      padding: 0.5rem;
+    }
+
+    &__burger-wrap {
+      padding: 0.5rem;
+      margin-left: 0.8rem;
+    }
+
+    &__burger {
+      width: 1.2rem;
+      height: 1rem;
+      position: relative;
+      &:before,
+      &:after,
+      & div {
+        background: $black;
+        content: "";
+        display: block;
+        height: 0.2rem;
+        border-radius: 0.2rem;
+        transition: 0.5s;
+      }
+      &.active:before {
+        transform: translateY(0.6rem) rotate(135deg);
+      }
+      &.active:after {
+        transform: translateY(-0.6rem) rotate(-135deg);
+      }
+      &.active div {
+        transform: scale(0);
+      }
+    }
+  }
+}
+
+.nav {
+  opacity: 1;
+  transition: opacity 400ms;
+  &.hide {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    gap: 3.2rem;
+    b {
+      font-weight: 600;
+    }
+    a {
+      display: inline-block;
+      padding: 0.8rem;
+      &:hover {
+        border-bottom: 0.1rem solid $black;
+      }
+    }
+  }
+  @include tab {
+    display: none;
+  }
+}
+
+.header-search {
+  margin-left: auto;
+  height: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  width: 0;
+  transition: width 0ms;
+  &.open {
+    transition: width 400ms ease-in;
+    width: 120rem;
+  }
+  &__magnific {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 100%;
+    background-color: $bckgrnd2;
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+  &__input {
+    font-size: 1.4rem;
+    flex-grow: 1;
+    padding: 1rem;
+    border-bottom: 1px solid $lightgrey;
+    &::placeholder {
+      color: $darkgrey;
+    }
+  }
+  &__close {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    svg {
+      @include img-contain;
+    }
+  }
+  @include tab {
+    padding: 2.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    transition: width 0ms;
+    background-color: $white;
+    transform: translateY(-200%);
+    z-index: 100;
+    @include block-shadow2;
+    &.open {
+      transition: width 400ms ease-in;
+
+      transform: translateY(120%);
+      width: 100vw;
+    }
+    &__magnific {
+      width: 2.4rem;
+      height: 2.4rem;
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+    &__input {
+      font-size: 1.2rem;
+      flex-grow: 1;
+      padding: 0.8rem;
+      border-bottom: none;
+    }
+    &__close {
+      width: 2.4rem;
+      height: 2.4rem;
+      position: relative;
+      right: 0;
+      top: 0;
+      transform: translateY(0);
+    }
+  }
+  @include tab {
+    padding: 1.6rem;
+    &.open {
+      transform: translateY(110%);
+    }
+  }
+}

@@ -1,0 +1,242 @@
+.card-ad-top {
+  margin-bottom: 4.8rem;
+  &__top {
+    margin-bottom: 1.6rem;
+  }
+  &__img, &__price, &__hr {
+    display: none;
+  }
+  &__date {
+    color: $darkgrey;
+    margin-bottom: 1.6rem;
+  }
+  &__tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+  &__table {
+    margin-bottom: 4.8rem;
+    /* Remove all table styles */
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    /* Reset table borders */
+    table,
+    th,
+    td {
+      border: none;
+    }
+    
+    table {
+      // border: unset;
+      border-collapse: separate;
+      border-spacing: 0 1.6rem;
+    }
+
+    /* Remove padding and margin from cells */
+    th,
+    td {
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    /* Remove background and color */
+    table,
+    th,
+    td {
+      background: none;
+      color: inherit;
+    }
+
+    /* Remove table headers and caption styles */
+    caption,
+    th {
+      font-weight: normal;
+      text-align: left;
+    }
+
+    /* Remove any default font styling */
+    table,
+    th,
+    td,
+    caption {
+      font: inherit;
+    }
+
+    filter: drop-shadow(148px 363px 110px rgba(230, 230, 230, 0))
+      drop-shadow(95px 232px 100px rgba(230, 230, 230, 0.02)) drop-shadow(53px 131px 85px rgba(230, 230, 230, 0.07))
+      drop-shadow(24px 58px 63px rgba(230, 230, 230, 0.12)) drop-shadow(6px 15px 34px rgba(230, 230, 230, 0.14));
+
+    th {
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      svg {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+        margin-right: 0.8rem;
+      }
+    }
+    td {
+      height: 10rem;
+    }
+    td, th {
+      padding: 1.5rem;
+      background-color: $white;
+      div {
+        text-align: center;
+      }
+      &:first-child {
+        border-radius: 2.4rem 0 0 2.4rem;
+      }
+      &:last-child {
+        border-radius: 0 2.4rem 2.4rem 0;
+      }
+    }
+    dl, dt, dd {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    dt {
+      display: none;
+    }
+  }
+  &__table-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.4rem;
+  }
+  &__list {
+    display: none;
+  }
+  @include tab {
+    padding: 0 2.4rem;
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+    }
+    &__img {
+      display: inline-block;
+      width: 5.2rem;
+      height: 5.2rem;
+      object-fit: contain;
+      flex-shrink: 0;
+      margin-right: 0.8rem;
+    }
+    &__price {
+      display: inline-block;
+      font-size: 2.2rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    &__date {
+      display: none;
+    }
+    &__tag {
+      margin-bottom: 2.4rem;
+    }
+    &__hr {
+      display: block;
+      position: relative;
+      width: 100vw;
+      left: -2.4rem;
+      height: 1px;
+      background-color: $lightgrey;
+      margin-bottom: 2.4rem;
+    }
+    &__h2 {
+      margin-bottom: 2.4rem;
+      display: none;
+    }
+    &__table {
+      display: none;
+    }
+    &__table-more {
+      padding-bottom: 2.4rem;
+    }
+    &__list {
+      display: block;
+      ul {
+        margin-bottom: 2.4rem;
+      }
+      li {
+        padding: 0.8rem 1.6rem;
+        background-color: $bckgrnd2;
+        border-radius: 0.8rem;
+        margin-bottom: 1.6rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &.hide {
+          display: none;
+        }
+      }
+      dl {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        font-size: 1.7rem;
+      }
+      dt, dd {
+        display: inline-flex;
+        align-items: center;
+        svg {
+          width: 2rem;
+          height: 2rem;
+          object-fit: contain;
+          margin-left: 0.4rem;
+        }
+      }
+      dd {
+        text-align: right;
+      }
+    }
+  }
+  @include mob {
+    padding: 0 1.6rem;
+    &__top {
+      display: block;
+      margin-bottom: 1.6rem;
+    }
+    &__title {
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    &__img {
+      display: none;
+    }
+    &__price {
+      font-size: 1.6rem;
+    }
+    &__list {
+      ul {
+        margin-bottom: 2.4rem;
+      }
+      li {
+        padding: 0.8rem 0.8rem;
+      }
+      dl {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

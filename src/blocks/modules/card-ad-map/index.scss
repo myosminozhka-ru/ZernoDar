@@ -1,0 +1,225 @@
+.card-ad-map {
+  margin-bottom: 4.8rem;
+  &__content {
+    margin-top: 2.4rem;
+    padding: 2.4rem;
+    border-radius: 2rem;
+    background-color: $white;
+    @include block-shadow2;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+  }
+  &__address {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.8rem;
+    gap: 1.6rem;
+  }
+  &__on-map {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $linkblue;
+  }
+  &__map {
+    height: 40rem;
+    margin-bottom: 1.6rem;
+    #map {
+      height: 100%;
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  &__input-label {
+    display: none;
+  }
+  &__input {
+    input {
+      min-width: 57.2rem;
+      border-radius: 2rem;
+      border: 1px solid $lightgrey;
+      padding: 1.3rem 1.6rem;
+      &::placeholder {
+        color: $darkgrey;
+      }
+    }
+    button, svg {
+      display: none;
+    }
+  }
+  &__calc {
+    font-weight: 500;
+    border-radius: 1.6rem;
+    background: $paleblue;
+    padding: 1.4rem 1.6rem;
+  }
+  &__distance {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  &__distance-val {
+    min-width: 21.7rem;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 2rem;
+    border: 1px solid $lightgrey;
+    padding: 1.3rem 1.6rem;
+  }
+  @include tab {
+    margin-bottom: 0;
+    &__mtitle {
+      left: 0;
+    }
+    &__content {
+      margin-top: 0;
+      padding: 2.4rem;
+      border-radius: 2rem;
+      background-color: $white;
+      @include block-shadow2;
+    }
+    &__top {
+      display: block;
+      margin-bottom: 1.6rem;
+    }
+    &__address {
+      width: 100%;
+      justify-content: space-between;
+      font-size: 1.7rem;
+      gap: 0;
+    }
+    &__on-map {
+      display: none;
+    }
+    &__map {
+      height: 40vw;
+      margin-bottom: 1rem;
+      display: none;
+      &.open {
+        display: block;
+      }
+    }
+    &__bottom {
+      display: block;
+    }
+    &__input-label {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 1.6rem;
+    }
+    &__input {
+      position: relative;
+      background-color: $bckgrnd2;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 1.6rem;
+      margin-bottom: 2.4rem;
+      input {
+        flex-grow: 1;
+        font-size: 1.4rem;
+        min-width: auto;
+        border: 0;
+        border-radius: 0;
+        padding: 0.8rem 1.6rem;
+        &::placeholder {
+          color: $black;
+        }
+      }
+      button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        font-size: 1.4rem;
+        font-weight: 500;
+        padding: 1.6rem;
+        background-color: $paleblue;
+        border-radius: 1.6rem;
+      }
+      svg {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    &__calc {
+      width: 100%;
+      font-size: 1.8rem;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+    &__distance {
+      margin-left: 0;
+      font-size: 1.4rem;
+      text-align: center;
+      justify-content: center;
+      gap: 0.5em;
+    }
+    &__distance-val {
+      font-size: 1.4rem;
+      min-width: auto;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 0;
+      border: 0;
+      padding: 0;
+    }
+  }
+  @include mob {
+    &__mtitle {
+      left: 0;
+    }
+    &__content {
+      padding: 1.6rem;
+    }
+    &__top {
+      display: block;
+      margin-bottom: 2.4rem;
+    }
+    &__address {
+      font-size: 1.4rem;
+    }
+    &__input-label {
+      font-size: 1.2rem;
+      margin-bottom: 2.4rem;
+    }
+    &__input {
+      padding-left: 0.8rem;
+      input {
+        font-size: 1.2rem;
+        padding: 0.8rem 0.8rem;
+      }
+      button {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+      }
+      svg {
+        width: 1.7rem;
+        height: 1.7rem;
+      }
+    }
+    &__calc {
+      font-size: 1.4rem;
+      padding: 1.1rem 1.6rem;
+    }
+    &__distance {
+      font-size: 1.2rem;
+      gap: 0.5em;
+    }
+    &__distance-val {
+      font-size: 1.2rem;
+    }
+  }
+}

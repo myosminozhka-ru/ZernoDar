@@ -1,0 +1,3 @@
+@function gutter($n) {
+  @return 0.4rem * $n;
+}

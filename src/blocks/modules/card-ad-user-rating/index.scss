@@ -1,0 +1,43 @@
+.card-ad-user-rating {
+  margin-top: 1.6rem;
+  padding: 2.4rem;
+  border-radius: 2rem;
+  background-color: $white;
+  @include block-shadow1;
+  &__top {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+    .helptip {
+      margin-left: 0.8rem;
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  &__rates {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    svg {
+      width: 2rem;
+      height: 2rem;
+      object-fit: contain;
+      margin-right: 0.8rem;
+    }
+  }
+  &__footer {
+    .btn3 {
+      width: 100%;
+    }
+  }
+}
