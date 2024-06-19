@@ -58,6 +58,10 @@
     border-radius: 1.6rem;
     background: $paleblue;
     padding: 1.4rem 1.6rem;
+    transition: background 200ms;
+    &:hover {
+      background-color: $palegreen;
+    }
   }
   &__distance {
     margin-left: auto;

@@ -18,7 +18,6 @@
   }
   &__table {
     margin-bottom: 4.8rem;
-    /* Remove all table styles */
     table {
       border-collapse: collapse;
       border-spacing: 0;
@@ -28,7 +27,6 @@
       table-layout: fixed;
     }
 
-    /* Reset table borders */
     table,
     th,
     td {
@@ -36,12 +34,10 @@
     }
     
     table {
-      // border: unset;
       border-collapse: separate;
       border-spacing: 0 1.6rem;
     }
 
-    /* Remove padding and margin from cells */
     th,
     td {
       padding: 0;
@@ -49,7 +45,7 @@
       text-align: left;
     }
 
-    /* Remove background and color */
+    
     table,
     th,
     td {
@@ -72,10 +68,12 @@
       font: inherit;
     }
 
-    filter: drop-shadow(148px 363px 110px rgba(230, 230, 230, 0))
-      drop-shadow(95px 232px 100px rgba(230, 230, 230, 0.02)) drop-shadow(53px 131px 85px rgba(230, 230, 230, 0.07))
-      drop-shadow(24px 58px 63px rgba(230, 230, 230, 0.12)) drop-shadow(6px 15px 34px rgba(230, 230, 230, 0.14));
 
+    tr {
+      &.hide {
+        display: none;
+      }
+    }
     th {
       div {
         display: flex;
@@ -91,6 +89,7 @@
     }
     td {
       height: 10rem;
+      @include block-shadow2;
     }
     td, th {
       padding: 1.5rem;

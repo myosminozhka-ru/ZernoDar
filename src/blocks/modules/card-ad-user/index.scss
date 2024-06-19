@@ -154,6 +154,14 @@
       height: 2.4rem;
       object-fit: contain;
       flex-shrink: 0;
+      color: $darkgrey;
+      transition: color 200ms;
+    }
+    &:hover {
+      text-decoration: underline;
+      svg {
+        color: $black;
+      }
     }
   }
 }
@@ -183,6 +191,10 @@
   justify-content: center;
   text-align: center;
   background-color: $green2;
+  transition: background 200ms;
+  &:hover {
+    background-color: $green;
+  }
   @include tab {
     font-size: 1.8rem;
     padding: 1.8rem 3.2rem;
@@ -206,6 +218,13 @@
     width: 4.6rem;
     height: 4.6rem;
     object-fit: contain;
+  }
+  transition: background 200ms;
+  &:hover {
+    background-color: $green;
+  }
+  &.active {
+    background-color: $green;
   }
   @include tab {
     padding: 1.8rem;
