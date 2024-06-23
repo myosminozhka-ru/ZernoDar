@@ -6,11 +6,17 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 3.2rem;
+    position: relative;
   }
   &__left {
     flex-shrink: 0;
     width: 28.3rem;
+    // position: sticky;
+    // top: 1rem;
+    // height: 100vh;
+    // overflow: auto;
   }
   &__right {
     flex-grow: 1;
@@ -26,6 +32,11 @@
     margin-top: 6rem;
     font-size: 1.4rem;
     color: $darkgrey;
+  }
+  &__pag {
+    .btn10 {
+      display: none;
+    }
   }
   @include tab {
     background-color: $bckgrnd2;

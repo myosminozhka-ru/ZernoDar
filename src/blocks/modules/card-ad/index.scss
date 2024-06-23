@@ -3,7 +3,9 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 2.2rem;
+    position: relative;
   }
   &__left {
     flex-grow: 1;
@@ -11,6 +13,8 @@
   &__right {
     flex-shrink: 0;
     width: 57.6rem;
+    position: sticky;
+    top: 1rem;
   }
   &__user-mob {
     display: none;
