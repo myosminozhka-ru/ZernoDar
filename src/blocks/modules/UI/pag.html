@@ -1,6 +1,22 @@
-<ul class="pag">
-  <li class="pag__item"><a href="#" class="pag__link current">1</a></li>
-  @@for (var i = 0; i < numbers.length; i++) {
-    <li class="pag__item"><a href="#" class="pag__link">`+numbers[i]+`</a></li>
-  }
-</ul>
+<div class="pag">
+  <a href="" class="pag__btn hide">
+    <svg>
+      <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+    </svg>
+    Назад
+  </a>
+  <ul>
+    <li><a href="#" class="current">1</a></li>
+    <li><a href="#" class="">2</a></li>
+    <li><a href="#" class="">3</a></li>
+    <li><a href="#" class="">4</a></li>
+    <li><a href="#" class="">...</a></li>
+    <li><a href="#" class="">14</a></li>
+  </ul>
+  <a href="" class="pag__btn">
+    Вперед
+    <svg>
+      <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+    </svg>
+  </a>
+</div>

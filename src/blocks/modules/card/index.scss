@@ -1,0 +1,268 @@
+.card {
+  padding: 3.2rem;
+  border-radius: 2rem;
+  background-color: $white;
+  @include block-shadow2;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.4rem;
+    padding-bottom: 2.4rem;
+    margin-bottom: 2.4rem;
+    border-bottom: 0.1rem solid $lightgrey;
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.4rem;
+  }
+  &__ava {
+    display: inline-block;
+    width: 6.4rem;
+    height: 6.4rem;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-right: 0.8rem;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  &__price-wrap {
+    display: flex;
+    align-items: center;
+  }
+  &__price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 1.6rem;
+  }
+  &__tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &__data {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+    }
+    dl, dt, dd {
+      margin: 0;
+    }
+    dl {
+      display: flex;
+      align-items: center;
+    }
+    li {
+      padding: 1.6rem 1.6rem;
+      border-radius: 1.6rem;
+      background-color: $bckgrnd2;
+    }
+
+  }
+  &__top-right {
+    width: 52.8rem;
+    flex-shrink: 0;
+  }
+  &__user-tags {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.6rem;
+  }
+  &__bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__bot-right {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  &__data-more {
+    display: none;
+  }
+  @include tab {
+    padding: 0;
+    border-radius: 0;
+    &__top {
+      display: block;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+    &__head {
+      margin-bottom: 0;
+      padding: 2.4rem 2.4rem 0;
+    }
+    &__ava {
+      width: 5.2rem;
+      height: 5.2rem;
+    }
+    &__title-wrap {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__title {
+      margin-bottom: 0;
+    }
+    &__price {
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-right: 0;
+      white-space: nowrap;
+    }
+    &__tags {
+      display: none;
+    }
+    &__tags2 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      margin-top: 1.8rem;
+      padding: 0 2.4rem 2.4rem;
+    }
+    &__data {
+      border-top: 0.1rem solid $lightgrey;
+      border-bottom: 0.1rem solid $lightgrey;
+      padding: 2.4rem 2.4rem 1.7rem;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+        margin-bottom: 2.4rem;
+      }
+      li {
+        width: 100%;
+        padding: 0.8rem 1.6rem;
+        background-color: $bckgrnd2;
+        border-radius: 0.8rem;
+      }
+      dl, dt, dd {
+        margin: 0;
+      }
+      dl {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        font-size: 1.7rem;
+      }
+      dt, dd {
+        display: inline-flex;
+        align-items: center;
+        svg {
+          width: 2rem;
+          height: 2rem;
+          object-fit: contain;
+          margin-left: 0.4rem;
+        }
+      }
+      dd {
+        text-align: right;
+      }
+  
+    }
+    &__data-more {
+      display: flex;
+      justify-content: center;
+    }
+    &__top-right {
+      width: 100%;
+      padding: 2.4rem;
+      .user-contact {
+        display: none;
+      }
+    }
+    &__user-tags {
+      margin-bottom: 0;
+    }
+    &__bot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__bot-left {
+      display: none;
+    }
+    &__bot-right {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0 2.4rem 2.4rem;
+      .btn9 {
+        flex-grow: 1;
+      }
+    }
+  }
+  @include mob {
+    &__head {
+      display: block;
+      margin-bottom: 0;
+      padding: 1.6rem 1.6rem 0;
+    }
+    &__ava {
+      display: none;
+    }
+    &__title-wrap {
+      display: block;
+    }
+    &__title {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+    &__price {
+      font-size: 1.6rem;
+    }
+    &__tags {
+      display: none;
+    }
+    &__tags2 {
+      margin-top: 1.6rem;
+      padding: 0 1.6rem 2.4rem;
+    }
+    &__data {
+      padding: 2.4rem 1.6rem 1.7rem;
+      ul {
+        margin-bottom: 2.4rem;
+      }
+      li {
+        padding: 1.1rem 0.8rem;
+      }
+      dl {
+        font-size: 1.4rem;
+      }
+      dt, dd {
+        display: inline-flex;
+        align-items: center;
+        svg {
+          width: 2rem;
+          height: 2rem;
+          object-fit: contain;
+          margin-left: 0.4rem;
+        }
+      }
+      dd {
+        text-align: right;
+      }
+  
+    }
+    &__top-right {
+      padding: 2.4rem 1.6rem;
+    }
+    &__bot-left {
+      display: none;
+    }
+    &__bot-right {
+      gap: 0.8rem;
+      padding: 0 1.6rem 2.4rem;
+    }
+  }
+}

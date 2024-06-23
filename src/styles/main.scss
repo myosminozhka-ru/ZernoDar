@@ -10,8 +10,11 @@
 @import "base/fonts";
 @import "base/general";
 @import "base/form";
+@import "base/UI";
 
 // БЭМ-блоки
 @import "../blocks/modules";
+
+@import "base/end";
 
 @import "base/vue";

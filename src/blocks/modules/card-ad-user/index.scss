@@ -147,7 +147,6 @@
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    color: $linkblue;
     flex-shrink: 0;
     svg, img {
       width: 2.4rem;
@@ -163,6 +162,9 @@
         color: $black;
       }
     }
+  }
+  a.user-contact__link {
+    color: $linkblue;
   }
 }
 
@@ -226,12 +228,27 @@
   &.active {
     background-color: $green;
   }
+  &--sm {
+    padding: 1.3rem;
+    border-radius: 1.6rem;
+    svg {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+  }
   @include tab {
     padding: 1.8rem;
     border-radius: 1.6rem;
     svg {
       width: 2.4rem;
       height: 2.4rem;
+    }
+    &--sm {
+      padding: 1.8rem;
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
     }
   }
   @include mob {

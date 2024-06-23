@@ -3,6 +3,7 @@ import more from "./more";
 import Modal from "./modal";
 
 import cardAdMap from "%modules%/card-ad-map/index";
+import Sidebar from "%modules%/catalog-sidebar/index";
 
 addEventListener('DOMContentLoaded', () => {
   more('.card-ad-top__list ul li', '.card-ad-top__list .card-ad-top__table-more .open-more2', 6)
@@ -15,5 +16,6 @@ addEventListener('DOMContentLoaded', () => {
   window.app = {
     header: new Header(),
     textSellerModal: new Modal('text-seller'),
+    sidebar: new Sidebar(),
   }
 })
