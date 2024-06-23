@@ -1,7 +1,9 @@
 import $ from "jquery";
 
 export default function init() {
-
+  if (!$('#map').length) {
+    return false;
+  }
   ymaps.ready(function () {
             
     // let breakpoint = window.matchMedia('(max-width: 48em)');

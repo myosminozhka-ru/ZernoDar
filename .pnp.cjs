@@ -65,6 +65,7 @@ const RAW_RUNTIME_STATE =
           ["imagemin-pngquant", "npm:9.0.2"],\
           ["imagemin-webp", "npm:6.1.0"],\
           ["imagemin-zopfli", "npm:7.0.0"],\
+          ["ion-rangeslider", "virtual:186381c180ca650736a44b8c87775381e96c396f54b06b7b470fd3e6b97ba133ec6ed70a4abd65ca57155aa5e6a08a547095c741cfae32b07330800978c660da#npm:2.3.1"],\
           ["jquery", "npm:3.7.1"],\
           ["lint-staged", "npm:12.5.0"],\
           ["postcss", "npm:8.4.32"],\
@@ -10194,6 +10195,7 @@ const RAW_RUNTIME_STATE =
           ["imagemin-pngquant", "npm:9.0.2"],\
           ["imagemin-webp", "npm:6.1.0"],\
           ["imagemin-zopfli", "npm:7.0.0"],\
+          ["ion-rangeslider", "virtual:186381c180ca650736a44b8c87775381e96c396f54b06b7b470fd3e6b97ba133ec6ed70a4abd65ca57155aa5e6a08a547095c741cfae32b07330800978c660da#npm:2.3.1"],\
           ["jquery", "npm:3.7.1"],\
           ["lint-staged", "npm:12.5.0"],\
           ["postcss", "npm:8.4.32"],\
@@ -11057,6 +11059,28 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/invert-kv-npm-1.0.0-114e48e289-0820af99ca.zip/node_modules/invert-kv/",\
         "packageDependencies": [\
           ["invert-kv", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["ion-rangeslider", [\
+      ["npm:2.3.1", {\
+        "packageLocation": "./.yarn/cache/ion-rangeslider-npm-2.3.1-e786e73373-83a86fc368.zip/node_modules/ion-rangeslider/",\
+        "packageDependencies": [\
+          ["ion-rangeslider", "npm:2.3.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:186381c180ca650736a44b8c87775381e96c396f54b06b7b470fd3e6b97ba133ec6ed70a4abd65ca57155aa5e6a08a547095c741cfae32b07330800978c660da#npm:2.3.1", {\
+        "packageLocation": "./.yarn/__virtual__/ion-rangeslider-virtual-4e37fce420/0/cache/ion-rangeslider-npm-2.3.1-e786e73373-83a86fc368.zip/node_modules/ion-rangeslider/",\
+        "packageDependencies": [\
+          ["ion-rangeslider", "virtual:186381c180ca650736a44b8c87775381e96c396f54b06b7b470fd3e6b97ba133ec6ed70a4abd65ca57155aa5e6a08a547095c741cfae32b07330800978c660da#npm:2.3.1"],\
+          ["@types/jquery", null],\
+          ["jquery", "npm:3.7.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/jquery",\
+          "jquery"\
         ],\
         "linkType": "HARD"\
       }]\

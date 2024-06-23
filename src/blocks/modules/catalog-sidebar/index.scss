@@ -1,0 +1,656 @@
+.catalog-sidebar {
+  &__modal-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    .btn4 {
+      flex: 1;
+    }
+  }
+  &__mobile,
+  &__head,
+  &__categoty {
+    display: none;
+  }
+  @include tab {
+    &__switch {
+      margin-bottom: 0;
+    }
+    &__mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      padding: 2.4rem;
+      background-color: $white;
+      border-radius: 0 0 1.2rem 1.2rem;
+    }
+    &__btns {
+      display: flex;
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: $white;
+        border: none;
+        width: auto;
+        height: auto;
+      }
+    }
+    &__modal {
+      position: fixed;
+      width: 100%;
+      height: calc(100% - 2rem);
+      left: 0;
+      bottom: 0;
+      z-index: 100;
+      background-color: $white;
+      overflow: auto;
+      border-radius: 2rem 2rem 0 0;
+      transform: translateY(130%);
+      transition: 300ms transform;
+      select {
+        background-color: $bckgrnd2;
+      }
+      &.open {
+        transform: translateY(0);
+      }
+    }
+    &__head {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $white;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $black;
+      padding: 1.6rem 2.4rem 2.4rem;
+      border-bottom: 1px solid $lightgrey;
+      svg {
+        color: #000;
+        @include img-contain;
+      }
+      &-close,
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+      }
+    }
+    &__modal-inner {
+      padding: 2.4rem;
+      gap: 2.4rem;
+    }
+    &__categoty {
+      display: block;
+    }
+  }
+  @include mob {
+    &__mobile {
+      padding: 1.6rem;
+    }
+    &__head {
+      padding: 1.6rem;
+    }
+    &__modal-inner {
+      padding: 1.6rem;
+    }
+  }
+}
+
+.catalog-head {
+  margin-bottom: 1.6rem;
+  position: relative;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.3rem;
+  }
+  &__sort {
+    width: 35.3rem;
+  }
+  &__map {
+    display: flex;
+    gap: 1.6rem;
+  }
+  &__bot {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  @include tab {
+    margin-bottom: 0;
+    padding: 3.2rem 2.4rem;
+    &__top {
+      display: none;
+    }
+    &__bot {
+      align-items: stretch;
+      flex-direction: column;
+      gap: 3.2rem;
+    }
+    &__total {
+      font-size: 1.7rem;
+    }
+    &__reset {
+      font-size: 1.8rem;
+      font-weight: 500;
+      padding: 1.8rem;
+      background-color: $paleblue;
+      border-radius: 1.6rem;
+      color: $black;
+      svg {
+        display: none;
+      }
+    }
+  }
+  @include mob {
+    margin-bottom: 0;
+    padding: 2.4rem 1.6rem;
+    &__bot {
+      gap: 1.6rem;
+    }
+    &__total {
+      font-size: 1.4rem;
+    }
+    &__reset {
+      font-size: 1.4rem;
+      padding: 1.4rem;
+      border-radius: 0.8rem;
+    }
+  }
+}
+
+.switch-button {
+  display: flex;
+  align-items: center;
+  background-color: $bckgrnd2;
+  border-radius: 1.6rem;
+  &__item {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.4rem;
+    border-radius: 1.6rem;
+    &.active {
+      color: $white;
+      background-color: $green;
+    }
+  }
+  @include tab {
+    border-radius: 0.8rem;
+    &__item {
+      padding: 2rem 1rem;
+      font-size: 1.6rem;
+      border-radius: 0.8rem;
+    }
+  }
+  @include mob {
+    border-radius: 1.6rem;
+    overflow: hidden;
+    &__item {
+      padding: 1.5rem 1rem;
+      font-size: 1.2rem;
+      border-radius: 0.8rem;
+    }
+  }
+}
+
+.switch-train {
+  overflow: auto;
+  ul {
+    display: flex;
+    white-space: nowrap;
+    gap: 0.8rem;
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.6rem;
+    border-radius: 10rem;
+    border: 1px solid $lightgrey;
+    &.active {
+      color: $white;
+      background-color: $orange;
+      border-color: $orange;
+    }
+  }
+  @include tab {
+    width: 100vw;
+    position: relative;
+    left: -2.4rem;
+    padding-left: 2.4rem;
+    li:last-child {
+      padding-right: 2.4rem;
+    }
+  }
+  @include mob {
+    left: -1.6rem;
+    padding-left: 1.6rem;
+    li:last-child {
+      padding-right: 1.6rem;
+    }
+     a {
+      font-size: 1.2rem;
+      padding: 1.4rem 1.4rem;
+     }
+  }
+}
+
+.catalog-map {
+  position: relative;
+  background-color: $bckgrnd2;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1.6rem;
+  input {
+    flex-grow: 1;
+    font-size: 1.4rem;
+    min-width: auto;
+    border: 0;
+    border-radius: 0;
+    padding: 1.5rem 1.6rem;
+    &::placeholder {
+      color: $black;
+    }
+  }
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 2.1rem 1.6rem;
+    background-color: $paleblue;
+    border-radius: 1.6rem;
+  }
+  svg {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+  }
+  @include mob {
+    padding-left: 0.8rem;
+    input {
+      flex-grow: 1;
+      font-size: 1.2rem;
+      padding: 1.5rem 0.8rem;
+    }
+    button {
+      font-size: 1.2rem;
+      padding: 1.5rem 1.6rem;
+      border-radius: 0.8rem;
+    }
+  }
+}
+
+.filter {
+  &__item {
+    margin-bottom: 3.2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__apply {
+    width: 100%;
+  }
+  @include tab {
+    &__item {
+      margin-bottom: 2.4rem;
+      padding-bottom: 2.4rem;
+      border-bottom: 1px solid $lightgrey;
+      &:last-child {
+        margin-bottom: 0;
+        border: none;
+        padding-bottom: 0;
+      }
+    }
+    &__title {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.filter-list {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__item {
+    &.hide {
+      display: none;
+    }
+    &.open {
+      .filter-list__drop {
+        display: flex;
+      }
+      .filter-list__title {
+        flex-direction: row;
+        justify-content: flex-start;
+        svg {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    cursor: pointer;
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      object-fit: contain;
+      flex-shrink: 0;
+      margin-right: 0.4rem;
+      transform: rotate(180deg);
+    }
+  }
+  &__drop {
+    margin-top: 1.7rem;
+    max-height: 30rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    display: none;
+  }
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  label {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+  }
+  input {
+    @include vhidden;
+  }
+  i {
+    margin-left: auto;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.1rem solid $darkgrey;
+    border-radius: 0.2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  input:checked + i {
+    background-color: $green;
+    border-color: $green;
+    background-image: url(../img/sprites/checkbox-green.svg);
+  }
+  @include tab {
+    font-size: 1.4rem;
+    i {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+}
+
+.filter-range {
+  .irs--flat {
+    height: 3rem;
+  }
+  .irs--flat .irs-bar {
+    top: 1.4rem;
+    height: 0.2rem;
+    background-color: $green;
+  }
+  .irs--flat .irs-line {
+    top: 1.4rem;
+    height: 0.2rem;
+    background-color: $lightgrey;
+    border-radius: 0.2rem;
+  }
+  .irs--flat .irs-handle {
+    top: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: $green;
+    border: 0.1rem solid green;
+    border-radius: 100%;
+    i {
+      display: none;
+    }
+  }
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8rem;
+    gap: 0.8rem;
+  }
+  &__sep {
+    flex-grow: 1;
+    height: 0.2rem;
+    background-color: $lightgrey;
+  }
+  &__input-wrap {
+    flex-shrink: 0;
+    width: calc(50% - 1.5rem);
+    border: 1.5px solid $lightgrey;
+    border-radius: 2rem;
+    padding: 1.2rem 1.6rem;
+    overflow: hidden;
+    position: relative;
+  }
+  &__label {
+    color: $darkgrey;
+    font-size: 1.4rem;
+  }
+  &__input,
+  &__val {
+    font-size: 1.6rem;
+    height: 1em;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    &.hide {
+      height: 0;
+      overflow: hidden;
+      line-height: 0;
+    }
+  }
+  &__distance {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    span {
+      flex: 1;
+      text-align: center;
+      &:first-child {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+  @include tab {
+    &__label {
+      color: $darkgrey;
+      font-size: 1.4rem;
+    }
+    &__input,
+    &__val {
+      font-size: 1.2rem;
+    }
+    &__distance {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.switch-slide {
+  display: inline-flex;
+  align-items: center;
+  width: 3.2rem;
+  height: 2rem;
+  border-radius: 6.2rem;
+  background-color: $green;
+  padding: 0.3rem;
+  cursor: pointer;
+  i {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    background-color: $white;
+    transition: 200ms transform;
+  }
+  input {
+    @include vhidden;
+    &:checked + i {
+      transform: translateX(73%);
+    }
+  }
+}
+
+.map-point {
+  position: absolute;
+  width: 53.7rem;
+  height: auto;
+  right: 0;
+  top: calc(100% - 5rem);
+  z-index: 100;
+  background-color: $white;
+  overflow: auto;
+  border-radius: 2rem;
+  display: none;
+  box-shadow: 0px 1.2rem 4.6rem 0px rgba(23, 15, 73, 0.19);
+  &.open {
+    display: block;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 2.4rem;
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+  }
+  &__title {
+    display: none;
+  }
+  &__head,
+  .filter-range .filter-range__inputs {
+    display: none;
+  }
+  @include tab {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 2rem);
+    left: 0;
+    bottom: 0;
+    top: auto;
+    right: auto;
+    z-index: 100;
+    background-color: $white;
+    overflow: auto;
+    border-radius: 2rem 2rem 0 0;
+    transform: translateY(130%);
+    transition: 300ms transform;
+    &__head {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $white;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $black;
+      padding: 1.6rem 2.4rem 2.4rem;
+      border-bottom: 1px solid $lightgrey;
+      svg {
+        color: #000;
+        @include img-contain;
+      }
+      &-close,
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+      }
+    }
+    &.open {
+      transform: translateY(0);
+    }
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      padding: 2.4rem;
+    }
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    &__title {
+      display: block;
+      font-size: 1.4rem;
+    }
+  }
+  @include mob {
+    &__inner {
+      padding: 2.4rem 1.6rem;
+    }
+  }
+
+}
