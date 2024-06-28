@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Зернодор</title>
+  <meta name="theme-color" content="#fff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0">
+
+  <meta property="og:url" content="https://www.your-domain.com/your-page.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Your Website Title"/>
+  <meta property="og:description" content="Your description"/>
+  <meta property="og:image" content="https://www.your-domain.com/path/image.jpg"/>
+
+  <link rel="icon" href="/favicons/favicon.ico" type="image/x-icon"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="styles/libs/fancybox.css">
+  <link rel="stylesheet" href="styles/libs/swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles/libs/ion.rangeSlider.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>"
+    type="text/javascript"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container container--full">
+      <div class="header__inner">
+        <a href="/" class="header__logo">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#logo"></use>
+          </svg>
+          ЗЕРНОДАР
+        </a>
+        <nav class="nav header__nav">
+          <div class="nav__inner">
+            <ul class="nav__list">
+              <li><a href="#">Предложение</a></li>
+              <li><a href="#"><b>Спрос</b></a></li>
+              <li><a href="#">Компании</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="header-search">
+          <button class="header-search__magnific">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#magnific"></use>
+            </svg>
+          </button>
+          <input type="text" class="header-search__input" placeholder="Поиск..."/>
+          <button class="header-search__close trig-close-search">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#x"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="header__actions">
+          <button class="header__act trig-open-search">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#magnific"></use>
+            </svg>
+          </button>
+          <a href="#" class="header__act">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#favourite"></use>
+            </svg>
+          </a>
+          <a href="#" class="header__act">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#user"></use>
+            </svg>
+          </a>
+        </div>
+        <a href="#" class="header__add-btn">Разместить объявление</a>
+        <div class="header__burger-wrap">
+          <div class="header__burger">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-drop">
+      <div class="nav-drop__inner">
+        <div class="nav-drop__left">
+          <div class="nav-drop__title">
+            <a  href="" class="str">
+              <span class="nav-drop__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#icon1"></use>
+                </svg>
+              </span>
+              Зерновые культуры
+            </a>
+            <div class="nav-drop__arrow">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="nav-drop__title">
+            <a  href="" class="str">
+              <span class="nav-drop__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#icon2"></use>
+                </svg>
+              </span>
+              Масличные культуры
+            </a>
+            <div class="nav-drop__arrow">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="nav-drop__title">
+            <a  href="" class="str">
+              <span class="nav-drop__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#icon3"></use>
+                </svg>
+              </span>
+              Посевной материал
+            </a>
+            <div class="nav-drop__arrow">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="nav-drop__right">
+          <div class="nav-drop__block open">
+            <div class="nav-drop__subtitle">Зерновые культуры</div>
+            <div class="nav-drop__lists">
+              <ul class="nav-drop__list">
+                <li><a href="">Бобы <span>163</span></a></li>
+                <li><a href="">Горох <span>163</span></a></li>
+                <li><a href="">Гречиха <span>163</span></a></li>
+                <li><a href="">Кукуруза <span>163</span></a></li>
+                <li><a href="">Люпин <span>163</span></a></li>
+                <li><a href="">Нут <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Овес <span>163</span></a></li>
+                <li><a href="">Полба <span>163</span></a></li>
+                <li><a href="">Просо <span>163</span></a></li>
+                <li><a href="">Пшеница <span>163</span></a></li>
+                <li><a href="">Рожь <span>163</span></a></li>
+                <li><a href="">Сорго <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Соя <span>163</span></a></li>
+                <li><a href="">Тритикале <span>163</span></a></li>
+                <li><a href="">Фасоль <span>163</span></a></li>
+                <li><a href="">Чечевица <span>163</span></a></li>
+                <li><a href="">Ячмень <span>163</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-drop__block">
+            <div class="nav-drop__subtitle">Зерновые культуры</div>
+            <div class="nav-drop__lists">
+              <ul class="nav-drop__list">
+                <li><a href="">Бобы <span>163</span></a></li>
+                <li><a href="">Горох <span>163</span></a></li>
+                <li><a href="">Гречиха <span>163</span></a></li>
+                <li><a href="">Кукуруза <span>163</span></a></li>
+                <li><a href="">Люпин <span>163</span></a></li>
+                <li><a href="">Нут <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Овес <span>163</span></a></li>
+                <li><a href="">Полба <span>163</span></a></li>
+                <li><a href="">Просо <span>163</span></a></li>
+                <li><a href="">Пшеница <span>163</span></a></li>
+                <li><a href="">Рожь <span>163</span></a></li>
+                <li><a href="">Сорго <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Соя <span>163</span></a></li>
+                <li><a href="">Тритикале <span>163</span></a></li>
+                <li><a href="">Фасоль <span>163</span></a></li>
+                <li><a href="">Чечевица <span>163</span></a></li>
+                <li><a href="">Ячмень <span>163</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-drop__block">
+            <div class="nav-drop__subtitle">Зерновые культуры</div>
+            <div class="nav-drop__lists">
+              <ul class="nav-drop__list">
+                <li><a href="">Бобы <span>163</span></a></li>
+                <li><a href="">Горох <span>163</span></a></li>
+                <li><a href="">Гречиха <span>163</span></a></li>
+                <li><a href="">Кукуруза <span>163</span></a></li>
+                <li><a href="">Люпин <span>163</span></a></li>
+                <li><a href="">Нут <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Овес <span>163</span></a></li>
+                <li><a href="">Полба <span>163</span></a></li>
+                <li><a href="">Просо <span>163</span></a></li>
+                <li><a href="">Пшеница <span>163</span></a></li>
+                <li><a href="">Рожь <span>163</span></a></li>
+                <li><a href="">Сорго <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Соя <span>163</span></a></li>
+                <li><a href="">Тритикале <span>163</span></a></li>
+                <li><a href="">Фасоль <span>163</span></a></li>
+                <li><a href="">Чечевица <span>163</span></a></li>
+                <li><a href="">Ячмень <span>163</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+
+
+<div class="main-wrapper">
+  <div class="brc">
+  <div class="container container--full">
+    <div class="brc__inner">
+      <ul class="brc__list">
+        <li>
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#left-circle"></use>
+          </svg>
+          <a href="/">Главная</a>
+        </li>
+        
+          <li>
+            <a href="#" class="link">Компании</a>
+          </li>
+        
+          <li>
+            <a href="#" class="link">АО "Сельскозозяйственная Маревская Корпорация"</a>
+          </li>
+        
+      </ul>
+      <div class="brc__arrow">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#curve-arrow-right"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="card-user-wrapper">
+  <div class="card-user-wrapper__inner">
+    <div class="card-user-wrapper__left">
+       
+<div class="card-user-top">
+  <div class="user-head user-head--lg">
+    <div class="user-head__ava">
+      <img src="img/user-ava.png" alt="">
+    </div>
+    <div>
+      <div class="user-head__name">АО "Сельскозозяйственная Маревская Корпорация"</div>
+      <div class="user-rating">
+        <div class="user-rating__ave-num">4.8</div>
+        <div class="user-rating__stars">
+          <div style="width: 80%;" class="user-rating__procent"></div>
+          <svg width="111" height="20" viewBox="0 0 111 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.49023 0.5H-0.00976562V19.5H110.99V0.5H101.49H78.4902H55.4902H32.4902H9.49023ZM9.49023 0.5L11.6231 7.06434H18.5253L12.9413 11.1213L15.0742 17.6857L9.49023 13.6287L3.90627 17.6857L6.03916 11.1213L0.455197 7.06434H7.35735L9.49023 0.5ZM32.4902 0.5L34.6231 7.06434H41.5253L35.9413 11.1213L38.0742 17.6857L32.4902 13.6287L26.9063 17.6857L29.0392 11.1213L23.4552 7.06434H30.3574L32.4902 0.5ZM55.4902 0.5L57.6231 7.06434H64.5253L58.9413 11.1213L61.0742 17.6857L55.4902 13.6287L49.9063 17.6857L52.0392 11.1213L46.4552 7.06434H53.3574L55.4902 0.5ZM78.4902 0.5L80.6231 7.06434H87.5253L81.9413 11.1213L84.0742 17.6857L78.4902 13.6287L72.9063 17.6857L75.0392 11.1213L69.4552 7.06434H76.3574L78.4902 0.5ZM101.49 0.5L99.3574 7.06434H92.4552L98.0392 11.1213L95.9063 17.6857L101.49 13.6287L107.074 17.6857L104.941 11.1213L110.525 7.06434H103.623L101.49 0.5Z" fill="#FFFFFF"></path>
+          </svg>
+        </div>
+        <div class="user-rating__review-num">35 отзывов</div>
+      </div>
+    </div>
+  </div>
+  <div class="user-rating card-user-top__rating">
+    <div class="user-rating__ave-num">4.8</div>
+    <div class="user-rating__stars">
+      <div style="width: 80%;" class="user-rating__procent"></div>
+      <svg width="111" height="20" viewBox="0 0 111 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.49023 0.5H-0.00976562V19.5H110.99V0.5H101.49H78.4902H55.4902H32.4902H9.49023ZM9.49023 0.5L11.6231 7.06434H18.5253L12.9413 11.1213L15.0742 17.6857L9.49023 13.6287L3.90627 17.6857L6.03916 11.1213L0.455197 7.06434H7.35735L9.49023 0.5ZM32.4902 0.5L34.6231 7.06434H41.5253L35.9413 11.1213L38.0742 17.6857L32.4902 13.6287L26.9063 17.6857L29.0392 11.1213L23.4552 7.06434H30.3574L32.4902 0.5ZM55.4902 0.5L57.6231 7.06434H64.5253L58.9413 11.1213L61.0742 17.6857L55.4902 13.6287L49.9063 17.6857L52.0392 11.1213L46.4552 7.06434H53.3574L55.4902 0.5ZM78.4902 0.5L80.6231 7.06434H87.5253L81.9413 11.1213L84.0742 17.6857L78.4902 13.6287L72.9063 17.6857L75.0392 11.1213L69.4552 7.06434H76.3574L78.4902 0.5ZM101.49 0.5L99.3574 7.06434H92.4552L98.0392 11.1213L95.9063 17.6857L101.49 13.6287L107.074 17.6857L104.941 11.1213L110.525 7.06434H103.623L101.49 0.5Z" fill="#FFFFFF"></path>
+      </svg>
+    </div>
+    <div class="user-rating__review-num">35 отзывов</div>
+  </div>
+  <div class="card-ad-user__user-tags">
+    <div class="tag-user">
+      <svg>
+        <use xlink:href="img/sprites/sprite.svg#true-user"></use>
+      </svg>
+      Проверенный пользователь
+    </div>
+  </div>
+</div>
+      <div class="base-tab">
+        <div class="base-tab__list">
+          <a href="#description" class="base-tab__item base-tab__item--tab active">Описание</a>
+          <a href="#requisites" class="base-tab__item base-tab__item--tab">Реквизиты</a>
+          <a href="#review" class="base-tab__item base-tab__item--scroll">Отзывы</a>
+          <a href="#adds" class="base-tab__item base-tab__item--scroll">Объявление</a>
+        </div>
+        <div class="base-tab__block base-tab__block--tab active" id="description">
+          <div class="base-tab__text-block">
+            <div class="base-tab__text-title">О компании</div>
+            <div class="base-tab__text">
+              Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+              <br><br>
+              Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.
+              Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+              <br><br>
+              Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+            </div>
+          </div>
+        </div>
+        <div class="card-user-wrapper__user-mob">
+          <div class="card-user-side-contact">
+  <div class="card-user-side-contact__title">Контакты</div>
+  <div class="user-contact">
+    <div class="user-contact__item">
+      <a href="#" class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#contact-mail"></use>
+        </svg>
+        abcd@mail.ru 
+      </a>
+    </div>
+    <div class="user-contact__item">
+      <a href="#" class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#contact-phone"></use>
+        </svg>
+        + 7 000 000 00 00
+      </a>
+      <div class="user-contact__links">
+        <a href="#" class="user-contact__link">
+          <img src="img/sprites/logos_whatsapp-icon.svg" alt="">
+        </a>
+        <a href="#" class="user-contact__link">
+          <img src="img/sprites/logos_telegram.svg" alt="">
+        </a>
+        <a href="#" class="user-contact__link">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#basil_viber-solid"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="user-contact__item">
+      <a href="www.marevcor.ru" target="_blank" class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#browse"></use>
+        </svg>
+        marevcor.ru
+      </a>
+    </div>
+    <div class="user-contact__item">
+      <span class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#home"></use>
+        </svg>
+        Новгородская область
+      </span>
+    </div>
+    <div class="user-contact__item">
+      <span class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#user-6"></use>
+        </svg>
+        Игнатий Игнатьевич  Игнатов
+      </span>
+    </div>
+  </div>
+  <div class="to-seller">
+    <button class="write-to-seller" data-class="text-seller">
+      Написать продавцу
+    </button>
+    <button class="to-favourite">
+      <svg>
+        <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
+      </svg>
+    </button>
+  </div>
+</div>
+          
+<div class="card-ad-user-rating">
+  <div class="card-ad-user-rating__top">
+    Рейтинг компании
+    <div class="helptip">
+      <div class="helptip__icon" style="color: #8C8C8C;">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
+        </svg>
+      </div>
+      <div class="helptip__content"></div>
+    </div>
+  </div>
+  <div class="card-ad-user-rating__content">
+    <div class="card-ad-user-rating__subtitle">48 важных фактов</div>
+    <div class="card-ad-user-rating__list">
+      <div class="card-ad-user-rating__rates">
+        <svg style="color: #0F582D;">
+          <use xlink:href="img/sprites/sprite.svg#check-mark-circle"></use>
+        </svg>
+        42
+      </div>
+      <div class="card-ad-user-rating__rates">
+        <svg style="color: #FCB040;">
+          <use xlink:href="img/sprites/sprite.svg#warning"></use>
+        </svg>
+        4
+      </div>
+      <div class="card-ad-user-rating__rates">
+        <svg style="color: #FF0000;">
+          <use xlink:href="img/sprites/sprite.svg#decrease-circle"></use>
+        </svg>
+        2
+      </div>
+    </div>
+  </div>
+  <div class="card-ad-user-rating__footer">
+    <button class="btn3" data-class="rating">Просмотреть</button>
+  </div>
+</div>
+        </div>
+        <div class="base-tab__open-req">
+          <button class="open-more2"  data-class="tab-req"><span class="str">Показать реквизиты</span>
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="base-tab__block base-tab__block--tab base-tab__block--modal  close-x" id="requisites" data-modal="tab-req">
+          <div class="base-tab__text-block">
+            <div class="modal__top">
+              <div class="modal__title">Реквизиты</div>
+              <button class="modal__close close-x" type="button">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#x"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="base-tab__text-title">Карта компании</div>
+            <div class="base-tab__text">
+              <ul>
+                <li><span>Краткое наименование:</span> АО "Сельскозозяйственная Маревская Корпорация"</li>
+                <li><span>Полное наименование:</span> Акционерное общество "Сельскозозяйственная Маревская Корпорация"</li>
+                <li><span>Юридический адрес:</span> Марёвский р-н, с Велилы, ул Советов, д. 7, помещ. 2 каб. 15 175353, г. Марево, Новгородская область</li>
+                <li><span>ИНН:</span> 5300005224</li>
+                <li><span>ОГРН:</span> 1225300003147</li>
+                <li><span>КПП:</span> 530001001</li>
+                <li><span>Дата регистрации:</span> 11 Августа 2022</li>
+                <li><span>Тип организации:</span> Юридическое лицо</li>
+                <li><span>Статус организации:</span> Действующая</li>
+                <li><span>ФИО руководителя:</span> Духанин Дмитрий Юрьевич</li>
+                <li><span>Должность руководителя:</span> ПРЕЗИДЕНТ</li>
+                <li><span>Тип подразделения:</span> Головная организация</li>
+                <li><span>Количество филиалов:</span> 0</li>
+                <li><span>Код ОКВЭД:</span> 01.11 — основной код ОКВЭД</li>
+                <li><span>Код ОКОПФ:</span> 12267</li>
+                <li><span>ОПФ:</span> Непубличное акционерное общество (НАО)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="base-tab__block base-tab__block--adds" id="adds">
+          
+<div class="card-ad-relative">
+  <div class="card-ad-relative__inner">
+    <div class="h2 card-ad-relative__mtitle">
+      <h2>Объявления компании</h2>
+    </div>
+    <div class="card-ad-relative__switch">
+      <div class="switch-button switch-button--fit">
+        <button class="switch-button__item active" data-index="0">Предложение</button>
+        <button class="switch-button__item" data-index="1">Спрос</button>
+      </div>
+    </div>
+    <div class="card-ad-relative__table" data-index="0">
+      <div class="card-ad-relative__thead">
+        <div class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Объявление</div>
+          <div class="card-ad-relative__td">Цена</div>
+          <div class="card-ad-relative__td">Количество</div>
+          <div class="card-ad-relative__td">Локация</div>
+        </div>
+      </div>
+      <div class="card-ad-relative__tbody">
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+      </div>
+    </div>
+    <div class="card-ad-relative__table hide" data-index="1">
+      <div class="card-ad-relative__thead">
+        <div class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Объявление</div>
+          <div class="card-ad-relative__td">Цена</div>
+          <div class="card-ad-relative__td">Количество</div>
+          <div class="card-ad-relative__td">Локация</div>
+        </div>
+      </div>
+      <div class="card-ad-relative__tbody">
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+        <div class="base-tab__block" id="review">
+          <div class="user-reviews">
+  <div class="h2 user-reviews__mtitle">Отзывы</div>
+  <div class="review-stars">
+  <div class="review-stars__top">
+    <div class="user-rating user-rating--md">
+      <div class="user-rating__ave-num">4.8</div>
+      <div class="user-rating__stars">
+        <div style="width: 80%;" class="user-rating__procent"></div>
+        <svg width="111" height="20" viewBox="0 0 111 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.49023 0.5H-0.00976562V19.5H110.99V0.5H101.49H78.4902H55.4902H32.4902H9.49023ZM9.49023 0.5L11.6231 7.06434H18.5253L12.9413 11.1213L15.0742 17.6857L9.49023 13.6287L3.90627 17.6857L6.03916 11.1213L0.455197 7.06434H7.35735L9.49023 0.5ZM32.4902 0.5L34.6231 7.06434H41.5253L35.9413 11.1213L38.0742 17.6857L32.4902 13.6287L26.9063 17.6857L29.0392 11.1213L23.4552 7.06434H30.3574L32.4902 0.5ZM55.4902 0.5L57.6231 7.06434H64.5253L58.9413 11.1213L61.0742 17.6857L55.4902 13.6287L49.9063 17.6857L52.0392 11.1213L46.4552 7.06434H53.3574L55.4902 0.5ZM78.4902 0.5L80.6231 7.06434H87.5253L81.9413 11.1213L84.0742 17.6857L78.4902 13.6287L72.9063 17.6857L75.0392 11.1213L69.4552 7.06434H76.3574L78.4902 0.5ZM101.49 0.5L99.3574 7.06434H92.4552L98.0392 11.1213L95.9063 17.6857L101.49 13.6287L107.074 17.6857L104.941 11.1213L110.525 7.06434H103.623L101.49 0.5Z" fill="#FFFFFF"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="review-stars__subtitle">На основании 35 оценок</div>
+  </div>
+  <div class="review-stars__inner">
+    <div class="review-stars__list">
+      <div class="review-stars__item">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#star5"></use>
+        </svg>
+        <div class="review-stars__line"></div>
+        <div class="review-stars__val">35</div>
+      </div>
+      <div class="review-stars__item">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#star4"></use>
+        </svg>
+        <div class="review-stars__line"></div>
+        <div class="review-stars__val">0</div>
+      </div>
+      <div class="review-stars__item">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#star3"></use>
+        </svg>
+        <div class="review-stars__line"></div>
+        <div class="review-stars__val">0</div>
+      </div>
+      <div class="review-stars__item">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#star2"></use>
+        </svg>
+        <div class="review-stars__line"></div>
+        <div class="review-stars__val">0</div>
+      </div>
+      <div class="review-stars__item">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#star1"></use>
+        </svg>
+        <div class="review-stars__line"></div>
+        <div class="review-stars__val">0</div>
+      </div>
+    </div>
+    <div class="review-stars__info">
+      <div class="review-stars__info-title">Рейтинг - это среднее значение <br>
+        арифметическое оценок<br>
+        пользователей.</div>
+      <button class="review-stars__leave-review">Оставить отзыв</button>
+    </div>
+  </div>
+</div>
+<div class="review-stars__out">
+  <button class="review-stars__leave-review">Оставить отзыв</button>
+</div>
+  <div class="review-list">
+  <div class="review-list__inner">
+    <div class="review-list__sort">
+      <div class="review-sort">
+        <div class="review-sort__title">Сортировать по:</div>
+        <div class="review-sort__item active">Дате</div>
+        <div class="review-sort__item">Рейтингу</div>
+      </div>
+    </div>
+    <div class="review-list__list">
+      <div class="review-list__item">
+        <div class="review-list__head">
+          <div class="user-head">
+            <div class="user-head__ava">
+              <img src="img/user-ava.png" alt="">
+            </div>
+            <div>
+              <div class="user-head__name">Ольга С.</div>
+              <div class="user-rating">
+                <div class="user-rating__ave-date">6 мая 2024</div>
+                <div class="user-rating__stars">
+                  <div style="width: 80%;" class="user-rating__procent"></div>
+                  <svg width="111" height="20" viewBox="0 0 111 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.49023 0.5H-0.00976562V19.5H110.99V0.5H101.49H78.4902H55.4902H32.4902H9.49023ZM9.49023 0.5L11.6231 7.06434H18.5253L12.9413 11.1213L15.0742 17.6857L9.49023 13.6287L3.90627 17.6857L6.03916 11.1213L0.455197 7.06434H7.35735L9.49023 0.5ZM32.4902 0.5L34.6231 7.06434H41.5253L35.9413 11.1213L38.0742 17.6857L32.4902 13.6287L26.9063 17.6857L29.0392 11.1213L23.4552 7.06434H30.3574L32.4902 0.5ZM55.4902 0.5L57.6231 7.06434H64.5253L58.9413 11.1213L61.0742 17.6857L55.4902 13.6287L49.9063 17.6857L52.0392 11.1213L46.4552 7.06434H53.3574L55.4902 0.5ZM78.4902 0.5L80.6231 7.06434H87.5253L81.9413 11.1213L84.0742 17.6857L78.4902 13.6287L72.9063 17.6857L75.0392 11.1213L69.4552 7.06434H76.3574L78.4902 0.5ZM101.49 0.5L99.3574 7.06434H92.4552L98.0392 11.1213L95.9063 17.6857L101.49 13.6287L107.074 17.6857L104.941 11.1213L110.525 7.06434H103.623L101.49 0.5Z" fill="#FFFFFF"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="user-rating review-list__rating">
+            <div class="user-rating__ave-date">6 мая 2024</div>
+            <div class="user-rating__stars">
+              <div style="width: 80%;" class="user-rating__procent"></div>
+              <svg width="111" height="20" viewBox="0 0 111 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.49023 0.5H-0.00976562V19.5H110.99V0.5H101.49H78.4902H55.4902H32.4902H9.49023ZM9.49023 0.5L11.6231 7.06434H18.5253L12.9413 11.1213L15.0742 17.6857L9.49023 13.6287L3.90627 17.6857L6.03916 11.1213L0.455197 7.06434H7.35735L9.49023 0.5ZM32.4902 0.5L34.6231 7.06434H41.5253L35.9413 11.1213L38.0742 17.6857L32.4902 13.6287L26.9063 17.6857L29.0392 11.1213L23.4552 7.06434H30.3574L32.4902 0.5ZM55.4902 0.5L57.6231 7.06434H64.5253L58.9413 11.1213L61.0742 17.6857L55.4902 13.6287L49.9063 17.6857L52.0392 11.1213L46.4552 7.06434H53.3574L55.4902 0.5ZM78.4902 0.5L80.6231 7.06434H87.5253L81.9413 11.1213L84.0742 17.6857L78.4902 13.6287L72.9063 17.6857L75.0392 11.1213L69.4552 7.06434H76.3574L78.4902 0.5ZM101.49 0.5L99.3574 7.06434H92.4552L98.0392 11.1213L95.9063 17.6857L101.49 13.6287L107.074 17.6857L104.941 11.1213L110.525 7.06434H103.623L101.49 0.5Z" fill="#FFFFFF"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="review-list__content">
+          Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+        </div>
+        <div class="review-list__likes">
+          <span class="review-list__like">
+            15
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#like"></use>
+            </svg>
+          </span>
+          <span class="review-list__like">
+            0
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#dislike"></use>
+            </svg>
+          </span>
+        </div>
+        <div class="review-list__answers">
+          <div class="review-list__head">
+            <div class="user-head">
+              <div class="user-head__ava">
+                <img src="img/user-ava.png" alt="">
+              </div>
+              <div>
+                <div class="user-head__name">АО "Сельскозозяйственная Маревская Корпорация"</div>
+                <div class="user-rating">
+                  <div class="user-rating__ave-date">7 мая 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-list__content">
+            Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. 
+          </div>
+        </div>
+      </div>
+      <div class="review-list__item">
+        <div class="review-list__head">
+          <div class="user-head">
+            <div class="user-head__ava">
+              <img src="img/user-ava.png" alt="">
+            </div>
+            <div>
+              <div class="user-head__name">Ольга С.</div>
+              <div class="user-rating">
+                <div class="user-rating__ave-date">6 мая 2024</div>
+                <div class="user-rating__stars">
+                  <div style="width: 80%;" class="user-rating__procent"></div>
+                  <svg width="111" height="20" viewBox="0 0 111 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.49023 0.5H-0.00976562V19.5H110.99V0.5H101.49H78.4902H55.4902H32.4902H9.49023ZM9.49023 0.5L11.6231 7.06434H18.5253L12.9413 11.1213L15.0742 17.6857L9.49023 13.6287L3.90627 17.6857L6.03916 11.1213L0.455197 7.06434H7.35735L9.49023 0.5ZM32.4902 0.5L34.6231 7.06434H41.5253L35.9413 11.1213L38.0742 17.6857L32.4902 13.6287L26.9063 17.6857L29.0392 11.1213L23.4552 7.06434H30.3574L32.4902 0.5ZM55.4902 0.5L57.6231 7.06434H64.5253L58.9413 11.1213L61.0742 17.6857L55.4902 13.6287L49.9063 17.6857L52.0392 11.1213L46.4552 7.06434H53.3574L55.4902 0.5ZM78.4902 0.5L80.6231 7.06434H87.5253L81.9413 11.1213L84.0742 17.6857L78.4902 13.6287L72.9063 17.6857L75.0392 11.1213L69.4552 7.06434H76.3574L78.4902 0.5ZM101.49 0.5L99.3574 7.06434H92.4552L98.0392 11.1213L95.9063 17.6857L101.49 13.6287L107.074 17.6857L104.941 11.1213L110.525 7.06434H103.623L101.49 0.5Z" fill="#FFFFFF"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="user-rating review-list__rating">
+            <div class="user-rating__ave-date">6 мая 2024</div>
+            <div class="user-rating__stars">
+              <div style="width: 80%;" class="user-rating__procent"></div>
+              <svg width="111" height="20" viewBox="0 0 111 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.49023 0.5H-0.00976562V19.5H110.99V0.5H101.49H78.4902H55.4902H32.4902H9.49023ZM9.49023 0.5L11.6231 7.06434H18.5253L12.9413 11.1213L15.0742 17.6857L9.49023 13.6287L3.90627 17.6857L6.03916 11.1213L0.455197 7.06434H7.35735L9.49023 0.5ZM32.4902 0.5L34.6231 7.06434H41.5253L35.9413 11.1213L38.0742 17.6857L32.4902 13.6287L26.9063 17.6857L29.0392 11.1213L23.4552 7.06434H30.3574L32.4902 0.5ZM55.4902 0.5L57.6231 7.06434H64.5253L58.9413 11.1213L61.0742 17.6857L55.4902 13.6287L49.9063 17.6857L52.0392 11.1213L46.4552 7.06434H53.3574L55.4902 0.5ZM78.4902 0.5L80.6231 7.06434H87.5253L81.9413 11.1213L84.0742 17.6857L78.4902 13.6287L72.9063 17.6857L75.0392 11.1213L69.4552 7.06434H76.3574L78.4902 0.5ZM101.49 0.5L99.3574 7.06434H92.4552L98.0392 11.1213L95.9063 17.6857L101.49 13.6287L107.074 17.6857L104.941 11.1213L110.525 7.06434H103.623L101.49 0.5Z" fill="#FFFFFF"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="review-list__content">
+          Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+        </div>
+        <div class="review-list__likes">
+          <span class="review-list__like active">
+            15
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#like"></use>
+            </svg>
+          </span>
+          <span class="review-list__like">
+            0
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#dislike"></use>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-user-wrapper__right">
+      <div class="card-user-side-contact">
+  <div class="card-user-side-contact__title">Контакты</div>
+  <div class="user-contact">
+    <div class="user-contact__item">
+      <a href="#" class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#contact-mail"></use>
+        </svg>
+        abcd@mail.ru 
+      </a>
+    </div>
+    <div class="user-contact__item">
+      <a href="#" class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#contact-phone"></use>
+        </svg>
+        + 7 000 000 00 00
+      </a>
+      <div class="user-contact__links">
+        <a href="#" class="user-contact__link">
+          <img src="img/sprites/logos_whatsapp-icon.svg" alt="">
+        </a>
+        <a href="#" class="user-contact__link">
+          <img src="img/sprites/logos_telegram.svg" alt="">
+        </a>
+        <a href="#" class="user-contact__link">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#basil_viber-solid"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="user-contact__item">
+      <a href="www.marevcor.ru" target="_blank" class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#browse"></use>
+        </svg>
+        marevcor.ru
+      </a>
+    </div>
+    <div class="user-contact__item">
+      <span class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#home"></use>
+        </svg>
+        Новгородская область
+      </span>
+    </div>
+    <div class="user-contact__item">
+      <span class="user-contact__link">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#user-6"></use>
+        </svg>
+        Игнатий Игнатьевич  Игнатов
+      </span>
+    </div>
+  </div>
+  <div class="to-seller">
+    <button class="write-to-seller" data-class="text-seller">
+      Написать продавцу
+    </button>
+    <button class="to-favourite">
+      <svg>
+        <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
+      </svg>
+    </button>
+  </div>
+</div>
+      
+<div class="card-ad-user-rating">
+  <div class="card-ad-user-rating__top">
+    Рейтинг компании
+    <div class="helptip">
+      <div class="helptip__icon" style="color: #8C8C8C;">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
+        </svg>
+      </div>
+      <div class="helptip__content"></div>
+    </div>
+  </div>
+  <div class="card-ad-user-rating__content">
+    <div class="card-ad-user-rating__subtitle">48 важных фактов</div>
+    <div class="card-ad-user-rating__list">
+      <div class="card-ad-user-rating__rates">
+        <svg style="color: #0F582D;">
+          <use xlink:href="img/sprites/sprite.svg#check-mark-circle"></use>
+        </svg>
+        42
+      </div>
+      <div class="card-ad-user-rating__rates">
+        <svg style="color: #FCB040;">
+          <use xlink:href="img/sprites/sprite.svg#warning"></use>
+        </svg>
+        4
+      </div>
+      <div class="card-ad-user-rating__rates">
+        <svg style="color: #FF0000;">
+          <use xlink:href="img/sprites/sprite.svg#decrease-circle"></use>
+        </svg>
+        2
+      </div>
+    </div>
+  </div>
+  <div class="card-ad-user-rating__footer">
+    <button class="btn3" data-class="rating">Просмотреть</button>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal--text-seller close-x" data-modal="rating">
+  <div class="modal__inner">
+    <div class="modal__top">
+      <div class="modal__title">Рейтинг компании</div>
+      <button class="modal__close close-x" type="button">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__content">
+      <div class="card-rating-modal">
+  <div class="card-rating-modal__list">
+    <div class="card-rating-modal__item">
+      <span>На рынке</span><span>5 лет</span>
+    </div>
+    <div class="card-rating-modal__item">
+      <span>Задолженность ФССП  2024</span><span>Отсутсвует</span>
+    </div>
+  </div>
+  <div class="card-rating-modal__title">Судебные дела</div>
+  <div class="card-rating-modal__list">
+    <div class="card-rating-modal__item">
+      <span>Всего</span><span>100 судебных дел</span>
+    </div>
+    <div class="card-rating-modal__item">
+      <div class="card-rating-modal__procent" style="width: 50%; background: #ECF4ED;"></div>
+      <span>Выигранных</span><span>75%</span>
+    </div>
+    <div class="card-rating-modal__item">
+      <div class="card-rating-modal__procent" style="width: 50%; background: #F8F1EC;"></div>
+      <span>Проигранных</span><span>75%</span>
+    </div>
+  </div>
+  <div class="card-rating-modal__title">Оборот</div>
+  <table class="card-rating-modal__table">
+    <thead>
+      <tr>
+        <th>Год</th>
+        <th>Доходы</th>
+        <th>Чистая прибыль</th>
+        <th>Расходы</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2024</td>
+        <td>16,97 млн ₽</td>
+        <td>4,4 млн ₽</td>
+        <td>12,5 млн ₽</td>
+      </tr>
+      <tr>
+        <td>2023</td>
+        <td>16,97 млн ₽</td>
+        <td>4,4 млн ₽</td>
+        <td>12,5 млн ₽</td>
+      </tr>
+      <tr>
+        <td>2022</td>
+        <td>16,97 млн ₽</td>
+        <td>4,4 млн ₽</td>
+        <td>12,5 млн ₽</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="card-rating-modal__mobile">
+    <div class="card-rating-modal__thead">
+      <button class="active" data-index="0">2022</button>
+      <button data-index="1">2023</button>
+      <button data-index="2">2024</button>
+    </div>
+    <div class="card-rating-modal__tbody">
+      <div class="card-rating-modal__list" data-index="0">
+        <div class="card-rating-modal__item">
+          <span>Доходы</span><span>16,97 млн ₽</span>
+        </div>
+        <div class="card-rating-modal__item">
+          <span>Чистая прибыль</span><span>4,4 млн ₽</span>
+        </div>
+        <div class="card-rating-modal__item">
+          <span>Расходы</span><span>12,5 млн ₽</span>
+        </div>
+      </div>
+      <div class="card-rating-modal__list hide" data-index="1">
+        <div class="card-rating-modal__item">
+          <span>Доходы</span><span>16,97 млн ₽</span>
+        </div>
+        <div class="card-rating-modal__item">
+          <span>Чистая прибыль</span><span>4,4 млн ₽</span>
+        </div>
+        <div class="card-rating-modal__item">
+          <span>Расходы</span><span>12,5 млн ₽</span>
+        </div>
+      </div>
+      <div class="card-rating-modal__list hide" data-index="2">
+        <div class="card-rating-modal__item">
+          <span>Доходы</span><span>16,97 млн ₽</span>
+        </div>
+        <div class="card-rating-modal__item">
+          <span>Чистая прибыль</span><span>4,4 млн ₽</span>
+        </div>
+        <div class="card-rating-modal__item">
+          <span>Расходы</span><span>12,5 млн ₽</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+        </main>
+        <footer class="footer">
+          <div class="container container--full">
+            <div class="footer__inner">
+              <div class="footer__col">
+                <a href="/" class="footer__logo">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#logo"></use>
+                  </svg>
+                  ЗЕРНОДАР
+                </a>
+                <div class="footer__docs only-pc">
+                  <a href="/">Пользовательское соглашение</a>
+                  <a href="/">Политика конфиденциальности</a>
+                </div>
+                <div class="footer__c only-pc">© Зернодар 2024</div>
+              </div>
+              <div class="footer__col">
+                <ul class="footer__list">
+                  <li><a href="">Предложение</a></li>
+                  <li><a href="">Спрос</a></li>
+                  <li><a href="">Компании</a></li>
+                  <li><a href="">О нас</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <ul class="footer__list">
+                  <li><a href="">FAQ</a></li>
+                  <li><a href="">Новости</a></li>
+                  <li><a href="">Контакты</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <div class="footer__soc">
+                  <a href="">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#vk-f"></use>
+                    </svg>
+                    Наша группа ВКонтакте
+                  </a>
+                  <a href="">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#tg-f"></use>
+                    </svg>
+                    Актуальных объявления
+                  </a>
+                </div>
+                <a href="" class="footer__created only-pc">Разработка сайта: Осьминожка</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__docs">
+              <a href="/">Пользовательское соглашение</a>
+              <a href="/">Политика конфиденциальности</a>
+            </div>
+            <a href="" class="footer__created">Разработка сайта: Осьминожка</a>
+          </div>
+          <div class="footer__c on-tab">© Зернодар 2024</div>
+        </footer>
+        <!-- <div class="scroll-up">
+          <div class="osmi-container">
+            <div class="scroll-up__inner">
+              <button class="scroll-up__btn">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow-up"></use>
+                </svg>
+              </button>
+              <script>
+                document.querySelector('.scroll-up__btn')?.addEventListener('click', () => {
+                  window.scrollTo({top: 0, behavior: 'smooth'});
+                })
+              </script>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="modal modal--text-seller close-x" data-modal="text-seller">
+  <div class="modal__inner">
+    <div class="modal__top">
+      <div class="modal__title">Написать  продавцу</div>
+      <button class="modal__close close-x" type="button">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__content">
+      <form action="">
+        <textarea class="textarea1" name="" id="" placeholder="Введите сообщение здесь"></textarea>
+        <button class="btn3">Отправить</button>
+      </form>
+    </div>
+  </div>
+</div>
+        <div class="visually-hidden">
+          <textarea id="urlCopy" rows="1" cols="30"></textarea>
+        </div>
+        <script src="js/libs/just-validate.production.min.js"></script>
+        <script src="js/libs/imask.js"></script>
+        <script src="js/vendor.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
