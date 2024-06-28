@@ -13,8 +13,14 @@
     border-radius: 100%;
     background-color: $darkgrey;
   }
+  &__switch {
+    margin: 2.4rem 0;
+  }
   &__table {
     margin-top: 2.4rem;
+    &.hide {
+      display: none;
+    }
   }
   &__thead {
     margin-bottom: 2rem;

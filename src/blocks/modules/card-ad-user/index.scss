@@ -63,9 +63,46 @@
   &__name {
     font-size: 1.8rem;
   }
+  &--lg {
+    .user-head {
+      &__ava {
+        width: 5.6rem;
+        height: 5.6rem;
+      }
+      &__name {
+        font-size: 2.4rem;
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+  .user-rating {
+    margin-bottom: 0;
+  }
   @include mob {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+    &__ava {
+      width: 4rem;
+      height: 4rem;
+    }
     &__name {
       font-size: 1.4rem;
+    }
+    &--lg {
+      .user-head {
+        &__ava {
+          width: 4rem;
+          height: 4rem;
+        }
+        &__name {
+          font-size: 1.4rem;
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+    .user-rating {
+      margin-bottom: 0;
     }
   }
 }
@@ -108,6 +145,15 @@
   }
   &__review-num {
     color: $linkblue;
+  }
+  &--md {
+    font-size: 1.8rem;
+    .user-rating {
+      &__stars {
+        width: 13.6rem;
+        height: 2.45rem;
+      }
+    }
   }
   @include tab {
     gap: 0.4rem;
