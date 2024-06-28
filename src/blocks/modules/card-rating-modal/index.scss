@@ -1,0 +1,102 @@
+.card-rating-modal {
+  min-width: 64rem;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    padding: 2.8rem 1.6rem;
+    border-radius: 2rem;
+    background-color: $bckgrnd2;
+    position: relative;
+    gap: 1rem;
+    span {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  &__procent {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 2.4rem;
+  }
+  &__table {
+    display: block;
+    thead, tbody, tr, th, td {
+      display: block;
+    }
+    tr {
+      display: flex;
+    }
+    th, td {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex: 1;
+      padding: 3rem 0.2rem;
+      font-size: 1.8rem;
+    }
+    th {
+      font-weight: 500;
+    }
+    tbody tr {
+      border-radius: 2rem;
+      &:nth-child(odd) {
+        background-color: $paleblue;
+      }
+    }
+    &__mobile {
+      display: none;
+    }
+  }
+  @include tab {
+    min-width: auto;
+    &__item {
+      font-size: 1.4rem;
+      padding: 1.4rem 1.6rem;
+      border-radius: 0.8rem;
+    }
+    &__title {
+      font-size: 1.4rem;
+    }
+    &__table {
+      display: none;
+    }
+    &__thead {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.6rem;
+      button {
+        padding: 1.6rem;
+        border-radius: 10rem;
+        border: 0.1 solid $lightgrey;
+        font-size: 1.2rem;
+        &.active {
+          background-color: $paleblue;
+          border-color: $paleblue;
+        }
+      }
+    }
+    &__mobile {
+      display: block;
+      .card-rating-modal__list {
+        &.hide {
+          display: none;
+        }
+      }
+    }
+  }
+}

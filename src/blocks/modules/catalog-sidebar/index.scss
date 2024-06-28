@@ -191,6 +191,13 @@
       background-color: $green;
     }
   }
+  &--fit {
+    width: auto;
+    display: inline-flex;
+    .switch-button__item {
+      min-width: 14rem;
+    }
+  }
   @include tab {
     border-radius: 0.8rem;
     &__item {

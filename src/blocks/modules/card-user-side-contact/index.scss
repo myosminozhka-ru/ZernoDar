@@ -1,0 +1,25 @@
+.card-user-side-contact {
+  padding: 2.4rem;
+  border-radius: 2rem;
+  background-color: $white;
+  @include block-shadow1;
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 2.4rem;
+  }
+  @include tab {
+    padding: 2.4rem;
+    border-radius: 0;
+    border-bottom: 0.1rem solid $lightgrey;
+    &__title {
+      font-size: 1.4rem;
+    }
+  }
+  @include mob {
+    padding: 2.4rem 1.6rem;
+    &__title {
+      font-size: 1.4rem;
+    }
+  }
+}
