@@ -27,6 +27,11 @@
     flex-direction: column;
     gap: 2.4rem;
     margin-bottom: 2.4rem;
+    &--users {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.2rem;
+    }
   }
   &__stext {
     margin-top: 6rem;
@@ -34,6 +39,7 @@
     color: $darkgrey;
   }
   &__pag {
+    margin-top: 10rem;
     .btn10 {
       display: none;
     }
@@ -53,8 +59,14 @@
     }
     &__content {
       margin-bottom: 0;
+      &--users {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2.4rem;
+      }
     }
     &__pag {
+      margin-top: 1rem;
       padding: 2.4rem;
       .pags {
         display: none;
