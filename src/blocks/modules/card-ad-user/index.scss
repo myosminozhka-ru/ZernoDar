@@ -212,6 +212,23 @@
   a.user-contact__link {
     color: $linkblue;
   }
+  @include mob {
+    font-size: 1.4rem;
+    &__item {
+      gap: 0.8rem;
+      justify-content: space-between;
+    }
+    &__links {
+      gap: 0.6rem;
+    }
+    &__link {
+      gap: 0.8rem;
+      svg, img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
 }
 
 .to-seller {

@@ -24,6 +24,7 @@ addEventListener('DOMContentLoaded', () => {
     textSellerModal: new Modal('text-seller'),
     tabReqModal: new Modal('tab-req'),
     ratingModal: new Modal('rating'),
+    sortCatalogModal: new Modal('sort-catalog'),
     sidebar: new Sidebar(),
   }
 })
