@@ -1,0 +1,454 @@
+.news {
+  padding: 0 3.2rem;
+  padding-bottom: 5rem;
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    margin-bottom: 3.2rem;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2rem;
+  }
+  &__pag {
+    margin-top: 6rem;
+    .btn3 {
+      display: none;
+    }
+  }
+  @include tab {
+    padding: 0;
+    padding-bottom: 3rem;
+    &__head {
+      flex-direction: column;
+      padding: 0 2.4rem;
+      align-items: stretch;
+    }
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2.4rem;
+    }
+    &__pag {
+      margin-top: 3.2rem;
+      padding: 0 2.4rem;
+      .btn3 {
+        display: flex;
+        width: 100%;
+      }
+      .pags {
+        display: none;
+      }
+    }
+  }
+  @include mob {
+    &__head {
+      padding: 0 1.6rem;
+    }
+    &__pag {
+      padding: 0 1.6rem;
+    }
+  }
+}
+
+.card-news {
+  background-color: $white;
+  border-radius: 2rem;
+  overflow: hidden;
+  @include block-shadow2;
+  &__img {
+    height: 28rem;
+    img {
+      @include img-cover;
+    }
+  }
+  &__content {
+    padding: 2.4rem 3.2rem 3.2rem;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  &__date {
+    font-size: 1.4rem;
+    color: $darkgrey;
+    margin-bottom: 1.6rem;
+  }
+  &__descrtiption {
+    font-size: 1.8rem;
+  }
+  @include tab {
+    &__img {
+      height: 18rem;
+    }
+    &__content {
+      padding: 1.6rem 2.4rem;
+    }
+    &__title {
+      font-size: 1.4rem;
+    }
+    &__date {
+      font-size: 1.2rem;
+    }
+    &__descrtiption {
+      font-size: 1.4rem;
+    }
+  }
+  @include mob {
+    &__content {
+      padding: 1.6rem;
+    }
+  }
+}
+
+.news-subs {
+  width: 57.5rem;
+  &__input {
+    width: 100%;
+    border-radius: 1.2rem;
+    padding: 1.4rem 1.6rem;
+    font-size: 1.8rem;
+    margin-bottom: 2.4rem;
+    background-color: $bckgrnd2;
+    &::placeholder {
+      color: $darkgrey;
+    }
+  }
+  &__btn {
+    width: 100%;
+    margin-bottom: 2.4rem;
+  }
+  &__policy {
+    font-size: 1.4rem;
+    color: $darkgrey;
+    text-align: center;
+  }
+  @include tab {
+    width: 100%;
+    &__input {
+      border-radius: 0.8rem;
+      padding: 1.3rem 0.8rem;
+      font-size: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
+    &__btn {
+      margin-bottom: 1.6rem;
+    }
+    &__policy {
+      font-size: 1.2rem;
+    }
+  }
+
+}
+
+.article {
+  padding-bottom: 10rem;
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 3.2rem;
+    position: relative;
+  }
+  &__left {
+    flex-grow: 1;
+  }
+  &__right {
+    width: 28.3rem;
+    flex-shrink: 0;
+    position: sticky;
+    top: 1rem;
+    padding-top: 0;
+  }
+  &__top {
+    margin-bottom: 3rem;
+  }
+  &__mtitle {
+    font-size: 4.2rem;
+    font-weight: 500;
+    margin-bottom: 5rem;
+  }
+  &__img {
+    border-radius: 2rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  &__meta {
+    display: flex;
+    gap: 2.4rem;
+    color: $darkgrey;
+  }
+  &__content {
+    margin-bottom: 6.5rem;
+    font-size: 1.8rem;
+    h2 {
+      margin-top: 3.4rem;
+      margin-bottom: 1.6rem;
+      font-size: 2.4rem;
+      font-weight: 500;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    p {
+      margin-bottom: 1.6rem;
+    }
+    blockquote {
+      font-size: 1.8rem;
+      margin: 3.4rem 0;
+      padding: 4.5rem 7.4rem;
+      border-radius: 2rem;
+      background-color: $paleorange;
+      background-image: url(../img/q.svg);
+      background-repeat: no-repeat;
+      background-size: 1.6rem 4.8rem;
+      background-position: 4.8rem 2.3rem;
+      address {
+        font: inherit;
+        margin-top: 3rem;
+        font-size: 2rem;
+        font-weight: 500;
+      }
+    }
+  }
+  &__auth {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+  &__ava {
+    width: 5.5rem;
+    height: 5.5rem;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    img {
+      @include img-cover;
+    }
+  }
+  &__author {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+  &__name {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  &__sign {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+  }
+  &__mob-share {
+    display: none;
+  }
+  &__nav {
+    display: none;
+  }
+  @include tab {
+    padding-bottom: 6rem;
+    .container {
+      padding: 0;
+    }
+    &__inner {
+      display: block;
+      position: static;
+    }
+    &__left {
+      flex-grow: 1;
+    }
+    &__right {
+      display: none;
+    }
+    &__top {
+      padding: 0 2.4rem;
+      margin-bottom: 3.2rem;
+      @include mob {
+        padding: 0 1.6rem;
+      }
+    }
+    &__mtitle {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+      padding: 0 2.4rem;
+      text-align: center;
+      @include mob {
+        padding: 0 1.6rem;
+      }
+    }
+    &__img {
+      height: 18rem;
+      margin-bottom: 1.6rem;
+      img {
+        @include img-cover;
+      }
+    }
+    &__meta {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.7rem 0;
+      font-size: 1.2rem;
+      span {
+        width: 50%;
+        &:nth-child(even) {
+          text-align: right;
+        }
+      }
+    }
+    &__content {
+      margin-bottom: 6.5rem;
+      font-size: 1.4rem;
+      padding: 0 2.4rem;
+      @include mob {
+        padding: 0 1.6rem;
+      }
+      h2 {
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        font-size: 1.4rem;
+      }
+      p {
+        margin-bottom: 1.6rem;
+      }
+      blockquote {
+        font-size: 1.4rem;
+        margin: 1.6rem 0;
+        padding: 2.4rem;
+        padding-top: 5rem;
+        border-radius: 1.2rem;
+        background-size: 1.4rem 4.4rem;
+        background-position: 3.2rem 1.6rem;
+        position: relative;
+        width: 100vw;
+        left: -2.4rem;
+        text-indent: 3rem;
+        address {
+          margin-top: 2rem;
+          font-size: 1.4rem;
+          text-indent: 0;
+        }
+        @include mob {
+          padding: 1.6rem;
+          padding-top: 4rem;
+          left: -1.6rem;
+        }
+      }
+    }
+    &__bot {
+      padding: 2.4rem;
+      background-color: $white;
+      @include block-shadow2;
+      @include mob {
+        padding: 1.6rem;
+      }
+    }
+    &__auth {
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+    &__ava {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.7rem;
+    }
+    &__author {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+    &__name {
+      font-size: 1.4rem;
+    }
+    &__sign {
+      font-size: 1.4rem;
+      margin-bottom: 1.6rem;
+    }
+    &__mob-share {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      font-size: 1.2rem;
+      color: $darkgrey;
+      border-bottom: 0.1rem solid $lightgrey;
+      padding-bottom: 1.6rem;
+    }
+    &__nav {
+      display: block;
+      margin-bottom: 4.8rem;
+    }
+  }
+}
+
+.article-nav {
+  background-color: $white;
+  border-radius: 2rem;
+  padding: 2.4rem;
+  @include block-shadow2;
+  &__list {
+    &.hide {
+      display: none;
+    }
+    li {
+      padding-bottom: 2.8rem;
+      margin-bottom: 2.8rem;
+      border-bottom: 0.1rem solid $lightgrey;
+    }
+    a {
+      font-size: 1.8rem;
+      display: block;
+      padding-left: 2.8rem;
+      background-image: url(../img/sprites/right-arrow.svg);
+      background-repeat: no-repeat;
+      background-size: 2.4rem;
+      background-position: 0 0;
+      color: $darkgrey;
+      &.active {
+        color: $black;
+      }
+    }
+  }
+  &__bot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @include tab {
+    padding: 0;
+    &__top {
+      text-align: center;
+      border-bottom: 0.1rem solid $lightgrey;
+      padding: 2.4rem;
+      @include mob {
+        padding: 1.6rem;
+        padding-bottom: 2.4rem;
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      padding: 2.4rem;
+      border-bottom: 0.1rem solid $lightgrey;
+      @include mob {
+        padding: 2.4rem 1.6rem;
+      }
+      li {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+      a {
+        padding: 0.2rem 0;
+        font-size: 1.4rem;
+        padding-left: 2.8rem;
+        background-size: 2.4rem;
+      }
+    }
+    &__bot {
+      padding: 2.4rem;
+      @include mob {
+        padding: 2.4rem 1.6rem;
+      }
+    }
+  }
+}
