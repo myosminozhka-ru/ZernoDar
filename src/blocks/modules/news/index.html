@@ -1,0 +1,21 @@
+<div class="news">
+  <div class="news__inner">
+    <div class="news__head">
+      <div class="h1 news__mtitle">Новости</div>
+      <button class="btn3 btn3--green"  data-class="news-subs">Подписаться на новости</button>
+    </div>
+    <div class="news__list">
+      @@include("./card.html")
+      @@include("./card.html")
+      @@include("./card.html")
+      @@include("./card.html")
+    </div>
+    <div class="news__pag">
+      @@include("../UI/pags.html")
+      <button class="btn3">Показать еще новости</button>
+    </div>
+  </div>
+</div>
+@@include("../modal/modalNewsSubs.html", {
+  name: 'news-subs',
+})

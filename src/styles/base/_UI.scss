@@ -229,6 +229,13 @@
   &:hover {
     background-color: $palegreen;
   }
+  &--green {
+    background-color: $palegreen;
+    &:hover {
+      background-color: $paleblue;
+    }
+
+  }
   @include tab {
     padding: 1.1rem;
     font-size: 1.4rem;
@@ -326,15 +333,30 @@
   &:hover {
     background-color: $green;
   }
+  &--lg {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    font-size: 2rem;
+  }
   @include tab {
     font-size: 1.8rem;
     padding: 1.8rem 3.2rem;
     border-radius: 1.6rem;
+    &--lg {
+      padding-top: 2.2rem;
+      padding-bottom: 2.2rem;
+      font-size: 1.8rem;
+    }
   }
   @include mob {
     font-size: 1.4rem;
     padding: 1.1rem 1.6rem;
     border-radius: 0.8rem;
+    &--lg {
+      padding-top: 1.1rem;
+      padding-bottom: 1.1rem;
+      font-size: 1.4rem;
+    }
   }
 
 }
