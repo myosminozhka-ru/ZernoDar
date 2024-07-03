@@ -10,4 +10,17 @@ export default function init() {
       behavior: 'smooth'
     }) : null;
   });
+
+
+  const swiper = new Swiper('.main-news__slider', {
+    loop: false,
+    slidesPerView: 'auto',
+    pagination: {
+      type: 'progressbar',
+      el: '.main-news__pag .slider-pag',
+      bulletClass: 'progressbar',
+      bulletActiveClass: 'active',
+      clickable: true,
+    },
+  });
 }

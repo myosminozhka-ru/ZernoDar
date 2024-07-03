@@ -238,6 +238,21 @@
       border-color: $orange;
     }
   }
+  &--update {
+    flex-grow: 1;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem 4.7rem;
+      border: 1px solid $lightgrey;
+      border-radius: 2.8rem;
+      background-color: $bckgrnd2;
+    }
+    a {
+      width: 100%;
+      border: none;
+    }
+  }
   @include tab {
     width: 100vw;
     position: relative;
@@ -245,6 +260,20 @@
     padding-left: 2.4rem;
     li:last-child {
       padding-right: 2.4rem;
+    }
+    &--update {
+      flex-grow: 1;
+      ul {
+        display: flex;
+        gap: 0.8rem;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+      }
+      a {
+        width: auto;
+        border: 1px solid $lightgrey;
+      }
     }
   }
   @include mob {
