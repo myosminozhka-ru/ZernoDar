@@ -452,3 +452,99 @@
     }
   }
 }
+
+.main-news {
+  overflow: hidden;
+  margin-bottom: 10rem;
+  &__slider {
+    overflow: visible;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    margin-bottom: 2rem;
+  }
+  &__pag {
+    margin-left: auto;
+    width: 60rem;
+  }
+  &__slide {
+    width: 44rem;
+    margin-right: 3.2rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__img {
+    height: 26rem;
+    width: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin-bottom: 1.6rem;
+    img {
+      @include img-cover;
+    }
+  }
+  &__date {
+    margin-bottom: 0.8rem;
+  }
+  &__title {
+    font-size: 1.8rem;
+  }
+  @include tab {
+    overflow: hidden;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    position: relative;
+    &__slider {
+      overflow: visible;
+    }
+    &__top {
+      margin-bottom: 2.3rem;
+      .btn3 {
+        display: none;
+      }
+    }
+    &__pag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 2.4rem;
+    }
+    &__slide {
+      width: 28rem;
+      margin-right: 2.4rem;
+    }
+    &__img {
+      height: 17rem;
+      border-radius: 2.4rem;
+    }
+    &__date {
+      font-size: 1.4rem;
+    }
+    &__title {
+      font-size: 1.7rem;
+    }
+  }
+  @include mob {
+    &__pag {
+      padding: 0 1.6rem;
+    }
+    &__slide {
+      width: 25rem;
+      margin-right: 1.6rem;
+    }
+    &__img {
+      height: 12rem;
+      border-radius: 2rem;
+    }
+    &__date {
+      font-size: 1.4rem;
+    }
+    &__title {
+      font-size: 1.4rem;
+    }
+  }
+}

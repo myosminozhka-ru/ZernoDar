@@ -57,6 +57,11 @@
   0.3rem 1rem 2rem 0 rgba(230, 230, 230, 0.14);
 }
 
+
+@mixin block-shodow3 {
+  box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
+}
+
 @mixin vhidden {
   position: absolute;
   width: 1px;

@@ -1,0 +1,130 @@
+.banner-social {
+  margin-bottom: 10rem;
+  &__inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 31.4rem;
+  }
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    img {
+      @include img-cover;
+    }
+  }
+  &__left {
+    position: relative;
+    z-index: 2;
+    width: 93.7rem;
+    padding-left: 9rem;
+    font-size: 4.2rem;
+    font-weight: 500;
+  }
+  &__right {
+    position: relative;
+    z-index: 2;
+  }
+  &__item {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    background-color: $white;
+    border-radius: 2rem;
+    padding: 1.6rem;
+    @include block-shadow2;
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(2) {
+      margin-left: 28.7rem;
+    }
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+  }
+  &__ava {
+    width: 4.8rem;
+    height: 4.8rem;
+    flex-shrink: 0;
+    img {
+      @include img-contain;
+    }
+  }
+  &__name {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  &__text {
+    font-size: 1.6rem;
+  }
+  @include tab {
+    margin-bottom: 4rem;
+    .container {
+      padding: 0;
+    }
+    &__inner {
+      display: block;
+      height: auto;
+      border-radius: 2rem;
+      background-color: $paleblue;
+      padding: 2.4rem;
+    }
+    &__img {
+      display: none;
+    }
+    &__left {
+      display: none;
+    }
+    &__right {
+      position: relative;
+      z-index: 2;
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      padding: 0.8rem;
+      margin-bottom: 2.4rem;
+      &:nth-child(2) {
+        margin-left: 0;
+      }
+      svg {
+        width: 2rem;
+        height: 2rem;
+        margin-left: auto;
+      }
+    }
+    &__ava {
+      width: 5.6rem;
+      height: 5.6rem;
+    }
+    &__name {
+      font-size: 1.7rem;
+    }
+    &__text {
+      font-size: 1.7rem;
+    }
+  }
+  @include mob {
+    &__inner {
+      padding: 3.2rem 1.6rem;
+    }
+    &__name {
+      font-size: 1.2rem;
+      margin-bottom: 0.9rem;
+    }
+    &__text {
+      font-size: 1.2rem;
+    }
+  }
+}
