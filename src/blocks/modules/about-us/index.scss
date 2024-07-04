@@ -56,7 +56,7 @@
   }
 
   &__text {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     width: 50rem;
     text-align: center;
     margin: 0 auto;
@@ -86,13 +86,78 @@
 }
 
 .accordion {
-  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 150rem;
+  margin: 0 auto;
+  padding-bottom: 10rem;
 
   &__title {
     font-size: 2.4rem;
     font-weight: 500;
     text-align: center;
-    margin-bottom: 3.2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__item {
+    border-radius: 1.6rem;
+    overflow: hidden;
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 4.8rem 2.6rem;
+    font-size: 2rem;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+
+    &--inactive .accordion__icon {
+      transform: rotate(0deg);
+    }
+  }
+
+  &__button:hover {
+    background-color: #f8f1ec;
+  }
+
+  &__text {
+    flex-grow: 1;
+    margin-left: 1rem;
+  }
+
+  &__icon {
+    width: 1.6rem;
+    height: 2.6rem;
+  }
+
+  &__input:checked + .accordion__button .accordion__icon {
+    transform: rotate(180deg);
+  }
+
+  &__input:checked ~ .accordion__panel {
+    max-height: 200rem;
+  }
+
+  &__panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+  }
+
+  &__content {
+    padding: 1rem;
+    font-size: 2rem;
+    padding: 2.4rem;
   }
 
   @include mob {
