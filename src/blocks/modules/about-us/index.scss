@@ -141,6 +141,10 @@
     transition: transform 0.3s ease-in-out;
   }
 
+  &__icon--mobile {
+    display: none;
+  }
+
   &__input:checked + .accordion__button .accordion__icon {
     transform: rotate(180deg);
   }
@@ -153,6 +157,7 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease-in-out;
+    border-top: 1px solid rgb(0, 0, 0, 0.1);
   }
 
   &__content {
@@ -163,12 +168,49 @@
 
   @include mob {
     margin-bottom: 3rem;
+    width: 100vw;
+    padding-bottom: 0rem;
 
     &__title {
       text-align: start;
       font-size: 1.8rem;
       font-weight: 500;
       margin-bottom: 2.4rem;
+      margin-left: 2rem;
+    }
+
+    &__icon {
+      display: none;
+    }
+
+    &__icon--mobile {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+    }
+
+    &__number {
+      display: none;
+    }
+
+    &__button {
+      padding: 2.4rem 2rem 2.4rem 1.2rem;
+      font-size: 1.4rem;
+      background-color: #fff;
+    }
+
+    &__button:hover {
+      background-color: transparent;
+    }
+
+    &__input:checked + .accordion__button .accordion__icon--mobile {
+      transform: rotate(180deg);
+    }
+
+    &__content {
+      padding: 1rem;
+      font-size: 1.4rem;
+      padding: 2.4rem;
     }
   }
 }
