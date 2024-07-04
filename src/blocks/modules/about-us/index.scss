@@ -138,6 +138,7 @@
   &__icon {
     width: 1.6rem;
     height: 2.6rem;
+    transition: transform 0.3s ease-in-out;
   }
 
   &__input:checked + .accordion__button .accordion__icon {
@@ -151,7 +152,7 @@
   &__panel {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.7s ease-in-out;
+    transition: max-height 1s ease-in-out;
   }
 
   &__content {
