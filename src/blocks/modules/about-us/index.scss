@@ -26,7 +26,7 @@
     font-weight: 500;
   }
 
-  @include mob {
+  @include tab {
     min-height: 19rem;
     margin: 3.2rem 0;
 
@@ -62,7 +62,7 @@
     margin: 0 auto;
   }
 
-  @include mob {
+  @include tab {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -166,7 +166,7 @@
     padding: 2.4rem;
   }
 
-  @include mob {
+  @include tab {
     margin-bottom: 3rem;
     width: 100vw;
     padding-bottom: 0rem;
