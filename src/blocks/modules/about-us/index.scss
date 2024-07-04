@@ -6,6 +6,7 @@
   text-align: center;
   position: relative;
   min-height: 30rem;
+  margin: 0 3.2rem;
 
   &__image {
     height: 100%;
@@ -15,24 +16,93 @@
     left: 0;
     object-fit: cover;
     z-index: 1;
+    border-radius: 3.2rem;
   }
 
   &__title {
     font-size: 8rem;
     position: relative;
     z-index: 2;
+    font-weight: 500;
   }
 
   @include mob {
     min-height: 19rem;
-    margin: 3rem 0;
+    margin: 3.2rem 0;
 
     &__title {
       font-size: 2rem;
     }
 
     &__image {
-      border-radius: 2rem;
+      border-radius: 2.4rem;
+    }
+  }
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-top: 13rem;
+  margin-bottom: 12rem;
+
+  &__description {
+    font-size: 4.2rem;
+    width: 110rem;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 500;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    width: 50rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  @include mob {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-top: 3.2rem;
+    margin-bottom: 4rem;
+
+    &__description {
+      font-size: 2rem;
+      width: 90vw;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+      width: 100vw;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+.accordion {
+  margin-bottom: 10rem;
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+
+  @include mob {
+    margin-bottom: 3rem;
+
+    &__title {
+      text-align: start;
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 2.4rem;
     }
   }
 }
