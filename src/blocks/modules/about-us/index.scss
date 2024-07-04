@@ -192,16 +192,16 @@
   }
 
   @include tab {
-    margin-bottom: 3rem;
-    width: 90vw;
-    padding-bottom: 0rem;
+    margin: 0 auto;
+    width: 99vw;
+    padding-bottom: 3rem;
 
     &__title {
       text-align: start;
       font-size: 1.8rem;
       font-weight: 500;
       margin-bottom: 2.4rem;
-      margin-left: 2rem;
+      margin-left: 1.4rem;
     }
 
     &__icon {
@@ -219,7 +219,7 @@
     }
 
     &__button {
-      padding: 2.4rem 2rem 2.4rem 1.2rem;
+      padding: 2.4rem 1.4rem 2.4rem 0.5rem;
       font-size: 1.4rem;
       background-color: #fff;
     }
