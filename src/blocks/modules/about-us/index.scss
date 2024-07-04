@@ -1,0 +1,38 @@
+.about-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  min-height: 30rem;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: 8rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  @include mob {
+    min-height: 19rem;
+    margin: 3rem 0;
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__image {
+      border-radius: 2rem;
+    }
+  }
+}
