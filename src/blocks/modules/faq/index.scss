@@ -57,3 +57,127 @@
     }
   }
 }
+
+.faq-form {
+  width: 100%;
+  margin-bottom: 10rem;
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 3.2rem auto;
+    width: 97rem;
+  }
+
+  &__inputs-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f4;
+    padding: 3.2rem;
+    border-radius: 2rem;
+    width: 124rem;
+    margin: 0 auto;
+  }
+
+  &__input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.2rem;
+
+    input {
+      width: 57rem;
+      padding: 1.9rem 1.6rem;
+      background-color: #fff;
+      border: none;
+      border-radius: 1.2rem;
+      font-size: 1.8rem;
+    }
+
+    textarea {
+      width: 118rem;
+      height: 10rem;
+      padding: 1.4rem 1.6rem;
+      background-color: #fff;
+      border: none;
+      border-radius: 1.2rem;
+      font-size: 1.8rem;
+      resize: none;
+      margin-bottom: 3.2rem;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #8c8c8c;
+      opacity: 1;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  &__disclaimer {
+    width: 67rem;
+    font-size: 1.4rem;
+  }
+
+  &__button {
+    width: 24rem;
+  }
+
+  @include tab {
+    &__title {
+      font-size: 1.8rem;
+      text-align: left;
+      margin-left: 1.6rem;
+      margin-bottom: 2.4rem;
+    }
+
+    &__text {
+      display: none;
+    }
+
+    &__inputs-wrapper {
+      padding: 1.6rem;
+      width: 100%;
+    }
+
+    &__input-group {
+      gap: 0.8rem;
+
+      input {
+        padding: 1.6rem 0.8rem;
+        border-radius: 0.8rem;
+        font-size: 1.2rem;
+      }
+
+      textarea {
+        height: 4.6rem;
+        padding: 1.6rem 0.8rem;
+        border-radius: 0.8rem;
+        font-size: 1.2rem;
+        overflow: hidden;
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    &__button {
+      width: 100%;
+    }
+
+    &__disclaimer {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 0.8rem;
+    }
+  }
+}
