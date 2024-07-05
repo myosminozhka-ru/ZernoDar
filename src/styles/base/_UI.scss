@@ -816,6 +816,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
   }
   li {
     display: inline-flex;
