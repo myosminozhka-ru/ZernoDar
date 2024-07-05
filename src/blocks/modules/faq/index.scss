@@ -1,0 +1,59 @@
+.faq-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  min-height: 30rem;
+  margin: 0 3.2rem;
+  margin-bottom: 3.2rem;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 3.2rem;
+  }
+
+  &__title {
+    font-size: 4.2rem;
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 auto;
+    width: 79rem;
+    z-index: 2;
+  }
+
+  @include tab {
+    min-height: 19rem;
+    margin: 3.2rem 0;
+
+    &__title {
+      font-size: 2rem;
+      margin-bottom: 1.4rem;
+      padding-top: 6rem;
+    }
+
+    &__image {
+      border-radius: 2.4rem;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+      width: 92vw;
+      padding-bottom: 10rem;
+    }
+  }
+}
