@@ -170,6 +170,10 @@
       }
     }
 
+    &__submit {
+      flex-direction: column;
+    }
+
     &__button {
       width: 100%;
     }
@@ -178,6 +182,8 @@
       font-size: 1.2rem;
       text-align: center;
       margin-top: 0.8rem;
+      width: 100%;
+      margin-bottom: 0.6rem;
     }
   }
 }
