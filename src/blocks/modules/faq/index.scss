@@ -142,6 +142,8 @@
   }
 
   @include tab {
+    margin-bottom: 3.9rem;
+
     &__title {
       font-size: 1.8rem;
       text-align: left;
