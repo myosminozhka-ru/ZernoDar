@@ -16,6 +16,7 @@
     top: 0;
     left: 0;
     object-fit: cover;
+    object-position: center calc(50% + 7rem);
     z-index: 1;
     border-radius: 3.2rem;
   }
@@ -43,17 +44,19 @@
     &__title {
       font-size: 2rem;
       margin-bottom: 1.4rem;
-      padding-top: 6rem;
+      padding-top: 6.4rem;
     }
 
     &__image {
       border-radius: 2.4rem;
+      object-position: center;
+      filter: saturate(85%);
     }
 
     &__text {
       font-size: 1.4rem;
       width: 92vw;
-      padding-bottom: 10rem;
+      padding-bottom: 11rem;
     }
   }
 }
@@ -73,6 +76,10 @@
     font-size: 1.8rem;
     margin: 3.2rem auto;
     width: 97rem;
+  }
+
+  &__input-text {
+    display: none;
   }
 
   &__inputs-wrapper {
@@ -149,6 +156,12 @@
     &__inputs-wrapper {
       padding: 1.6rem;
       width: 100%;
+    }
+
+    &__input-text {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 2.4rem;
     }
 
     &__input-group {
