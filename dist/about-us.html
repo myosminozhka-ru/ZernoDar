@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Зернодор</title>
+  <meta name="theme-color" content="#fff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0">
+
+  <meta property="og:url" content="https://www.your-domain.com/your-page.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Your Website Title"/>
+  <meta property="og:description" content="Your description"/>
+  <meta property="og:image" content="https://www.your-domain.com/path/image.jpg"/>
+
+  <link rel="icon" href="/favicons/favicon.ico" type="image/x-icon"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="styles/libs/fancybox.css">
+  <link rel="stylesheet" href="styles/libs/swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles/libs/ion.rangeSlider.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>"
+    type="text/javascript"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container container--full">
+      <div class="header__inner">
+        <a href="/" class="header__logo">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#logo"></use>
+          </svg>
+          ЗЕРНОДАР
+        </a>
+        <nav class="nav header__nav">
+          <div class="nav__inner">
+            <ul class="nav__list">
+              <li><a href="#">Предложение</a></li>
+              <li><a href="#"><b>Спрос</b></a></li>
+              <li><a href="#">Компании</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="header-search">
+          <button class="header-search__magnific">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#magnific"></use>
+            </svg>
+          </button>
+          <input type="text" class="header-search__input" placeholder="Поиск..."/>
+          <button class="header-search__close trig-close-search">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#x"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="header__actions">
+          <button class="header__act trig-open-search">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#magnific"></use>
+            </svg>
+          </button>
+          <a href="#" class="header__act">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#favourite"></use>
+            </svg>
+          </a>
+          <a href="#" class="header__act">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#user"></use>
+            </svg>
+          </a>
+        </div>
+        <a href="#" class="header__add-btn">Разместить объявление</a>
+        <div class="header__burger-wrap">
+          <div class="header__burger">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-drop">
+      <div class="nav-drop__inner">
+        <div class="nav-drop__left">
+          <div class="nav-drop__title">
+            <a  href="" class="str">
+              <span class="nav-drop__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#icon1"></use>
+                </svg>
+              </span>
+              Зерновые культуры
+            </a>
+            <div class="nav-drop__arrow">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="nav-drop__title">
+            <a  href="" class="str">
+              <span class="nav-drop__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#icon2"></use>
+                </svg>
+              </span>
+              Масличные культуры
+            </a>
+            <div class="nav-drop__arrow">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="nav-drop__title">
+            <a  href="" class="str">
+              <span class="nav-drop__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#icon3"></use>
+                </svg>
+              </span>
+              Посевной материал
+            </a>
+            <div class="nav-drop__arrow">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="nav-drop__right">
+          <div class="nav-drop__block open">
+            <div class="nav-drop__subtitle">Зерновые культуры</div>
+            <div class="nav-drop__lists">
+              <ul class="nav-drop__list">
+                <li><a href="">Бобы <span>163</span></a></li>
+                <li><a href="">Горох <span>163</span></a></li>
+                <li><a href="">Гречиха <span>163</span></a></li>
+                <li><a href="">Кукуруза <span>163</span></a></li>
+                <li><a href="">Люпин <span>163</span></a></li>
+                <li><a href="">Нут <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Овес <span>163</span></a></li>
+                <li><a href="">Полба <span>163</span></a></li>
+                <li><a href="">Просо <span>163</span></a></li>
+                <li><a href="">Пшеница <span>163</span></a></li>
+                <li><a href="">Рожь <span>163</span></a></li>
+                <li><a href="">Сорго <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Соя <span>163</span></a></li>
+                <li><a href="">Тритикале <span>163</span></a></li>
+                <li><a href="">Фасоль <span>163</span></a></li>
+                <li><a href="">Чечевица <span>163</span></a></li>
+                <li><a href="">Ячмень <span>163</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-drop__block">
+            <div class="nav-drop__subtitle">Зерновые культуры</div>
+            <div class="nav-drop__lists">
+              <ul class="nav-drop__list">
+                <li><a href="">Бобы <span>163</span></a></li>
+                <li><a href="">Горох <span>163</span></a></li>
+                <li><a href="">Гречиха <span>163</span></a></li>
+                <li><a href="">Кукуруза <span>163</span></a></li>
+                <li><a href="">Люпин <span>163</span></a></li>
+                <li><a href="">Нут <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Овес <span>163</span></a></li>
+                <li><a href="">Полба <span>163</span></a></li>
+                <li><a href="">Просо <span>163</span></a></li>
+                <li><a href="">Пшеница <span>163</span></a></li>
+                <li><a href="">Рожь <span>163</span></a></li>
+                <li><a href="">Сорго <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Соя <span>163</span></a></li>
+                <li><a href="">Тритикале <span>163</span></a></li>
+                <li><a href="">Фасоль <span>163</span></a></li>
+                <li><a href="">Чечевица <span>163</span></a></li>
+                <li><a href="">Ячмень <span>163</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-drop__block">
+            <div class="nav-drop__subtitle">Зерновые культуры</div>
+            <div class="nav-drop__lists">
+              <ul class="nav-drop__list">
+                <li><a href="">Бобы <span>163</span></a></li>
+                <li><a href="">Горох <span>163</span></a></li>
+                <li><a href="">Гречиха <span>163</span></a></li>
+                <li><a href="">Кукуруза <span>163</span></a></li>
+                <li><a href="">Люпин <span>163</span></a></li>
+                <li><a href="">Нут <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Овес <span>163</span></a></li>
+                <li><a href="">Полба <span>163</span></a></li>
+                <li><a href="">Просо <span>163</span></a></li>
+                <li><a href="">Пшеница <span>163</span></a></li>
+                <li><a href="">Рожь <span>163</span></a></li>
+                <li><a href="">Сорго <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Соя <span>163</span></a></li>
+                <li><a href="">Тритикале <span>163</span></a></li>
+                <li><a href="">Фасоль <span>163</span></a></li>
+                <li><a href="">Чечевица <span>163</span></a></li>
+                <li><a href="">Ячмень <span>163</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+
+
+<div class="main-wrapper">
+  <div class="brc">
+  <div class="container container--full">
+    <div class="brc__inner">
+      <ul class="brc__list">
+        <li>
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#left-circle"></use>
+          </svg>
+          <a href="/">Главная</a>
+        </li>
+        
+          <li>
+            <a href="#" class="link">О нас</a>
+          </li>
+        
+      </ul>
+      <div class="brc__arrow">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#curve-arrow-right"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="about-heading">
+  <img class="about-heading__image" src="img/about-us.jpg" alt="" />
+  <h1 class="about-heading__title">С нами легко</h1>
+</div>
+
+<div class="about-main">
+  <img src="img/bg-koloski.png" alt="" class="about-main__background" />
+  <img
+    src="img/bg-koloski.png"
+    alt=""
+    class="about-main__background--reversed"
+  />
+  <p class="about-main__description">
+    ЗерноДар - интернет-площадка для быстрой продажи и покупки зерна без потери
+    нервов.
+  </p>
+  <p class="about-main__text">
+    Новая ступень диджитализации консервативной отрасли сельского хозяйства
+  </p>
+</div>
+
+  <div class="accordion">
+  <h2 class="accordion__title">Наши ценности</h2>
+
+  <div class="accordion__item">
+    <input type="checkbox" id="accordion-item-1" class="accordion__input" />
+    <label
+      for="accordion-item-1"
+      class="accordion__button accordion__button--inactive"
+    >
+      <span class="accordion__number">01/</span>
+      <span class="accordion__text">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit
+      </span>
+      <img
+        src="img/sprites/accordion-arrow.svg"
+        alt=""
+        class="accordion__icon"
+      />
+      <img
+        src="img/sprites/accordion-arrow-mob.svg"
+        alt=""
+        class="accordion__icon--mobile"
+      />
+    </label>
+    <div class="accordion__panel">
+      <p class="accordion__content">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+        mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor
+        sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
+        est a, mattis tellus. <br />
+        <br />
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion__item">
+    <input type="checkbox" id="accordion-item-2" class="accordion__input" />
+    <label
+      for="accordion-item-2"
+      class="accordion__button accordion__button--inactive"
+    >
+      <span class="accordion__number">02/</span>
+      <span class="accordion__text">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit
+      </span>
+      <img
+        src="img/sprites/accordion-arrow.svg"
+        alt=""
+        class="accordion__icon"
+      />
+      <img
+        src="img/sprites/accordion-arrow-mob.svg"
+        alt=""
+        class="accordion__icon--mobile"
+      />
+    </label>
+    <div class="accordion__panel">
+      <p class="accordion__content">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+        mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor
+        sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
+        est a, mattis tellus. <br />
+        <br />
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion__item">
+    <input type="checkbox" id="accordion-item-3" class="accordion__input" />
+    <label
+      for="accordion-item-3"
+      class="accordion__button accordion__button--inactive"
+    >
+      <span class="accordion__number">03/</span>
+      <span class="accordion__text">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit
+      </span>
+      <img
+        src="img/sprites/accordion-arrow.svg"
+        alt=""
+        class="accordion__icon"
+      />
+      <img
+        src="img/sprites/accordion-arrow-mob.svg"
+        alt=""
+        class="accordion__icon--mobile"
+      />
+    </label>
+    <div class="accordion__panel">
+      <p class="accordion__content">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+        mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor
+        sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
+        est a, mattis tellus. <br />
+        <br />
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion__item">
+    <input type="checkbox" id="accordion-item-4" class="accordion__input" />
+    <label
+      for="accordion-item-4"
+      class="accordion__button accordion__button--inactive"
+    >
+      <span class="accordion__number">04/</span>
+      <span class="accordion__text">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit
+      </span>
+      <img
+        src="img/sprites/accordion-arrow.svg"
+        alt=""
+        class="accordion__icon"
+      />
+      <img
+        src="img/sprites/accordion-arrow-mob.svg"
+        alt=""
+        class="accordion__icon--mobile"
+      />
+    </label>
+    <div class="accordion__panel">
+      <p class="accordion__content">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+        mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor
+        sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
+        est a, mattis tellus. <br />
+        <br />
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div class="main-help">
+  <div class="container">
+    <div class="h1 main-help__mtitle">Мы помогаем</div>
+    <div class="main-help__inner">
+      <div class="main-help__item main-help__item--green">
+        <div class="main-help__img">
+          <img src="img/help-block1.jpg" alt="">
+        </div>
+        <div class="main-help__content">
+          <div>
+            <div class="main-help__title">Продавцам</div>
+            <div class="main-help__text">Borem ipsum dolor sit amet, consectetur adipiscing elit. Borem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+          </div>
+          <button class="slider-next">
+  <svg>
+    <use xlink:href="img/sprites/sprite.svg#slider-next"></use>
+  </svg>
+</button>
+        </div>
+      </div>
+      <div class="main-help__item main-help__item--orange">
+        <div class="main-help__img">
+          <img src="img/help-block2.jpg" alt="">
+        </div>
+        <div class="main-help__content">
+          <div>
+            <div class="main-help__title">Продавцам</div>
+            <div class="main-help__text">Borem ipsum dolor sit amet, consectetur adipiscing elit. Borem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+          </div>
+          <button class="slider-next">
+  <svg>
+    <use xlink:href="img/sprites/sprite.svg#slider-next"></use>
+  </svg>
+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+        </main>
+        <footer class="footer">
+          <div class="container container--full">
+            <div class="footer__inner">
+              <div class="footer__col">
+                <a href="/" class="footer__logo">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#logo"></use>
+                  </svg>
+                  ЗЕРНОДАР
+                </a>
+                <div class="footer__docs only-pc">
+                  <a href="/">Пользовательское соглашение</a>
+                  <a href="/">Политика конфиденциальности</a>
+                </div>
+                <div class="footer__c only-pc">© Зернодар 2024</div>
+              </div>
+              <div class="footer__col">
+                <ul class="footer__list">
+                  <li><a href="">Предложение</a></li>
+                  <li><a href="">Спрос</a></li>
+                  <li><a href="">Компании</a></li>
+                  <li><a href="">О нас</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <ul class="footer__list">
+                  <li><a href="">FAQ</a></li>
+                  <li><a href="">Новости</a></li>
+                  <li><a href="">Контакты</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <div class="footer__soc">
+                  <a href="">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#vk-f"></use>
+                    </svg>
+                    Наша группа ВКонтакте
+                  </a>
+                  <a href="">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#tg-f"></use>
+                    </svg>
+                    Актуальных объявления
+                  </a>
+                </div>
+                <a href="" class="footer__created only-pc">Разработка сайта: Осьминожка</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__docs">
+              <a href="/">Пользовательское соглашение</a>
+              <a href="/">Политика конфиденциальности</a>
+            </div>
+            <a href="" class="footer__created">Разработка сайта: Осьминожка</a>
+          </div>
+          <div class="footer__c on-tab">© Зернодар 2024</div>
+        </footer>
+        <!-- <div class="scroll-up">
+          <div class="osmi-container">
+            <div class="scroll-up__inner">
+              <button class="scroll-up__btn">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow-up"></use>
+                </svg>
+              </button>
+              <script>
+                document.querySelector('.scroll-up__btn')?.addEventListener('click', () => {
+                  window.scrollTo({top: 0, behavior: 'smooth'});
+                })
+              </script>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="modal modal--text-seller close-x" data-modal="text-seller">
+  <div class="modal__inner">
+    <div class="modal__top">
+      <div class="modal__title">Написать  продавцу</div>
+      <button class="modal__close close-x" type="button">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__content">
+      <form action="">
+        <textarea class="textarea1" name="" id="" placeholder="Введите сообщение здесь"></textarea>
+        <button class="btn3">Отправить</button>
+      </form>
+    </div>
+  </div>
+</div>
+        <div class="visually-hidden">
+          <textarea id="urlCopy" rows="1" cols="30"></textarea>
+        </div>
+        <script src="js/libs/swiper-bundle.min.js"></script>
+        <script src="js/libs/just-validate.production.min.js"></script>
+        <script src="js/libs/imask.js"></script>
+        <script src="js/vendor.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

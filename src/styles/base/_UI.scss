@@ -816,6 +816,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
   }
   li {
     display: inline-flex;
@@ -1517,5 +1518,285 @@
     opacity: 0;
     display: none;
     z-index: -100;
+  }
+}
+
+
+
+.user-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  &__ava {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+    margin-right: 0.8rem;
+    img {
+      @include img-cover;
+    }
+  }
+  &__name {
+    font-size: 1.8rem;
+  }
+  &--lg {
+    .user-head {
+      &__ava {
+        width: 5.6rem;
+        height: 5.6rem;
+      }
+      &__name {
+        font-size: 2.4rem;
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+  .user-rating {
+    margin-bottom: 0;
+  }
+  @include mob {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+    &__ava {
+      width: 4rem;
+      height: 4rem;
+    }
+    &__name {
+      font-size: 1.4rem;
+    }
+    &--lg {
+      .user-head {
+        &__ava {
+          width: 4rem;
+          height: 4rem;
+        }
+        &__name {
+          font-size: 1.4rem;
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+    .user-rating {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.user-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+  &__stars {
+    width: 11rem;
+    height: 2rem;
+    position: relative;
+    svg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 3;
+    }
+  }
+  &__stars::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    height: calc(100% - 0.2rem);
+    width: 100%;
+    background-color: $darkgrey;
+    z-index: 1;
+  }
+  &__procent {
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    height: calc(100% - 0.2rem);
+    background-color: $orange;
+    z-index: 2;
+  }
+  &__review-num {
+    color: $linkblue;
+  }
+  &--md {
+    font-size: 1.8rem;
+    .user-rating {
+      &__stars {
+        width: 13.6rem;
+        height: 2.45rem;
+      }
+    }
+  }
+  @include tab {
+    gap: 0.4rem;
+    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+    &__stars {
+      width: 10rem;
+      height: 1.8rem;
+    }
+    &__stars::before {
+      top: 2%;
+      height: 95%;
+      width: 100%;
+    }
+    &__procent {
+      top: 2%;
+      height: 95%;
+    }
+  }
+}
+
+.user-contact {
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__links {
+    display: inline-flex;
+    gap: 0.8rem;
+  }
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-shrink: 0;
+    svg, img {
+      width: 2.4rem;
+      height: 2.4rem;
+      object-fit: contain;
+      flex-shrink: 0;
+      color: $darkgrey;
+      transition: color 200ms;
+    }
+    &:hover {
+      text-decoration: underline;
+      svg {
+        color: $black;
+      }
+    }
+  }
+  a.user-contact__link {
+    color: $linkblue;
+  }
+  @include mob {
+    font-size: 1.4rem;
+    &__item {
+      gap: 0.8rem;
+      justify-content: space-between;
+    }
+    &__links {
+      gap: 0.6rem;
+    }
+    &__link {
+      gap: 0.8rem;
+      svg, img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}
+
+.to-seller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+  .write-to-seller {
+    flex-grow: 1;
+  }
+  @include tab {
+    gap: 0.8rem;
+  }
+}
+
+.write-to-seller {
+  font-size: 2rem;
+  font-weight: 500;
+  color: $white;
+  padding: 2.7rem 3.2rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: $green2;
+  transition: background 200ms;
+  &:hover {
+    background-color: $green;
+  }
+  @include tab {
+    font-size: 1.8rem;
+    padding: 1.8rem 3.2rem;
+    border-radius: 1.6rem;
+  }
+  @include mob {
+    font-size: 1.4rem;
+    padding: 1.1rem 1.6rem;
+    border-radius: 0.8rem;
+  }
+}
+
+.to-favourite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.7rem;
+  background-color: $green2;
+  border-radius: 2rem;
+  svg {
+    width: 4.6rem;
+    height: 4.6rem;
+    object-fit: contain;
+  }
+  transition: background 200ms;
+  &:hover {
+    background-color: $green;
+  }
+  &.active {
+    background-color: $green;
+  }
+  &--sm {
+    padding: 1.3rem;
+    border-radius: 1.6rem;
+    svg {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+  }
+  @include tab {
+    padding: 1.8rem;
+    border-radius: 1.6rem;
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+    &--sm {
+      padding: 1.8rem;
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+  }
+  @include mob {
+    padding: 1rem;
+    border-radius: 0.8rem;
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
