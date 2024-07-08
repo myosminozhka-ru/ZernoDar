@@ -134,7 +134,7 @@
         font-size: 1.6rem;
         background: white;
         border-radius: 2.4rem;
-        box-shadow: 0 4px 10px rgba(174, 174, 174, 0.1);
+        box-shadow: 0 4px 10px rgba(234, 234, 234, 0.1);
 
         div {
           flex: 1;
@@ -219,23 +219,48 @@
   &:focus {
     outline: none;
   }
+
+  @include tab {
+    border-radius: 0.5rem;
+    padding: 0.3rem 0rem 0.3rem 0.5rem;
+    font-size: 1.2rem;
+    background-size: 0.8rem;
+    background-position: right 0.9rem center;
+    width: 4.7rem;
+  }
 }
 
 .subs-mob {
   display: none;
   background-color: #ebf4ec;
+  padding: 0 !important;
 
   @include tab {
     display: block;
     border-radius: 1.6rem;
 
     &__inner {
+      display: flex;
+      width: 30rem;
+      padding: 1.6rem;
+      flex-direction: column;
+      gap: 1.8rem;
       background-color: white;
       border-radius: 1.2rem;
 
       h3 {
         font-size: 1.8rem;
         font-weight: 500;
+        margin-bottom: 1.6rem;
+      }
+
+      .tariff-card {
+        &__contents--wrapper {
+          font-size: 1.2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
       }
     }
 
@@ -244,9 +269,11 @@
     }
 
     &__slide {
-      background-size: 22rem;
+      background-size: 25rem;
       background-repeat: no-repeat;
-      background-position: top right;
+      background-position: right 0px top -1.3rem;
+      align-items: end;
+      padding: 20rem 1.6rem 0.7rem 1.6rem;
     }
   }
 }
