@@ -752,11 +752,15 @@
     z-index: 10 !important;
   }
   &--subs {
+    position: relative;
+    z-index: 10 !important;
+    bottom: -2.8rem !important;
+
     .bullet {
-      border-color: $darkgrey;
+      border-color: #dfdfdf !important;
       &.active {
         background-color: #0e582d;
-        border-color: #0e582d;
+        border-color: #0e582d !important;
       }
     }
   }

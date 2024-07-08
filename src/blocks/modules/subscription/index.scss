@@ -185,6 +185,10 @@
       }
 
       @include tab {
+        .row-titles {
+          display: none;
+        }
+
         .history-row {
           flex-direction: column;
           text-align: left;
