@@ -43,13 +43,45 @@
       .tariff-card {
         width: 40rem;
         background: #ecf0f4;
-        border-radius: 2rem;
+        border-radius: 1.6rem;
         padding: 25.3rem 3.2rem 3.2rem 3.2rem;
-        text-align: center;
         box-shadow: 0 4px 10px rgba(174, 174, 174, 0.1);
-        background-size: 30rem;
+        background-size: 31rem;
         background-repeat: no-repeat;
         background-position: top right;
+
+        @include tab {
+          padding: 20.9rem 1.6rem 1.6rem 1.6rem;
+        }
+
+        &__contents {
+          background-color: white;
+          border-radius: 2rem;
+          padding: 1.6rem;
+          font-size: 1.6rem;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+
+          h3 {
+            font-size: 2rem;
+            margin-bottom: 1.4rem;
+          }
+
+          button {
+            width: 30.4rem;
+
+            @include tab {
+              width: 100%;
+            }
+          }
+        }
+
+        &__contents--wrapper {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
 
         img {
           max-width: 100%;
@@ -59,16 +91,6 @@
 
         &--active {
           background-color: #ebf4ec;
-        }
-
-        h3 {
-          font-size: 1.2rem;
-          margin-bottom: 0.5rem;
-        }
-
-        p {
-          font-size: 1rem;
-          margin-bottom: 0.5rem;
         }
 
         .change-btn {
@@ -134,5 +156,24 @@
         }
       }
     }
+  }
+}
+
+.custom-select {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 0.6rem 0rem 0.6rem 1rem;
+  font-size: 1.6rem;
+  color: #333;
+  background-image: url("/img/sprites/accordion-arrow-mob.svg");
+  background-repeat: no-repeat;
+  background-position: right 1.3rem center;
+  background-size: 1.2rem;
+  width: 7.7rem;
+
+  &:focus {
+    outline: none;
   }
 }
