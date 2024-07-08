@@ -1,5 +1,144 @@
 .subscription {
+  display: flex;
+
   @include tab {
-    margin-top: 3.2rem;
+    flex-direction: column;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    margin: 2.2rem 0rem 1.7rem 0rem;
+
+    @include tab {
+      font-size: 1.8rem;
+      margin: 0rem 0rem 2rem 1.6rem;
+    }
+  }
+
+  &__main-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tab {
+      margin-top: 3.2rem;
+    }
+  }
+
+  &__main-section {
+    width: 125rem;
+
+    @include tab {
+      width: 100%;
+    }
+
+    .tariff-cards {
+      display: flex;
+      gap: 2.4rem;
+      justify-content: space-between;
+
+      @include tab {
+        flex-direction: column;
+      }
+
+      .tariff-card {
+        width: 40rem;
+        background: #ecf0f4;
+        border-radius: 2rem;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(174, 174, 174, 0.1);
+
+        img {
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 1rem;
+        }
+
+        &--active {
+          background-color: #ebf4ec;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        button {
+          padding: 0.8rem 1.6rem;
+          background: #4caf50;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background: #45a049;
+          }
+        }
+      }
+
+      @include tab {
+        .tariff-card {
+          width: 100%;
+          flex-direction: column;
+          background-color: #ebf4ec;
+          border-radius: 1.6rem;
+        }
+      }
+    }
+  }
+
+  &__history-section {
+    .subscription__history-table {
+      width: 100%;
+
+      .history-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid #e0e0e0;
+
+        &.header {
+          font-weight: bold;
+        }
+
+        div {
+          flex: 1;
+          text-align: center;
+          padding: 0 0.5rem;
+        }
+
+        button {
+          padding: 0.5rem 1rem;
+          background: #2196f3;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background: #1e88e5;
+          }
+        }
+      }
+
+      @include tab {
+        .history-row {
+          flex-direction: column;
+          text-align: left;
+
+          div {
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 }
