@@ -46,9 +46,9 @@
         border-radius: 1.6rem;
         padding: 25.3rem 3.2rem 3.2rem 3.2rem;
         box-shadow: 0 4px 10px rgba(174, 174, 174, 0.1);
-        background-size: 31rem;
+        background-size: 33rem;
         background-repeat: no-repeat;
-        background-position: top right;
+        background-position: right -1rem top -2.2rem;
 
         @include tab {
           padding: 20.9rem 1.6rem 1.6rem 1.6rem;
@@ -61,7 +61,7 @@
           font-size: 1.6rem;
           display: flex;
           flex-direction: column;
-          gap: 2rem;
+          gap: 2.4rem;
 
           h3 {
             font-size: 2rem;
@@ -116,6 +116,14 @@
 
     @include tab {
       margin-top: 1rem;
+    }
+
+    .history-mobile {
+      display: none;
+
+      @include tab {
+        display: block;
+      }
     }
 
     .subscription__history-table {
@@ -185,18 +193,7 @@
       }
 
       @include tab {
-        .row-titles {
-          display: none;
-        }
-
-        .history-row {
-          flex-direction: column;
-          text-align: left;
-
-          div {
-            text-align: left;
-          }
-        }
+        display: none;
       }
     }
   }
@@ -280,4 +277,8 @@
 
 .pagination {
   margin: 6rem 0rem;
+
+  @include tab {
+    display: none;
+  }
 }
