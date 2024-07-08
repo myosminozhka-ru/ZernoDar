@@ -89,57 +89,99 @@
       </div>
     </div>
 
-    <div class="first-screen subscription-slider-mobile">
-      <div class="swiper first-screen__slider">
-        <div class="swiper-wrapper first-screen__wrapper">
-          <div class="swiper-slide first-screen__slide">
-            <div class="first-screen__inner">
-              <div class="first-screen__title">
-                Эффективный способ<br />
-                купить и продать зерно
+    <div class="first-screen subs-mob">
+      <div class="swiper first-screen__slider subs-mob__slider">
+        <div class="swiper-wrapper first-screen__wrapper subs-mob__wrapper">
+          <div
+            class="swiper-slide first-screen__slide subs-mob__slide"
+            style="background-image: url('img/tariff-card-bg.png')"
+          >
+            <div class="subs-mob__inner">
+              <h3>Название тарифа</h3>
+              <div class="tariff-card__contents--wrapper">
+                <span>Стоимость</span>
+                <span>1200 р/мес</span>
               </div>
-              <div class="first-screen__subtitle">
-                Найдите надежных партнеров для <br />
-                торговли зерном
+              <div class="tariff-card__contents--wrapper">
+                <span>Срок действия</span>
+                <span>1 месяц</span>
               </div>
-              <a href="#" class="btn11 first-screen__btn">Перейти в каталог</a>
+              <div class="tariff-card__contents--wrapper">
+                <span>Количество объявлений</span>
+                <select class="custom-select">
+                  <option value="10">10</option>
+                  <option value="20" selected>20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                </select>
+              </div>
+              <button class="btn10 change-btn">Выбрать тариф</button>
             </div>
           </div>
-          <div class="swiper-slide first-screen__slide">
-            <div class="first-screen__inner">
-              <div class="first-screen__title">
-                Эффективный способ купить и продать зерно
+          <div
+            class="swiper-slide first-screen__slide subs-mob__slide"
+            style="background-image: url('img/tariff-card-bg.png')"
+          >
+            <div class="subs-mob__inner">
+              <h3>Название тарифа</h3>
+              <div class="tariff-card__contents--wrapper">
+                <span>Стоимость</span>
+                <span>1200 р/мес</span>
               </div>
-              <div class="first-screen__subtitle">
-                Найдите надежных партнеров для торговли зерном
+              <div class="tariff-card__contents--wrapper">
+                <span>Срок действия</span>
+                <span>1 месяц</span>
               </div>
-              <a href="#" class="btn11 first-screen__btn">Перейти в каталог</a>
+              <div class="tariff-card__contents--wrapper">
+                <span>Количество объявлений</span>
+                <select class="custom-select">
+                  <option value="10">10</option>
+                  <option value="20" selected>20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                </select>
+              </div>
+              <button class="btn10 change-btn">Выбрать тариф</button>
             </div>
           </div>
-          <div class="swiper-slide first-screen__slide">
-            <div class="first-screen__inner">
-              <div class="first-screen__title">
-                Эффективный способ купить и продать зерно
+          <div
+            class="swiper-slide first-screen__slide subs-mob__slide"
+            style="background-image: url('img/tariff-card-bg.png')"
+          >
+            <div class="subs-mob__inner">
+              <h3>Название тарифа</h3>
+              <div class="tariff-card__contents--wrapper">
+                <span>Стоимость</span>
+                <span>1200 р/мес</span>
               </div>
-              <div class="first-screen__subtitle">
-                Найдите надежных партнеров для торговли зерном
+              <div class="tariff-card__contents--wrapper">
+                <span>Срок действия</span>
+                <span>1 месяц</span>
               </div>
-              <a href="#" class="btn11 first-screen__btn">Перейти в каталог</a>
+              <div class="tariff-card__contents--wrapper">
+                <span>Количество объявлений</span>
+                <select class="custom-select">
+                  <option value="10">10</option>
+                  <option value="20" selected>20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                </select>
+              </div>
+              <button class="btn10 change-btn">Выбрать тариф</button>
             </div>
           </div>
         </div>
-        <div
-          class="slider-pag slider-pag--bullets slider-pag--abs slider-pag--green"
-        ></div>
-        @@include("../UI/slider-prev.html") @@include("../UI/slider-next.html")
       </div>
+      <div
+        class="slider-pag slider-pag--bullets slider-pag--abs slider-pag--subs slider-pag--subs-bullet"
+      ></div>
     </div>
 
     <div class="subscription__history-section">
       <h2 class="subscription__heading">История платежей</h2>
 
       <div class="subscription__history-table">
-        <div class="history-row">
+        <div class="row-titles">
           <div>Название тарифа</div>
           <div>Дата оплаты</div>
           <div>Период</div>
@@ -152,7 +194,7 @@
           <div>05.05.2024</div>
           <div>апрель - май 2024</div>
           <div>1200 р</div>
-          <div>Оплачено</div>
+          <div>Оплачен</div>
           <div><button>Электронный чек</button></div>
         </div>
         <div class="history-row">
@@ -160,7 +202,7 @@
           <div>05.05.2024</div>
           <div>апрель - май 2024</div>
           <div>1200 р</div>
-          <div>Не оплачено</div>
+          <div>Не оплачен</div>
           <div><button>Счет на оплату</button></div>
         </div>
         <div class="history-row">
@@ -168,12 +210,12 @@
           <div>05.05.2024</div>
           <div>апрель - май 2024</div>
           <div>1200 р</div>
-          <div>Не оплачено</div>
+          <div>Не оплачен</div>
           <div><button>Оплатить</button></div>
         </div>
       </div>
 
-      <!-- pagination here -->
+      <section class="pagination">pagination</section>
     </div>
   </section>
 </div>

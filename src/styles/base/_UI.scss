@@ -1,4 +1,3 @@
-
 //Scroll
 ::-webkit-scrollbar-track {
   border-radius: 0.4rem;
@@ -95,7 +94,7 @@
     height: 2.4rem;
     object-fit: contain;
     flex-shrink: 0;
-    color: $linkblue; 
+    color: $linkblue;
   }
   @include tab {
     font-size: 1.4rem;
@@ -105,7 +104,7 @@
       height: 2.4rem;
       object-fit: contain;
       flex-shrink: 0;
-      color: $linkblue; 
+      color: $linkblue;
     }
   }
   @include mob {
@@ -162,8 +161,8 @@
     height: 2.4rem;
     object-fit: contain;
     flex-shrink: 0;
-    margin-right: 0.4rem; 
-    color: #2FA51C; 
+    margin-right: 0.4rem;
+    color: #2fa51c;
   }
   &--bez {
     background-color: $paleorange;
@@ -181,13 +180,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: $green3; 
+  color: $green3;
   svg {
     width: 2.4rem;
     height: 2.4rem;
     object-fit: contain;
     flex-shrink: 0;
-    margin-right: 0.4rem; 
+    margin-right: 0.4rem;
   }
   &--bez {
     color: $red;
@@ -209,7 +208,7 @@
     height: 2.4rem;
     object-fit: contain;
     flex-shrink: 0;
-    margin-right: 0.4rem;  
+    margin-right: 0.4rem;
   }
   @include tab {
     font-size: 1.4rem;
@@ -362,7 +361,6 @@
       font-size: 1.4rem;
     }
   }
-
 }
 .btn10 {
   font-weight: 500;
@@ -388,7 +386,6 @@
     padding: 1.1rem 1.6rem;
     border-radius: 0.8rem;
   }
-
 }
 .btn11 {
   font-size: 2rem;
@@ -416,7 +413,6 @@
     padding: 1.2rem 1.6rem;
     border-radius: 1rem;
   }
-
 }
 .open-more {
   display: inline-flex;
@@ -688,7 +684,7 @@
 }
 
 .on-tab {
-  display: none; 
+  display: none;
   @include tab {
     display: block;
   }
@@ -697,7 +693,7 @@
 .slider-next {
   width: 4.8rem;
   height: 6rem;
-  background: var(--blur-white-blure-btns, rgba(255, 255, 255, 0.30));
+  background: var(--blur-white-blure-btns, rgba(255, 255, 255, 0.3));
   backdrop-filter: blur(12px);
   position: absolute;
   z-index: 10;
@@ -712,7 +708,6 @@
     object-fit: contain;
   }
   @include tab {
-
   }
 }
 
@@ -756,6 +751,16 @@
     transform: translateX(-50%) !important;
     z-index: 10 !important;
   }
+  &--subs {
+    .bullet {
+      border-color: $darkgrey;
+      &.active {
+        background-color: #0e582d;
+        border-color: #0e582d;
+      }
+    }
+  }
+
   &--green {
     .bullet {
       border-color: $darkgrey;
@@ -927,7 +932,7 @@
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  &__btn  {
+  &__btn {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
@@ -1067,7 +1072,7 @@
     &--big {
       padding-top: 0.65em;
       line-height: 1.14;
-      &::before {    
+      &::before {
         height: 0.2rem;
         width: 14rem;
       }
@@ -1509,7 +1514,7 @@
 }
 @keyframes preloaderHide {
   0% {
-   opacity: 1;
+    opacity: 1;
   }
   75% {
     opacity: 0;
@@ -1520,8 +1525,6 @@
     z-index: -100;
   }
 }
-
-
 
 .user-head {
   display: flex;
@@ -1671,7 +1674,8 @@
     align-items: center;
     gap: 0.8rem;
     flex-shrink: 0;
-    svg, img {
+    svg,
+    img {
       width: 2.4rem;
       height: 2.4rem;
       object-fit: contain;
@@ -1700,7 +1704,8 @@
     }
     &__link {
       gap: 0.8rem;
-      svg, img {
+      svg,
+      img {
         width: 2rem;
         height: 2rem;
       }
