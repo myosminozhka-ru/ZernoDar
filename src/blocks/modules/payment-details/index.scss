@@ -2,9 +2,9 @@
   display: flex;
 
   &__wrapper {
-    width: 59.8rem;
+    width: 60rem;
     margin-left: 17rem;
-    margin-bottom: 12.1rem;
+    margin-bottom: 13.8rem;
     margin-top: 6rem;
   }
 
@@ -17,12 +17,68 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2.4rem;
+  }
+
+  &__cards-section,
+  &__accs-section {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  &__accs-section {
+    margin-top: 3.2rem;
+  }
+
+  &__auto-section {
+    margin-top: 3.2rem;
+
+    p {
+      font-size: 1.8rem;
+      color: #8c8c8c;
+    }
+  }
+
+  &__card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__card {
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-radius: 1.6rem;
+    padding: 1.6rem;
+
+    .card-type {
+      margin-top: 1.2rem;
+    }
+
+    img {
+      width: 7rem;
+      height: 3rem;
+    }
+  }
+
+  &__acc {
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background-color: #f8f8f8;
+    border-radius: 1.6rem;
+    padding: 1.6rem;
+    margin-bottom: 2.4rem;
   }
 
   &__add-card {
     display: flex;
     align-items: center;
     gap: 1.2rem;
+    margin: 2.4rem 0rem;
 
     span {
       font-size: 1.6rem;
@@ -67,6 +123,40 @@
       margin-left: 0;
       margin-bottom: 2.7rem;
       margin-top: 3.2rem;
+    }
+
+    &__cards-section,
+    &__accs-section {
+      border-bottom: none;
+    }
+
+    &__card {
+      font-size: 1.4rem;
+      color: #8c8c8c;
+
+      img {
+        width: 3rem;
+        height: 2rem;
+      }
+
+      .card-type {
+        display: none;
+      }
+    }
+
+    &__acc {
+      p {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+      .acc-type {
+        display: none;
+      }
+    }
+
+    &__card-list {
+      gap: 1.6rem;
     }
 
     h2 {
