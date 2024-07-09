@@ -166,7 +166,7 @@
           background-color: white;
           padding: 1.6rem;
           border-radius: 1.2rem;
-          margin: 1.4rem 0rem 3.2rem 0rem;
+          margin: 1.4rem 0rem 1.6rem 0rem;
 
           h3 {
             font-size: 1.8rem;
@@ -357,5 +357,15 @@
 
   @include tab {
     display: none;
+  }
+}
+
+.show-more {
+  display: none;
+
+  @include tab {
+    display: block;
+    width: 28.8rem;
+    margin: 0 1.6rem 3.2rem 1.6rem;
   }
 }
