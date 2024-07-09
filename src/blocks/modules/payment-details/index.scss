@@ -18,6 +18,10 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2.4rem;
+
+    @include tab {
+      padding: 0 1.6rem;
+    }
   }
 
   &__cards-section,
@@ -27,6 +31,10 @@
 
   &__accs-section {
     margin-top: 3.2rem;
+
+    @include tab {
+      margin-top: 4.2rem;
+    }
   }
 
   &__auto-section {
@@ -36,6 +44,11 @@
       margin-top: -0.6rem;
       font-size: 1.8rem;
       color: #8c8c8c;
+
+      @include tab {
+        font-size: 1.4rem;
+        padding-left: 1.6rem;
+      }
     }
   }
 
@@ -66,8 +79,8 @@
     .radio-label::before {
       content: "";
       position: absolute;
-      left: -3.45rem;
-      top: 0.1rem;
+      left: -3.4rem;
+      top: 0.15rem;
       width: 2.2rem;
       height: 2.2rem;
       border-radius: 50%;
@@ -81,8 +94,8 @@
       position: absolute;
       left: -2.8rem;
       top: 0.75rem;
-      width: 0.9rem;
-      height: 0.9rem;
+      width: 1rem;
+      height: 1rem;
       border-radius: 50%;
       background-color: #0084cf;
       opacity: 0;
@@ -98,6 +111,13 @@
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
+
+    @include tab {
+      background-color: rgb(255, 255, 255);
+      border-radius: 0.8rem;
+      gap: 1.6rem;
+      padding: 1.6rem;
+    }
   }
 
   &__card {
@@ -108,6 +128,11 @@
     background-color: #f8f8f8;
     border-radius: 1.6rem;
     padding: 1.6rem;
+
+    @include tab {
+      border-radius: 0.8rem;
+      padding: 1rem;
+    }
 
     .card-type {
       margin-top: 1.2rem;
@@ -149,6 +174,8 @@
 
     @include tab {
       gap: 0.8rem;
+      padding-left: 1.6rem;
+      margin-top: -0.08rem;
 
       span {
         font-size: 1.4rem;
@@ -206,6 +233,13 @@
         flex-direction: row-reverse;
         justify-content: space-between;
       }
+
+      margin: 0 1.6rem;
+      padding: 1.2rem;
+      border-radius: 0.8rem;
+      font-size: 1.4rem;
+      color: #8c8c8c;
+
       .acc-type {
         display: none;
       }
