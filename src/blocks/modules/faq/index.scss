@@ -1,0 +1,204 @@
+.faq-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  min-height: 30rem;
+  margin: 0 3.2rem;
+  margin-bottom: 3.2rem;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center calc(50% + 7rem);
+    z-index: 1;
+    border-radius: 3.2rem;
+  }
+
+  &__title {
+    font-size: 4.2rem;
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 auto;
+    width: 79rem;
+    z-index: 2;
+  }
+
+  @include tab {
+    min-height: 19rem;
+    margin: 3.2rem 0;
+
+    &__title {
+      font-size: 2rem;
+      margin-bottom: 1.4rem;
+      padding-top: 6.4rem;
+    }
+
+    &__image {
+      border-radius: 2.4rem;
+      object-position: center;
+      filter: saturate(85%);
+    }
+
+    &__text {
+      font-size: 1.4rem;
+      width: 92vw;
+      padding-bottom: 11rem;
+    }
+  }
+}
+
+.faq-form {
+  width: 100%;
+  margin-bottom: 10rem;
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 3.2rem auto;
+    width: 97rem;
+  }
+
+  &__input-text {
+    display: none;
+  }
+
+  &__inputs-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f4;
+    padding: 3.2rem;
+    border-radius: 2rem;
+    width: 124rem;
+    margin: 0 auto;
+  }
+
+  &__input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.2rem;
+
+    input {
+      width: 57rem;
+      padding: 1.9rem 1.6rem;
+      background-color: #fff;
+      border: none;
+      border-radius: 1.2rem;
+      font-size: 1.8rem;
+    }
+
+    textarea {
+      width: 118rem;
+      height: 10rem;
+      padding: 1.4rem 1.6rem;
+      background-color: #fff;
+      border: none;
+      border-radius: 1.2rem;
+      font-size: 1.8rem;
+      resize: none;
+      margin-bottom: 3.2rem;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #8c8c8c;
+      opacity: 1;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  &__disclaimer {
+    width: 67rem;
+    font-size: 1.4rem;
+  }
+
+  &__button {
+    width: 24rem;
+  }
+
+  @include tab {
+    margin-bottom: 3.9rem;
+
+    &__title {
+      font-size: 1.8rem;
+      text-align: left;
+      margin-left: 1.6rem;
+      margin-bottom: 2.4rem;
+    }
+
+    &__text {
+      display: none;
+    }
+
+    &__inputs-wrapper {
+      padding: 1.6rem;
+      width: 100%;
+    }
+
+    &__input-text {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 2.4rem;
+    }
+
+    &__input-group {
+      gap: 0.8rem;
+
+      input {
+        padding: 1.6rem 0.8rem;
+        border-radius: 0.8rem;
+        font-size: 1.2rem;
+      }
+
+      textarea {
+        height: 4.6rem;
+        padding: 1.6rem 0.8rem;
+        border-radius: 0.8rem;
+        font-size: 1.2rem;
+        overflow: hidden;
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    &__submit {
+      flex-direction: column;
+    }
+
+    &__button {
+      width: 100%;
+    }
+
+    &__disclaimer {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 0.8rem;
+      width: 100%;
+      margin-bottom: 0.6rem;
+    }
+  }
+}
