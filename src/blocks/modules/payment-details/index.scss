@@ -2,7 +2,7 @@
   display: flex;
 
   &__wrapper {
-    width: 60rem;
+    width: 62rem;
     margin-left: 17rem;
     margin-bottom: 13.8rem;
     margin-top: 6rem;
@@ -34,6 +34,9 @@
 
     @include tab {
       margin-top: 4.2rem;
+      background-color: rgb(255, 255, 255);
+      border-radius: 0.8rem;
+      padding: 1.6rem 0rem 1rem 0rem;
     }
   }
 
@@ -52,7 +55,7 @@
     }
 
     @include tab {
-      margin-top: 4rem;
+      margin-top: 2.4rem;
     }
   }
 
