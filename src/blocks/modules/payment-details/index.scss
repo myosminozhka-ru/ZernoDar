@@ -38,6 +38,61 @@
     }
   }
 
+  &__checkboxes-desk {
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    font-size: 1.8rem;
+
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .radio-label {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .radio-label::before {
+      content: "";
+      position: absolute;
+      left: -3.45rem;
+      top: 0.1rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      border: 1px solid #0084cf;
+      background-color: #fff;
+      transition: background 0.2s, border 0.2s;
+    }
+
+    .radio-label::after {
+      content: "";
+      position: absolute;
+      left: -2.8rem;
+      top: 0.75rem;
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 50%;
+      background-color: #0084cf;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    input[type="radio"]:checked + .radio-label::after {
+      opacity: 1;
+    }
+  }
+
   &__card-list {
     display: flex;
     flex-direction: column;
