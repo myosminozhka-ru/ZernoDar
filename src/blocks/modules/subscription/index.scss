@@ -123,6 +123,83 @@
 
       @include tab {
         display: block;
+
+        &__date {
+          display: block;
+          color: #8c8c8c;
+          font-size: 1.2rem;
+          font-weight: 400;
+          padding-left: 1.6rem;
+          padding-bottom: 0.8rem;
+          border-bottom: 1px solid #e5e5e5;
+        }
+
+        &__button {
+          text-align: center;
+          background-color: #ecf0f4;
+          border: none;
+          border-radius: 0.8rem;
+          padding: 1.2rem;
+          margin-top: 2.4rem;
+        }
+
+        &__bot-divider {
+          position: relative;
+          border-top: 1px solid #e5e5e5;
+          bottom: 11.4rem;
+        }
+
+        &__row {
+          font-size: 1.2rem;
+          padding: 1.2rem 0.8rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #f8f8f8;
+          border-radius: 0.8rem;
+        }
+
+        &__main {
+          display: flex;
+          flex-direction: column;
+          gap: 1.6rem;
+          background-color: white;
+          padding: 1.6rem;
+          border-radius: 1.2rem;
+          margin: 1.4rem 0rem 3.2rem 0rem;
+
+          h3 {
+            font-size: 1.8rem;
+            font-weight: 500;
+          }
+        }
+
+        &__status {
+          font-size: 1.2rem;
+          padding: 1.2rem;
+          border-radius: 10rem;
+          border: none;
+          margin-bottom: 1rem;
+
+          &--completed {
+            background: #ebf4ec;
+            width: 8.7rem;
+          }
+
+          &--not-completed {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: #ffe5e4;
+            width: 12.2rem;
+
+            img {
+              display: inline;
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
       }
     }
 
