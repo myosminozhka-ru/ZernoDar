@@ -50,6 +50,10 @@
         padding-left: 1.6rem;
       }
     }
+
+    @include tab {
+      margin-top: 4rem;
+    }
   }
 
   &__checkboxes-desk {
@@ -116,7 +120,7 @@
       background-color: rgb(255, 255, 255);
       border-radius: 0.8rem;
       gap: 1.6rem;
-      padding: 1.6rem;
+      padding: 1.6rem 1.6rem 5rem 1.6rem;
     }
   }
 
@@ -175,7 +179,34 @@
     @include tab {
       gap: 0.8rem;
       padding-left: 1.6rem;
-      margin-top: -0.08rem;
+      margin-top: -3.6rem;
+
+      span {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__add-acc {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 1.6rem 0rem;
+
+    span {
+      font-size: 1.6rem;
+      color: #8c8c8c;
+    }
+
+    img {
+      display: inline;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    @include tab {
+      gap: 0.8rem;
+      padding-left: 1.6rem;
 
       span {
         font-size: 1.4rem;
