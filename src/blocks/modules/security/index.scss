@@ -104,6 +104,11 @@
     margin-bottom: 10px;
   }
 
+  &__link--pass {
+    margin-top: -3.6rem;
+    margin-bottom: 0.6rem;
+  }
+
   &__actions {
     display: flex;
     gap: 0.8rem;
@@ -126,4 +131,8 @@
     border: 1px solid #e5e5e5;
     text-align: center;
   }
+}
+
+#new-pass {
+  margin-top: 2rem;
 }
