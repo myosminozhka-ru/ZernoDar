@@ -1,0 +1,87 @@
+<div class="payment-details">
+  @@include("../lk-nav/index.html")
+
+  <section class="payment-details__wrapper">
+    <div class="payment-details__cards-section">
+      <div class="payment-details__row">
+        <h2>Привязанные карты</h2>
+        <button class="payment-details__desktop-button">
+          <img src="/img/sprites/edit.svg" alt="" />
+          <span>Изменить</span>
+        </button>
+      </div>
+      <div>
+        <ul class="payment-details__card-list">
+          <li class="payment-details__card">
+            <div>
+              <p>**** 8395</p>
+              <p class="card-type">Visa</p>
+            </div>
+            <img src="/img/sprites/visa.svg" alt="" />
+          </li>
+          <li class="payment-details__card">
+            <div>
+              <p>**** 8395</p>
+              <p class="card-type">Master card</p>
+            </div>
+            <img src="/img/sprites/mc.svg" alt="" />
+          </li>
+          <li class="payment-details__card">
+            <div>
+              <p>**** 8395</p>
+              <p class="card-type">Мир</p>
+            </div>
+            <img src="/img/sprites/mir.svg" alt="" />
+          </li>
+        </ul>
+        <button class="payment-details__add-card">
+          <img src="/img/sprites/add.svg" alt="" />
+          <span>Добавить новую карту</span>
+        </button>
+      </div>
+    </div>
+    <div class="payment-details__accs-section">
+      <div class="payment-details__row">
+        <h2>Юридические аккаунты</h2>
+        <button class="payment-details__desktop-button">
+          <img src="/img/sprites/edit.svg" alt="" />
+          <span>Изменить</span>
+        </button>
+      </div>
+      <div class="payment-details__acc">
+        <p class="acc-type">Аккаунт компании</p>
+        <p>Расчетный счет <span>****1234</span></p>
+      </div>
+
+      <button class="payment-details__add-acc">
+        <img src="/img/sprites/add.svg" alt="" />
+        <span>Добавить счет для оплаты</span>
+      </button>
+    </div>
+    <div class="payment-details__auto-section">
+      <div class="payment-details__row">
+        <h2>Автоплатеж</h2>
+        <span class="payment-details__checkboxes-desk">
+          <div>
+            <input type="radio" id="option1" name="radio-group" />
+            <label for="option1" class="radio-label">Включен</label>
+          </div>
+          <div>
+            <input type="radio" id="option2" name="radio-group" checked />
+            <label for="option2" class="radio-label">Отключен</label>
+          </div>
+        </span>
+        <span class="payment-details__toggle-mob">
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </span>
+      </div>
+      <p>
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus.
+      </p>
+    </div>
+  </section>
+</div>
