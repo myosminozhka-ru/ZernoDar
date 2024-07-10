@@ -7,7 +7,7 @@
     width: 124.8rem;
     margin-top: 6.3rem;
     margin-bottom: 10rem;
-    padding: 3.2rem 3.2rem 1.4rem 3.2rem;
+    padding: 3.2rem;
     border-radius: 2rem;
     background: #ffffff;
     box-shadow: 2px 20px 20px rgba(119, 119, 119, 0.03),
@@ -22,7 +22,7 @@
 
   &__item {
     border-bottom: 1px solid #e5e5e5;
-    padding: 1.6rem 0 0.8rem 0;
+    padding: 3rem 0;
 
     &:first-of-type {
       border-top: 1px solid #e5e5e5;
@@ -30,23 +30,27 @@
 
     &:last-child {
       border-bottom: none;
-      padding: 1.6rem 0 0 0;
+      padding: 3rem 0 0 0;
     }
   }
 
   &__header-wrapper {
     display: flex;
-    padding: 10px;
-    margin-bottom: 5px;
   }
 
   &__header {
+    display: flex;
     flex-grow: 1;
   }
 
   &__label,
   &__info {
     font-size: 1.8rem;
+  }
+
+  &__label {
+    color: #8c8c8c;
+    width: 20rem;
   }
 
   &__toggle {
@@ -64,10 +68,6 @@
   &__body {
     display: none;
     padding: 10px;
-    background-color: #f9f9f9;
-    border-left: 2px solid #ddd;
-    border-right: 2px solid #ddd;
-    border-bottom: 2px solid #ddd;
   }
 
   &__input:checked ~ .security__body {
