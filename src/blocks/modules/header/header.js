@@ -39,16 +39,17 @@ export default class Header {
   }
   openSearch() {
     
-    console.log($('.nav').length)
     $('.nav').addClass('hide')
     $('.header-search').addClass('open')
     $(this).addClass('hide')
+    $('.drop-search').addClass('open')
     $('body').addClass('lock')
   }
   closeSearch() {
     $('.nav').removeClass('hide')
     $('.header-search').removeClass('open')
     $('.trig-open-search').removeClass('hide')
+    $('.drop-search').removeClass('open')
     $('body').removeClass('lock')
   }
   toggleHandler() {
@@ -59,7 +60,8 @@ export default class Header {
         !$(event.target).closest('.header-search').length &&
         !$(event.target).closest('.trig-open-search').length &&
         !$(event.target).closest('[data-modal]').length &&
-        !$(event.target).closest('[data-class]').length
+        !$(event.target).closest('[data-class]').length &&
+        !$(event.target).closest('.drop-search__inner').length
       ) {
         that.closeSearch();
       }

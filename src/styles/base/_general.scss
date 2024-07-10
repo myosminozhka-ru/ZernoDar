@@ -20,7 +20,8 @@ body {
   font-size: 1.6rem;
   padding-top: 9.6rem;
 
-  &.lock {
+  &.lock,
+  &.lock2 {
     overflow: hidden;
   }
 

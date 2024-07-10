@@ -104,10 +104,12 @@ export default class Sidebar {
   modal() {
     $('.js-open-filter').on('click', () => {
       $('.catalog-sidebar__modal').addClass('open')
+      $('body').addClass('lock2')
     })
 
     $('.js-close-filter').on('click', () => {
       $('.catalog-sidebar__modal').removeClass('open')
+      $('body').removeClass('lock2')
     })
 
     $('.js-open-map').on('click', () => {
@@ -129,20 +131,22 @@ export default class Sidebar {
   }
 
   category() {
-    $('.filter-list__item').each(function( index ) {
-      console.log(this);
-      const that = this
-      $(this).children('.filter-list__title').on('click', function() {
-        if ($(that).hasClass('open')) {
-          $('.filter-list__item').removeClass('hide')
-          $(that).removeClass('open')
-        } else {
-          $('.filter-list__item').toggleClass('hide')
-          $(that).toggleClass('hide')
-          $(that).toggleClass('open')
-        }
-        // $('.filter-list__item').toggleClass('hide')
-      })
+    $('.catalog-wrapper').each(function( index ) {
+      const thatwrapper = this;
+      $(thatwrapper).find('.filter-list__item').each(function( index ) {
+        const that = this
+        $(this).find('.filter-list__title').on('click', function() {
+          if ($(that).hasClass('open')) {
+            $(thatwrapper).find('.filter-list__item').removeClass('hide')
+            $(that).removeClass('open')
+          } else {
+            $(thatwrapper).find('.filter-list__item').toggleClass('hide')
+            $(that).toggleClass('hide')
+            $(that).toggleClass('open')
+          }
+          // $('.filter-list__item').toggleClass('hide')
+        })
+      });
     });
   }
 

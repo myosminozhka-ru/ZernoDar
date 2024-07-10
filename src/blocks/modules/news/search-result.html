@@ -1,0 +1,14 @@
+<div class="search-result">
+  <div class="search-result__subscripe">
+    <button class="btn3" data-class="news-subs">Подписаться на новости</button>
+  </div>
+  <div class="search-result__list">
+    @@include("./card.html")
+    @@include("./card.html")
+    @@include("./card.html")
+    @@include("./card.html")
+  </div>
+</div>
+@@include("../modal/modalNewsSubs.html", {
+  name: 'news-subs',
+})

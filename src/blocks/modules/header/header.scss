@@ -286,7 +286,7 @@
     }
   }
   @include tab {
-    padding: 2.4rem;
+    padding: 2.421rem 2.4rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -302,7 +302,7 @@
     &.open {
       transition: width 400ms ease-in;
 
-      transform: translateY(120%);
+      transform: translateY(0);
       width: 100vw;
     }
     &__magnific {
@@ -328,10 +328,10 @@
       transform: translateY(0);
     }
   }
-  @include tab {
-    padding: 1.6rem;
+  @include mob {
+    padding: 1.221rem 1.6rem;
     &.open {
-      transform: translateY(110%);
+      transform: translateY(0%);
     }
   }
 }
