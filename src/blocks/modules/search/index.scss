@@ -1,0 +1,140 @@
+.main-tab {
+  &__top {
+    padding: 0 3.2rem;
+    margin-bottom: 3.1rem;
+  }
+  &__mtitle {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 3.1rem;
+  }
+  &__tabs {
+    display: flex;
+    align-items: center;
+  }
+  &__tab {
+    font-size: 1.6rem;
+    color: $darkgrey;
+    padding: 1.4rem 5rem;
+    border-bottom: 0.1rem solid $lightgrey;
+    transition: all 200ms;
+    &.active {
+      color: $black;
+      border-color: $black;
+    }
+    &:hover {
+      color: $black;
+    }
+  }
+  &__block {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  @include tab {
+    &__top {
+      padding: 0 2.4rem;
+      margin-bottom: 2rem;
+      @include mob {
+        padding: 0 1.6rem;
+        margin-bottom: 1.6rem;
+      }
+    }
+    &__mtitle {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    &__tabs {
+      justify-content: space-between;
+    }
+    &__tab {
+      font-size: 1.2rem;
+      padding: 1rem 0.5rem;
+      border-bottom: 0.1rem solid transparent;
+    }
+  }
+}
+
+.drop-search {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: calc(100vh - 9.8rem);
+  background: var(--light-grey, rgba(0, 0, 0, 0.10));
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1.8rem;    
+  padding-right: 15rem;
+  overflow: auto;
+  display: none;
+  &.open {
+    display: flex;
+  }
+  &__inner {
+    width: 131.2rem;
+    border-radius: 2rem;
+    padding: 3.2rem;
+    background-color: $white;
+  }
+  &__tabs {
+    display: flex;
+    align-items: center;
+  }
+  &__tab {
+    font-size: 1.6rem;
+    color: $darkgrey;
+    padding: 1.4rem 5rem;
+    border-bottom: 0.1rem solid $lightgrey;
+    transition: all 200ms;
+    &.active {
+      color: $black;
+      border-color: $black;
+    }
+    &:hover {
+      color: $black;
+    }
+  }
+  &__block {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  .card-ad-relative {
+    box-shadow: none;
+    margin: 0;
+  }
+  .card-ad-relative__thead,
+  .card-ad-relative__tbody {
+    box-shadow: none;
+  }
+  @include tab {
+    padding-top: 0.8rem;    
+    padding-right: 0;
+    height: calc(100vh - 8rem);
+    @include mob {
+      height: calc(100vh - 5.6rem);
+    }
+    &__inner {
+      width: 100%;
+      border-radius: 1.6rem;
+      padding: 2.4rem;
+      @include mob {
+        padding: 1.6rem;
+      }
+    }
+    &__tabs {
+      justify-content: space-between;
+    }
+    &__tab {
+      font-size: 1.2rem;
+      padding: 1rem 0;
+      border-bottom: 0.1rem solid transparent;
+    }
+
+  }
+}

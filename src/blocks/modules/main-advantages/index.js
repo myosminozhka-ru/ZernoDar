@@ -10,5 +10,7 @@ export default function() {
       clickable: true,
     },
   });
-  swiper.slideNext()
+  if (swiper?.mounted === true) {
+    swiper.slideNext()
+  }
 }

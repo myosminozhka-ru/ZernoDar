@@ -1,0 +1,113 @@
+<form class="catalog-sidebar">
+  <div class="catalog-sidebar__inner">
+    <div class="catalog-sidebar__mobile">
+      <div class="catalog-sidebar__switch">
+        <div class="switch-button">
+          <button class="switch-button__item active">Предложение</button>
+          <button class="switch-button__item">Спрос</button>
+        </div>
+      </div>
+      <div class="catalog-sidebar__undercategoty">
+        <div class="switch-train">
+          <ul>
+            <li><a href="#" class="active">Зерновые культуры</a></li>
+            <li><a href="#">Масличные культуры</a></li>
+            <li><a href="#">Посевной материал</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="catalog-sidebar__btns">
+        <button class="btn4 js-open-filter">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#filter-alt"></use>
+          </svg>
+          Фильтры
+        </button>
+        <button class="btn4" data-class="sort-catalog">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#up-down-arrow"></use>
+          </svg>
+          Сортировка
+        </button>
+      </div>
+    </div>
+    <div class="catalog-sidebar__modal">
+      <div class="catalog-sidebar__head">
+        <button class="catalog-sidebar__head-close js-close-filter">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#x"></use>
+          </svg>
+        </button>
+        <span class="str">Фильтры</span>
+      </div>
+      <div class="catalog-sidebar__modal-inner">
+        <div class="catalog-sidebar__switch">
+          <div class="switch-button">
+            <button class="switch-button__item active">Предложение</button>
+            <button class="switch-button__item">Спрос</button>
+          </div>
+        </div>
+        <div class="catalog-sidebar__filter">
+          <div class="filter">
+            <div class="filter__inner">
+              <div class="filter__list">
+                <div class="filter__item">
+                  <div class="filter__title">Категории</div>
+                  <ul class="checkbox-list">
+                    <li>
+                      <label>
+                        <input type="checkbox">
+                        Зерновые культуры
+                        <i></i>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input type="checkbox">
+                        Масличные культуры
+                        <i></i>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input type="checkbox">
+                        Посевной материал
+                        <i></i>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="filter__item">
+                  <div class="filter__title">Тип продукции</div>
+                  <ul class="checkbox-list">
+                    <li>
+                      <label>
+                        <input type="checkbox">
+                        Продовольственный
+                        <i></i>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input type="checkbox">
+                        Кормовой
+                        <i></i>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="filter__item">
+                  <button class="btn3 filter__apply js-apply-filter">Применить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @@include("../modal/modalSort.html", {
+    name: "sort-catalog"
+  })
+</form>
