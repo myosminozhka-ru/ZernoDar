@@ -36,10 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
         oldPasswordWrapper.setAttribute("id", "old-pass-wrapper");
 
         oldPasswordWrapper.innerHTML = `
-          <input type="password" class="security__input-field" id="old-pass-input" style="margin-top: -0.8rem"/>
+          <input type="password" class="security__input-field" id="old-pass-input" style="margin-top: -0.6rem"/>
         `;
 
         securityHeader.appendChild(oldPasswordWrapper);
+      } else if (securityHeader.classList.contains("security__header--email")) {
+        // Handle email-specific logic if needed
+      } else if (securityHeader.classList.contains("security__header--phone")) {
+        // Handle phone-specific logic if needed
       }
     });
 
@@ -49,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         body.style.display = "none";
         toggleButton.style.display = "block";
 
-        if (!securityHeader.classList.contains("security__header--password")) {
+        if (securityLabel.textContent === "Старый пароль") {
           securityLabel.textContent = "Пароль";
           infoSpan.style.display = "block";
           securityHeader.classList.add("security__header--password");
@@ -59,6 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
           if (oldPasswordWrapper) {
             oldPasswordWrapper.remove();
           }
+        } else if (
+          securityHeader.classList.contains("security__header--email")
+        ) {
+          // Revert email-specific logic if needed
+        } else if (
+          securityHeader.classList.contains("security__header--phone")
+        ) {
+          // Revert phone-specific logic if needed
         }
       });
     }
