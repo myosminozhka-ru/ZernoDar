@@ -15,22 +15,26 @@
           <label for="security-email" class="security__toggle">Изменить</label>
         </div>
         <div class="security__body">
-          <input
-            type="email"
-            class="security__input-field"
-            placeholder="Новый Email"
-          />
-          <input
-            type="password"
-            class="security__input-field"
-            placeholder="Пароль"
-          />
-          <a href="#" class="security__link">Забыли пароль?</a>
-          <div class="security__actions">
-            <button class="security__button-save">Сохранить</button>
-            <label for="security-email" class="security__button-cancel"
-              >Отмена</label
-            >
+          <div class="security__body__input-wrapper">
+            <span class="security__body__title">Новый Email</span>
+            <input id="email" type="email" class="security__input-field" />
+          </div>
+          <div class="security__body__input-wrapper">
+            <span class="security__body__title">Пароль</span>
+            <input
+              id="password"
+              type="password"
+              class="security__input-field"
+            />
+          </div>
+          <div>
+            <a href="#" class="security__link">Забыли пароль?</a>
+            <div class="security__actions">
+              <button class="security__button-save">Сохранить</button>
+              <label for="security-email" class="security__button-cancel">
+                Отмена
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -59,16 +63,11 @@
             <span class="security__label">Телефон</span>
             <span class="security__info">+7 000 000 000</span>
           </div>
-          <input
-            type="checkbox"
-            id="security-phone"
-            class="security__input"
-          />
-          <label for="security-phone" class="security__toggle"
-            >Изменить</label
-          >
+          <input type="checkbox" id="security-phone" class="security__input" />
+          <label for="security-phone" class="security__toggle">Изменить</label>
         </div>
         <div class="security__body"></div>
       </div>
+    </div>
   </section>
 </div>

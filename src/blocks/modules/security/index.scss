@@ -67,7 +67,18 @@
 
   &__body {
     display: none;
-    padding: 10px;
+    padding: 2.2rem 0;
+
+    &__input-wrapper {
+      display: flex;
+      align-items: baseline;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      color: #8c8c8c;
+      width: 20rem;
+    }
   }
 
   &__input:checked ~ .security__body {
@@ -75,22 +86,18 @@
   }
 
   &__input-field {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 98.4rem;
+    padding: 1.4rem;
+    margin-bottom: 2.4rem;
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 1.6rem;
   }
 
   &__link {
     display: block;
     color: #0084cf;
     margin-bottom: 10px;
-  }
-
-  &__actions {
-    display: flex;
-    justify-content: space-between;
   }
 
   &__button-save,
