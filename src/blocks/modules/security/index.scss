@@ -67,7 +67,7 @@
 
   &__body {
     display: none;
-    padding-top: 2.2rem;
+    padding-top: 3.2rem;
 
     &__input-wrapper {
       display: flex;
@@ -81,7 +81,7 @@
     }
   }
 
-  &__input:checked ~ .security__body {
+  .security__input:checked ~ .security__body {
     display: block;
   }
 

@@ -26,10 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleButton.style.display = "none";
     });
 
-    cancelButton.addEventListener("click", function () {
-      checkbox.checked = false;
-      body.style.display = "none";
-      toggleButton.style.display = "block";
-    });
+    if (cancelButton) {
+      cancelButton.addEventListener("click", function () {
+        checkbox.checked = false;
+        body.style.display = "none";
+        toggleButton.style.display = "block";
+      });
+    }
   });
 });
