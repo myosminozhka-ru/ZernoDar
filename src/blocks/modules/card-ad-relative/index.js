@@ -1,6 +1,6 @@
 import $ from "jquery";
 export default function init(className) {
-  $(className + ' .switch-button__item').on('click', function (e) {
+  $(document).on('click', className + ' .switch-button__item',function (e) {
     e.preventDefault();
     $(className + ' .switch-button__item').removeClass('active')
     $(this).addClass('active')

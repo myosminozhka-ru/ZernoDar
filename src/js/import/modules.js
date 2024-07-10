@@ -12,6 +12,7 @@ import article from "%modules%/news/index";
 import firstScreen from "%modules%/first-screen/index";
 import partners from "%modules%/partners/index";
 import mainAdvantages from "%modules%/main-advantages/index";
+import search from "%modules%/search/index";
 
 addEventListener('DOMContentLoaded', () => {
   more('.card-ad-top__list ul li', '.card-ad-top__list .card-ad-top__table-more .open-more2', 6)
@@ -32,12 +33,14 @@ addEventListener('DOMContentLoaded', () => {
   firstScreen()
   partners()
   mainAdvantages()
+  search()
   window.app = {
     header: new Header(),
     textSellerModal: new Modal('text-seller'),
     tabReqModal: new Modal('tab-req'),
     ratingModal: new Modal('rating'),
     sortCatalogModal: new Modal('sort-catalog'),
+    sortCompamyModal: new Modal('sort-compamy'),
     newsSubsModal: new Modal('news-subs'),
     sidebar: new Sidebar(),
   }

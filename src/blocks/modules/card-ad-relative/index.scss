@@ -53,6 +53,11 @@
     background-color: $white;
     @include block-shadow2;
   }
+  &__show-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.4rem;
+  }
   @include tab {
     &__head {
       flex-direction: column;
