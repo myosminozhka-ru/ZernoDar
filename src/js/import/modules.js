@@ -13,38 +13,59 @@ import firstScreen from "%modules%/first-screen/index";
 import partners from "%modules%/partners/index";
 import mainAdvantages from "%modules%/main-advantages/index";
 import security from "%modules%/security/index";
+import signupSwitch from "%modules%/signup/index";
 import search from "%modules%/search/index";
 
-addEventListener('DOMContentLoaded', () => {
-  more('.card-ad-top__list ul li', '.card-ad-top__list .card-ad-top__table-more .open-more2', 6)
+addEventListener("DOMContentLoaded", () => {
+  more(
+    ".card-ad-top__list ul li",
+    ".card-ad-top__list .card-ad-top__table-more .open-more2",
+    6
+  );
 
-  more('.card-ad-top__table--harakteristitki tr', '.card-ad-top__table--harakteristitki .card-ad-top__table-more .open-more', 4)
+  more(
+    ".card-ad-top__table--harakteristitki tr",
+    ".card-ad-top__table--harakteristitki .card-ad-top__table-more .open-more",
+    4
+  );
 
-  more('.card-ad-description__content ul li', '.card-ad-description__more .open-more2', 1)
+  more(
+    ".card-ad-description__content ul li",
+    ".card-ad-description__more .open-more2",
+    1
+  );
 
-  more('.catalog-update__top2 .switch-train li', '.catalog-update__top2 .btn4', 6)
+  more(
+    ".catalog-update__top2 .switch-train li",
+    ".catalog-update__top2 .btn4",
+    6
+  );
 
-  hideShowBlock('.article .article__nav .article-nav__list', '.article .article__nav .open-more2')
+  hideShowBlock(
+    ".article .article__nav .article-nav__list",
+    ".article .article__nav .open-more2"
+  );
 
-  cardAdMap()
-  review()
-  cardAdRelative('.card-ad-relative')
-  cardRatingModal()
-  article()
-  firstScreen()
-  partners()
-  mainAdvantages()
-  security()
-  search()
+  cardAdMap();
+  review();
+  cardAdRelative(".card-ad-relative");
+  cardRatingModal();
+  article();
+  firstScreen();
+  partners();
+  mainAdvantages();
+  security();
+  signupSwitch();
+  search();
   window.app = {
     header: new Header(),
-    textSellerModal: new Modal('text-seller'),
-    tabReqModal: new Modal('tab-req'),
-    ratingModal: new Modal('rating'),
-    sortCatalogModal: new Modal('sort-catalog'),
-    sortCompamyModal: new Modal('sort-compamy'),
-    newsSubsModal: new Modal('news-subs'),
-    modalReviewComplaint: new Modal('review-complaint'),
+    textSellerModal: new Modal("text-seller"),
+    tabReqModal: new Modal("tab-req"),
+    ratingModal: new Modal("rating"),
+    sortCatalogModal: new Modal("sort-catalog"),
+    sortCompamyModal: new Modal("sort-compamy"),
+    newsSubsModal: new Modal("news-subs"),
+    modalReviewComplaint: new Modal("review-complaint"),
     sidebar: new Sidebar(),
-  }
-})
+  };
+});

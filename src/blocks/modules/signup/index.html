@@ -1,0 +1,123 @@
+<div class="registration">
+  <h1 class="registration__title">Регистрация</h1>
+  <div class="registration__switch">
+    <input type="radio" id="juridical" name="switch" checked />
+    <input type="radio" id="physical" name="switch" />
+    <label for="juridical" class="registration__label" id="juridicalLabel"
+      >Юр. лицо</label
+    >
+    <label for="physical" class="registration__label" id="physicalLabel"
+      >Физ. лицо</label
+    >
+    <div class="registration__slider"></div>
+  </div>
+  <form
+    id="juridicalForm"
+    class="registration__form registration__form--active"
+  >
+    <input
+      type="text"
+      class="registration__input"
+      placeholder="*Название организации"
+      required
+    />
+    <input
+      type="text"
+      class="registration__input"
+      placeholder="*Тип организации"
+      required
+    />
+    <input
+      type="text"
+      class="registration__input"
+      placeholder="*ИНН"
+      required
+    />
+    <input
+      type="text"
+      class="registration__input"
+      placeholder="*Телефон"
+      required
+    />
+    <input
+      type="email"
+      class="registration__input"
+      placeholder="*Email"
+      required
+    />
+    <input
+      type="text"
+      class="registration__input"
+      placeholder="Контактное лицо"
+    />
+    <input type="text" class="registration__input" placeholder="Адрес" />
+    <input type="text" class="registration__input" placeholder="Сайт" />
+    <input
+      type="password"
+      class="registration__input"
+      placeholder="Пароль"
+      required
+    />
+    <input
+      type="password"
+      class="registration__input"
+      placeholder="Повторите пароль"
+      required
+    />
+    <div class="registration__confirm">
+      <span>Отправить подтверждающий код</span>
+      <label>
+        <input type="radio" name="confirm" value="sms" required /> Sms по номеру
+        телефона
+      </label>
+      <label>
+        <input type="radio" name="confirm" value="email" /> На email
+      </label>
+    </div>
+    <button type="submit" class="registration__submit">Продолжить</button>
+  </form>
+  <form id="physicalForm" class="registration__form">
+    <input
+      type="text"
+      class="registration__input"
+      placeholder="*Название организации"
+      required
+    />
+    <input
+      type="text"
+      class="registration__input"
+      placeholder="*Телефон"
+      required
+    />
+    <input
+      type="email"
+      class="registration__input"
+      placeholder="*Email"
+      required
+    />
+    <input type="text" class="registration__input" placeholder="Адрес" />
+    <input
+      type="password"
+      class="registration__input"
+      placeholder="Пароль"
+      required
+    />
+    <input
+      type="password"
+      class="registration__input"
+      placeholder="Повторите пароль"
+      required
+    />
+    <div class="registration__confirm">
+      <span>Отправить подтверждающий код</span>
+      <label>
+        <input type="radio" name="confirm" value="sms" required /> Sms по номеру
+        телефона
+      </label>
+      <label>
+        <input type="radio" name="confirm" value="email" /> На email
+      </label>
+    </div>
+    <button type="submit" class="registration__submit">Продолжить</button>
+  </form>
+</div>
