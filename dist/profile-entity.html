@@ -373,11 +373,7 @@
         </li>
         
           <li>
-            <a href="#" class="link">Компании</a>
-          </li>
-        
-          <li>
-            <a href="#" class="link">АО "Сельскозозяйственная Маревская Корпорация"</a>
+            <a href="#" class="link">Личный кабинет</a>
           </li>
         
       </ul>
@@ -389,11 +385,65 @@
     </div>
   </div>
 </div>
-  
+  <div class="profile">
+  <section class="lk-nav">
+  <h1 class="lk-nav__heading">Личный кабинет</h1>
+
+  <div class="lk-nav__menu">
+    <ul class="lk-nav__list">
+      <a href="/advertisements.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Объявления
+      </a>
+      <a href="/profile.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Профиль
+      </a>
+      <a href="/subscription.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Подписка
+      </a>
+      <a href="/security.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Безопасность
+      </a>
+      <a href="/payment-details.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Платежные данные
+      </a>
+    </ul>
+  </div>
+</section>
+
+
+  <section class="profile__inner">
+    
 <div class="card-user-wrapper">
   <div class="card-user-wrapper__inner">
     <div class="card-user-wrapper__left">
-       
+
+      <div class="card-user-wrapper__top">
+        
 <div class="card-user-top">
   <div class="user-head user-head--lg">
     <div class="user-head__ava">
@@ -432,12 +482,15 @@
     </div>
   </div>
 </div>
+        <div class="card-user-wrapper__edit">
+          <button class="btn3">Редактировать</button>
+        </div>
+      </div>
       <div class="base-tab">
         <div class="base-tab__list">
           <a href="#description" class="base-tab__item base-tab__item--tab active">Описание</a>
           <a href="#requisites" class="base-tab__item base-tab__item--tab">Реквизиты</a>
           <a href="#review" class="base-tab__item base-tab__item--scroll">Отзывы</a>
-          <a href="#adds" class="base-tab__item base-tab__item--scroll">Объявление</a>
         </div>
         <div class="base-tab__block base-tab__block--tab active" id="description">
           <div class="base-tab__text-block">
@@ -452,9 +505,42 @@
             </div>
           </div>
         </div>
-        <div class="card-user-wrapper__user-mob">
-          <div class="card-user-side-contact">
-  <div class="card-user-side-contact__title">Контакты</div>
+        <div class="base-tab__block base-tab__block--tab base-tab__block--modal  close-x" id="requisites" data-modal="tab-req">
+          <div class="base-tab__text-block">
+            <div class="modal__top">
+              <div class="modal__title">Реквизиты</div>
+              <button class="modal__close close-x" type="button">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#x"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="base-tab__text-title">Карта компании</div>
+            <div class="base-tab__text">
+              <ul>
+                <li><span>Краткое наименование:</span> АО "Сельскозозяйственная Маревская Корпорация"</li>
+                <li><span>Полное наименование:</span> Акционерное общество "Сельскозозяйственная Маревская Корпорация"</li>
+                <li><span>Юридический адрес:</span> Марёвский р-н, с Велилы, ул Советов, д. 7, помещ. 2 каб. 15 175353, г. Марево, Новгородская область</li>
+                <li><span>ИНН:</span> 5300005224</li>
+                <li><span>ОГРН:</span> 1225300003147</li>
+                <li><span>КПП:</span> 530001001</li>
+                <li><span>Дата регистрации:</span> 11 Августа 2022</li>
+                <li><span>Тип организации:</span> Юридическое лицо</li>
+                <li><span>Статус организации:</span> Действующая</li>
+                <li><span>ФИО руководителя:</span> Духанин Дмитрий Юрьевич</li>
+                <li><span>Должность руководителя:</span> ПРЕЗИДЕНТ</li>
+                <li><span>Тип подразделения:</span> Головная организация</li>
+                <li><span>Количество филиалов:</span> 0</li>
+                <li><span>Код ОКВЭД:</span> 01.11 — основной код ОКВЭД</li>
+                <li><span>Код ОКОПФ:</span> 12267</li>
+                <li><span>ОПФ:</span> Непубличное акционерное общество (НАО)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="base-tab__block">
+          <div class="card-user-profile-contact">
+  <div class="card-user-profile-contact__title">Контакты</div>
   <div class="user-contact">
     <div class="user-contact__item">
       <a href="#" class="user-contact__link">
@@ -510,55 +596,36 @@
       </span>
     </div>
   </div>
-  <div class="to-seller">
-    <button class="write-to-seller" data-class="text-seller">
-      Написать продавцу
-    </button>
-    <button class="to-favourite">
-      <svg>
-        <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
-      </svg>
-    </button>
-  </div>
 </div>
+        </div>
+        <div class="base-tab__block">
           
-<div class="card-ad-user-rating">
-  <div class="card-ad-user-rating__top">
+<div class="profile-user-rating">
+  <div class="profile-user-rating__top">
     Рейтинг компании
-    <div class="helptip">
-      <div class="helptip__icon" style="color: #8C8C8C;">
-        <svg>
-          <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
-        </svg>
-      </div>
-      <div class="helptip__content"></div>
-    </div>
   </div>
-  <div class="card-ad-user-rating__content">
-    <div class="card-ad-user-rating__subtitle">48 важных фактов</div>
-    <div class="card-ad-user-rating__list">
-      <div class="card-ad-user-rating__rates">
+  <div class="profile-user-rating__content">
+    <div class="profile-user-rating__subtitle">48 важных фактов</div>
+    <div class="profile-user-rating__list">
+      <div class="profile-user-rating__rates">
         <svg style="color: #0F582D;">
           <use xlink:href="img/sprites/sprite.svg#check-mark-circle"></use>
         </svg>
         42
       </div>
-      <div class="card-ad-user-rating__rates">
+      <div class="profile-user-rating__rates">
         <svg style="color: #FCB040;">
           <use xlink:href="img/sprites/sprite.svg#warning"></use>
         </svg>
         4
       </div>
-      <div class="card-ad-user-rating__rates">
+      <div class="profile-user-rating__rates">
         <svg style="color: #FF0000;">
           <use xlink:href="img/sprites/sprite.svg#decrease-circle"></use>
         </svg>
         2
       </div>
     </div>
-  </div>
-  <div class="card-ad-user-rating__footer">
-    <button class="btn3" data-class="rating">Просмотреть</button>
   </div>
 </div>
         </div>
@@ -601,88 +668,6 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div class="base-tab__block base-tab__block--adds" id="adds">
-          
-<div class="card-ad-relative">
-  <div class="card-ad-relative__inner">
-    <div class="h2 card-ad-relative__mtitle">
-      <h2>Объявления компании</h2>
-    </div>
-    <div class="card-ad-relative__switch">
-      <div class="switch-button switch-button--fit">
-        <button class="switch-button__item active" data-index="0">Предложение</button>
-        <button class="switch-button__item" data-index="1">Спрос</button>
-      </div>
-    </div>
-    <div class="card-ad-relative__table" data-index="0">
-      <div class="card-ad-relative__thead">
-        <div class="card-ad-relative__tr">
-          <div class="card-ad-relative__td">Объявление</div>
-          <div class="card-ad-relative__td">Цена</div>
-          <div class="card-ad-relative__td">Количество</div>
-          <div class="card-ad-relative__td">Локация</div>
-        </div>
-      </div>
-      <div class="card-ad-relative__tbody">
-        <a href="" class="card-ad-relative__tr">
-          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
-            в Новгородской области</div>
-          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
-          <div class="card-ad-relative__td">35 тонн</div>
-          <div class="card-ad-relative__td">Казань</div>
-        </a>
-        <a href="" class="card-ad-relative__tr">
-          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
-            в Новгородской области</div>
-          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
-          <div class="card-ad-relative__td">35 тонн</div>
-          <div class="card-ad-relative__td">Казань</div>
-        </a>
-        <a href="" class="card-ad-relative__tr">
-          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
-            в Новгородской области</div>
-          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
-          <div class="card-ad-relative__td">35 тонн</div>
-          <div class="card-ad-relative__td">Казань</div>
-        </a>
-      </div>
-    </div>
-    <div class="card-ad-relative__table hide" data-index="1">
-      <div class="card-ad-relative__thead">
-        <div class="card-ad-relative__tr">
-          <div class="card-ad-relative__td">Объявление</div>
-          <div class="card-ad-relative__td">Цена</div>
-          <div class="card-ad-relative__td">Количество</div>
-          <div class="card-ad-relative__td">Локация</div>
-        </div>
-      </div>
-      <div class="card-ad-relative__tbody">
-        <a href="" class="card-ad-relative__tr">
-          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
-            в Новгородской области</div>
-          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
-          <div class="card-ad-relative__td">35 тонн</div>
-          <div class="card-ad-relative__td">Казань</div>
-        </a>
-        <a href="" class="card-ad-relative__tr">
-          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
-            в Новгородской области</div>
-          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
-          <div class="card-ad-relative__td">35 тонн</div>
-          <div class="card-ad-relative__td">Казань</div>
-        </a>
-        <a href="" class="card-ad-relative__tr">
-          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
-            в Новгородской области</div>
-          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
-          <div class="card-ad-relative__td">35 тонн</div>
-          <div class="card-ad-relative__td">Казань</div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
         </div>
         <div class="base-tab__block" id="review">
           <div class="user-reviews">
@@ -738,16 +723,7 @@
         <div class="review-stars__val">0</div>
       </div>
     </div>
-    <div class="review-stars__info">
-      <div class="review-stars__info-title">Рейтинг - это среднее значение <br>
-        арифметическое оценок<br>
-        пользователей.</div>
-      <button class="review-stars__leave-review">Оставить отзыв</button>
-    </div>
   </div>
-</div>
-<div class="review-stars__out">
-  <button class="review-stars__leave-review">Оставить отзыв</button>
 </div>
   <div class="review-list">
   <div class="review-list__inner">
@@ -787,6 +763,11 @@
               </svg>
             </div>
           </div>
+          <div class="review-list__warning" data-class="review-complaint">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#warning"></use>
+            </svg>
+          </div>
         </div>
         <div class="review-list__content">
           Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
@@ -818,9 +799,25 @@
                 </div>
               </div>
             </div>
+            <div class="review-list__edit">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#edit"></use>
+              </svg>
+            </div>
           </div>
           <div class="review-list__content">
             Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. 
+          </div>
+          <div class="review-list__edit-answer hide">
+            <div class="review-to-answer">
+              <form class="review-to-answer__content">
+                <textarea type="text" class="review-to-answer__input" placeholder="Введите комментарий">Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. </textarea>
+                <div class="review-to-answer__btns">
+                  <button class="btn3">Изменить</button>
+                  <button class="btn3 btn3--transparent" type="button">Отменить</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -852,6 +849,11 @@
               </svg>
             </div>
           </div>
+          <div class="review-list__warning" data-class="review-complaint">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#warning"></use>
+            </svg>
+          </div>
         </div>
         <div class="review-list__content">
           Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
@@ -870,131 +872,29 @@
             </svg>
           </span>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+        <div class="review-list__to-answer">
+          <div class="review-to-answer">
+            <form class="review-to-answer__content hide">
+              <textarea type="text" class="review-to-answer__input" placeholder="Введите комментарий"></textarea>
+              <div class="review-to-answer__btns">
+                <button class="btn3">Отправить</button>
+                <button class="btn3 btn3--transparent" type="button">Отменить</button>
+              </div>
+            </form>
+            <div class="review-to-answer__open">
+              <button class="btn3">Ответить</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="card-user-wrapper__right">
-      <div class="card-user-side-contact">
-  <div class="card-user-side-contact__title">Контакты</div>
-  <div class="user-contact">
-    <div class="user-contact__item">
-      <a href="#" class="user-contact__link">
-        <svg>
-          <use xlink:href="img/sprites/sprite.svg#contact-mail"></use>
-        </svg>
-        abcd@mail.ru 
-      </a>
-    </div>
-    <div class="user-contact__item">
-      <a href="#" class="user-contact__link">
-        <svg>
-          <use xlink:href="img/sprites/sprite.svg#contact-phone"></use>
-        </svg>
-        + 7 000 000 00 00
-      </a>
-      <div class="user-contact__links">
-        <a href="#" class="user-contact__link">
-          <img src="img/sprites/logos_whatsapp-icon.svg" alt="">
-        </a>
-        <a href="#" class="user-contact__link">
-          <img src="img/sprites/logos_telegram.svg" alt="">
-        </a>
-        <a href="#" class="user-contact__link">
-          <svg>
-            <use xlink:href="img/sprites/sprite.svg#basil_viber-solid"></use>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <div class="user-contact__item">
-      <a href="www.marevcor.ru" target="_blank" class="user-contact__link">
-        <svg>
-          <use xlink:href="img/sprites/sprite.svg#browse"></use>
-        </svg>
-        marevcor.ru
-      </a>
-    </div>
-    <div class="user-contact__item">
-      <span class="user-contact__link">
-        <svg>
-          <use xlink:href="img/sprites/sprite.svg#home"></use>
-        </svg>
-        Новгородская область
-      </span>
-    </div>
-    <div class="user-contact__item">
-      <span class="user-contact__link">
-        <svg>
-          <use xlink:href="img/sprites/sprite.svg#user-6"></use>
-        </svg>
-        Игнатий Игнатьевич  Игнатов
-      </span>
-    </div>
-  </div>
-  <div class="to-seller">
-    <button class="write-to-seller" data-class="text-seller">
-      Написать продавцу
-    </button>
-    <button class="to-favourite">
-      <svg>
-        <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
-      </svg>
-    </button>
   </div>
 </div>
-      
-<div class="card-ad-user-rating">
-  <div class="card-ad-user-rating__top">
-    Рейтинг компании
-    <div class="helptip">
-      <div class="helptip__icon" style="color: #8C8C8C;">
-        <svg>
-          <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
-        </svg>
-      </div>
-      <div class="helptip__content"></div>
-    </div>
-  </div>
-  <div class="card-ad-user-rating__content">
-    <div class="card-ad-user-rating__subtitle">48 важных фактов</div>
-    <div class="card-ad-user-rating__list">
-      <div class="card-ad-user-rating__rates">
-        <svg style="color: #0F582D;">
-          <use xlink:href="img/sprites/sprite.svg#check-mark-circle"></use>
-        </svg>
-        42
-      </div>
-      <div class="card-ad-user-rating__rates">
-        <svg style="color: #FCB040;">
-          <use xlink:href="img/sprites/sprite.svg#warning"></use>
-        </svg>
-        4
-      </div>
-      <div class="card-ad-user-rating__rates">
-        <svg style="color: #FF0000;">
-          <use xlink:href="img/sprites/sprite.svg#decrease-circle"></use>
-        </svg>
-        2
-      </div>
-    </div>
-  </div>
-  <div class="card-ad-user-rating__footer">
-    <button class="btn3" data-class="rating">Просмотреть</button>
-  </div>
 </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal close-x" data-modal="rating">
+<div class="modal modal--text-seller close-x" data-modal="review-complaint">
   <div class="modal__inner">
     <div class="modal__top">
-      <div class="modal__title">Рейтинг компании</div>
+      <div class="modal__title">Пожаловаться на отзыв</div>
       <button class="modal__close close-x" type="button">
         <svg>
           <use xlink:href="img/sprites/sprite.svg#x"></use>
@@ -1002,106 +902,22 @@
       </button>
     </div>
     <div class="modal__content">
-      <div class="card-rating-modal">
-  <div class="card-rating-modal__list">
-    <div class="card-rating-modal__item">
-      <span>На рынке</span><span>5 лет</span>
-    </div>
-    <div class="card-rating-modal__item">
-      <span>Задолженность ФССП  2024</span><span>Отсутсвует</span>
+      <form action="">
+        <textarea class="textarea1" name="" id="" placeholder="Введите сообщение здесь"></textarea>
+        <button class="btn3">Отправить</button>
+      </form>
     </div>
   </div>
-  <div class="card-rating-modal__title">Судебные дела</div>
-  <div class="card-rating-modal__list">
-    <div class="card-rating-modal__item">
-      <span>Всего</span><span>100 судебных дел</span>
-    </div>
-    <div class="card-rating-modal__item">
-      <div class="card-rating-modal__procent" style="width: 50%; background: #ECF4ED;"></div>
-      <span>Выигранных</span><span>75%</span>
-    </div>
-    <div class="card-rating-modal__item">
-      <div class="card-rating-modal__procent" style="width: 50%; background: #F8F1EC;"></div>
-      <span>Проигранных</span><span>75%</span>
-    </div>
-  </div>
-  <div class="card-rating-modal__title">Оборот</div>
-  <table class="card-rating-modal__table">
-    <thead>
-      <tr>
-        <th>Год</th>
-        <th>Доходы</th>
-        <th>Чистая прибыль</th>
-        <th>Расходы</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2024</td>
-        <td>16,97 млн ₽</td>
-        <td>4,4 млн ₽</td>
-        <td>12,5 млн ₽</td>
-      </tr>
-      <tr>
-        <td>2023</td>
-        <td>16,97 млн ₽</td>
-        <td>4,4 млн ₽</td>
-        <td>12,5 млн ₽</td>
-      </tr>
-      <tr>
-        <td>2022</td>
-        <td>16,97 млн ₽</td>
-        <td>4,4 млн ₽</td>
-        <td>12,5 млн ₽</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="card-rating-modal__mobile">
-    <div class="card-rating-modal__thead">
-      <button class="active" data-index="0">2022</button>
-      <button data-index="1">2023</button>
-      <button data-index="2">2024</button>
-    </div>
-    <div class="card-rating-modal__tbody">
-      <div class="card-rating-modal__list" data-index="0">
-        <div class="card-rating-modal__item">
-          <span>Доходы</span><span>16,97 млн ₽</span>
-        </div>
-        <div class="card-rating-modal__item">
-          <span>Чистая прибыль</span><span>4,4 млн ₽</span>
-        </div>
-        <div class="card-rating-modal__item">
-          <span>Расходы</span><span>12,5 млн ₽</span>
-        </div>
-      </div>
-      <div class="card-rating-modal__list hide" data-index="1">
-        <div class="card-rating-modal__item">
-          <span>Доходы</span><span>16,97 млн ₽</span>
-        </div>
-        <div class="card-rating-modal__item">
-          <span>Чистая прибыль</span><span>4,4 млн ₽</span>
-        </div>
-        <div class="card-rating-modal__item">
-          <span>Расходы</span><span>12,5 млн ₽</span>
-        </div>
-      </div>
-      <div class="card-rating-modal__list hide" data-index="2">
-        <div class="card-rating-modal__item">
-          <span>Доходы</span><span>16,97 млн ₽</span>
-        </div>
-        <div class="card-rating-modal__item">
-          <span>Чистая прибыль</span><span>4,4 млн ₽</span>
-        </div>
-        <div class="card-rating-modal__item">
-          <span>Расходы</span><span>12,5 млн ₽</span>
+</div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-    </div>
-  </div>
+  </section>
 </div>
+
 </div>
 
 
@@ -1210,3 +1026,4 @@
         <script src="js/main.js"></script>
     </body>
 </html>
+
