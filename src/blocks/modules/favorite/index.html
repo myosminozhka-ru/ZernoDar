@@ -1,0 +1,19 @@
+<div class="favorite-wrapper">
+  <div class="main-tab">
+    <div class="main-tab__top">
+      <div class="main-tab__mtitle">Избранное</div>
+      <div class="main-tab__tabs">
+        <a href="#search-catalog" class="main-tab__tab active">Объявления 12</a>
+        <a href="#search-company" class="main-tab__tab">Компании 12</a>
+      </div>
+    </div>
+    <div class="main-tab__blocks">
+      <div class="main-tab__block active" id="search-catalog">
+        @@include("../catalog/favorite.html")
+      </div>
+      <div class="main-tab__block" id="search-company">
+        @@include("../catalog/favorite-user.html")
+      </div>
+    </div>
+  </div>
+</div>
