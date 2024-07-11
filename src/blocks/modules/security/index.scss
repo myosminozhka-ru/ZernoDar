@@ -153,12 +153,6 @@
     &__input-wrapper {
       display: flex;
       align-items: baseline;
-
-      &--pass {
-        @include tab {
-          display: none;
-        }
-      }
     }
 
     &__title {
@@ -204,7 +198,11 @@
   }
 
   &__input-field-mobile::placeholder {
-    font-size: 1.2rem;
+    display: none;
+
+    @include tab {
+      font-size: 1.2rem;
+    }
   }
 
   &__bottom-section {
@@ -231,7 +229,7 @@
     margin-bottom: 0.6rem;
 
     @include tab {
-      margin-top: -1rem;
+      margin-top: 0rem;
       margin-bottom: 0;
       font-size: 1.2rem;
     }
@@ -295,12 +293,11 @@
       }
 
       .pass-close {
-        bottom: 7.1rem;
+        bottom: 26.8rem;
       }
 
       .phone-close {
-        background-color: red;
-        bottom: 0;
+        bottom: 14.2rem;
       }
     }
   }
@@ -308,4 +305,8 @@
 
 #new-pass {
   margin-top: 2rem;
+}
+
+.mob-old-pass {
+  margin-top: -1.2rem;
 }
