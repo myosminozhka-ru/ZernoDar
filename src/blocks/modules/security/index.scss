@@ -20,7 +20,6 @@
     @include tab {
       width: 100%;
       margin: 0;
-      background-color: blue;
       padding: 0;
     }
   }
@@ -75,6 +74,9 @@
 
   &__header-wrapper {
     display: flex;
+
+    @include tab {
+    }
   }
 
   &__header {
@@ -117,8 +119,8 @@
 
       @include tab {
         display: block;
-        width: 2rem;
-        height: 2rem;
+        width: 1.8rem;
+        height: 1.8rem;
       }
     }
 
@@ -169,6 +171,7 @@
   &__link {
     display: block;
     color: #0084cf;
+    cursor: pointer;
     margin-bottom: 10px;
   }
 
