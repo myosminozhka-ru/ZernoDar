@@ -74,9 +74,6 @@
 
   &__header-wrapper {
     display: flex;
-
-    @include tab {
-    }
   }
 
   &__header {
@@ -139,15 +136,27 @@
     display: none;
     padding-top: 3.2rem;
 
+    @include tab {
+      padding-top: 1.6rem;
+    }
+
     &__input-wrapper {
       display: flex;
       align-items: baseline;
+
+      @include tab {
+        display: block;
+      }
     }
 
     &__title {
       font-size: 1.8rem;
       color: #8c8c8c;
       width: 20rem;
+
+      @include tab {
+        display: none;
+      }
     }
   }
 
@@ -162,10 +171,36 @@
     background-color: #f8f8f8;
     border: none;
     border-radius: 1.6rem;
+
+    @include tab {
+      display: none;
+    }
+  }
+
+  &__input-field-mobile {
+    display: none;
+
+    @include tab {
+      display: block;
+      width: 100%;
+      padding: 1rem 0.8rem 1.3rem 0.8rem;
+      margin-bottom: 1.6rem;
+      background-color: #f8f8f8;
+      border: none;
+      border-radius: 0.8rem;
+    }
+  }
+
+  &__input-field-mobile::placeholder {
+    font-size: 1.2rem;
   }
 
   &__bottom-section {
     margin-left: 20rem;
+
+    @include tab {
+      margin-left: 0;
+    }
   }
 
   &__link {
@@ -173,16 +208,28 @@
     color: #0084cf;
     cursor: pointer;
     margin-bottom: 10px;
+
+    @include tab {
+      font-size: 1.2rem;
+    }
   }
 
   &__link--pass {
     margin-top: -3.6rem;
     margin-bottom: 0.6rem;
+
+    @include tab {
+      font-size: 1.2rem;
+    }
   }
 
   &__actions {
     display: flex;
     gap: 0.8rem;
+
+    @include tab {
+      gap: 0;
+    }
   }
 
   &__button-save,
@@ -192,15 +239,47 @@
     cursor: pointer;
     font-size: 1.6rem;
     width: 24rem;
+
+    @include tab {
+      padding: 1rem 0rem;
+      margin-top: 0.8rem;
+    }
   }
 
   &__button-save {
     background-color: #ecf0f4;
+
+    @include tab {
+      min-width: 28.8rem;
+      font-size: 1.4rem;
+      border-radius: 0.8rem;
+    }
   }
 
   &__button-cancel {
     border: 1px solid #e5e5e5;
     text-align: center;
+
+    img {
+      display: none;
+    }
+
+    @include tab {
+      border: none;
+
+      span {
+        display: none;
+      }
+
+      img {
+        display: block;
+        position: relative;
+        bottom: 22.6rem;
+        right: 1.8rem;
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+    }
   }
 }
 

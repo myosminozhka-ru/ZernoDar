@@ -23,6 +23,12 @@
           <div class="security__body__input-wrapper">
             <span class="security__body__title">Новый Email</span>
             <input id="email" type="email" class="security__input-field" />
+            <input
+              id="email"
+              type="email"
+              class="security__input-field-mobile"
+              placeholder="Введите новый Email"
+            />
           </div>
           <div class="security__body__input-wrapper">
             <span class="security__body__title">Пароль</span>
@@ -31,6 +37,12 @@
               type="password"
               class="security__input-field"
             />
+            <input
+              id="password"
+              type="password"
+              class="security__input-field-mobile"
+              placeholder="Пароль"
+            />
           </div>
           <div class="security__bottom-section">
             <a href="#" class="security__link">Забыли пароль?</a>
@@ -38,9 +50,10 @@
               <button class="security__button-save" type="submit">
                 Сохранить
               </button>
-              <label for="security-email" class="security__button-cancel"
-                >Отмена</label
-              >
+              <label for="security-email" class="security__button-cancel">
+                <img src="/img/sprites/cancel.svg" alt="" />
+                <span>Отмена</span>
+              </label>
             </div>
           </div>
         </div>
