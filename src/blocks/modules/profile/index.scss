@@ -1,0 +1,33 @@
+.profile {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  .lk-nav {
+    position: sticky;
+  }
+  &__inner {
+    width: 125rem;
+    padding-top: 6.3rem;
+  }
+  .card-user-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @include tab {
+    display: block;
+    .lk-nav {
+      position: static;
+    }
+    &__inner {
+      width: 100%;
+      padding-top: 3.2rem;
+    }
+    .card-user-wrapper {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .base-tab__open-req {
+      margin-bottom: 3.2rem;
+    }
+  }
+}

@@ -44,6 +44,7 @@ addEventListener('DOMContentLoaded', () => {
     sortCatalogModal: new Modal('sort-catalog'),
     sortCompamyModal: new Modal('sort-compamy'),
     newsSubsModal: new Modal('news-subs'),
+    modalReviewComplaint: new Modal('review-complaint'),
     sidebar: new Sidebar(),
   }
 })

@@ -41,3 +41,42 @@
     }
   }
 }
+
+.profile-user-rating {
+  &__top {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+  }
+  &__subtitle {
+    margin-bottom: 0.8rem;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  &__rates {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    svg {
+      width: 2rem;
+      height: 2rem;
+      object-fit: contain;
+      margin-right: 0.8rem;
+    }
+  }
+  @include tab {
+    background-color: $white;
+    padding: 2.4rem;
+    border-bottom: 0.1rem solid #e6e6e6;
+    &__top {
+      font-size: 1.4rem;
+    }
+  }
+  @include mob {
+    padding: 1.6rem;
+  }
+
+}

@@ -2,13 +2,18 @@
 <div class="card-user-wrapper">
   <div class="card-user-wrapper__inner">
     <div class="card-user-wrapper__left">
-       @@include("../card-user-top/index.html")
+
+      <div class="card-user-wrapper__top">
+        @@include("../card-user-top/index.html")
+        <div class="card-user-wrapper__edit">
+          <button class="btn3">Редактировать</button>
+        </div>
+      </div>
       <div class="base-tab">
         <div class="base-tab__list">
           <a href="#description" class="base-tab__item base-tab__item--tab active">Описание</a>
           <a href="#requisites" class="base-tab__item base-tab__item--tab">Реквизиты</a>
           <a href="#review" class="base-tab__item base-tab__item--scroll">Отзывы</a>
-          <a href="#adds" class="base-tab__item base-tab__item--scroll">Объявление</a>
         </div>
         <div class="base-tab__block base-tab__block--tab active" id="description">
           <div class="base-tab__text-block">
@@ -23,9 +28,44 @@
             </div>
           </div>
         </div>
-        <div class="card-user-wrapper__user-mob">
-          @@include("../card-user-contact/index.html")
-          @@include("../card-ad-user-rating/index.html")
+        <div class="base-tab__block base-tab__block--tab base-tab__block--modal  close-x" id="requisites" data-modal="tab-req">
+          <div class="base-tab__text-block">
+            <div class="modal__top">
+              <div class="modal__title">Реквизиты</div>
+              <button class="modal__close close-x" type="button">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#x"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="base-tab__text-title">Карта компании</div>
+            <div class="base-tab__text">
+              <ul>
+                <li><span>Краткое наименование:</span> АО "Сельскозозяйственная Маревская Корпорация"</li>
+                <li><span>Полное наименование:</span> Акционерное общество "Сельскозозяйственная Маревская Корпорация"</li>
+                <li><span>Юридический адрес:</span> Марёвский р-н, с Велилы, ул Советов, д. 7, помещ. 2 каб. 15 175353, г. Марево, Новгородская область</li>
+                <li><span>ИНН:</span> 5300005224</li>
+                <li><span>ОГРН:</span> 1225300003147</li>
+                <li><span>КПП:</span> 530001001</li>
+                <li><span>Дата регистрации:</span> 11 Августа 2022</li>
+                <li><span>Тип организации:</span> Юридическое лицо</li>
+                <li><span>Статус организации:</span> Действующая</li>
+                <li><span>ФИО руководителя:</span> Духанин Дмитрий Юрьевич</li>
+                <li><span>Должность руководителя:</span> ПРЕЗИДЕНТ</li>
+                <li><span>Тип подразделения:</span> Головная организация</li>
+                <li><span>Количество филиалов:</span> 0</li>
+                <li><span>Код ОКВЭД:</span> 01.11 — основной код ОКВЭД</li>
+                <li><span>Код ОКОПФ:</span> 12267</li>
+                <li><span>ОПФ:</span> Непубличное акционерное общество (НАО)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="base-tab__block">
+          @@include("../card-user-contact/profile.html")
+        </div>
+        <div class="base-tab__block">
+          @@include("../card-ad-user-rating/profile.html")
         </div>
         <div class="base-tab__open-req">
           <button class="open-more2"  data-class="tab-req"><span class="str">Показать реквизиты</span>
@@ -67,21 +107,10 @@
             </div>
           </div>
         </div>
-        <div class="base-tab__block base-tab__block--adds" id="adds">
-          @@include("../card-ad-relative/index-user.html")
-        </div>
         <div class="base-tab__block" id="review">
-          @@include("../review/user-reviews.html")
+          @@include("../review/user-reviews-profile.html")
         </div>
       </div>
     </div>
-    <div class="card-user-wrapper__right">
-      @@include("../card-user-contact/index.html")
-      @@include("../card-ad-user-rating/index.html")
-    </div>
   </div>
 </div>
-
-@@include("../modal/modalRating.html", {
-  name: "rating",
-})
