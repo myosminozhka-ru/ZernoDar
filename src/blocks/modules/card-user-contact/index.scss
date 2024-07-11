@@ -23,3 +23,26 @@
     }
   }
 }
+
+.card-user-profile-contact {
+  &__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+  }
+  @include tab {
+    padding: 2.4rem;
+    border-radius: 0;
+    border-bottom: 0.1rem solid $lightgrey;
+    background-color: $white;
+    &__title {
+      font-size: 1.4rem;
+    }
+  }
+  @include mob {
+    padding: 2.4rem 1.6rem;
+    &__title {
+      font-size: 1.4rem;
+    }
+  }
+}

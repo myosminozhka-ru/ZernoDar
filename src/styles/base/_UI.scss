@@ -234,6 +234,12 @@
       background-color: $paleblue;
     }
   }
+  &--transparent {
+    background-color: transparent;
+    &:hover {
+      background-color: $paleblue;
+    }
+  }
   @include tab {
     padding: 1.1rem;
     font-size: 1.4rem;
