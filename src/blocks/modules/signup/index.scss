@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 12rem;
 
   &__title {
     font-size: 4.2rem;
@@ -32,7 +33,7 @@
       align-items: center;
       cursor: pointer;
       z-index: 1;
-      transition: color 0.3s;
+      transition: color 0.5s;
     }
 
     .registration__slider {
@@ -63,17 +64,31 @@
     display: none;
     flex-direction: column;
     width: 75.5rem;
-    background-color: #6fa06f;
+    padding: 0 3.2rem;
+    margin-bottom: 3.2rem;
+    background-color: #ffffff;
+    border-radius: 2rem;
+    box-shadow: 2px 20px 20px rgba(173, 173, 173, 0.03),
+      4px 20px 20px rgba(115, 115, 115, 0.01);
 
     &--active {
       display: flex;
     }
 
-    &__input {
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    input {
+      background: #f8f8f8;
+      border-radius: 1.6rem;
+      padding: 1.3rem 2.4rem;
+      margin-top: 3.2rem;
+
+      &:last-child {
+        margin-bottom: 3.2rem;
+      }
+
+      &::placeholder {
+        font-size: 1.8rem;
+        color: #8c8c8c;
+      }
     }
 
     &__confirm {

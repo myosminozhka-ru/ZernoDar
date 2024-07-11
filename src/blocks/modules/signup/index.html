@@ -64,18 +64,8 @@
       placeholder="Повторите пароль"
       required
     />
-    <div class="registration__confirm">
-      <span>Отправить подтверждающий код</span>
-      <label>
-        <input type="radio" name="confirm" value="sms" required /> Sms по номеру
-        телефона
-      </label>
-      <label>
-        <input type="radio" name="confirm" value="email" /> На email
-      </label>
-    </div>
-    <button type="submit" class="registration__submit">Продолжить</button>
   </form>
+
   <form id="physicalForm" class="registration__form">
     <input
       type="text"
@@ -108,16 +98,17 @@
       placeholder="Повторите пароль"
       required
     />
-    <div class="registration__confirm">
-      <span>Отправить подтверждающий код</span>
-      <label>
-        <input type="radio" name="confirm" value="sms" required /> Sms по номеру
-        телефона
-      </label>
-      <label>
-        <input type="radio" name="confirm" value="email" /> На email
-      </label>
-    </div>
-    <button type="submit" class="registration__submit">Продолжить</button>
   </form>
+
+  <div class="registration__confirm">
+    <span>Отправить подтверждающий код</span>
+    <label>
+      <input type="radio" name="confirm" value="sms" required /> Sms по номеру
+      телефона
+    </label>
+    <label>
+      <input type="radio" name="confirm" value="email" checked /> На email
+    </label>
+  </div>
+  <button type="submit" class="registration__submit">Продолжить</button>
 </div>
