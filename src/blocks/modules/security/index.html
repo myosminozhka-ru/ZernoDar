@@ -62,7 +62,7 @@
       <div class="security__item">
         <div class="security__header-wrapper">
           <div class="security__header security__header--password">
-            <span class="security__label">Пароль</span>
+            <span class="security__label label-mobile">Пароль</span>
             <span class="security__info">Обновлен месяц назад</span>
           </div>
           <input
@@ -81,7 +81,10 @@
               >Забыли пароль?</a
             >
           </div>
-          <div class="security__body__input-wrapper" id="new-pass">
+          <div
+            class="security__body__input-wrapper security__body__input-wrapper--pass"
+            id="new-pass"
+          >
             <span class="security__body__title">Новый пароль</span>
             <input
               id="password"
@@ -102,9 +105,10 @@
               <button class="security__button-save" type="submit">
                 Сохранить
               </button>
-              <label for="security-password" class="security__button-cancel"
-                >Отмена</label
-              >
+              <label for="security-password" class="security__button-cancel">
+                <img src="/img/sprites/cancel.svg" alt="" class="pass-close" />
+                <span>Отмена</span>
+              </label>
             </div>
           </div>
         </div>
@@ -132,9 +136,10 @@
               <button class="security__button-save" type="submit">
                 Сохранить
               </button>
-              <label for="security-password" class="security__button-cancel"
-                >Отмена</label
-              >
+              <label for="security-password" class="security__button-cancel">
+                <img src="/img/sprites/cancel.svg" alt="" class="phone-close" />
+                <span>Отмена</span>
+              </label>
             </div>
           </div>
         </div>
