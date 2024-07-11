@@ -68,6 +68,7 @@
 
       &:last-child {
         padding: 1.6rem;
+        margin-bottom: 3rem;
       }
     }
   }
@@ -116,10 +117,10 @@
 
   &__toggle {
     color: #0084cf;
-    cursor: pointer;
     font-size: 1.8rem;
     display: block;
     margin-bottom: 5px;
+    cursor: pointer;
 
     img {
       display: none;
@@ -299,6 +300,69 @@
       .phone-close {
         bottom: 14.2rem;
       }
+    }
+  }
+
+  &__email-upd-notification {
+    position: absolute;
+    top: 27.6rem;
+    right: 35.5rem;
+    display: flex;
+    width: 57.3rem;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background-color: #ecf0f4;
+    color: #0084cf;
+    border-radius: 1.6rem;
+
+    span {
+      font-size: 1.2rem;
+    }
+
+    img {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    @include tab {
+      position: static;
+      width: 28.8rem;
+      align-items: normal;
+      padding: 1.6rem;
+      margin: 1.6rem;
+    }
+  }
+
+  &__password-upd-notification {
+    justify-content: center;
+    position: absolute;
+    top: 27.6rem;
+    right: 35.5rem;
+    display: flex;
+    width: 21.3rem;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background-color: #ebf4ec;
+    color: #10572d;
+    border-radius: 1.6rem;
+
+    span {
+      font-size: 1.2rem;
+    }
+
+    img {
+      width: 1.7rem;
+      height: 1.3rem;
+    }
+
+    @include tab {
+      position: static;
+      width: 28.8rem;
+      align-items: normal;
+      padding: 1.6rem;
+      margin: 1.6rem;
     }
   }
 }
