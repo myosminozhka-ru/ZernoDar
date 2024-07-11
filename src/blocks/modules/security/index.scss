@@ -1,5 +1,9 @@
 .security-wrapper {
   display: flex;
+
+  @include tab {
+    flex-direction: column;
+  }
 }
 
 .security {
@@ -12,12 +16,35 @@
     background: #ffffff;
     box-shadow: 2px 20px 20px rgba(119, 119, 119, 0.03),
       4px 20px 20px rgba(115, 115, 115, 0.01);
+
+    @include tab {
+      width: 100%;
+      margin: 0;
+      background-color: blue;
+      padding: 0;
+    }
   }
 
   &__title {
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 3.2rem;
+
+    @include tab {
+      display: none;
+    }
+  }
+
+  &__title-mobile {
+    display: none;
+
+    @include tab {
+      display: block;
+      font-size: 1.8rem;
+      margin-bottom: 2.4rem;
+      margin-top: 3rem;
+      margin-left: 1.6rem;
+    }
   }
 
   &__item {
@@ -32,6 +59,18 @@
       border-bottom: none;
       padding: 3rem 0 0 0;
     }
+
+    @include tab {
+      padding: 1.6rem;
+
+      &:first-of-type {
+        border-top: none;
+      }
+
+      &:last-child {
+        padding: 1.6rem;
+      }
+    }
   }
 
   &__header-wrapper {
@@ -41,16 +80,29 @@
   &__header {
     display: flex;
     flex-grow: 1;
+
+    @include tab {
+      flex-direction: column;
+      gap: 1.6rem;
+    }
   }
 
   &__label,
   &__info {
     font-size: 1.8rem;
+
+    @include tab {
+      font-size: 1.4rem;
+    }
   }
 
   &__label {
     color: #8c8c8c;
     width: 20rem;
+
+    @include tab {
+      font-size: 1.2rem;
+    }
   }
 
   &__toggle {
@@ -59,6 +111,22 @@
     font-size: 1.8rem;
     display: block;
     margin-bottom: 5px;
+
+    img {
+      display: none;
+
+      @include tab {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    @include tab {
+      span {
+        display: none;
+      }
+    }
   }
 
   &__input {

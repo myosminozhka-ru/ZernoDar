@@ -2,6 +2,8 @@
   @@include("../lk-nav/index.html")
 
   <section class="security">
+    <h2 class="security__title-mobile">Безопасность</h2>
+
     <div class="security__main">
       <h2 class="security__title">Безопасность</h2>
 
@@ -12,7 +14,10 @@
             <span class="security__info">1234@mail.ru</span>
           </div>
           <input type="checkbox" id="security-email" class="security__input" />
-          <label for="security-email" class="security__toggle">Изменить</label>
+          <label for="security-email" class="security__toggle">
+            <img src="/img/sprites/edit.svg" alt="" />
+            <span>Изменить</span>
+          </label>
         </div>
         <div class="security__body">
           <div class="security__body__input-wrapper">
@@ -52,9 +57,10 @@
             id="security-password"
             class="security__input"
           />
-          <label for="security-password" class="security__toggle"
-            >Изменить</label
-          >
+          <label for="security-password" class="security__toggle">
+            <img src="/img/sprites/edit.svg" alt="" />
+            <span>Изменить</span>
+          </label>
         </div>
         <div class="security__body">
           <div class="security__bottom-section">
@@ -98,16 +104,26 @@
             <span class="security__info">+7 000 000 000</span>
           </div>
           <input type="checkbox" id="security-phone" class="security__input" />
-          <label for="security-phone" class="security__toggle">Изменить</label>
+          <label for="security-phone" class="security__toggle">
+            <img src="/img/sprites/edit.svg" alt="" />
+            <span>Изменить</span>
+          </label>
         </div>
         <div class="security__body">
-          <p>sdasd</p>
-          <p>sdasd</p>
-          <p>sdasd</p>
-          <p>sdasd</p>
-          <p>sdasd</p>
-          <p>sdasd</p>
-          <p>sdasd</p>
+          <div class="security__body__input-wrapper">
+            <span class="security__body__title">Новый номер</span>
+            <input id="phone" type="phone" class="security__input-field" />
+          </div>
+          <div class="security__bottom-section">
+            <div class="security__actions">
+              <button class="security__button-save" type="submit">
+                Сохранить
+              </button>
+              <label for="security-password" class="security__button-cancel"
+                >Отмена</label
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>
