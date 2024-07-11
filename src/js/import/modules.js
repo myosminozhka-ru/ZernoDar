@@ -12,6 +12,7 @@ import article from "%modules%/news/index";
 import firstScreen from "%modules%/first-screen/index";
 import partners from "%modules%/partners/index";
 import mainAdvantages from "%modules%/main-advantages/index";
+import security from "%modules%/security/index";
 import search from "%modules%/search/index";
 
 addEventListener('DOMContentLoaded', () => {
@@ -33,6 +34,7 @@ addEventListener('DOMContentLoaded', () => {
   firstScreen()
   partners()
   mainAdvantages()
+  security()
   search()
   window.app = {
     header: new Header(),
