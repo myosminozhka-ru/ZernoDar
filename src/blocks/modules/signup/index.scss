@@ -4,10 +4,22 @@
   align-items: center;
   margin-bottom: 12rem;
 
+  @include tab {
+    align-items: normal;
+    margin-bottom: 6rem;
+  }
+
   &__title {
     font-size: 4.2rem;
     margin-top: 5.4rem;
     margin-bottom: 4rem;
+
+    @include tab {
+      font-size: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      margin-left: 1.6rem;
+    }
   }
 
   &__switch {
@@ -20,6 +32,14 @@
     border: 1px solid #dfdfdf;
     border-radius: 10rem;
     margin-bottom: 3.2rem;
+
+    @include tab {
+      width: 18rem;
+      font-size: 1.2rem;
+      height: 4.6rem;
+      margin-left: 1.6rem;
+      margin-bottom: 2.4rem;
+    }
 
     input {
       display: none;
@@ -40,8 +60,8 @@
       position: absolute;
       width: 50%;
       height: 100%;
-      background-color: #f0a500;
-      outline: 1px solid #f0a500;
+      background-color: #fcb13f;
+      outline: 1px solid #fcb13f;
       border-radius: 10rem;
       transition: transform 0.3s;
       z-index: 0;
@@ -75,6 +95,13 @@
       display: flex;
     }
 
+    @include tab {
+      width: 100%;
+      padding: 0 1.6rem;
+      border-radius: 1.2rem;
+      margin-bottom: 2.4rem;
+    }
+
     input {
       background: #f8f8f8;
       border-radius: 1.6rem;
@@ -89,6 +116,20 @@
         font-size: 1.8rem;
         color: #8c8c8c;
       }
+
+      @include tab {
+        border-radius: 0.8rem;
+        padding: 1.3rem 0.8rem;
+        margin-top: 1.6rem;
+
+        &:last-child {
+          margin-bottom: 1.6rem;
+        }
+
+        &::placeholder {
+          font-size: 1.2rem;
+        }
+      }
     }
   }
 
@@ -99,6 +140,15 @@
 
     p {
       font-size: 1.8rem;
+    }
+
+    @include tab {
+      flex-direction: column;
+
+      p {
+        font-size: 1.4rem;
+        margin-left: 1.6rem;
+      }
     }
   }
 
@@ -117,6 +167,19 @@
     &:hover {
       background-color: #6c927a;
     }
+
+    @include tab {
+      width: 28.8rem;
+      margin-left: 1.6rem;
+      font-size: 1.4rem;
+      height: 4rem;
+      border-radius: 0.8rem;
+      background-color: #0e582d;
+
+      &:hover {
+        background-color: #0e582d;
+      }
+    }
   }
 
   &__checkboxes {
@@ -130,6 +193,16 @@
     align-items: center;
     gap: 6rem;
     font-size: 1.6rem;
+
+    @include tab {
+      flex-direction: column;
+      align-items: normal;
+      gap: 1.2rem;
+      font-size: 1.2rem;
+      color: #8c8c8c;
+      margin-left: 4.4rem;
+      margin-top: 2.4rem;
+    }
 
     input[type="radio"] {
       position: absolute;
@@ -154,6 +227,13 @@
       border: 1px solid #0084cf;
       background-color: #fff;
       transition: background 0.2s, border 0.2s;
+
+      @include tab {
+        width: 1.8rem;
+        height: 1.8rem;
+        top: 0;
+        left: -2.8rem;
+      }
     }
 
     .radio-label::after {
@@ -167,6 +247,11 @@
       background-color: #0084cf;
       opacity: 0;
       transition: opacity 0.3s;
+
+      @include tab {
+        top: 0.4rem;
+        left: -2.4rem;
+      }
     }
 
     input[type="radio"]:checked + .radio-label::after {
