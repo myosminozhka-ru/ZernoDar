@@ -12,6 +12,7 @@ import article from "%modules%/news/index";
 import firstScreen from "%modules%/first-screen/index";
 import partners from "%modules%/partners/index";
 import mainAdvantages from "%modules%/main-advantages/index";
+import security from "%modules%/security/index";
 
 addEventListener('DOMContentLoaded', () => {
   more('.card-ad-top__list ul li', '.card-ad-top__list .card-ad-top__table-more .open-more2', 6)
@@ -32,6 +33,7 @@ addEventListener('DOMContentLoaded', () => {
   firstScreen()
   partners()
   mainAdvantages()
+  security()
   window.app = {
     header: new Header(),
     textSellerModal: new Modal('text-seller'),
