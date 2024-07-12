@@ -13,7 +13,7 @@ import firstScreen from "%modules%/first-screen/index";
 import partners from "%modules%/partners/index";
 import mainAdvantages from "%modules%/main-advantages/index";
 import security from "%modules%/security/index";
-import signupSwitch from "%modules%/signup/index";
+import signupSwitch from "%modules%/registration/index";
 import search from "%modules%/search/index";
 
 addEventListener("DOMContentLoaded", () => {
