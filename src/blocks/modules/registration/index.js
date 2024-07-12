@@ -1,4 +1,4 @@
-export default function () {
+export default function signupSwitch() {
   document.getElementById("juridical").addEventListener("change", function () {
     document
       .getElementById("juridicalForm")
