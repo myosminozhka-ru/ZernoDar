@@ -1,3 +1,5 @@
+import phoneMask from "../../../js/import/phoneMask";
+
 export default function signupSwitch() {
   document.getElementById("juridical").addEventListener("change", function () {
     document
@@ -16,4 +18,6 @@ export default function signupSwitch() {
       .getElementById("juridicalForm")
       .classList.remove("registration__form--active");
   });
+
+  phoneMask(".phone-input");
 }
