@@ -336,6 +336,11 @@
   flex-direction: column;
   align-items: center;
 
+  @include tab {
+    align-items: normal;
+    margin-bottom: 3.2rem;
+  }
+
   &__title {
     font-size: 4.2rem;
     margin-top: 5.4rem;
@@ -352,6 +357,13 @@
   &__text {
     font-size: 1.8rem;
     margin-bottom: 3.6rem;
+
+    @include tab {
+      text-align: center;
+      color: #8c8c8c;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
   }
 
   &__main {
@@ -363,10 +375,22 @@
     box-shadow: 2px 20px 20px rgba(133, 133, 133, 0.03),
       4px 20px 20px rgba(115, 115, 115, 0.01);
 
+    @include tab {
+      width: 100%;
+      margin-bottom: 3.2rem;
+      border-radius: 1.6rem;
+      padding: 1.6rem;
+    }
+
     p {
       font-size: 1.8rem;
       text-align: center;
       line-height: 2.8rem;
+
+      @include tab {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+      }
     }
 
     span {
@@ -374,6 +398,12 @@
       display: block;
       text-align: center;
       color: #0084cf;
+
+      @include tab {
+        font-size: 1.2rem;
+        margin-top: 1.6rem;
+        margin-bottom: 0.4rem;
+      }
     }
   }
 
@@ -383,7 +413,48 @@
 
     @include tab {
       align-items: baseline;
+      font-size: 1.3rem;
+      padding: 1.6rem;
     }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .radio-label {
+    position: relative;
+    padding-left: 3rem;
+    cursor: pointer;
+  }
+
+  .radio-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #0084cf;
+    border-radius: 50%;
+    background-color: #ffffff;
+  }
+
+  .radio-label::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #0084cf;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  input[type="checkbox"]:checked + .radio-label::after {
+    opacity: 1;
   }
 }
 
@@ -406,4 +477,10 @@
 
 .code-input:focus {
   outline: none;
+}
+
+.code-div {
+  @include tab {
+    display: none !important;
+  }
 }
