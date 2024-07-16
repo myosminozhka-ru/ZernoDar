@@ -1,9 +1,10 @@
-export default  function() {
-  const currentPath = window.location.pathname;
+export default function () {
+  const currentPath = window.location.pathname.replace(/^\/dist/, "");
   const navLinks = document.querySelectorAll(".lk-nav__link");
 
   navLinks.forEach((link) => {
-    if (link.href.includes(currentPath)) {
+    const linkPath = new URL(link.href).pathname.replace(/^\/dist/, "");
+    if (linkPath === currentPath) {
       link.classList.add("lk-nav__link--active");
     }
   });
