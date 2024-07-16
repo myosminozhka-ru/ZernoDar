@@ -420,6 +420,54 @@
     border-radius: 1rem;
   }
 }
+.btn12 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding: 1.35rem 1.6rem;
+  border-radius: 1.6rem;
+  color: $white;
+  background-color: $green;
+  transition: background 200ms;
+  min-width: 24rem;
+  &:hover {
+    background-color: #749E85;
+  }
+  &[disabled="true"] {
+    background-color: $lightgrey;
+    pointer-events: none;
+  }
+  &--palegreen {
+    color: $black;
+    background-color: $palegreen;
+    &:hover {
+      background-color: $paleblue;
+    }
+  }
+  &--green {
+    background-color: $palegreen;
+    &:hover {
+      background-color: $paleblue;
+    }
+  }
+  &--transparent {
+    color: $black;
+    background-color: transparent;
+    &:hover {
+      background-color: $paleblue;
+    }
+  }
+  &--border {
+    border: 0.1rem solid $lightgrey;
+  }
+  @include tab {
+    padding: 1.1rem;
+    font-size: 1.4rem;
+    border-radius: 0.8rem;
+  }
+}
 .open-more {
   display: inline-flex;
   align-items: center;
