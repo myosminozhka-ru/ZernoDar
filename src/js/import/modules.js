@@ -42,8 +42,8 @@ addEventListener("DOMContentLoaded", () => {
     6
   );
 
-  more('.edit-about__text-part', '.edit-about__more .open-more2', 1)
-  
+  more(".edit-about__text-part", ".edit-about__more .open-more2", 1);
+
   hideShowBlock(
     ".article .article__nav .article-nav__list",
     ".article .article__nav .open-more2"
