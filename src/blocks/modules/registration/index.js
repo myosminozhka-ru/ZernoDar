@@ -1,23 +1,28 @@
 import phoneMask from "../../../js/import/phoneMask";
 
 export default function signupSwitch() {
-  document.getElementById("juridical").addEventListener("change", function () {
-    document
-      .getElementById("juridicalForm")
-      .classList.add("registration__form--active");
-    document
-      .getElementById("physicalForm")
-      .classList.remove("registration__form--active");
-  });
+  const juridicalElement = document.getElementById("juridical");
+  const juridicalForm = document.getElementById("juridicalForm");
+  const physicalElement = document.getElementById("physical");
+  const physicalForm = document.getElementById("physicalForm");
 
-  document.getElementById("physical").addEventListener("change", function () {
-    document
-      .getElementById("physicalForm")
-      .classList.add("registration__form--active");
-    document
-      .getElementById("juridicalForm")
-      .classList.remove("registration__form--active");
-  });
+  if (juridicalElement) {
+    juridicalElement.addEventListener("change", function () {
+      if (juridicalForm && physicalForm) {
+        juridicalForm.classList.add("registration__form--active");
+        physicalForm.classList.remove("registration__form--active");
+      }
+    });
+  }
+
+  if (physicalElement) {
+    physicalElement.addEventListener("change", function () {
+      if (physicalForm && juridicalForm) {
+        physicalForm.classList.add("registration__form--active");
+        juridicalForm.classList.remove("registration__form--active");
+      }
+    });
+  }
 
   phoneMask(".phone-input");
 }

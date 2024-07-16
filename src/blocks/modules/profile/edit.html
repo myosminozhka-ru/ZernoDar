@@ -1,0 +1,70 @@
+<div class="profile-edit">
+  <div class="profile-edit__inner">
+    <div class="profile-edit__block profile-edit__block--contact">
+      <div class="profile-edit__head">
+        <div class="profile-edit__mtitle">Информация о компании</div>
+        <div class="infotip">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#warning"></use>
+          </svg>
+          Информация видна на сайте
+        </div>
+      </div>
+      <div class="profile-edit__content">
+        @@include("./edit-contact.html")
+      </div>
+    </div>
+    <div class="profile-edit__block">
+      <div class="profile-edit__head">
+        <div class="profile-edit__mtitle">О компании</div>
+        <button type="button" class="change-blue js-edit-about-open">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#edit"></use>
+          </svg>
+          Изменить
+        </button>
+        <button type="button" class="change-blue js-edit-about-cancel hide">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+          </svg>
+          Отмена
+        </button>
+      </div>
+      <div class="profile-edit__content">
+        @@include("./edit-about.html")
+      </div>
+    </div>
+    <div class="profile-edit__block">
+      <div class="profile-edit__head">
+        <div class="profile-edit__mtitle">Реквизиты</div>
+        <button type="button" class="change-blue js-edit-requisites-open">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#edit"></use>
+          </svg>
+          Изменить
+        </button>
+        <button type="button" class="change-blue js-edit-requisites-cancel hide">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+          </svg>
+          Отмена
+        </button>
+      </div>
+      <div class="profile-edit__content">
+        @@include("./edit-requisites.html")
+      </div>
+    </div>
+    <div class="profile-edit__block profile-edit__block--file">
+      <div class="profile-edit__head">
+        <div>
+          <div class="profile-edit__mtitle">Верификация по документам</div>
+          <div class="profile-edit__subtitle">Свидетельство ИНН;  Приказ о назначении генерального директора</div>
+        </div>
+        <button type="button" class="btn12 js-send-profile-docs" disabled="true">
+          Отправить
+        </button>
+      </div>
+      @@include("./veri.html")
+    </div>
+  </div>
+</div>

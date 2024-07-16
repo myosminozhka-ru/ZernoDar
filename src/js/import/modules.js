@@ -15,6 +15,7 @@ import mainAdvantages from "%modules%/main-advantages/index";
 import security from "%modules%/security/index";
 import signupSwitch from "%modules%/registration/index";
 import search from "%modules%/search/index";
+import profile from "%modules%/profile/index";
 
 addEventListener("DOMContentLoaded", () => {
   more(
@@ -41,6 +42,8 @@ addEventListener("DOMContentLoaded", () => {
     6
   );
 
+  more(".edit-about__text-part", ".edit-about__more .open-more2", 1);
+
   hideShowBlock(
     ".article .article__nav .article-nav__list",
     ".article .article__nav .open-more2"
@@ -57,6 +60,7 @@ addEventListener("DOMContentLoaded", () => {
   security();
   signupSwitch();
   search();
+  profile();
   window.app = {
     header: new Header(),
     textSellerModal: new Modal("text-seller"),
