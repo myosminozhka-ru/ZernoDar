@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Зернодар</title>
+  <meta name="theme-color" content="#fff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0">
+
+  <meta property="og:url" content="https://www.your-domain.com/your-page.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Your Website Title"/>
+  <meta property="og:description" content="Your description"/>
+  <meta property="og:image" content="https://www.your-domain.com/path/image.jpg"/>
+
+  <link rel="icon" href="/favicons/favicon.ico" type="image/x-icon"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="styles/libs/fancybox.css">
+  <link rel="stylesheet" href="styles/libs/swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles/libs/ion.rangeSlider.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>"
+    type="text/javascript"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container container--full">
+      <div class="header__inner">
+        <a href="/" class="header__logo">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#logo"></use>
+          </svg>
+          ЗЕРНОДАР
+        </a>
+        <nav class="nav header__nav">
+          <div class="nav__inner">
+            <ul class="nav__list">
+              <li><a href="#">Предложение</a></li>
+              <li><a href="#"><b>Спрос</b></a></li>
+              <li><a href="#">Компании</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="header-search">
+          <button class="header-search__magnific">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#magnific"></use>
+            </svg>
+          </button>
+          <input type="text" class="header-search__input" placeholder="Поиск..."/>
+          <button class="header-search__close trig-close-search">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#x"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="header__actions">
+          <button class="header__act trig-open-search">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#magnific"></use>
+            </svg>
+          </button>
+          <a href="#" class="header__act">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#favourite"></use>
+            </svg>
+          </a>
+          <a href="#" class="header__act">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#user"></use>
+            </svg>
+          </a>
+        </div>
+        <a href="#" class="header__add-btn">Разместить объявление</a>
+        <div class="header__burger-wrap">
+          <div class="header__burger">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-drop">
+      <div class="nav-drop__inner">
+        <div class="nav-drop__left">
+          <div class="nav-drop__title">
+            <a  href="" class="str">
+              <span class="nav-drop__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#icon1"></use>
+                </svg>
+              </span>
+              Зерновые культуры
+            </a>
+            <div class="nav-drop__arrow">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="nav-drop__title">
+            <a  href="" class="str">
+              <span class="nav-drop__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#icon2"></use>
+                </svg>
+              </span>
+              Масличные культуры
+            </a>
+            <div class="nav-drop__arrow">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="nav-drop__title">
+            <a  href="" class="str">
+              <span class="nav-drop__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#icon3"></use>
+                </svg>
+              </span>
+              Посевной материал
+            </a>
+            <div class="nav-drop__arrow">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="nav-drop__right">
+          <div class="nav-drop__block open">
+            <div class="nav-drop__subtitle">Зерновые культуры</div>
+            <div class="nav-drop__lists">
+              <ul class="nav-drop__list">
+                <li><a href="">Бобы <span>163</span></a></li>
+                <li><a href="">Горох <span>163</span></a></li>
+                <li><a href="">Гречиха <span>163</span></a></li>
+                <li><a href="">Кукуруза <span>163</span></a></li>
+                <li><a href="">Люпин <span>163</span></a></li>
+                <li><a href="">Нут <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Овес <span>163</span></a></li>
+                <li><a href="">Полба <span>163</span></a></li>
+                <li><a href="">Просо <span>163</span></a></li>
+                <li><a href="">Пшеница <span>163</span></a></li>
+                <li><a href="">Рожь <span>163</span></a></li>
+                <li><a href="">Сорго <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Соя <span>163</span></a></li>
+                <li><a href="">Тритикале <span>163</span></a></li>
+                <li><a href="">Фасоль <span>163</span></a></li>
+                <li><a href="">Чечевица <span>163</span></a></li>
+                <li><a href="">Ячмень <span>163</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-drop__block">
+            <div class="nav-drop__subtitle">Зерновые культуры</div>
+            <div class="nav-drop__lists">
+              <ul class="nav-drop__list">
+                <li><a href="">Бобы <span>163</span></a></li>
+                <li><a href="">Горох <span>163</span></a></li>
+                <li><a href="">Гречиха <span>163</span></a></li>
+                <li><a href="">Кукуруза <span>163</span></a></li>
+                <li><a href="">Люпин <span>163</span></a></li>
+                <li><a href="">Нут <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Овес <span>163</span></a></li>
+                <li><a href="">Полба <span>163</span></a></li>
+                <li><a href="">Просо <span>163</span></a></li>
+                <li><a href="">Пшеница <span>163</span></a></li>
+                <li><a href="">Рожь <span>163</span></a></li>
+                <li><a href="">Сорго <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Соя <span>163</span></a></li>
+                <li><a href="">Тритикале <span>163</span></a></li>
+                <li><a href="">Фасоль <span>163</span></a></li>
+                <li><a href="">Чечевица <span>163</span></a></li>
+                <li><a href="">Ячмень <span>163</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-drop__block">
+            <div class="nav-drop__subtitle">Зерновые культуры</div>
+            <div class="nav-drop__lists">
+              <ul class="nav-drop__list">
+                <li><a href="">Бобы <span>163</span></a></li>
+                <li><a href="">Горох <span>163</span></a></li>
+                <li><a href="">Гречиха <span>163</span></a></li>
+                <li><a href="">Кукуруза <span>163</span></a></li>
+                <li><a href="">Люпин <span>163</span></a></li>
+                <li><a href="">Нут <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Овес <span>163</span></a></li>
+                <li><a href="">Полба <span>163</span></a></li>
+                <li><a href="">Просо <span>163</span></a></li>
+                <li><a href="">Пшеница <span>163</span></a></li>
+                <li><a href="">Рожь <span>163</span></a></li>
+                <li><a href="">Сорго <span>163</span></a></li>
+              </ul>
+              <ul class="nav-drop__list">
+                <li><a href="">Соя <span>163</span></a></li>
+                <li><a href="">Тритикале <span>163</span></a></li>
+                <li><a href="">Фасоль <span>163</span></a></li>
+                <li><a href="">Чечевица <span>163</span></a></li>
+                <li><a href="">Ячмень <span>163</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="drop-search">
+  <div class="drop-search__inner">
+    <div class="drop-search__tabs">
+      <a href="#drop-search-catalog" class="drop-search__tab active">Объявления 12</a>
+      <a href="#drop-search-company" class="drop-search__tab">Компании 1</a>
+      <a href="#drop-search-news" class="drop-search__tab">Статьи 2</a>
+    </div>
+    <div class="drop-search__blocks">
+      <div class="drop-search__block active" id="drop-search-catalog">
+        
+<div class="card-ad-relative">
+  <div class="card-ad-relative__inner">
+    <div class="card-ad-relative__switch">
+      <div class="switch-button switch-button--fit">
+        <button class="switch-button__item active" data-index="0">Предложение</button>
+        <button class="switch-button__item" data-index="1">Спрос</button>
+      </div>
+    </div>
+    <div class="card-ad-relative__table" data-index="0">
+      <div class="card-ad-relative__thead">
+        <div class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Объявление</div>
+          <div class="card-ad-relative__td">Цена</div>
+          <div class="card-ad-relative__td">Количество</div>
+          <div class="card-ad-relative__td">Локация</div>
+        </div>
+      </div>
+      <div class="card-ad-relative__tbody">
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+      </div>
+    </div>
+    <div class="card-ad-relative__table hide" data-index="1">
+      <div class="card-ad-relative__thead">
+        <div class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Объявление</div>
+          <div class="card-ad-relative__td">Цена</div>
+          <div class="card-ad-relative__td">Количество</div>
+          <div class="card-ad-relative__td">Локация</div>
+        </div>
+      </div>
+      <div class="card-ad-relative__tbody">
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+        <a href="" class="card-ad-relative__tr">
+          <div class="card-ad-relative__td">Пшеница 2 класса  <br>
+            в Новгородской области</div>
+          <div class="card-ad-relative__td">12 000 ₽ за кг</div>
+          <div class="card-ad-relative__td">35 тонн</div>
+          <div class="card-ad-relative__td">Казань</div>
+        </a>
+      </div>
+    </div>
+    <div class="card-ad-relative__show-more">
+      <a href="#" class="btn3">Показать 12 объявлений</a>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="drop-search__block" id="drop-search-company">
+        Компании
+      </div>
+      <div class="drop-search__block" id="drop-search-news">
+        <div class="search-drop">
+  <div class="search-drop__inner">
+    <div class="search-drop__list">
+      <a href="#" class="search-drop__item">
+        <div class="search-drop__ava">
+          <img src="img/news.jpg" alt="">
+        </div>
+        <div class="search-drop__content">
+          <div class="search-drop__data">27.05.2024</div>
+          <div class="search-drop__text">Rorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        </div>
+      </a>
+      <a href="#" class="search-drop__item">
+        <div class="search-drop__ava">
+          <img src="img/news.jpg" alt="">
+        </div>
+        <div class="search-drop__content">
+          <div class="search-drop__data">27.05.2024</div>
+          <div class="search-drop__text">Rorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        </div>
+      </a>
+    </div>
+    <div class="search-drop__more">
+      <a href="#" class="btn3">Показать 2 статьи</a>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+  </header>
+  <main>
+
+
+<div class="main-wrapper">
+  <div class="brc">
+  <div class="container container--full">
+    <div class="brc__inner">
+      <ul class="brc__list">
+        <li>
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#left-circle"></use>
+          </svg>
+          <a href="/">Главная</a>
+        </li>
+        
+          <li>
+            <a href="#" class="link">Личный кабинет</a>
+          </li>
+        
+      </ul>
+      <div class="brc__arrow">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#curve-arrow-right"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="profile">
+  <section class="lk-nav">
+  <h1 class="lk-nav__heading">Личный кабинет</h1>
+
+  <div class="lk-nav__menu">
+    <ul class="lk-nav__list">
+      <a href="/advertisements.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Объявления
+      </a>
+      <a href="/profile.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Профиль
+      </a>
+      <a href="/subscription.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Подписка
+      </a>
+      <a href="/security.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Безопасность
+      </a>
+      <a href="/payment-details.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Платежные данные
+      </a>
+    </ul>
+  </div>
+</section>
+
+
+  <section class="profile__inner">
+    <div class="profile-edit">
+  <div class="profile-edit__inner">
+    <div class="profile-edit__block profile-edit__block--contact">
+      <div class="profile-edit__head">
+        <div class="profile-edit__mtitle">Информация о компании</div>
+        <div class="infotip">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#warning"></use>
+          </svg>
+          Информация видна на сайте
+        </div>
+      </div>
+      <div class="profile-edit__content">
+        <div class="edit-contact">
+  <div class="edit-contact__inner">
+    <div class="edit-contact__list">
+      <div class="edit-contact__item edit-contact__item--logo">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Лого</div>
+          <div class="edit-contact__value"><a href="#">Добавить фотографию</a></div>
+          <div class="edit-contact__change">
+            <div class="edit-contact__logo-change">
+              <div class="edit-contact__logo-img">
+                <img src="img/profile-logo.jpg" alt="">
+              </div>
+              <div class="edit-contact__logo-icon">
+                <img src="img/sprites/camera.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Название</div>
+          <div class="edit-contact__value">АО "Сельскозозяйственная Маревская Корпорация"</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <input class="edit-contact__input" type="text" placeholder="Новое название">
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Телефон</div>
+          <div class="edit-contact__value">+7 000 000 000</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <input class="edit-contact__input" type="text" placeholder="Новое название">
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">
+            <img src="img/sprites/logos_telegram.svg" alt="">
+            Telegram
+          </div>
+          <div class="edit-contact__value">@ignat_ignat</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <input class="edit-contact__input" type="text" placeholder="Новое название">
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">
+            <img src="img/sprites/logos_whatsapp-icon.svg" alt="">
+            Whatsapp
+          </div>
+          <div class="edit-contact__value">+7 000 000 000</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <input class="edit-contact__input" type="text" placeholder="Новое название">
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">
+            <img src="img/sprites/basil_viber-solid.svg" alt="">
+            Viber
+          </div>
+          <div class="edit-contact__value">+7 000 000 000</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <input class="edit-contact__input" type="text" placeholder="Новое название">
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Сайт</div>
+          <div class="edit-contact__value"><a href="https://marevcor.ru" target="_blank">marevcor.ru</a></div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <input class="edit-contact__input" type="text" placeholder="Новое название">
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Адрес</div>
+          <div class="edit-contact__value">Новгородская область</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <input class="edit-contact__input" type="text" placeholder="Новое название">
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Контактное лицо</div>
+          <div class="edit-contact__value">Иван Иванов</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <input class="edit-contact__input" type="text" placeholder="Новое название">
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="profile-edit__block">
+      <div class="profile-edit__head">
+        <div class="profile-edit__mtitle">О компании</div>
+        <button type="button" class="change-blue js-edit-about-open">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#edit"></use>
+          </svg>
+          Изменить
+        </button>
+        <button type="button" class="change-blue js-edit-about-cancel hide">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+          </svg>
+          Отмена
+        </button>
+      </div>
+      <div class="profile-edit__content">
+        <div class="edit-about">
+  <div class="edit-about__inner">
+    <div class="edit-about__text">
+        <div class="edit-about__text-part">
+          Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+        </div>
+        <div class="edit-about__text-part">
+          <br><br>
+          Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+          <br><br>
+          Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+          <br><br>
+          Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+      </div>
+    </div>
+    <div class="edit-about__body hide">
+      <textarea name="" id="" class="edit-about__textarea">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+        
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+        
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+        
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+      </textarea>
+      <div class="edit-about__actions">
+        <button class="btn3 edit-about__save">Сохранить</button>
+        <button class="btn3 btn3--transparent edit-about__cancel" type="button">Отмена</button>
+      </div>
+    </div>
+    <div class="edit-about__more">
+      <button class="open-more2"><span class="str">Развернуть</span>
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="profile-edit__block">
+      <div class="profile-edit__head">
+        <div class="profile-edit__mtitle">Реквизиты</div>
+        <button type="button" class="change-blue js-edit-requisites-open">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#edit"></use>
+          </svg>
+          Изменить
+        </button>
+        <button type="button" class="change-blue js-edit-requisites-cancel hide">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+          </svg>
+          Отмена
+        </button>
+      </div>
+      <div class="profile-edit__content">
+        <div class="edit-requisites">
+  <div class="edit-requisites__inner">
+    <div class="edit-requisites__list">
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Краткое наименование</div>
+        <div class="edit-requisites__value">АО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"</div>
+        <input class="edit-requisites__input" type="text" placeholder="Краткое наименование" value='АО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Полное наименование</div>
+        <div class="edit-requisites__value"> АКЦИОНЕРНОЕ ОБЩЕСТВО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"</div>
+        <input class="edit-requisites__input" type="text" placeholder="Полное наименование" value=' АКЦИОНЕРНОЕ ОБЩЕСТВО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Юридический адрес</div>
+        <div class="edit-requisites__value">175353, НОВГОРОДСКАЯ ОБЛАСТЬ, М.О. МАРЁВСКИЙ, С ВЕЛИЛЫ, УЛ СОВЕТОВ, Д. 7, 
+          ПОМЕЩ. 2, КАБ. 15</div>
+        <input class="edit-requisites__input" type="text" placeholder="Юридический адрес" value='175353, НОВГОРОДСКАЯ ОБЛАСТЬ, М.О. МАРЁВСКИЙ, С ВЕЛИЛЫ, УЛ СОВЕТОВ, Д. 7, 
+        ПОМЕЩ. 2, КАБ. 15'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">ИНН:</div>
+        <div class="edit-requisites__value">5300005224</div>
+        <input class="edit-requisites__input" type="text" placeholder="ИНН:" value='5300005224'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">ОГРН</div>
+        <div class="edit-requisites__value">1225300003147</div>
+        <input class="edit-requisites__input" type="text" placeholder="ОГРН" value='1225300003147'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">КПП</div>
+        <div class="edit-requisites__value">530001001</div>
+        <input class="edit-requisites__input" type="text" placeholder="КПП" value='530001001'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Дата регистрации</div>
+        <div class="edit-requisites__value">11 Августа 2022</div>
+        <input class="edit-requisites__input" type="text" placeholder="Дата регистрации" value='11 Августа 2022'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Тип организации:</div>
+        <div class="edit-requisites__value">Юридическое лицо</div>
+        <input class="edit-requisites__input" type="text" placeholder="Тип организации:" value='Юридическое лицо'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Статус организации</div>
+        <div class="edit-requisites__value">Действующая</div>
+        <input class="edit-requisites__input" type="text" placeholder="Статус организации" value='Действующая'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">ФИО руководителя</div>
+        <div class="edit-requisites__value">Духанин Дмитрий Юрьевич</div>
+        <input class="edit-requisites__input" type="text" placeholder="ФИО руководителя" value='Духанин Дмитрий Юрьевич'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Должность руководителя</div>
+        <div class="edit-requisites__value">ПРЕЗИДЕНТ</div>
+        <input class="edit-requisites__input" type="text" placeholder="Должность руководителя" value='ПРЕЗИДЕНТ'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Тип подразделения</div>
+        <div class="edit-requisites__value">Головная организация</div>
+        <input class="edit-requisites__input" type="text" placeholder="Тип подразделения" value='Головная организация'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Количество филиалов</div>
+        <div class="edit-requisites__value">0</div>
+        <input class="edit-requisites__input" type="text" placeholder="Количество филиалов" value='0'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Код ОКВЭД</div>
+        <div class="edit-requisites__value">01.11 — основной код ОКВЭД</div>
+        <input class="edit-requisites__input" type="text" placeholder="Код ОКВЭД" value='01.11 — основной код ОКВЭД'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Код ОКОПФ</div>
+        <div class="edit-requisites__value">12267</div>
+        <input class="edit-requisites__input" type="text" placeholder="Код ОКОПФ" value='12267'>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">ОПФ</div>
+        <div class="edit-requisites__value">Непубличное акционерное общество (НАО)</div>
+        <input class="edit-requisites__input" type="text" placeholder="ОПФ" value='Непубличное акционерное общество (НАО)'>
+      </div>
+    </div>
+    <div class="edit-requisites__action">
+      <button class="btn3 edit-requisites__save js-edit-requisites-save">Сохранить</button>
+      <button class="btn3 btn3--transparent edit-requisites__cancel js-edit-requisites-cancel" type="button">Отмена</button>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="profile-edit__block profile-edit__block--file">
+      <div class="profile-edit__head">
+        <div>
+          <div class="profile-edit__mtitle">Верификация по документам</div>
+          <div class="profile-edit__subtitle">Свидетельство ИНН;  Приказ о назначении генерального директора</div>
+        </div>
+        <button type="button" class="btn12 js-send-profile-docs" disabled="true">
+          Отправить
+        </button>
+      </div>
+      <div class="veri">
+  <form action="" method="post" class="veri__inner veri__inner--draganddrop">
+    <div class="veri__bg">
+      <img src="img/doc-bg-before.jpg" alt="" class="">
+    </div>
+    <div class="veri__content">
+      <div class="veri__text veri__text--greeting">
+        <label for="firstDocID" class="veri__link">Переместите файлы сюда ли загрузите из документов</label>
+      </div>
+      <div class="dropfile veri__labels hide">
+        <div class="dropfile__list">
+          <!-- <div class="dropfile__item show">
+            <label class="dropfile__add">
+              <input type="file" name="" id="" accept=".png, .jpg, .jpeg, .pdf" hidden>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#plus"></use>
+              </svg>
+            </label>
+            <div class="dropfile__img">
+              <img src="img/picture.jpg" alt="">
+            </div>
+            <div class="dropfile__delete">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#trash"></use>
+              </svg>
+            </div>
+            <div class="dropfile__info">
+              <div class="dropfile__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#picture"></use>
+                </svg>
+              </div>
+              <div class="dropfile__name-wrap">
+                <div class="dropfile__name">Photo halushhalush...</div>
+                <div class="dropfile__size">408 KB</div>
+              </div>
+            </div>
+          </div> -->
+          <div class="dropfile__item active">
+            <label class="dropfile__add">
+              <input type="file" name="firstDocID" id="firstDocID" accept=".png, .jpg, .jpeg, .pdf" hidden>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#plus"></use>
+              </svg>
+            </label>
+            <div class="dropfile__img">
+              <img src="" alt="">
+            </div>
+            <div class="dropfile__delete">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#trash"></use>
+              </svg>
+            </div>
+            <div class="dropfile__info">
+              <div class="dropfile__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#picture"></use>
+                </svg>
+              </div>
+              <div class="dropfile__name-wrap">
+                <div class="dropfile__name"></div>
+                <div class="dropfile__size"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="veri__inner veri__inner--verified hide">
+    <div class="veri__bg">
+      <img src="img/doc-bg-after.jpg" alt="" class="">
+    </div>
+    <div class="veri__content">
+      <div class="veri__text">
+        <div class="veri__title">Верификация пройдена</div>
+        <button type="button" class="veri__subtitle">Изменить документы</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn12 js-send-profile-docs veri__send" disabled="true">
+    Отправить
+  </button>
+</div>
+    </div>
+  </div>
+</div>
+  </section>
+</div>
+
+</div>
+
+
+        </main>
+        <footer class="footer">
+          <div class="container container--full">
+            <div class="footer__inner">
+              <div class="footer__col">
+                <a href="/" class="footer__logo">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#logo"></use>
+                  </svg>
+                  ЗЕРНОДАР
+                </a>
+                <div class="footer__docs only-pc">
+                  <a href="/">Пользовательское соглашение</a>
+                  <a href="/">Политика конфиденциальности</a>
+                </div>
+                <div class="footer__c only-pc">© Зернодар 2024</div>
+              </div>
+              <div class="footer__col">
+                <ul class="footer__list">
+                  <li><a href="">Предложение</a></li>
+                  <li><a href="">Спрос</a></li>
+                  <li><a href="">Компании</a></li>
+                  <li><a href="">О нас</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <ul class="footer__list">
+                  <li><a href="">FAQ</a></li>
+                  <li><a href="">Новости</a></li>
+                  <li><a href="">Контакты</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <div class="footer__soc">
+                  <a href="">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#vk-f"></use>
+                    </svg>
+                    Наша группа ВКонтакте
+                  </a>
+                  <a href="">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#tg-f"></use>
+                    </svg>
+                    Актуальных объявления
+                  </a>
+                </div>
+                <a href="" class="footer__created only-pc">Разработка сайта: Осьминожка</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__docs">
+              <a href="/">Пользовательское соглашение</a>
+              <a href="/">Политика конфиденциальности</a>
+            </div>
+            <a href="" class="footer__created">Разработка сайта: Осьминожка</a>
+          </div>
+          <div class="footer__c on-tab">© Зернодар 2024</div>
+        </footer>
+        <!-- <div class="scroll-up">
+          <div class="osmi-container">
+            <div class="scroll-up__inner">
+              <button class="scroll-up__btn">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow-up"></use>
+                </svg>
+              </button>
+              <script>
+                document.querySelector('.scroll-up__btn')?.addEventListener('click', () => {
+                  window.scrollTo({top: 0, behavior: 'smooth'});
+                })
+              </script>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="modal modal--text-seller close-x" data-modal="text-seller">
+  <div class="modal__inner">
+    <div class="modal__top">
+      <div class="modal__title">Написать  продавцу</div>
+      <button class="modal__close close-x" type="button">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__content">
+      <form action="">
+        <textarea class="textarea1" name="" id="" placeholder="Введите сообщение здесь"></textarea>
+        <button class="btn3">Отправить</button>
+      </form>
+    </div>
+  </div>
+</div>
+        <div class="visually-hidden">
+          <textarea id="urlCopy" rows="1" cols="30"></textarea>
+        </div>
+        <script src="js/libs/swiper-bundle.min.js"></script>
+        <script src="js/libs/just-validate.production.min.js"></script>
+        <script src="js/libs/imask.js"></script>
+        <script src="js/vendor.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
