@@ -195,28 +195,6 @@
     }
   }
 
-  // &__input-field-mobile {
-  //   display: none;
-
-  //   @include tab {
-  //     display: block;
-  //     width: 100%;
-  //     padding: 1rem 0.8rem 1.3rem 0.8rem;
-  //     margin-bottom: 1.6rem;
-  //     background-color: #f8f8f8;
-  //     border: none;
-  //     border-radius: 0.8rem;
-  //   }
-  // }
-
-  // &__input-field-mobile::placeholder {
-  //   display: none;
-
-  //   @include tab {
-  //     font-size: 1.2rem;
-  //   }
-  // }
-
   &__bottom-section {
     margin-left: 20rem;
 
@@ -237,13 +215,13 @@
   }
 
   &__link--pass {
-    margin-top: -3.6rem;
-    margin-bottom: 0.6rem;
+    margin-left: 20rem;
+    margin-bottom: 2.4rem;
 
     @include tab {
       margin-top: 0rem;
-      margin-bottom: 0;
-      font-size: 1.2rem;
+      margin-bottom: 1.6rem;
+      margin-left: 0rem;
     }
   }
 
@@ -375,5 +353,13 @@
       padding: 1.6rem;
       margin: 1.6rem;
     }
+  }
+}
+
+#body-pass {
+  padding-top: 0rem;
+
+  @include tab {
+    padding-top: 1.6rem;
   }
 }

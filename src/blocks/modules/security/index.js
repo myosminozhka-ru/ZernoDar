@@ -7,18 +7,27 @@ export default function () {
     const cancelButton = item.querySelector(".security__button-cancel");
     const body = item.querySelector(".security__body");
     const infoSpan = item.querySelector(".security__info");
-    const securityLabel = item.querySelector(".security__label");
-    const securityHeader = item.querySelector(".security__header");
+    const labelMobile = item.querySelector(".security__label.label-mobile");
+
+    function isMobile() {
+      return window.innerWidth < 700;
+    }
 
     toggleButton.addEventListener("click", function () {
       checkbox.checked = true;
       body.style.display = "block";
       toggleButton.style.display = "none";
 
-      if (securityHeader.classList.contains("security__header--password")) {
-        securityLabel.textContent = "Старый пароль";
+      if (infoSpan && infoSpan.textContent.includes("Обновлен месяц назад")) {
         infoSpan.style.display = "none";
-        securityHeader.classList.remove("security__header--password");
+      }
+
+      if (
+        labelMobile &&
+        labelMobile.textContent.trim() === "Пароль" &&
+        !isMobile()
+      ) {
+        labelMobile.style.display = "none";
       }
     });
 
@@ -28,10 +37,16 @@ export default function () {
         body.style.display = "none";
         toggleButton.style.display = "block";
 
-        if (securityLabel.textContent === "Старый пароль") {
-          securityLabel.textContent = "Пароль";
+        if (infoSpan && infoSpan.textContent.includes("Обновлен месяц назад")) {
           infoSpan.style.display = "block";
-          securityHeader.classList.add("security__header--password");
+        }
+
+        if (
+          labelMobile &&
+          labelMobile.textContent.trim() === "Пароль" &&
+          !isMobile()
+        ) {
+          labelMobile.style.display = "block";
         }
       });
     }
