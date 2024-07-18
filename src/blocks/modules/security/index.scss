@@ -180,31 +180,42 @@
     border-radius: 1.6rem;
 
     @include tab {
-      display: none;
-    }
-  }
-
-  &__input-field-mobile {
-    display: none;
-
-    @include tab {
-      display: block;
-      width: 100%;
-      padding: 1rem 0.8rem 1.3rem 0.8rem;
       margin-bottom: 1.6rem;
-      background-color: #f8f8f8;
-      border: none;
+      padding: 1rem 0.8rem 1.3rem 0.8rem;
       border-radius: 0.8rem;
     }
   }
 
-  &__input-field-mobile::placeholder {
-    display: none;
+  &__input-field::placeholder {
+    color: transparent;
 
     @include tab {
+      color: #8c8c8c;
       font-size: 1.2rem;
     }
   }
+
+  // &__input-field-mobile {
+  //   display: none;
+
+  //   @include tab {
+  //     display: block;
+  //     width: 100%;
+  //     padding: 1rem 0.8rem 1.3rem 0.8rem;
+  //     margin-bottom: 1.6rem;
+  //     background-color: #f8f8f8;
+  //     border: none;
+  //     border-radius: 0.8rem;
+  //   }
+  // }
+
+  // &__input-field-mobile::placeholder {
+  //   display: none;
+
+  //   @include tab {
+  //     font-size: 1.2rem;
+  //   }
+  // }
 
   &__bottom-section {
     margin-left: 20rem;
@@ -365,12 +376,4 @@
       margin: 1.6rem;
     }
   }
-}
-
-#new-pass {
-  margin-top: 2rem;
-}
-
-.mob-old-pass {
-  margin-top: -1.2rem;
 }
