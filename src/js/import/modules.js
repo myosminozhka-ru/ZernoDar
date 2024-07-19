@@ -2,6 +2,7 @@ import Header from "%modules%/header/header";
 import more from "./more";
 import hideShowBlock from "./hideShowBlock";
 import Modal from "./modal";
+import Copy from "./copy";
 
 import cardAdMap from "%modules%/card-ad-map/index";
 import Sidebar from "%modules%/catalog-sidebar/index";
@@ -16,6 +17,7 @@ import security from "%modules%/security/index";
 import signupSwitch from "%modules%/registration/index";
 import search from "%modules%/search/index";
 import profile from "%modules%/profile/index";
+import contactMap from "%modules%/contacts/index";
 
 addEventListener("DOMContentLoaded", () => {
   more(
@@ -44,6 +46,13 @@ addEventListener("DOMContentLoaded", () => {
 
   more(".edit-about__text-part", ".edit-about__more .open-more2", 1);
 
+
+  more(
+    ".contact-requisites__list .contact-requisites__item",
+    ".js-contact-requisites-open",
+    7
+  );
+
   hideShowBlock(
     ".article .article__nav .article-nav__list",
     ".article .article__nav .open-more2"
@@ -61,6 +70,7 @@ addEventListener("DOMContentLoaded", () => {
   signupSwitch();
   search();
   profile();
+  contactMap();
   window.app = {
     header: new Header(),
     textSellerModal: new Modal("text-seller"),
@@ -71,5 +81,6 @@ addEventListener("DOMContentLoaded", () => {
     newsSubsModal: new Modal("news-subs"),
     modalReviewComplaint: new Modal("review-complaint"),
     sidebar: new Sidebar(),
+    copy: new Copy(),
   };
 });

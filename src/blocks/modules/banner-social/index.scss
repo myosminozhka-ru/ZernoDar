@@ -5,6 +5,8 @@
     align-items: center;
     position: relative;
     height: 31.4rem;
+    border-radius: 2rem;
+    overflow: hidden;
   }
   &__img {
     position: absolute;
@@ -67,6 +69,30 @@
   &__text {
     font-size: 1.6rem;
   }
+  &--small {
+    .banner-social {
+      &__img {
+        img {    
+          object-position: -16rem center;
+        }
+      }
+      &__inner {
+        align-items: flex-start;
+        height: auto;
+        padding-top: 3.8rem;
+        padding-bottom: 3.8rem;
+        padding-right: 5rem;
+      }
+      &__left {
+        padding-left: 4.8rem;
+      }
+      &__item {
+        &:nth-child(2) {
+          margin-left: 4.8rem;
+        }
+      }
+    }
+  }
   @include tab {
     margin-bottom: 4rem;
     .container {
@@ -114,6 +140,23 @@
     &__text {
       font-size: 1.7rem;
     }
+    &--small {
+      .banner-social {
+        &__img {
+          img {    
+            object-position: center;
+          }
+        }
+        &__inner {
+          padding: 2.4rem;
+        }
+        &__item {
+          &:nth-child(2) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
   }
   @include mob {
     &__inner {
@@ -125,6 +168,13 @@
     }
     &__text {
       font-size: 1.2rem;
+    }
+    &--small {
+      .banner-social {
+        &__inner {
+          padding: 1.6rem;
+        }
+      }
     }
   }
 }
