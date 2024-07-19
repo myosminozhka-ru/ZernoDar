@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -368,41 +360,291 @@
   <main>
 
 
-  <button class="btn1">button</button>
-  <button class="btn2">button</button>
-  <button class="btn3">button</button>
-  <button class="btn4">button</button>
-  <button class="btn5">button</button>
-  <button class="btn6">button</button>
-  <button class="btn7">button</button>
-  <button class="btn8">button</button>
-  <button class="btn9">button</button>
-  <button class="btn10">button</button>
-  <button class="btn11">button</button>
-  <button class="btn12">button</button>
-  <button class="btn13">button</button>
-  <button class="btn14">button</button>
-  <button class="btn15">button</button>
-  <button class="btn16">button</button>
-  <button class="tag1">tag1</button>
-  <button class="tag2">tag2</button>
-  <button class="tag3">tag1</button>
-  <button class="tag-torg">tag2</button>
-  <button class="tag-torg2">tag2</button>
-  <button class="tag-user">tag2</button>
-
-  <button class="open-more"><span class="str">Показать все</span>
-    <svg>
-      <use xlink:href="img/sprites/sprite.svg#open-more"></use>
-    </svg>
-  </button>
-
-  <button class="open-more2"><span class="str">Показать все</span>
-    <svg>
-      <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
-    </svg>
-  </button>
+<div class="main-wrapper">
+  <div class="brc">
+  <div class="container container--full">
+    <div class="brc__inner">
+      <ul class="brc__list">
+        <li>
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#left-circle"></use>
+          </svg>
+          <a href="/">Главная</a>
+        </li>
+        
+          <li>
+            <a href="#" class="link">Контакты </a>
+          </li>
+        
+      </ul>
+      <div class="brc__arrow">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#curve-arrow-right"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="contacts-page-wrapper">
   
+  <div class="contact-banner">
+  <div class="contact-banner__inner">
+    <div class="contact-banner__bg">
+      <img src="img/contact-banner.jpg" alt="">
+    </div>
+    <div class="contact-banner__content">
+      <div class="contact-banner__title">Контакты</div>
+      <div class="contact-banner__text">Если у вас есть вопросы по продуктам компании, сотрудничеству или вы хотите <br> стать частью нашей команды, оставьте заявку и мы свяжемся с вами.</div>
+    </div>
+  </div>
+</div>
+  <div class="container container--small">
+    <div class="contact-map-feedback">
+      <div class="contact-map">
+  <div class="h1 contact-map__mtitle">Карта</div>
+  <div class="contact-map__inner">
+    <div class="contact-map__map">
+      <div class="contact-map__show-on-map">
+        <span class="text">Ульяновская обл., Россия, 433315</span>
+        <span class="linkblue">Показать на карте</span>
+      </div>
+      <div id="contact-map"></div>
+    </div>
+    <div class="contact-map__content">
+      <div class="contact-map__left">
+        <div class="h1 contact-map__subtitle">Контакты</div>
+        <div class="user-contact">
+          <div class="user-contact__item">
+            <a href="#" class="user-contact__link">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#contact-mail"></use>
+              </svg>
+              abcd@mail.ru 
+            </a>
+          </div>
+          <div class="user-contact__item">
+            <a href="#" class="user-contact__link">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#contact-phone"></use>
+              </svg>
+              + 7 000 000 00 00
+            </a>
+          </div>
+          <div class="user-contact__item user-contact__item--local">
+            <span class="user-contact__link">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#map-point"></use>
+              </svg>
+              Ульяновск
+            </span>
+          </div>
+          <div class="user-contact__item only-pc">
+            <span class="user-contact__link">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+              </svg>
+              Пн - Вс 9:00 - 18:00
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map__right">
+        <div class="contact-map__mid">
+          <div class="h1 contact-map__subtitle">Рабочие часы</div>
+          <div class="user-contact">
+            <div class="user-contact__item">
+              <span class="user-contact__link">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                </svg>
+                Пн - Вс 9:00 - 18:00
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="h1 contact-map__subtitle">Соцсети</div>
+        <div class="user-contact">
+          <div class="user-contact__item">
+            <div class="user-contact__links user-contact__links--lg">
+              <a href="#" class="user-contact__link">
+                <img src="img/sprites/logos_whatsapp-icon.svg" alt="">
+              </a>
+              <a href="#" class="user-contact__link">
+                <img src="img/sprites/logos_telegram.svg" alt="">
+              </a>
+              <a href="#" class="user-contact__link">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#basil_viber-solid"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="contact-feedback">
+  <div class="h1 contact-feedback__mtitle">Свяжитесь с нами</div>
+  <div class="contact-feedback__inner">
+    <label class="contact-feedback__label">
+      <input type="text" placeholder="Имя, Фамилия">
+    </label>
+    <label class="contact-feedback__label">
+      <input type="text" placeholder="Телефон">
+    </label>
+    <label class="contact-feedback__label">
+      <input type="text" placeholder="Email">
+    </label>
+    <label class="contact-feedback__label">
+      <textarea name="" id="" placeholder="Текст сообщения"></textarea>
+    </label>
+    <div class="contact-feedback__actions">
+      <button class="btn9 btn9--lg contact-feedback__send">Отправить заявку</button>
+      <div class="contact-feedback__police">Нажимая «Задать вопрос», вы соглашаетесь с условиями <a href="">Пользовательского соглашения</a> и <a href="">Политикой обработки персональных данных</a></div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="contact-requisites">
+  <div class="container container--small">
+    <div class="contact-requisites__head">
+      <div class="h1 contact-requisites__mtitle">Карта компании</div>
+      <button class="open-more" data-copy-trigger="text"><span class="str">Скопировать</span>
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#copy"></use>
+        </svg>
+      </button>
+      <a href="#" class="open-more open-more--palegreen"><span class="str">Скачать</span>
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#download-5"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="contact-requisites__inner">
+      <div class="contact-requisites__list" data-copy-text="text">
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Краткое наименование</div>
+          <div class="contact-requisites__value">АО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Полное наименование</div>
+          <div class="contact-requisites__value"> АКЦИОНЕРНОЕ ОБЩЕСТВО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Юридический адрес</div>
+          <div class="contact-requisites__value">175353, НОВГОРОДСКАЯ ОБЛАСТЬ, М.О. МАРЁВСКИЙ, С ВЕЛИЛЫ, УЛ СОВЕТОВ, Д. 7, 
+            ПОМЕЩ. 2, КАБ. 15</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">ИНН:</div>
+          <div class="contact-requisites__value">5300005224</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">ОГРН</div>
+          <div class="contact-requisites__value">1225300003147</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">КПП</div>
+          <div class="contact-requisites__value">530001001</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Дата регистрации</div>
+          <div class="contact-requisites__value">11 Августа 2022</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Тип организации:</div>
+          <div class="contact-requisites__value">Юридическое лицо</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Статус организации</div>
+          <div class="contact-requisites__value">Действующая</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">ФИО руководителя</div>
+          <div class="contact-requisites__value">Духанин Дмитрий Юрьевич</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Должность руководителя</div>
+          <div class="contact-requisites__value">ПРЕЗИДЕНТ</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Тип подразделения</div>
+          <div class="contact-requisites__value">Головная организация</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Количество филиалов</div>
+          <div class="contact-requisites__value">0</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Код ОКВЭД</div>
+          <div class="contact-requisites__value">01.11&nbsp;— основной код ОКВЭД</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">Код ОКОПФ</div>
+          <div class="contact-requisites__value">12267</div>
+        </div>
+        <div class="contact-requisites__item">
+          <div class="contact-requisites__name">ОПФ</div>
+          <div class="contact-requisites__value">Непубличное акционерное общество (НАО)</div>
+        </div>
+      </div>
+      <button class="open-more3 contact-requisites__more js-contact-requisites-open"><span class="str">Показать детали</span>
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#open-more"></use>
+        </svg>
+      </button>
+      <button class="open-more2 contact-requisites__more2 js-contact-requisites-open"><span class="str">Показать детали</span>
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
+        </svg>
+      </button>
+    </div>
+  </div>  
+</div>
+    <div class="banner-social banner-social--small">
+  <div class="banner-social__inner">
+    <div class="banner-social__img">
+      <img src="img/banner-soc.jpg" alt="">
+    </div>
+    <div class="banner-social__left">
+      Больше практик <br>
+      в Telegram
+    </div>
+    <div class="banner-social__right">
+      <div class="banner-social__item">
+        <div class="banner-social__ava">
+          <img src="img/sprites/banner-soc1.svg" alt="">
+        </div>
+        <div class="banner-social__div">
+          <div class="banner-social__name">Анонсы объявлений</div>
+          <div class="banner-social__text">Будьте в курсе новых <br>
+            предложений первыми</div>
+        </div>
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+        </svg>
+      </div>
+      <div class="banner-social__item">
+        <div class="banner-social__ava">
+          <img src="img/sprites/banner-soc2.svg" alt="">
+        </div>
+        <div class="banner-social__div">
+          <div class="banner-social__name">Следите только за нужными <br> культурами</div>
+          <div class="banner-social__text">Обновления только по интересующим культурам</div>
+        </div>
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#right-arrow"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+
+
         </main>
         <footer class="footer">
           <div class="container container--full">
@@ -507,7 +749,4 @@
         <script src="js/vendor.js"></script>
         <script src="js/main.js"></script>
     </body>
-</html>
-
-</body>
 </html>

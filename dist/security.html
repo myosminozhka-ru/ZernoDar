@@ -470,11 +470,10 @@
         <div class="security__body">
           <div class="security__body__input-wrapper">
             <span class="security__body__title">Новый Email</span>
-            <input id="email" type="email" class="security__input-field" />
             <input
               id="email"
               type="email"
-              class="security__input-field-mobile"
+              class="security__input-field"
               placeholder="Введите новый Email"
             />
           </div>
@@ -484,11 +483,6 @@
               id="password"
               type="password"
               class="security__input-field"
-            />
-            <input
-              id="password"
-              type="password"
-              class="security__input-field-mobile"
               placeholder="Пароль"
             />
           </div>
@@ -523,49 +517,37 @@
             <span>Изменить</span>
           </label>
         </div>
-        <div class="security__body">
-          <div class="security__bottom-section">
+        <div class="security__body" id="body-pass">
+          <div class="security__body__input-wrapper">
+            <span class="security__body__title">Старый пароль</span>
             <input
-              id="password"
-              type="password"
-              class="security__input-field-mobile mob-old-pass"
-              placeholder="Старый пароль"
-            />
-            <a href="#" class="security__link security__link--pass"
-              >Забыли пароль?</a
-            >
-          </div>
-          <div
-            class="security__body__input-wrapper security__body__input-wrapper--pass"
-            id="new-pass"
-          >
-            <span class="security__body__title">Новый пароль</span>
-            <input
-              id="password"
+              id="old-password"
               type="password"
               class="security__input-field"
+              placeholder="Старый пароль"
+            />
+          </div>
+          <a href="#" class="security__link security__link--pass">
+            Забыли пароль?
+          </a>
+          <div class="security__body__input-wrapper">
+            <span class="security__body__title">Новый пароль</span>
+            <input
+              id="new-password"
+              type="password"
+              class="security__input-field"
+              placeholder="Новый пароль"
             />
           </div>
           <div class="security__body__input-wrapper">
             <span class="security__body__title">Повторите пароль</span>
             <input
-              id="password"
+              id="repeat-password"
               type="password"
               class="security__input-field"
+              placeholder="Повторите пароль"
             />
           </div>
-          <input
-            id="password"
-            type="password"
-            class="security__input-field-mobile"
-            placeholder="Новый пароль"
-          />
-          <input
-            id="password"
-            type="password"
-            class="security__input-field-mobile"
-            placeholder="Повторите пароль"
-          />
           <div class="security__bottom-section">
             <div class="security__actions">
               <button class="security__button-save" type="submit">
@@ -595,11 +577,10 @@
         <div class="security__body">
           <div class="security__body__input-wrapper">
             <span class="security__body__title">Новый номер</span>
-            <input id="phone" type="phone" class="security__input-field" />
             <input
               id="phone"
               type="phone"
-              class="security__input-field-mobile"
+              class="security__input-field"
               placeholder="Новый номер"
             />
           </div>
