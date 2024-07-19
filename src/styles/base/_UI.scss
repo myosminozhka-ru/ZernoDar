@@ -29,6 +29,9 @@
   &--full {
     width: 100%;
   }
+  &--small {
+    width: 123rem;
+  }
   @include tab {
     max-width: none;
     width: 100%;
@@ -496,6 +499,9 @@
     }
   }
   &:hover {
+    background-color: $palegreen;
+  }
+  &--palegreen {
     background-color: $palegreen;
   }
 }
@@ -1726,6 +1732,13 @@
   &__links {
     display: inline-flex;
     gap: 0.8rem;
+    &--lg {
+      .user-contact__link svg, 
+      .user-contact__link img {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
   }
   &__link {
     display: inline-flex;
@@ -1759,6 +1772,13 @@
     }
     &__links {
       gap: 0.6rem;
+      &--lg {
+        .user-contact__link svg, 
+        .user-contact__link img {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
     }
     &__link {
       gap: 0.8rem;
