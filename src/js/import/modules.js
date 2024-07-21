@@ -18,6 +18,7 @@ import signupSwitch from "%modules%/registration/index";
 import search from "%modules%/search/index";
 import profile from "%modules%/profile/index";
 import contactMap from "%modules%/contacts/index";
+import cookies from "%modules%/cookies/index";
 
 addEventListener("DOMContentLoaded", () => {
   more(
@@ -53,6 +54,12 @@ addEventListener("DOMContentLoaded", () => {
     7
   );
 
+  more(
+    ".agreement__content>p",
+    ".agreement__more .open-more2",
+    4
+  );
+
   hideShowBlock(
     ".article .article__nav .article-nav__list",
     ".article .article__nav .open-more2"
@@ -71,6 +78,7 @@ addEventListener("DOMContentLoaded", () => {
   search();
   profile();
   contactMap();
+  cookies();
   window.app = {
     header: new Header(),
     textSellerModal: new Modal("text-seller"),

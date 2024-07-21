@@ -1,0 +1,36 @@
+.cookies {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 3.2rem;
+  background-color: $palegreen;
+  &.hide {
+    display: none;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    gap: 2.4rem;
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  @include tab {
+    padding: 2.4rem;
+    &__inner {
+      font-size: 1.7rem;
+    }
+  }
+  @include mob {
+    padding: 1.6rem;
+    &__inner {
+      font-size: 1.2rem;
+    }
+  }
+}
