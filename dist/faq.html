@@ -385,16 +385,18 @@
     </div>
   </div>
 </div>
-
-  <div class="faq-heading">
-    <img class="faq-heading__image" src="img/faq-bg.jpg" alt="" />
-    <h1 class="faq-heading__title">FAQ</h1>
-    <p class="faq-heading__text">
-      Если у вас есть вопросы по продуктам компании, сотрудничеству или хотите
-      стать частью нашей команды, оставьте контакты и мы свяжемся с вами.
-    </p>
+  <section class="page-banner">
+  <div class="page-banner__inner">
+    <div class="page-banner__bg">
+      <img src="img/faq-bg.jpg" alt="">
+    </div>
+    <div class="page-banner__content">
+      <h1 class="page-banner__title">FAQ</h1>
+      <p class="page-banner__text">Если у вас есть вопросы по продуктам компании, сотрудничеству или хотите <br>
+        стать частью нашей команды, оставьте контакты и мы свяжемся с вами.</p>
+    </div>
   </div>
-
+</section>
   <div class="accordion">
   <div class="accordion__item">
     <input type="checkbox" id="accordion-item-1" class="accordion__input" />
@@ -558,11 +560,21 @@
         Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
         libero et velit interdum, ac aliquet odio mattis.
       </p>
-      <input type="text" name="first_name" placeholder="Имя" required />
-      <input type="text" name="last_name" placeholder="Фамилия" required />
-      <input type="tel" name="phone" placeholder="Телефон" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Сообщение" required></textarea>
+      <label>
+        <input type="text" name="first_name" placeholder="Имя" required />
+      </label>
+      <label>
+        <input type="text" name="last_name" placeholder="Фамилия" required />
+      </label>
+      <label>
+        <input type="tel" name="phone" placeholder="Телефон" required />
+      </label>
+      <label>
+        <input type="email" name="email" placeholder="Email" required />
+      </label>
+      <label>
+        <textarea name="message" placeholder="Сообщение" required></textarea>
+      </label>
     </div>
     <div class="faq-form__submit">
       <button class="faq-form__button btn10" type="submit">
