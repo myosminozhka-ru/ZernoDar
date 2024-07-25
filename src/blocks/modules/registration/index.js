@@ -9,8 +9,8 @@ export default function signupSwitch() {
   if (juridicalElement) {
     juridicalElement.addEventListener("change", function () {
       if (juridicalForm && physicalForm) {
-        juridicalForm.classList.add("registration__form--active");
-        physicalForm.classList.remove("registration__form--active");
+        juridicalForm.classList.add("registration__block--active");
+        physicalForm.classList.remove("registration__block--active");
       }
     });
   }
@@ -18,8 +18,8 @@ export default function signupSwitch() {
   if (physicalElement) {
     physicalElement.addEventListener("change", function () {
       if (physicalForm && juridicalForm) {
-        physicalForm.classList.add("registration__form--active");
-        juridicalForm.classList.remove("registration__form--active");
+        physicalForm.classList.add("registration__block--active");
+        juridicalForm.classList.remove("registration__block--active");
       }
     });
   }
