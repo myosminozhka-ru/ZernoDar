@@ -1,168 +1,176 @@
-<div class="security-wrapper">
+<div class="lk-wrapper">
   @@include("../lk-nav/index.html")
 
-  <section class="security">
-    <h2 class="security__title-mobile">Безопасность</h2>
-
-    <div class="security__main">
-      <h2 class="security__title">Безопасность</h2>
-
-      <span class="security__email-upd-notification">
-        <img src="img/sprites/caution-info.svg" alt="" />
-        <span>
-          Мы направили на адрес 12***.ru письмо с сcылкой для подтверждения
-          нового email
+  <div class="lk-inner">
+    <section class="security">
+      <h2 class="security__title-mobile">Безопасность</h2>
+  
+      <div class="security__main">
+        <h2 class="security__title">Безопасность</h2>
+  
+        <span class="security__email-upd-notification">
+          <img src="img/sprites/caution-info.svg" alt="" />
+          <span>
+            Мы направили на адрес 12***.ru письмо с сcылкой для подтверждения
+            нового email
+          </span>
         </span>
-      </span>
-
-      <span class="security__password-upd-notification" style="display: none">
-        <img src="img/sprites/done.svg" alt="" />
-        <span> Пароль успешно изменен </span>
-      </span>
-
-      <div class="security__item">
-        <div class="security__header-wrapper">
-          <div class="security__header security__header--email">
-            <span class="security__label">Email</span>
-            <span class="security__info">1234@mail.ru</span>
+  
+        <span class="security__password-upd-notification" style="display: none">
+          <img src="img/sprites/done.svg" alt="" />
+          <span> Пароль успешно изменен </span>
+        </span>
+  
+        <div class="security__item">
+          <div class="security__header-wrapper">
+            <div class="security__header security__header--email">
+              <span class="security__label">Email</span>
+              <span class="security__info">1234@mail.ru</span>
+            </div>
+            <button class="security__toggle">
+              <img src="img/sprites/edit.svg" alt="" />
+              <span>Изменить</span>
+            </button>
           </div>
-          <input type="checkbox" id="security-email" class="security__input" />
-          <label for="security-email" class="security__toggle">
-            <img src="img/sprites/edit.svg" alt="" />
-            <span>Изменить</span>
-          </label>
-        </div>
-        <div class="security__body">
-          <div class="security__body__input-wrapper">
-            <span class="security__body__title">Новый Email</span>
-            <input
-              id="email"
-              type="email"
-              class="security__input-field"
-              placeholder="Введите новый Email"
-            />
-          </div>
-          <div class="security__body__input-wrapper">
-            <span class="security__body__title">Пароль</span>
-            <input
-              id="password"
-              type="password"
-              class="security__input-field"
-              placeholder="Пароль"
-            />
-          </div>
-          <div class="security__bottom-section">
-            <a href="#" class="security__link">Забыли пароль?</a>
-            <div class="security__actions">
-              <button class="security__button-save" type="submit">
-                Сохранить
-              </button>
-              <label for="security-email" class="security__button-cancel">
-                <img src="img/sprites/cancel.svg" alt="" />
-                <span>Отмена</span>
+          <div class="security__body">
+            <div class="security__body__input-wrapper">
+              <span class="security__body__title">Новый Email</span>
+              <label class="security__input-wrap">
+                <input
+                  id="email"
+                  type="email"
+                  class="security__input-field"
+                  placeholder="Введите новый Email"
+                />
               </label>
+            </div>
+            <div class="security__body__input-wrapper">
+              <span class="security__body__title">Пароль</span>
+              <label class="security__input-wrap">
+                <input
+                  id="password"
+                  type="password"
+                  class="security__input-field"
+                  placeholder="Пароль"
+                />
+              </label>
+            </div>
+            <div class="security__bottom-section">
+              <a href="#" class="security__link">Забыли пароль?</a>
+              <div class="security__actions">
+                <button class="security__button-save" type="submit">
+                  Сохранить
+                </button>
+                <button class="security__button-cancel">
+                  <img src="img/sprites/cancel.svg" alt="" />
+                  <span>Отмена</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="security__item security__item--password">
+          <div class="security__header-wrapper">
+            <div class="security__header security__header--password">
+              <span class="security__label label-mobile">Пароль</span>
+              <span class="security__info">Обновлен месяц назад</span>
+            </div>
+            <button class="security__toggle">
+              <img src="img/sprites/edit.svg" alt="" />
+              <span>Изменить</span>
+            </button>
+          </div>
+          <div class="security__body" id="body-pass">
+            <div class="security__body__input-wrapper">
+              <span class="security__body__title">Старый пароль</span>
+              <label class="security__input-wrap">
+                <input
+                  id="old-password"
+                  type="password"
+                  class="security__input-field"
+                  placeholder="Старый пароль"
+                />
+              </label>
+            </div>
+            <a href="#" class="security__link security__link--pass">
+              Забыли пароль?
+            </a>
+            <div class="security__body__input-wrapper">
+              <span class="security__body__title">Новый пароль</span>
+              <label class="security__input-wrap">
+                <input
+                  id="new-password"
+                  type="password"
+                  class="security__input-field"
+                  placeholder="Новый пароль"
+                />
+              </label>
+            </div>
+            <div class="security__body__input-wrapper">
+              <span class="security__body__title">Повторите пароль</span>
+              <label class="security__input-wrap">
+                <input
+                  id="repeat-password"
+                  type="password"
+                  class="security__input-field"
+                  placeholder="Повторите пароль"
+                />
+              </label>
+            </div>
+            <div class="security__bottom-section">
+              <div class="security__actions">
+                <button class="security__button-save" type="submit">
+                  Сохранить
+                </button>
+                <button class="security__button-cancel">
+                  <img src="img/sprites/cancel.svg" alt="" class="pass-close" />
+                  <span>Отмена</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="security__item">
+          <div class="security__header-wrapper">
+            <div class="security__header security__header--phone">
+              <span class="security__label">Телефон</span>
+              <span class="security__info">+7 000 000 000</span>
+            </div>
+            <button class="security__toggle">
+              <img src="img/sprites/edit.svg" alt="" />
+              <span>Изменить</span>
+            </button>
+          </div>
+          <div class="security__body">
+            <div class="security__body__input-wrapper">
+              <span class="security__body__title">Новый номер</span>
+              <label class="security__input-wrap">
+                <input
+                  id="phone"
+                  type="phone"
+                  class="security__input-field"
+                  placeholder="Новый номер"
+                />
+              </label>
+            </div>
+  
+            <div class="security__bottom-section">
+              <div class="security__actions">
+                <button class="security__button-save" type="submit">
+                  Сохранить
+                </button>
+                <button class="security__button-cancel">
+                  <img src="img/sprites/cancel.svg" alt="" class="phone-close" />
+                  <span>Отмена</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="security__item">
-        <div class="security__header-wrapper">
-          <div class="security__header security__header--password">
-            <span class="security__label label-mobile">Пароль</span>
-            <span class="security__info">Обновлен месяц назад</span>
-          </div>
-          <input
-            type="checkbox"
-            id="security-password"
-            class="security__input"
-          />
-          <label for="security-password" class="security__toggle">
-            <img src="img/sprites/edit.svg" alt="" />
-            <span>Изменить</span>
-          </label>
-        </div>
-        <div class="security__body" id="body-pass">
-          <div class="security__body__input-wrapper">
-            <span class="security__body__title">Старый пароль</span>
-            <input
-              id="old-password"
-              type="password"
-              class="security__input-field"
-              placeholder="Старый пароль"
-            />
-          </div>
-          <a href="#" class="security__link security__link--pass">
-            Забыли пароль?
-          </a>
-          <div class="security__body__input-wrapper">
-            <span class="security__body__title">Новый пароль</span>
-            <input
-              id="new-password"
-              type="password"
-              class="security__input-field"
-              placeholder="Новый пароль"
-            />
-          </div>
-          <div class="security__body__input-wrapper">
-            <span class="security__body__title">Повторите пароль</span>
-            <input
-              id="repeat-password"
-              type="password"
-              class="security__input-field"
-              placeholder="Повторите пароль"
-            />
-          </div>
-          <div class="security__bottom-section">
-            <div class="security__actions">
-              <button class="security__button-save" type="submit">
-                Сохранить
-              </button>
-              <label for="security-password" class="security__button-cancel">
-                <img src="img/sprites/cancel.svg" alt="" class="pass-close" />
-                <span>Отмена</span>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="security__item">
-        <div class="security__header-wrapper">
-          <div class="security__header security__header--phone">
-            <span class="security__label">Телефон</span>
-            <span class="security__info">+7 000 000 000</span>
-          </div>
-          <input type="checkbox" id="security-phone" class="security__input" />
-          <label for="security-phone" class="security__toggle">
-            <img src="img/sprites/edit.svg" alt="" />
-            <span>Изменить</span>
-          </label>
-        </div>
-        <div class="security__body">
-          <div class="security__body__input-wrapper">
-            <span class="security__body__title">Новый номер</span>
-            <input
-              id="phone"
-              type="phone"
-              class="security__input-field"
-              placeholder="Новый номер"
-            />
-          </div>
-
-          <div class="security__bottom-section">
-            <div class="security__actions">
-              <button class="security__button-save" type="submit">
-                Сохранить
-              </button>
-              <label for="security-password" class="security__button-cancel">
-                <img src="img/sprites/cancel.svg" alt="" class="phone-close" />
-                <span>Отмена</span>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
+

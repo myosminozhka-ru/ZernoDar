@@ -7,9 +7,10 @@
 }
 
 .security {
+  position: relative;
   &__main {
-    width: 124.8rem;
-    margin-top: 6.3rem;
+    width: 100%;
+    margin-top: 0;
     margin-bottom: 10rem;
     padding: 3.2rem;
     border-radius: 2rem;
@@ -60,6 +61,7 @@
     }
 
     @include tab {
+      position: relative;
       padding: 1.6rem;
 
       &:first-of-type {
@@ -171,16 +173,23 @@
     display: block;
   }
 
-  &__input-field {
+  &__input-wrap {
     width: 98.4rem;
-    padding: 1.4rem;
     margin-bottom: 2.4rem;
+    @include tab {
+      width: 100%;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__input-field {
+    width: 100%;
+    padding: 1.4rem;
     background-color: #f8f8f8;
     border: none;
     border-radius: 1.6rem;
 
     @include tab {
-      margin-bottom: 1.6rem;
       padding: 1rem 0.8rem 1.3rem 0.8rem;
       border-radius: 0.8rem;
     }
@@ -252,7 +261,8 @@
     background-color: #ecf0f4;
 
     @include tab {
-      min-width: 28.8rem;
+      width: 100%;
+      min-width: auto;
       font-size: 1.4rem;
       border-radius: 0.8rem;
     }
@@ -267,7 +277,14 @@
     }
 
     @include tab {
+      position: absolute;
+      right: 1.6rem;
+      top: 3rem;
       border: none;
+      width: 1.8rem;
+      height: 1.8rem;
+      padding: 0;
+      margin: 0;
 
       span {
         display: none;
@@ -275,9 +292,6 @@
 
       img {
         display: block;
-        position: relative;
-        bottom: 22.6rem;
-        right: 1.8rem;
         width: 1.8rem;
         height: 1.8rem;
       }
@@ -294,10 +308,10 @@
 
   &__email-upd-notification {
     position: absolute;
-    top: 27.6rem;
-    right: 35.5rem;
+    top: 2.6rem;
+    right: 3.2rem;
     display: flex;
-    width: 57.3rem;
+    width: auto;
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem;
@@ -316,7 +330,6 @@
 
     @include tab {
       position: static;
-      width: 28.8rem;
       align-items: normal;
       padding: 1.6rem;
       margin: 1.6rem;
@@ -326,10 +339,10 @@
   &__password-upd-notification {
     justify-content: center;
     position: absolute;
-    top: 27.6rem;
-    right: 35.5rem;
+    top: 2.6rem;
+    right: 3.2rem;
     display: flex;
-    width: 21.3rem;
+    width: auto;
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem;
@@ -348,7 +361,6 @@
 
     @include tab {
       position: static;
-      width: 28.8rem;
       align-items: normal;
       padding: 1.6rem;
       margin: 1.6rem;
