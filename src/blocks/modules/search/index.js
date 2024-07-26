@@ -1,11 +1,11 @@
 import $ from "jquery";
 export default function() {
-  $(document).on('click', '.main-tab__tab', function (e) {
+  $('.js-tab-wrapper .js-tab').on('click', function (e) {
     e.preventDefault();
-    $('.main-tab__tab').removeClass('active')
+    $('.js-tab').removeClass('active')
     $(this).addClass('active')
 
-    $('.main-tab__block').removeClass('active')
+    $('.js-tab-block').removeClass('active')
     const targetId = $(this).attr('href').substring(1);
     const targetSection = $('#' + targetId);
     targetSection.addClass('active')
