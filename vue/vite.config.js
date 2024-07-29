@@ -14,6 +14,13 @@ export default defineConfig({
       '@@': fileURLToPath(new URL('../dist', import.meta.url)),
     }
   },
+  css: {
+      preprocessorOptions: {
+          scss: {
+              additionalData: `@import "@/assets/styles/main.scss";`,
+          },
+      },
+  },
   build: {
     rollupOptions: {
       output: {
