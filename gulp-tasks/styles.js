@@ -26,6 +26,9 @@ gulp.task("styles", () => {
     .pipe(gulp.dest(paths.styles.distLibs))
     .pipe(gulp.dest(vueStr(paths.styles.distLibs)))
 
+    gulp.src(paths.styles.srcSass)
+    .pipe(gulp.dest(paths.styles.distSass))
+
     gulpif(production, 
       gulp.src(paths.styles.srcVue)
       .pipe(gulp.dest(paths.styles.distVue))
