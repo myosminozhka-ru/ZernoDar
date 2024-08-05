@@ -69,6 +69,10 @@ const count = ref(0)
     font-weight: 500;
     margin-bottom: 2.4rem;
   }
+  &__list {
+    height: calc(100vh - 26rem);
+    overflow: auto;
+  }
   &__item {
     margin-bottom: 2.5rem;
     &:last-child {

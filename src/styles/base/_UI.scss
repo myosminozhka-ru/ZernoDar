@@ -1345,6 +1345,11 @@
       width: 100%;
     }
   }
+  &--grey {
+    select {
+      background-color: $bckgrnd2;
+    }
+  }
   @include tab {
     svg {
       width: 2rem;

@@ -79,7 +79,7 @@ addEventListener("DOMContentLoaded", () => {
   profile();
   contactMap();
   cookies();
-  window.app = {
+  window.octo = {
     header: new Header(),
     textSellerModal: new Modal("text-seller"),
     tabReqModal: new Modal("tab-req"),
@@ -88,7 +88,9 @@ addEventListener("DOMContentLoaded", () => {
     sortCompamyModal: new Modal("sort-compamy"),
     newsSubsModal: new Modal("news-subs"),
     modalReviewComplaint: new Modal("review-complaint"),
-    sidebar: new Sidebar(),
+    Sidebar: Sidebar,
+    catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
+    catalogSidebarRange: Sidebar.initRange('catalogSidebar', '.catalog-wrapper'),
     copy: new Copy(),
   };
 });

@@ -45,7 +45,9 @@ provide(/* key */ 'imgPath', /* value */ imgPath)
     padding: 3.2rem;
     &__inner {
       display: flex;
+      align-items: flex-start;
       gap: 3.5rem;
+      position: relative;
     }
     &__map {
       flex-grow: 1;

@@ -1,20 +1,25 @@
 import $ from "jquery";
 import ionRangeSlider from 'ion-rangeslider';
 
+window.rangeInstance = {};
+
 export default class Sidebar {
-  constructor() {
-    this.initRange()
+  constructor(name, parentSelector) {
+    this.name = name
+    this.parentSelector = parentSelector
     this.modal()
     this.category()
     this.resetListener()
   }
-  initRange() {
+
+  static initRange(name, parentSelector) {
     window.ionRangeSlider = ionRangeSlider
     const rangeInstanceArray = []
 
-    const rangeNodes = document.querySelectorAll('.filter-range')
+    const rangeNodes = document.querySelectorAll(parentSelector + ' .filter-range:not(.inited)')
 
     rangeNodes.forEach(element => {
+      element.classList.add('inited')
       const inputRange = element.querySelector('.js-range-slider')
       const inputFrom = element.querySelector('.filter-range__input--from')
       const inputTo = element.querySelector('.filter-range__input--to')
@@ -97,7 +102,7 @@ export default class Sidebar {
         });
       })
     })
-    window.rangeInstanceArray = rangeInstanceArray
+    window.rangeInstance[name] = rangeInstanceArray
 
   }
 
@@ -161,12 +166,17 @@ export default class Sidebar {
   }
 
   resetFilter() {
-    $('.catalog-sidebar').trigger("reset");
-    $('.catalog-head__top').trigger("reset");
+    $(this.parentSelector + ' .catalog-sidebar').trigger("reset");
+    $(this.parentSelector + ' .catalog-head__top').trigger("reset");
+    this.resetRange()
+  }
 
-    window.rangeInstanceArray.forEach(instance => {
+  resetRange(name) {
+
+    window.rangeInstance[name || this.name].forEach(instance => {
       instance.instance.reset()
       instance.resetInputs()
     })
+
   }
 }
