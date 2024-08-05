@@ -8,7 +8,7 @@ import vueStr from "./vue.js";
 gulp.task("gzip", () => {
     return gulp.src(paths.gzip.src)
         .pipe(gulp.dest(paths.gzip.dist))
-        //.pipe(gulp.dest(vueStr(paths.gzip.dist)))
+        .pipe(gulp.dest(vueStr(paths.gzip.dist)))
         .pipe(debug({
             "title": "GZIP config"
         }));

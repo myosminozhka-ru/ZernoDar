@@ -22,7 +22,7 @@ gulp.task("favicons", () => {
             }
         }))
         .pipe(gulp.dest(paths.favicons.dist))
-        //.pipe(gulp.dest(vueStr(paths.favicons.dist)))
+        .pipe(gulp.dest(vueStr(paths.favicons.dist)))
         .pipe(debug({
             "title": "Favicons"
         }));

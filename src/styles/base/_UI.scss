@@ -471,6 +471,51 @@
     border-radius: 0.8rem;
   }
 }
+
+.btn13 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $black;
+  padding: 1.6rem;
+  gap: 0.4rem;
+  font-weight: 500;
+  transition: color 200ms;
+  svg {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  &:hover {
+    color: $green;
+  }
+  &--lg {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    font-size: 2rem;
+  }
+  @include tab {
+    font-size: 1.8rem;
+    padding: 1.8rem 3.2rem;
+    border-radius: 1.6rem;
+    &--lg {
+      padding-top: 2.2rem;
+      padding-bottom: 2.2rem;
+      font-size: 1.8rem;
+    }
+  }
+  @include mob {
+    font-size: 1.4rem;
+    padding: 1.1rem 1.6rem;
+    border-radius: 0.8rem;
+    &--lg {
+      padding-top: 1.1rem;
+      padding-bottom: 1.1rem;
+      font-size: 1.4rem;
+    }
+  }
+}
 .open-more {
   display: inline-flex;
   align-items: center;
@@ -1343,6 +1388,11 @@
     width: 100%;
     select {
       width: 100%;
+    }
+  }
+  &--grey {
+    select {
+      background-color: $bckgrnd2;
     }
   }
   @include tab {
