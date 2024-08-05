@@ -111,18 +111,18 @@
       background: #f8f8f8;
       border-radius: 1.6rem;
       padding: 1.3rem 2.4rem;
+      font-size: 1.8rem;
 
       &::placeholder {
-        font-size: 1.8rem;
         color: #8c8c8c;
       }
 
       @include tab {
         border-radius: 0.8rem;
         padding: 1.3rem 0.8rem;
+          font-size: 1.2rem;
 
         &::placeholder {
-          font-size: 1.2rem;
         }
       }
     }
@@ -139,11 +139,30 @@
     input {
       width: 100%;
     }
+
+    .select {
+      border: none;
+    }
+
+    select {
+      background: #f8f8f8;
+      border-radius: 1.6rem;
+      padding: 1.3rem 2.4rem;
+      border: none;
+      color: #8c8c8c;
+      font-size: 1.8rem;
+    }
     @include tab {
       margin-top: 1.6rem;
 
       &:last-child {
         margin-bottom: 1.6rem;
+      }
+  
+      select {
+        border-radius: 0.8rem;
+        padding: 1.3rem 0.8rem;
+        font-size: 1.2rem;
       }
     }
   }
