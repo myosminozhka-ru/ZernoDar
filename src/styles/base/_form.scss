@@ -1,11 +1,15 @@
 .form {
-  &__inner {
+  &__content {
+    padding: 3.2rem;
+    background-color: #fff;
+    @include block-shadow2;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -1.2rem;
+    gap: 3.2rem;
+    border-radius: 2rem;
   }
   &__item {
-    padding: 2rem 1.2rem;
+    padding: 1.6rem 1.6rem;
     width: 100%;
     &--50 {
       width: 50%;
@@ -13,45 +17,41 @@
     &--33 {
       width: 33.3333%;
     }
+    &--text {
+      padding-top: 0.8rem;
+    }
   }
   &__label {
     display: inline-block;
-    font-size: 1.6rem;
-    font-weight: 500;
-    margin-bottom: 0.6rem;
   }
   &__input, &__textarea {
     width: 100%;
-    font-size: 1.6rem;
-    background-color: $black;
-    border: 1px solid $black;
-    border-radius: 0.8rem;
+    font-size: 1.8rem;
+    background-color: $bckgrnd2;
+    border: none;
+    border-radius: 1.6rem;
     color: $black;
     &.error, 
     &.just-validate-error-field {
       border: 1px solid $error !important;
-      background-color: $white;
     }
     &::placeholder {
-      color: $grey;
+      color: $darkgrey;
     }
     &:hover {
-      background-color: #E6EBF0;
-      border-color: #E6EBF0;
     }
     &:active,
     &:focus {
-      background-color: $white;
-      border-color: $accent;
     }
   }
   &__input {
     height: 4.8rem;
-    padding: 1.5rem 1.6rem;
+    padding: 1.3rem 2.4rem;
+    font-size: 1.8rem;
   }
   &__textarea {
     height: 4.8rem;
-    padding: 1.5rem 1.6rem;
+    padding: 1rem 2.4rem;
     padding-top: 1rem;
     &--big {
       height: 14.6rem;
@@ -131,10 +131,21 @@
     color: $grey;
   }
 
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 500;
+    a {
+      color: $linkblue;
+    }
+  }
+
   &__actions {
-    margin-top: 2.4rem;
-    padding-top: 2.4rem;
-    border-top: 1px solid $black;
+    margin-top: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
   }
 
   .just-validate-error-label {
@@ -149,39 +160,47 @@
   }
 
   @include tab {
-    &__inner {
-      margin: 0 -0.5rem;
+    &__content {
+      padding: 2.4rem;
+      gap: 2.4rem;
+      border-radius: 1.2rem;
     }
     &__item {
-      padding: 1.2rem 0.5rem;
+      padding: 0.8rem 1.2rem;
       &--33 {
         width: 50%;
+      }
+      &--text {
+        padding-top: 0.4rem;
       }
     }
   }
   @include mob {
-    &__inner {
-      margin: 0 -0.5rem;
+    &__content {
+      padding: 1.6rem;
+      gap: 1.6rem;
     }
     &__item {
-      padding: 0.6rem 0.5rem;
+      padding: 0.8rem 0.8rem;
       &--50 {
         width: 100%;
       }
       &--33 {
         width: 100%;
       }
+      &--text {
+        padding-top: 0.4rem;
+      }
     }
     &__label {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
     &__input, &__textarea {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
 
     &__actions {
-      margin-top: 1.6rem;
-      padding-top: 1.6rem;
+      margin-top: 2.4rem;
     }
     &__police {
       font-size: 1.2rem;

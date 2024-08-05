@@ -1,0 +1,74 @@
+.auth {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 10rem);
+  }
+  &__mtitle {
+    font-size: 4.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+  &__subtitle {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 3.2rem;
+    a {
+      color: $linkblue;
+    }
+  }
+  .form__content {
+    width: 60.3rem;
+  }
+  .form__actions .btn9 {
+    width: 43.2rem;
+  }
+  &--password {
+    .form__actions .btn13, 
+    .form__actions .btn9 {
+      width: 100%;
+    }
+  }
+  @include tab {
+    padding: 3rem 0;
+    .container {
+      padding: 0;
+    }
+    &__inner {
+      display: block;
+      min-height: auto;
+    }
+    &__mtitle {
+      font-size: 2rem;
+      text-align: left;
+      margin-bottom: 2.4rem;
+      padding: 0 2.4rem;
+      @include mob {
+        padding: 0 1.6rem;
+      }
+    }
+    &__subtitle {
+      font-size: 1.2rem;
+      text-align: left;
+      margin-bottom: 2.4rem;
+      padding: 0 2.4rem;
+      @include mob {
+        padding: 0 1.6rem;
+      }
+    }
+    .form__content {
+      width: 100%;
+    }
+    .form__actions .btn9 {
+      width: 100%;
+    }
+    .form__actions {
+      padding: 0 2.4rem;
+      @include mob {
+        padding: 0 1.6rem;
+      }
+    }
+  }
+}
