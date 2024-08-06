@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -41,10 +42,22 @@ module.exports = {
         ]
     },
 
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      })
+    ],
+
     resolve: {
         alias: {
             "%modules%": path.resolve(__dirname, "src/blocks/modules"),
-            "%components%": path.resolve(__dirname, "src/blocks/components")
+            "%components%": path.resolve(__dirname, "src/blocks/components"),
+            // bind version of jquery-ui
+            "jquery-ui": "jquery-ui/jquery-ui.js",      
+            // bind to modules;
+            modules: path.join(__dirname, "node_modules"),
         }
     }
 };

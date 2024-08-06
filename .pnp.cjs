@@ -67,6 +67,7 @@ const RAW_RUNTIME_STATE =
           ["imagemin-zopfli", "npm:7.0.0"],\
           ["ion-rangeslider", "virtual:186381c180ca650736a44b8c87775381e96c396f54b06b7b470fd3e6b97ba133ec6ed70a4abd65ca57155aa5e6a08a547095c741cfae32b07330800978c660da#npm:2.3.1"],\
           ["jquery", "npm:3.7.1"],\
+          ["jquery-ui-bundle", "npm:1.12.1-migrate"],\
           ["lint-staged", "npm:12.5.0"],\
           ["postcss", "npm:8.4.32"],\
           ["postcss-scss", "virtual:186381c180ca650736a44b8c87775381e96c396f54b06b7b470fd3e6b97ba133ec6ed70a4abd65ca57155aa5e6a08a547095c741cfae32b07330800978c660da#npm:4.0.9"],\
@@ -10197,6 +10198,7 @@ const RAW_RUNTIME_STATE =
           ["imagemin-zopfli", "npm:7.0.0"],\
           ["ion-rangeslider", "virtual:186381c180ca650736a44b8c87775381e96c396f54b06b7b470fd3e6b97ba133ec6ed70a4abd65ca57155aa5e6a08a547095c741cfae32b07330800978c660da#npm:2.3.1"],\
           ["jquery", "npm:3.7.1"],\
+          ["jquery-ui-bundle", "npm:1.12.1-migrate"],\
           ["lint-staged", "npm:12.5.0"],\
           ["postcss", "npm:8.4.32"],\
           ["postcss-scss", "virtual:186381c180ca650736a44b8c87775381e96c396f54b06b7b470fd3e6b97ba133ec6ed70a4abd65ca57155aa5e6a08a547095c741cfae32b07330800978c660da#npm:4.0.9"],\
@@ -12064,6 +12066,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/jquery-npm-3.7.1-eeeac0f21e-17be9929f5.zip/node_modules/jquery/",\
         "packageDependencies": [\
           ["jquery", "npm:3.7.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["jquery-ui-bundle", [\
+      ["npm:1.12.1-migrate", {\
+        "packageLocation": "./.yarn/cache/jquery-ui-bundle-npm-1.12.1-migrate-467013e6e3-bb13169050.zip/node_modules/jquery-ui-bundle/",\
+        "packageDependencies": [\
+          ["jquery-ui-bundle", "npm:1.12.1-migrate"]\
         ],\
         "linkType": "HARD"\
       }]\
