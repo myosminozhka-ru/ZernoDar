@@ -50,7 +50,7 @@ provide(/* key */ 'imgPath', /* value */ imgPath)
       position: relative;
     }
     &__map {
-      flex-grow: 1;
+      width: 122.5rem;
     }
     &__sidbar {
       flex-shrink: 0;
