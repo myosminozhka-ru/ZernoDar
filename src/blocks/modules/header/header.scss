@@ -85,6 +85,8 @@
     &__logo {
       font-size: 1.7rem;
       margin-right: 0;
+      position: relative;
+      z-index: 22;
   
       svg {
         width: 2.1rem;
@@ -124,6 +126,7 @@
       width: 1.6rem;
       height: 1.3rem;
       position: relative;
+      z-index: 21;
       &:before,
       &:after,
       & div {
@@ -179,8 +182,8 @@
     }
 
     &__burger {
-      width: 1.2rem;
-      height: 1rem;
+      // width: 1.2rem;
+      // height: 1rem;
       position: relative;
       &:before,
       &:after,
@@ -223,6 +226,31 @@
     b {
       font-weight: 600;
     }
+    li {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 200ms;
+      &.active {
+        svg {
+          transform: rotate(-180deg);
+        }
+      }
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        object-fit: contain;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: all 200ms;
+      }
+      &:hover {
+        color: $linkblue;
+        a {
+          border-bottom: none;
+        }
+      }
+    }
     a {
       display: inline-block;
       padding: 0.8rem;
@@ -232,7 +260,46 @@
     }
   }
   @include tab {
-    display: none;
+    opacity: 0;
+    transition: all 400ms;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateY(-120%);
+    width: 100%;
+    height: 100vh;
+    background-color: $white;
+    overflow: auto;
+    padding: 5rem 1.6rem;
+    z-index: 20;
+    &.open {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      font-size: 1.2rem;
+      font-weight: 500;
+      gap: 1rem;
+      li {
+        align-items: left;
+        gap: 0.5rem;
+        justify-content: space-between;
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+      a {
+        display: inline-block;
+        padding: 0.8rem;
+        &:hover {
+          border-bottom: 0.1rem solid $black;
+        }
+      }
+    }
   }
 }
 
@@ -342,10 +409,16 @@
   top: calc(100% + 0.8rem);
   width: 100%;
   display: flex;
-  justify-content: center;
   display: none;
+  z-index: 100;
   &.open {
     display: flex;
+  }
+  &--supply {
+    padding-left: 22rem;
+  }
+  &--demand {
+    padding-left: 44rem;
   }
   &__inner {
     display: flex;
@@ -371,6 +444,9 @@
       align-items: center;
       margin-right: 2.4rem;
     }
+    &.active .nav-drop__arrow{
+      transform: translateX(1rem);
+    }
   }
   &__icon {
     width: 6.4rem;
@@ -386,6 +462,7 @@
     height: 2.4rem;
     flex-shrink: 0;
     margin-left: auto;
+    transition: all 200ms;
     svg {
       @include img-contain;
     }
@@ -427,6 +504,19 @@
     span {
       color: $darkgrey;
       margin-left: 0.2em;
+    }
+  }
+  @include tab {
+    position: fixed;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    &--supply {
+      padding-left: 0;
+    }
+    &--demand {
+      padding-left: 0;
     }
   }
 }
