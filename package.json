@@ -79,6 +79,7 @@
         "dev": "^0.1.3",
         "ion-rangeslider": "^2.3.1",
         "jquery": "^3.7.1",
+        "jquery-ui-bundle": "1.12.1-migrate",
         "swiper": "^9.3.2",
         "webpack": "^5.70.0",
         "webpack-stream": "^7.0.0"

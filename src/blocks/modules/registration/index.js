@@ -1,4 +1,6 @@
 import phoneMask from "../../../js/import/phoneMask";
+import $ from "jquery";
+import 'jquery-ui-bundle';
 
 export default function signupSwitch() {
   const juridicalElement = document.getElementById("juridical");
@@ -25,4 +27,12 @@ export default function signupSwitch() {
   }
 
   phoneMask(".phone-input");
+
+
+  $(".select--typeorg select").selectmenu({
+    classes: {
+      "ui-selectmenu-button": "ui-selectmenu-button-typeorg",
+      "ui-selectmenu-menu": "ui-selectmenu-menu-typeorg"
+    }
+  });
 }
