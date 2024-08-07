@@ -563,14 +563,6 @@
         />
         Безопасность
       </a>
-      <a href="/payment-details.html" class="lk-nav__link">
-        <img
-          class="lk-nav__arrow"
-          src="img/sprites/accordion-arrow-mob.svg"
-          alt=""
-        />
-        Платежные данные
-      </a>
     </ul>
   </div>
 </section>
@@ -578,63 +570,71 @@
 
   <div class="lk-inner">
     <div class="payment-details">
+      <div class="payment-details__left">
+      <div class="payment-details__row">
+        <h2>Оплата тарифа</h2>
+      </div>
+        <div
+          class="tariff-card tariff-card--active"
+          style="background-image: url('img/tariff-card-bg.png')"
+        >
+          <div class="tariff-card__contents">
+            <h3>Название тарифа</h3>
+            <div class="tariff-card__contents--wrapper">
+              <span>Стоимость</span>
+              <span>1200 ₽/мес</span>
+            </div>
+            <div class="tariff-card__contents--wrapper">
+              <span>Срок действия</span>
+              <span>1 месяц</span>
+            </div>
+            <div class="tariff-card__contents--wrapper">
+              <span>Количество объявлений</span>
+              <select class="custom-select">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
       <section class="payment-details__wrapper">
         <div class="payment-details__cards-section">
           <div class="payment-details__row">
-            <h2>Привязанные карты</h2>
-            <button class="payment-details__desktop-button">
-              <img src="img/sprites/edit.svg" alt="" />
-              <span>Изменить</span>
-            </button>
+            <h2>Оплатить картой</h2>
           </div>
           <div>
-            <ul class="payment-details__card-list">
-              <li class="payment-details__card">
-                <div>
-                  <p>**** 8395</p>
-                  <p class="card-type">Visa</p>
-                </div>
-                <img src="img/sprites/visa.svg" alt="" />
-              </li>
-              <li class="payment-details__card">
-                <div>
-                  <p>**** 8395</p>
-                  <p class="card-type">Master card</p>
-                </div>
-                <img src="img/sprites/mc.svg" alt="" />
-              </li>
-              <li class="payment-details__card">
-                <div>
-                  <p>**** 8395</p>
-                  <p class="card-type">Мир</p>
-                </div>
-                <img src="img/sprites/mir.svg" alt="" />
-              </li>
-            </ul>
-            <button class="payment-details__add-card">
-              <img src="img/sprites/add.svg" alt="" />
-              <span>Добавить новую карту</span>
-            </button>
+            <div class="payment-details__card-list">
+              <label class="payment-details__card">
+                <span>
+                  <input type="radio" name="paymentcard">
+                  <span class="payment-details__checkboxradio"></span>
+                  Юкасса
+                </span>
+                <img src="img/logo-black.svg" alt="" />
+              </label>
+            </div>
           </div>
         </div>
-        <div class="payment-details__accs-section">
+        <div class="payment-details__cards-section">
           <div class="payment-details__row">
             <h2>Юридические аккаунты</h2>
-            <button class="payment-details__desktop-button">
-              <img src="img/sprites/edit.svg" alt="" />
-              <span>Изменить</span>
-            </button>
           </div>
-          <div class="payment-details__acc">
-            <p class="acc-type">Аккаунт компании</p>
-            <p>Расчетный счет <span>****1234</span></p>
+          <div>
+            <div class="payment-details__card-list">
+              <label class="payment-details__card">
+                <span>
+                  <input type="radio" name="paymentcard">
+                  <span class="payment-details__checkboxradio"></span>
+                  Сформировать счет
+                </span>
+              </label>
+            </div>
           </div>
-    
-          <button class="payment-details__add-acc">
-            <img src="img/sprites/add.svg" alt="" />
-            <span>Добавить счет для оплаты</span>
-          </button>
         </div>
+        
         <div class="payment-details__auto-section">
           <div class="payment-details__row">
             <h2>Автоплатеж</h2>
@@ -655,10 +655,20 @@
               </label>
             </span>
           </div>
-          <p>
-            Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
-            molestie, dictum est a, mattis tellus.
-          </p>
+        </div>
+
+        <div class="payment-details__actions">
+          <button class="btn10 btn10--lg">Оплатить 1200 ₽</button>
+          <button class="payment-details__cancel">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#x"></use>
+            </svg>
+            Отказаться от оплаты
+          </button>
+        </div>
+        <div class="payment-details__policy">
+          Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+          molestie, dictum est a, mattis tellus.
         </div>
       </section>
     </div>
