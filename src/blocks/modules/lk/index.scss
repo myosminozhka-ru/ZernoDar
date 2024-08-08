@@ -3,6 +3,7 @@
   align-items: flex-start;
   position: relative;
   margin-bottom: 16rem;
+  padding-right: 3.2rem;
   .lk-nav {
     position: sticky;
   }
@@ -14,9 +15,15 @@
     padding-left: 0;
     padding-right: 0;
   }
+  &--full {
+    .lk-inner {
+      width: 100%;
+    }
+  }
   @include tab {
     display: block;
     margin-bottom: 4.5rem;
+    padding-right: 0;
     .lk-nav {
       position: static;
     }

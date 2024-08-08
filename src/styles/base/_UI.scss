@@ -170,13 +170,25 @@
   &--bez {
     background-color: $paleorange;
   }
+  &--transparent {
+    background-color: transparent;
+    padding: 0;
+  }
   @include tab {
     font-size: 1.4rem;
     padding: 0.8rem 1.2rem;
+    &--transparent {
+      background-color: transparent;
+      padding: 0;
+    }
   }
-  @include tab {
+  @include mob {
     font-size: 1.2rem;
     padding: 0.8rem 1.2rem;
+    &--transparent {
+      background-color: transparent;
+      padding: 0;
+    }
   }
 }
 .tag-torg2 {
@@ -275,10 +287,27 @@
       transform: rotate(-180deg);
     }
   }
+  &--lg {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    font-size: 2rem;
+  }
+  @include tab {
+    &--lg {
+      padding-top: 2.2rem;
+      padding-bottom: 2.2rem;
+      font-size: 1.8rem;
+    }
+  }
   @include mob {
     font-size: 1.2rem;
     padding: 1.2rem 1rem;
     border-radius: 0.8rem;
+    &--lg {
+      padding-top: 1.1rem;
+      padding-bottom: 1.1rem;
+      font-size: 1.4rem;
+    }
   }
 }
 .btn5 {
@@ -350,6 +379,10 @@
     padding-bottom: 2.4rem;
     font-size: 2rem;
   }
+  &--long {
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+  }
   @include tab {
     font-size: 1.8rem;
     padding: 1.8rem 3.2rem;
@@ -390,6 +423,9 @@
     padding-bottom: 2.4rem;
     font-size: 2rem;
   }
+  &--full {
+    width: 100%;
+  }
   @include tab {
     font-size: 1.8rem;
     padding: 1.8rem 3.2rem;
@@ -398,6 +434,9 @@
       padding-top: 2.2rem;
       padding-bottom: 2.2rem;
       font-size: 1.8rem;
+    }
+    &--full {
+      width: 100%;
     }
   }
   @include mob {
@@ -408,6 +447,9 @@
       padding-top: 1.1rem;
       padding-bottom: 1.1rem;
       font-size: 1.4rem;
+    }
+    &--full {
+      width: 100%;
     }
   }
 }
@@ -523,6 +565,60 @@
   @include mob {
     font-size: 1.4rem;
     padding: 1.1rem 1.6rem;
+    border-radius: 0.8rem;
+    &--lg {
+      padding-top: 1.1rem;
+      padding-bottom: 1.1rem;
+      font-size: 1.4rem;
+    }
+  }
+}
+.btn14 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  min-width: 28.8rem;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  border-radius: 1.6rem;
+  border: 0.1rem solid $lightgrey;
+  background-color: $white;
+  &:hover {
+    background-color: $palegreen;
+  }
+  svg {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 200ms;
+  }
+  &.open {
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+  &--lg {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    font-size: 2rem;
+  }
+  &--full {
+    width: 100%;
+    min-width: auto;
+  }
+  @include tab {
+    &--lg {
+      padding-top: 2.2rem;
+      padding-bottom: 2.2rem;
+      font-size: 1.8rem;
+    }
+  }
+  @include mob {
+    font-size: 1.2rem;
+    padding: 1.2rem 1rem;
     border-radius: 0.8rem;
     &--lg {
       padding-top: 1.1rem;

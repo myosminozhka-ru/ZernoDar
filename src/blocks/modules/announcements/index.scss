@@ -1,0 +1,81 @@
+.announcements {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  &__mtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 3.7rem;
+  }
+  &__btns {
+    margin-bottom: 3.7rem;
+    &--newann.announcements__btns--bot {
+      display: none;
+    }
+  }
+  &__date {
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.60);
+    margin-bottom: 2.4rem;
+  }
+  &__pag {
+    margin-top: 2.4rem;
+    .btn10 {
+      display: none;
+    }
+  }
+  @include tab {
+    &__mtitle {
+      font-size: 1.8rem;
+      margin-bottom: 2.4rem;
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
+      @include mob {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+    }
+    &__btns {
+      &--newann.announcements__btns--top {
+        display: none;
+      }
+      &--newann.announcements__btns--bot {
+        display: block;
+      }
+      padding: 0 2.4rem;
+      @include mob {
+        padding: 0 1.6rem;
+      }
+    }
+    &__date {
+      font-size: 1.2rem;
+      border-bottom: 0.1rem solid $lightgrey;
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
+      padding-bottom: 0.8rem;
+      margin-bottom: 0rem;
+      @include mob {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+    }
+    &__pag {
+      margin-bottom: 2.4rem;
+      .pags {
+        display: none;
+      }
+      .btn10 {
+        display: flex;
+      }
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
+      @include mob {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+    }
+
+  }
+}
