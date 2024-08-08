@@ -62,6 +62,9 @@
       display: none;
     }
   }
+  &__mobile {
+    display: none;
+  }
   @include tab {
     min-width: auto;
     &__item {
