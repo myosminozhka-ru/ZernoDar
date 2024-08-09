@@ -2,8 +2,10 @@
   display: flex;
   align-items: flex-start;
   position: relative;
-  margin-bottom: 16rem;
+  padding-bottom: 16rem;
   padding-right: 3.2rem;
+  overflow: hidden;
+  z-index: 2;
   .lk-nav {
     position: sticky;
   }
@@ -22,7 +24,7 @@
   }
   @include tab {
     display: block;
-    margin-bottom: 4.5rem;
+    padding-bottom: 4.5rem;
     padding-right: 0;
     .lk-nav {
       position: static;
