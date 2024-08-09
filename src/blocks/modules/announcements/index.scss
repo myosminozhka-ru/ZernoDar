@@ -79,3 +79,591 @@
 
   }
 }
+
+.add-announcements {
+  &__mtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 3.7rem;
+  }
+  &__btns {
+    margin-bottom: 3.7rem;
+    display: flex;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+  @include tab {
+    &__mtitle {
+      font-size: 1.8rem;
+      margin-bottom: 2.4rem;
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
+      @include mob {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+    }
+    &__btns {
+      padding: 0 2.4rem;
+      @include mob {
+        padding: 0 1.6rem;
+      }
+    }
+    &__list {
+      gap: 2.4rem;
+    }
+  }
+}
+
+.add-ann-block {
+  padding: 3.2rem;
+  border-radius: 2rem;
+  @include block-shadow2;
+  background-color: $white;
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid $lightgrey;
+    padding-bottom: 2.4rem;
+  }
+  &__mtitle {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  &__body {
+    padding-top: 2.4rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__row {
+    position: relative;
+    margin-bottom: 2.4rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &--actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      button {
+        min-width: 24rem;
+      }
+    }
+    &:first-child .add-ann-block__remove-row {
+      display: none;
+    }
+  }
+  &__remove-row {
+    position: absolute;
+    bottom: 0;
+    right: 2rem;
+    opacity: 1;
+    transform: translateY(100%);
+    z-index: 10;
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      object-fit: contain;
+      color: $red;
+    }
+  }
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+  }
+  &--clean {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    .add-ann-block {
+      &__body {
+        padding: 0;
+      }
+    }
+  }
+  @include tab {
+    padding: 2.4rem;
+    border-radius: 1.6rem;
+    &__head {
+      flex-direction: column;
+      align-items: stretch;
+      border-bottom: none;
+      padding-bottom: 2.4rem;
+    }
+    &__mtitle {
+      font-size: 1.4rem;
+      margin-bottom: 1.6rem;
+    }
+    &__body {
+      padding-top: 1.6rem;
+    }
+    &__row {
+      margin-bottom: 2.4rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &--actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+        gap: 1.6rem;
+        button {
+          min-width: auto;
+          width: 100%;
+          font-size: 1.4rem;
+          font-weight: 500;
+        }
+      }
+    }
+    &__remove-row {
+      bottom: auto;
+      top: 0.5rem;
+      right: 0.6rem;
+      opacity: 1;
+      transform: translateY(0);
+      z-index: 10;
+    }
+    &__cancel {
+      margin-bottom: 1.6rem;
+      border: none;
+      color: $green;
+      &:hover, &:active, &:focus {
+        color: $green;
+        background-color: #fff;
+      }
+    }
+    &__save {
+      margin-bottom: 1.6rem;
+      border: none;
+      color: $green;
+      background-color: $palegreen;
+      &:hover, &:active, &:focus {
+        color: $green;
+        background-color: $paleblue;
+      }
+    }
+    &__title {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    &--clean {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: transparent;
+      box-shadow: none;
+      .add-ann-block {
+        &__body {
+          padding: 0;
+        }
+      }
+    }
+
+  }
+  @include mob {
+    padding: 1.6rem;
+    &--clean {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: transparent;
+      box-shadow: none;
+      .add-ann-block {
+        &__body {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.my-notification {
+  display: inline-flex;
+  width: auto;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background-color: #ecf0f4;
+  color: #0084cf;
+  border-radius: 1.6rem;
+  svg {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+  &--orange {
+    color: $orange;
+    background-color: $paleorange;
+  }
+  @include tab {
+    font-size: 1.4rem;
+  }
+}
+
+.my-input-wrap {
+  margin-left: -1.2rem;
+  margin-right: -1.2rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  @include tab {
+    margin-left: -1.2rem;
+    margin-right: -1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  @include mob {
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+.my-input {
+  width: 100%;
+  padding: 1.2rem;
+  &--50 {
+    width: 50%;
+  }
+  &--25 {
+    width: 25%;
+  }
+  &--33 {
+    width: 33.3333%;
+  }
+  &__label {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+  }
+  &__input, &__textarea  {
+    width: 100%;
+    font-size: 1.8rem;
+    background-color: $bckgrnd2;
+    border: none;
+    border-radius: 1.6rem;
+    color: $black;
+    &::placeholder {
+      color: $darkgrey;
+    }
+  }
+  &__input {
+    height: 4.8rem;
+    padding: 1.3rem 2.4rem;
+    font-size: 1.8rem;
+    &--lg {
+      height: 6rem;
+      padding: 2rem 1.6rem;
+    }
+  }
+  &__textarea {
+    height: 4.8rem;
+    padding: 1rem 2.4rem;
+    padding-top: 1rem;
+    &--big {
+      height: 14.6rem;
+    }
+  }
+  @include tab {
+    padding: 2.4rem;
+    &--50 {
+      width: 100%;
+    }
+    &--25 {
+      width: 100%;
+    }
+    &--33 {
+      width: 100%;
+    }
+    &__label {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    &__input, &__textarea  {
+      font-size: 1.2rem;
+      border-radius: 0.8rem;
+    }
+    &__input {
+      height: 4.6rem;
+      padding: 1.5rem 0.8rem;
+      font-size: 1.2rem;
+      &--lg {
+        height: 4.6rem;
+        padding: 1.5rem 0.8rem;
+      }
+    }
+    &__textarea {
+      font-size: 1.2rem;
+      height: 6rem;
+      padding: 1.5rem 0.8rem;
+      padding-top: 1.2rem;
+      &--big {
+        font-size: 1.2rem;
+        height: 10rem;
+      }
+    }
+  }
+  @include mob {
+    padding: 0.8rem;
+    &--50 {
+      width: 100%;
+    }
+    &--25 {
+      width: 100%;
+    }
+    &--33 {
+      width: 100%;
+    }
+  }
+}
+
+.my-select {
+  display: inline-block;
+  position: relative;
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    position: absolute;
+    z-index: 3;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    height: 4.8rem;
+    padding: 1.3rem 2.4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $black;
+    background-color: $bckgrnd2;
+    border-radius: 1.6rem;
+    border: 0.1px solid $bckgrnd2;
+    position: relative;
+    z-index: 2;
+    padding-right: 3.2rem;
+    cursor: pointer;
+    &:active,
+    &:focus,
+    &:focus-visible {
+      outline: $accent auto 1px;
+    }
+
+    &:focus svg {
+      transform: translateY(-50%) rotate(-90deg);
+    }
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+  &--lg {
+    height: 6rem;
+    padding: 2rem 1.6rem;
+  }
+  &--full {
+    width: 100%;
+    select {
+      width: 100%;
+    }
+  }
+  @include tab {
+    height: 4.6rem;
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+    select {
+      height: 4.6rem;
+      font-size: 1.2rem;
+      padding: 1.5rem 0.8rem;
+      border-radius: 0.8rem;
+    }
+    &--lg {
+      select {
+        height: 4.6rem;
+        padding: 1.5rem 0.8rem;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+}
+
+@mixin tag-torg-with-active {
+  background-color: $palegreen;
+  svg {
+    color: $green;
+  }
+}
+
+@mixin tag-torg-bez-active {
+  background-color: $paleorange;
+  svg {
+    color: $red;
+  }
+}
+
+.switch-checkboxradio {
+  display: flex;
+  gap: 2.4rem;
+
+  .tag-torg {
+    padding: 0.8rem 1.6rem;
+    color: $black;
+    background-color: transparent;
+    border: 0.1rem solid $lightgrey;
+    transition: 200ms all;
+    svg {
+      color: $darkgrey;
+      transition: 200ms all;
+    }
+    &--with:hover {
+      @include tag-torg-with-active;
+    }
+    &--bez:hover {
+      @include tag-torg-bez-active;
+    }
+  }
+  &__item {
+    cursor: pointer;
+    input:checked + .tag-torg {
+      border: 0.1rem solid transparent;
+      &--with {
+        @include tag-torg-with-active;
+      }
+      &--bez {
+        @include tag-torg-bez-active;
+      }
+    }
+  }
+  @include tab {
+    flex-direction: column;
+    gap: 0.8rem;
+
+    .tag-torg {
+      justify-content: flex-start;
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    &__item, .tag-torg {
+      width: 100%;
+    }
+  }
+}
+
+.add-new-char {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: $darkgrey;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-align: left;
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: $palegreen;
+    flex-shrink: 0;
+    color: $green;
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  @include tab {
+    gap: 0.8rem;
+    font-size: 1.4rem;
+  }
+}
+
+.switch-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2.4rem;
+  margin-bottom: 2.4rem;
+  border-bottom: 0.1rem solid $lightgrey;
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $darkgrey;
+  }
+  @include tab {
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 0;
+    margin-bottom: 1.6rem;
+    border-bottom: none;
+    &__title {
+      font-size: 1.4rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+}
+
+.switch-radio {
+  box-shadow: inset 0 0 0 0.1rem $lightgrey;
+  background-color: $bckgrnd2;
+  border-radius: 1.6rem;
+  display: flex;
+  label {
+    min-width: 8rem;
+    min-height: 3.6rem;
+    display: inline-flex;
+    cursor: pointer;
+    span {
+      flex-grow: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1.4rem;
+      border-radius: 1.6rem;
+      padding: 1.2rem;
+    }
+    input:checked + span {
+      background-color: $linkblue;
+      color: $white;
+    }
+  }
+  @include tab {
+    border-radius: 1.6rem;
+    label {
+      min-width: auto;
+      width: 50%;
+      min-height: 4.6rem;
+      span {
+        font-size: 1.2rem;
+      }
+      &:first-child {
+        span {
+          border-radius: 1.6rem 0.8rem 0.8rem 1.6rem;
+        }
+      }
+      &:last-child {
+        span {
+          border-radius: 0.8rem 1.6rem 1.6rem 0.8rem;
+        }
+      }
+    }
+  }
+}
