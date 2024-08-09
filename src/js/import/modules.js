@@ -19,6 +19,7 @@ import search from "%modules%/search/index";
 import profile from "%modules%/profile/index";
 import contactMap from "%modules%/contacts/index";
 import cookies from "%modules%/cookies/index";
+import announcements from "%modules%/announcements/index";
 
 addEventListener("DOMContentLoaded", () => {
   more(
@@ -79,6 +80,7 @@ addEventListener("DOMContentLoaded", () => {
   profile();
   contactMap();
   cookies();
+  announcements();
   window.octo = {
     header: new Header(),
     textSellerModal: new Modal("text-seller"),
