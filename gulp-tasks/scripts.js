@@ -27,7 +27,7 @@ gulp.task("scripts", () => {
       .pipe(gulp.dest(paths.scripts.distVue))
     )
     return gulp.src(paths.scripts.src)
-        .pipe(webpackStream(webpackConfig), webpack)
+        // .pipe(webpackStream(webpackConfig), webpack)
         // .pipe(gulpif(production, rename({
         //     suffix: ".min"
         // })))
