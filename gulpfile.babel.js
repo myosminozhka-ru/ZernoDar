@@ -30,7 +30,7 @@ const requireDir = require("require-dir"),
             ]
         },
         scripts: {
-            src: "./src/js/index.js",
+            src: "./src/js/main.js",
             srcVue: "./vue/dist/assets/index.js",
             dist: "./dist/js/",
             srcLibs: "./src/js/libs/*.js",
