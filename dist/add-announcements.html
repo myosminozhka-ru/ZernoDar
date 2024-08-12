@@ -512,7 +512,7 @@
         </li>
         
           <li>
-            <a href="#" class="link">Регистрация</a>
+            <a href="#" class="link">Личный кабинет</a>
           </li>
         
       </ul>
@@ -524,11 +524,275 @@
     </div>
   </div>
 </div>
-  <div class="registration-completed">
-  <div class="registration-completed__main">
-    <img id="desktop-bg" src="img/bg-koloski.png" alt="" />
-    <h2>Регистрация прошла успешно</h2>
-    <a href="/">На главную</a>
+  <div class="lk-wrapper">
+  <section class="lk-nav">
+  <h1 class="lk-nav__heading">Личный кабинет</h1>
+
+  <div class="lk-nav__menu">
+    <ul class="lk-nav__list">
+      <a href="/advertisements.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Объявления
+      </a>
+      <a href="/profile.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Профиль
+      </a>
+      <a href="/subscription.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Подписка
+      </a>
+      <a href="/security.html" class="lk-nav__link">
+        <img
+          class="lk-nav__arrow"
+          src="img/sprites/accordion-arrow-mob.svg"
+          alt=""
+        />
+        Безопасность
+      </a>
+    </ul>
+  </div>
+</section>
+
+
+  <div class="lk-inner">
+    <div class="add-announcements">
+      <div class="add-announcements__inner">
+        <div class="add-announcements__mtitle">Все объявления</div>
+        <div class="add-announcements__btns add-announcements__btns--newann add-announcements__btns--top">
+          <div class="switch-button switch-button--fit">
+            <a href="" class="switch-button__item active">Предложение</a>
+            <a href="" class="switch-button__item">Спрос</a>
+          </div>
+        </div>
+        <div class="add-announcements__list">
+          <div class="add-ann-block">
+            <div class="add-ann-block__head">
+              <div class="add-ann-block__mtitle">Основное</div>
+              <span class="my-notification my-notification--blue">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
+                </svg>
+                <span>
+                  В наименовании нельзя призывать, например использовать  слова как  «Куплю» или «Продам»
+                </span>
+              </span>
+            </div>
+            <div class="add-ann-block__body">
+              <div class="my-input-wrap add-ann-block__row">
+                <label class="my-input my-input--lg">
+                  <div class="my-input__label">Наименование</div>
+                  <input type="text" class="my-input__input" placeholder="Пример: Пшеница 2 класса в Новгородской области">
+                </label>
+                <label class="my-input my-input--lg my-input--25">
+                  <div class="my-input__label">Цена, ₽</div>
+                  <input type="text" class="my-input__input" placeholder="0,00 ₽">
+                </label>
+                <label class="my-input my-input--lg my-input--25">
+                  <div class="my-input__label">Количество</div>
+                  <input type="text" class="my-input__input" placeholder="0,00">
+                </label>
+                <label class="my-input my-input--lg my-input--25">
+                  <div class="my-input__label">Культура</div>
+                  <div class="my-select my-select--full">
+                    <select name="" id="" class="">
+                      <option value="" selected disabled>Выбрать</option>
+                      <option value="">Тип 1</option>
+                      <option value="">Тип 2</option>
+                    </select>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
+                    </svg>
+                  </div>
+                </label>
+                <label class="my-input my-input--lg my-input--25">
+                  <div class="my-input__label">Тип товара</div>
+                  <div class="my-select my-select--full">
+                    <select name="" id="" class="">
+                      <option value="" selected disabled>Выбрать</option>
+                      <option value="">Тип 1</option>
+                      <option value="">Тип 2</option>
+                    </select>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
+                    </svg>
+                  </div>
+                </label>
+              </div>
+              <div class="add-ann-block__row">
+                <div class="add-ann-block__title">Торг</div>
+                <div class="add-ann-block__checkboxradio switch-checkboxradio">
+                  <label class="switch-checkboxradio__item">
+                    <input type="radio" name="torg" class="visually-hidden" checked>
+                    <div class="tag-torg tag-torg--with">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#check-mark-circle"></use>
+                      </svg>
+                      Торг
+                    </div>
+                  </label>              
+                  <label class="switch-checkboxradio__item">
+                    <input type="radio" name="torg" class="visually-hidden">
+                    <div class="tag-torg tag-torg--bez">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#radix-current"></use>
+                      </svg>
+                      Без торга
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="add-ann-block js-add-ann-new-row-block">
+            <div class="add-ann-block__head">
+              <div class="add-ann-block__mtitle">Характеристики</div>
+              <span class="my-notification my-notification--orange">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
+                </svg>
+                <span>
+                  Добавьте характеристики и Ваше объявление будет легче найти
+                </span>
+              </span>
+            </div>
+            <div class="add-ann-block__body">
+              <div class="my-input-wrap add-ann-block__row js-add-ann-new-row-clone">
+                <!-- 
+                  id и name у
+                  select_test__0 и input_test1__0 будут инкрементироватся при добавлении новых строк  
+                  пример: select_test__1, input_test1__1
+                -->
+                <label class="my-input my-input--lg my-input--25">
+                  <div class="my-input__label">Класс</div>
+                  <div class="my-select my-select--full">
+                    <select name="select_test__0" id="select_test__0" class="">
+                      <option value="" selected disabled>Выбрать</option>
+                      <option value="">Тип 1</option>
+                      <option value="">Тип 2</option>
+                    </select>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
+                    </svg>
+                  </div>
+                </label>
+                <label class="my-input my-input--lg my-input--25">
+                  <div class="my-input__label">Влажность</div>
+                  <input id="input_test1__0" name="input_test1__0" type="text" class="my-input__input" placeholder="%">
+                </label>
+                <label class="my-input my-input--lg my-input--25">
+                  <div class="my-input__label">Частота падения</div>
+                  <input id="input_test2__0" name="input_test2__0" type="text" class="my-input__input" placeholder="%">
+                </label>
+                <label class="my-input my-input--lg my-input--25">
+                  <div class="my-input__label">Протеин</div>
+                  <input id="input_test3__0" name="input_test3__0" type="text" class="my-input__input" placeholder="%">
+                </label>
+                <button class="add-ann-block__remove-row js-add-ann-new-row-remove" title="Удалить">
+                  <svg title="Удалить">
+                    <use xlink:href="img/sprites/sprite.svg#x"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="add-ann-block__row js-add-ann-new-row-before">
+                <button class="add-new-char js-add-ann-new-row-button">
+                  <span class="add-new-char__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#plus"></use>
+                    </svg>
+                  </span>
+                  Добавить еще характеристики
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="add-ann-block">
+            <div class="add-ann-block__head">
+              <div class="add-ann-block__mtitle">Документы</div>
+              <span class="my-notification my-notification--blue">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
+                </svg>
+                <span>
+                  Подтвердите происхождение товара 
+                </span>
+              </span>
+            </div>
+            <div class="add-ann-block__body">
+              <div class="switch-text add-ann-block__row">
+                <div class="switch-text__title">Декларация соответствия</div>
+                <div class="switch-radio">
+                  <label>
+                    <input type="radio" name="name1" class="visually-hidden" checked>
+                    <span>Есть</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="name1" class="visually-hidden">
+                    <span>Нет</span>
+                  </label>
+                </div>
+              </div>
+              <div class="switch-text add-ann-block__row">
+                <div class="switch-text__title">Декларация соответствия</div>
+                <div class="switch-radio">
+                  <label>
+                    <input type="radio" name="name2" class="visually-hidden" checked>
+                    <span>Есть</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="name2" class="visually-hidden">
+                    <span>Нет</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="add-ann-block add-ann-block--clean">
+            <div class="add-ann-block__body">
+              <div class="my-input-wrap add-ann-block__row">
+                <label class="my-input my-input--lg">
+                  <div class="my-input__label">Адрес</div>
+                  <input type="text" class="my-input__input" placeholder="Введите адрес">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="add-ann-block add-ann-block--clean">
+            <div class="add-ann-block__body">
+              <div class="my-input-wrap add-ann-block__row">
+                <label class="my-input my-input--lg">
+                  <div class="my-input__label">Описание</div>
+                  <textarea name="" id="" class="my-input__textarea" placeholder="Введите описание "></textarea>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="add-ann-block add-ann-block--clean">
+            <div class="add-ann-block__body">
+              <div class="add-ann-block__row add-ann-block__row--actions">
+                <button class="btn14 add-ann-block__cancel">Отмена</button>
+                <div>
+                  <button class="btn14 add-ann-block__save">Сохранить</button>
+                  <button class="btn12 add-ann-block__publish">Опубликовать</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
