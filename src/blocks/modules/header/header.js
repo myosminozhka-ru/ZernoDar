@@ -1,11 +1,12 @@
 import $ from "jquery";
 
 export default class Header {
-  
   constructor() {
     this.isSearchOpen = false;
     this.isDropOpen = false;
     this.isNavOpen = false;
+    this.demandIsOpen = false;
+    this.supplyIsOpen = false;
     this.header = document.querySelector('.header');
     this.scrollUp = document.querySelector('.scroll-up');
     this.preloader = document.querySelector('.preloader');
@@ -15,6 +16,7 @@ export default class Header {
     this.searchHandler()
     this.navDropHandler()
     this.menuHandler()
+    this.moveElementPlaceHandler()
     // this.scrollHandler()
     // this.preloaderHandler()
   }
@@ -90,20 +92,25 @@ export default class Header {
     });
 
   }
+  navDropItemHandler(mod, e) {
+    e.preventDefault()
+    if (this[mod + 'IsOpen']) {
+      $('.nav__item').removeClass('active')
+      this.closeNavDrop('.nav-drop--' + mod)
+      this.supplyIsOpen = false
+      this.demandIsOpen = false
+    } else {
+      $('.nav__item').removeClass('active')
+      $('.nav__item--' + mod).addClass('active')
+      this.openNavDrop('.nav-drop--' + mod)
+      this.supplyIsOpen = false
+      this.demandIsOpen = false
+      this[mod + 'IsOpen'] = true;
+    }
+  }
   navDropHandler() {
-    $('.nav__item--supply').click((e) => {
-      e.preventDefault()
-      $('.nav__item').removeClass('active')
-      $('.nav__item--supply').addClass('active')
-      this.openNavDrop('.nav-drop--supply')
-    })
-    
-    $('.nav__item--demand').click((e) => {
-      e.preventDefault()
-      $('.nav__item').removeClass('active')
-      $('.nav__item--demand').addClass('active')
-      this.openNavDrop('.nav-drop--demand')
-    })
+    $('.nav__item--supply svg').on('click' ,this.navDropItemHandler.bind(this, "supply"))
+    $('.nav__item--demand svg').on('click' , this.navDropItemHandler.bind(this, "demand"))
 
     $(document).click((event) => {
       if (
@@ -112,24 +119,33 @@ export default class Header {
         !$(event.target).closest('.nav__item--drop').length
       ) {
         this.closeNavDrop()
+        this.supplyIsOpen = false
+        this.demandIsOpen = false
       }
     });
 
     $('.nav-drop').each(function(index, element) {
       $(element).find('.nav-drop__arrow').each(function(index, arrow) {
         $(arrow).on('click', function() {
+          const isOpen = $(element).find(`.nav-drop__block:eq(${index})`).hasClass('open')
           $(element).find('.nav-drop__title').removeClass('active')
           $(element).find('.nav-drop__block').removeClass('open')
-          $(element).find(`.nav-drop__title:eq(${index})`).addClass('active')
-          $(element).find(`.nav-drop__block:eq(${index})`).addClass('open')
+          if (!isOpen) {
+            $(element).find(`.nav-drop__title:eq(${index})`).addClass('active')
+            $(element).find(`.nav-drop__block:eq(${index})`).addClass('open')
+          }
         })
       })
+
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       $(element).find('.nav-drop__title').each(function(index, title) {
         $(title).on('mouseover', function() {
-          $(element).find('.nav-drop__title').removeClass('active')
-          $(element).find('.nav-drop__block').removeClass('open')
-          $(element).find(`.nav-drop__title:eq(${index})`).addClass('active')
-          $(element).find(`.nav-drop__block:eq(${index})`).addClass('open')
+          if (!isMobile) {
+            $(element).find('.nav-drop__title').removeClass('active')
+            $(element).find('.nav-drop__block').removeClass('open')
+            $(element).find(`.nav-drop__title:eq(${index})`).addClass('active')
+            $(element).find(`.nav-drop__block:eq(${index})`).addClass('open')
+          }
         })
       })
     })
@@ -144,5 +160,53 @@ export default class Header {
     this.isDropOpen = false
     $(selector).removeClass('open')
     $('.nav__item').removeClass('active')
+  }
+  moveElementPlaceHandler() {
+    const mediaQuery = window.matchMedia("(max-width: 840px)");
+
+    // Function to handle the event
+    const  handleMediaQueryChange = (event) => {
+        if (event.matches) {
+            this.moveElementPlace("out")
+            this.moveNavBlocks("out")
+        } else {
+            this.moveElementPlace("home")
+            this.moveNavBlocks("home")
+        }
+    }
+
+    // Add the listener to the media query
+    mediaQuery.addEventListener('change', handleMediaQueryChange.bind(this));
+
+    // Initial check
+    handleMediaQueryChange(mediaQuery);
+  }
+  moveNavBlocks(direction = "home") {
+    if (direction == "home") {
+      $('.nav-drop').each(function(index, element) {
+        $(element).find('.nav-drop__block').removeClass('open')
+        $(element).find('.nav-drop__title').removeClass('active')
+        $(element).find(`.nav-drop__block:eq(0)`).addClass('open')
+        $(element).find('.nav-drop__block').appendTo($(element).find('.nav-drop__right'))
+
+      })
+    } else {
+      $('.nav-drop').each(function(index, element) {
+        $(element).find('.nav-drop__block').removeClass('open')
+        $(element).find('.nav-drop__title').removeClass('active')
+        $(element).find('.nav-drop__title').each(function(index, title) {
+          $(element).find(`.nav-drop__block:eq(${index})`).appendTo(title)
+        })
+      })
+    }
+  }
+  moveElementPlace(direction = "home") {
+    if (direction == "home") {
+      $('.nav-drop--supply').appendTo($('.header'));
+      $('.nav-drop--demand').appendTo($('.header'));
+    } else {
+      $('.nav-drop--supply').appendTo($('.nav__item--supply'));
+      $('.nav-drop--demand').appendTo($('.nav__item--demand'));
+    }
   }
 }
