@@ -5,6 +5,8 @@
   z-index: 100;
   width: 100%;
   background-color: rgba($color: $bckgrnd, $alpha: 1);
+  background: var(--blur-white-blur-menu, rgba(255, 255, 255, 0.70));
+  backdrop-filter: blur(30px);
   // transition: transform 200ms, background 200ms;
   transition: background-color .25s ease-in-out;
   &.scroll {
@@ -70,6 +72,7 @@
     border-radius: 1.6rem;
     transition: all 200ms;
     margin-left: 2.4rem;
+    white-space: nowrap;
     &:hover {
       background-color: #FF9B08;
     }
@@ -80,7 +83,9 @@
   }
 
   @include tab {
-    border-bottom: 1.62px solid $palegreen;
+    backdrop-filter: unset;
+    background-color: rgba($color: $bckgrnd, $alpha: 1);
+    border-bottom: 0.16rem solid $palegreen;
     &__logo {
       font-size: 1.7rem;
       margin-right: 0;
