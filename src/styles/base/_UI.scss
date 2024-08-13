@@ -272,8 +272,9 @@
   border-radius: 1.6rem;
   border: 0.1rem solid $lightgrey;
   background-color: $white;
+  transition: 200ms all;
   &:hover {
-    background-color: $palegreen;
+    font-weight: 600;
   }
   svg {
     width: 2rem;
@@ -467,7 +468,7 @@
   color: $white;
   transition: background 200ms;
   &:hover {
-    background-color: $paleorange;
+    background-color: #FF9B08;
   }
   @include tab {
     font-size: 1.8rem;
@@ -695,6 +696,17 @@
   border-radius: 1.6rem;
   transition: background 200ms;
   border: 0.1rem solid $lightgrey;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    .svg-wrap {
+      transform: translateY(200%);
+    }
+  }
+  .svg-wrap {
+    position: relative;
+    transition: transform 300ms;
+  }
   svg {
     width: 2rem;
     height: 2rem;
@@ -702,6 +714,12 @@
     flex-shrink: 0;
     margin-left: 1rem;
     transition: transform 200ms;
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-200%);
+    }
   }
   &:active {
     color: $black;
@@ -711,9 +729,6 @@
       transform: rotate(-180deg);
       transform-origin: center;
     }
-  }
-  &:hover {
-    background-color: $palegreen;
   }
 }
 
@@ -731,9 +746,18 @@
     text-align: center;
     font-size: 1.4rem;
     border-radius: 1.6rem;
+    transition:  200ms all;
+    &:hover {
+      background-color: $palegreen;
+      font-weight: 600;
+    }
     &.active {
       color: $white;
       background-color: $green;
+      &:hover {
+        background-color: $green;
+        font-weight: 400;
+      }
     }
   }
   &--fit {
@@ -963,10 +987,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition:  all 200ms;
   svg {
     height: 2rem;
     width: 1rem;
     object-fit: contain;
+  }
+  &:hover {
+    background-color: $orange;
   }
   @include tab {
   }

@@ -488,6 +488,10 @@
     align-items: center;
     gap: 3.2rem;
     margin-bottom: 2rem;
+    .btn3--green {
+      color: $green;
+      font-weight: 500;
+    }
   }
   &__pag {
     margin-left: auto;

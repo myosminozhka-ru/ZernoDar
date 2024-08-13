@@ -16,9 +16,15 @@
     @include block-shodow3;
     &--green {
       background-color: $green;
+      .slider-next:hover {
+        background-color: $orange;
+      }
     }
     &--orange {
       background-color: $orange;
+      .slider-next:hover {
+        background-color: $green;
+      }
     }
   }
   &__img {
