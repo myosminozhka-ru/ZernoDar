@@ -149,27 +149,28 @@ function more(element, button, count = 1) {
   let btnStr = $(button).children(".str");
   let btnText = btnStr.text();
 
-  function start() {
+  function start(make) {
     for (let index = count; index < $(element).length; index++) {
-      $(element).eq(index).toggleClass("hide");
+      if (make === "hide") {
+        $(element).eq(index).addClass("hide");
+      } else {
+        $(element).eq(index).removeClass("hide");
+      }
     }
   }
-  start();
+  start("hide");
 
   let isOpen = false;
-  $(button).click(function () {
-    if (fistClick) {
-      btnText = $(this).children(".str").text();
-    }
-    fistClick = !fistClick;
+  $(document).on("click", button, function (e) {
+    isOpen = $(button).hasClass("open")
     $(button).toggleClass("open");
     if (isOpen) {
       btnStr.text(btnText);
+      start("hide");
     } else {
+      start("show");
       btnStr.text("Свернуть");
     }
-    isOpen = !isOpen;
-    start();
   });
 }
 // ==== more end
@@ -206,6 +207,24 @@ class Header {
     this.moveElementPlaceHandler()
     // this.scrollHandler()
     // this.preloaderHandler()
+  }
+  static setHeaderPosition(pos) {
+    const localPosition = localStorage.getItem("headerPosition");
+    if (pos === false) {
+      localStorage.setItem("headerPosition", pos);
+      $(".header").css({
+        position: '',
+      })
+    } else if (pos) {
+      localStorage.setItem("headerPosition", pos);
+      $(".header").css({
+        position: pos,
+      })
+    } else if (localPosition) {
+      $(".header").css({
+        position: localPosition,
+      })
+    }
   }
   menuHandler() {
     $(".header__burger").click(() => {
@@ -296,8 +315,15 @@ class Header {
     }
   }
   navDropHandler() {
-    $('.nav__item--supply svg').on('click' ,this.navDropItemHandler.bind(this, "supply"))
-    $('.nav__item--demand svg').on('click' , this.navDropItemHandler.bind(this, "demand"))
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (!isMobile) {
+      $('.nav__item--supply').on('mouseenter' ,this.navDropItemHandler.bind(this, "supply"))
+      $('.nav__item--demand').on('mouseenter' , this.navDropItemHandler.bind(this, "demand"))
+    } else {
+      $('.nav__item--supply svg').on('click' ,this.navDropItemHandler.bind(this, "supply"))
+      $('.nav__item--demand svg').on('click' , this.navDropItemHandler.bind(this, "demand"))
+    }
 
     $(document).click((event) => {
       if (
@@ -324,9 +350,8 @@ class Header {
         })
       })
 
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       $(element).find('.nav-drop__title').each(function(index, title) {
-        $(title).on('mouseover', function() {
+        $(title).on('mouseenter', function() {
           if (!isMobile) {
             $(element).find('.nav-drop__title').removeClass('active')
             $(element).find('.nav-drop__block').removeClass('open')
@@ -397,6 +422,7 @@ class Header {
     }
   }
 }
+Header.setHeaderPosition();
 // ==== Header end
 
 // ==== cardAdMap start
@@ -467,6 +493,7 @@ class Sidebar {
     this.modal()
     this.category()
     this.resetListener()
+    this.initMapRadiusRange()
   }
 
   static initRange(name, parentSelector) {
@@ -589,6 +616,10 @@ class Sidebar {
         $('.map-point').removeClass('open')
       }
     });
+  }
+
+  initMapRadiusRange() {
+    $(".map-point .js-range-slider").ionRangeSlider();
   }
 
   category() {
