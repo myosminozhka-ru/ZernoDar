@@ -73,7 +73,7 @@
             </svg>
           </button>
           <input type="text" class="header-search__input" placeholder="Поиск..."/>
-          <button class="header-search__close trig-close-search">
+          <button class="header-search__close trig-close-search" type="button">
             <svg>
               <use xlink:href="img/sprites/sprite.svg#x"></use>
             </svg>
@@ -740,8 +740,8 @@
         </div>
       </div>
       <div class="catalog-head__map">
-        <button class="btn5 js-open-map">Показать на карте</button>
-        <button class="btn6">
+        <a href="" class="btn5">Показать на карте</a>
+        <button class="btn6 js-open-map">
           Любой регион
           <svg>
             <use xlink:href="img/sprites/sprite.svg#input-map"></use>
@@ -774,7 +774,6 @@
         <use xlink:href="img/sprites/sprite.svg#input-map"></use>
       </svg>
       <input type="text" placeholder="Введите регион, город">
-      
     </div>
     <div class="map-point__tags">
       <span class="tag2">Ростовская область</span>
@@ -789,8 +788,8 @@
         </svg>
       </span>
     </div>
-    <div class="map-point__title">Расширение радиуса поиска, км</div>
-    <div class="filter-range">
+    <div class="map-point__title hide">Расширение радиуса поиска, км</div>
+    <div class="filter-range hide">
       <input type="text" class="js-range-slider" name="my_range" value=""
         data-type="single"
         data-min="0"
@@ -828,7 +827,8 @@
         <span>600</span>
       </div>
     </div>
-    <button class="btn8 map-point__btn">Сохранить</button>
+    <div class="map-point__line"></div>
+    <button class="btn3 map-point__btn">Сохранить</button>
   </div>
 </div>
   </div>
