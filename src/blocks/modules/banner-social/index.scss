@@ -102,18 +102,26 @@
       display: block;
       height: auto;
       border-radius: 2rem;
-      background-color: $paleblue;
-      padding: 2.4rem;
+      padding: 0;
+      background-color: transparent;
     }
     &__img {
       display: none;
     }
     &__left {
-      display: none;
+      width: 100%;
+      padding: 0 2.4rem 2.4rem;
+      font-size: 2rem;
+      br {
+        display: none;
+      }
     }
     &__right {
       position: relative;
       z-index: 2;
+      background-color: $paleblue;
+      padding: 2.4rem;
+      border-radius: 2rem;
     }
     &__item {
       display: flex;
@@ -160,6 +168,12 @@
   }
   @include mob {
     &__inner {
+    }
+    &__left {
+      padding: 0 1.6rem 2.4rem;
+      font-size: 1.8rem;
+    }
+    &__right {
       padding: 3.2rem 1.6rem;
     }
     &__name {

@@ -188,6 +188,10 @@
     padding: 1.6rem;
     border-radius: 10rem;
     border: 1px solid $lightgrey;
+    transition: 200ms all;
+    &:hover {
+      font-weight: 600;
+    }
     &.active {
       color: $white;
       background-color: $orange;
@@ -196,17 +200,23 @@
   }
   &--update {
     flex-grow: 1;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     ul {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 1rem 4.7rem;
-      border: 1px solid $lightgrey;
+      border: 0.1rem solid $lightgrey;
       border-radius: 2.8rem;
       background-color: $bckgrnd2;
     }
     a {
       width: 100%;
       border: none;
+      padding: 1.36rem 1.6rem;
     }
   }
   @include tab {
@@ -570,12 +580,41 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.6rem;
+    .tag2 {
+      cursor: pointer;
+      transition: 200ms all;
+      &:hover {
+        font-weight: 600;
+      }
+    }
+    .tag3 {
+      cursor: pointer;
+      transition: 200ms all;
+      &:hover {
+        font-weight: 600;
+      }
+    }
   }
   &__title {
-    display: none;
+    &.hide {
+      display: none;
+    }
   }
   &__head,
   .filter-range .filter-range__inputs {
+    display: none;
+  }
+  & &__inner .catalog-map {
+    display: flex;
+  }
+  .filter-range.hide {
+    display: none;
+    & + .map-point__line {
+      display: block;
+    }
+  }
+  &__line {
+    border-top: 0.1rem solid $lightgrey;
     display: none;
   }
   @include tab {
