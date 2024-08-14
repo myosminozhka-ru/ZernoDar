@@ -1,5 +1,5 @@
 // all scripts here
-
+window.showMore = {};
 // ==== copy start
 class Copy {
   constructor() {
@@ -144,34 +144,36 @@ class Modal {
 // ==== modal end
 
 // ==== more start
-function more(element, button, count = 1) {
-  let fistClick = true;
-  let btnStr = $(button).children(".str");
-  let btnText = btnStr.text();
-
-  function start(make) {
-    for (let index = count; index < $(element).length; index++) {
-      if (make === "hide") {
-        $(element).eq(index).addClass("hide");
+function more(element, button, count = 1, parent) {
+  $(parent).each(function (idx, el) {
+    let btn = $(el).find(button)
+    let els = $(el).find(element)
+    let btnStr = btn.children(".str").eq(0);
+    let btnText = btnStr.text();
+    let isOpen = false;
+    btn.on("click", function (e) {
+      isOpen = btn.hasClass("open") // $(this).find(button).hasClass("open")
+      btn.toggleClass("open");
+      if (isOpen) {
+        btnStr.text(btnText);
+        start(els, "hide");
       } else {
-        $(element).eq(index).removeClass("hide");
+        start(els, "show");
+        btnStr.text("Свернуть");
+      }
+    });
+    start(els, "hide");
+  })
+
+  function start(elements, make) {
+    for (let index = count; index < elements.length; index++) {
+      if (make === "hide") {
+        elements.eq(index).addClass("hide");
+      } else {
+        elements.eq(index).removeClass("hide");
       }
     }
   }
-  start("hide");
-
-  let isOpen = false;
-  $(document).on("click", button, function (e) {
-    isOpen = $(button).hasClass("open")
-    $(button).toggleClass("open");
-    if (isOpen) {
-      btnStr.text(btnText);
-      start("hide");
-    } else {
-      start("show");
-      btnStr.text("Свернуть");
-    }
-  });
 }
 // ==== more end
 
@@ -1336,43 +1338,60 @@ function authCode() {
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
   more(
-    ".card-ad-top__list ul li",
-    ".card-ad-top__list .card-ad-top__table-more .open-more2",
-    6
+    "ul li",
+    ".card-ad-top__table-more .open-more2",
+    6,
+    ".card-ad-top__list"
   );
 
   more(
-    ".card-ad-top__table--harakteristitki tr",
-    ".card-ad-top__table--harakteristitki .card-ad-top__table-more .open-more",
-    4
+    "tr",
+    ".card-ad-top__table-more .open-more",
+    4,
+    ".card-ad-top__table--harakteristitki"
   );
 
   more(
     ".card-ad-description__content ul li",
     ".card-ad-description__more .open-more2",
-    1
+    1,
+    ".card-ad-description"
   );
 
-  more(
-    ".catalog-update__top2 .switch-train li",
-    ".catalog-update__top2 .btn4",
-    6
-  );
-
-  more(".edit-about__text-part", ".edit-about__more .open-more2", 1);
+  more(".edit-about__text-part", ".edit-about__more .open-more2", 1, ".edit-about");
 
 
   more(
-    ".contact-requisites__list .contact-requisites__item",
+    ".contact-requisites__item",
     ".js-contact-requisites-open",
-    7
+    7,
+    ".contact-requisites__list"
   );
 
   more(
     ".agreement__content>p",
     ".agreement__more .open-more2",
-    4
+    4,
+    ".agreement"
   );
+
+  window.showMore.mainTrainDetails = () => more(
+    ".switch-train li",
+    ".btn4",
+    6,
+    ".catalog-update__top2"
+  );
+  window.showMore.mainTrainDetails()
+
+  window.showMore.mainCardDetails = () => more(
+    ".card__data li",
+    ".card__bot .open-more3",
+    6,
+    ".catalog-update .card"
+  );
+  window.showMore.mainCardDetails()
+
+
 
   hideShowBlock(
     ".article .article__nav .article-nav__list",
