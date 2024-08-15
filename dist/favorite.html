@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="styles/libs/jquery-ui.min.css">
   <link rel="stylesheet" href="styles/main.css">
 
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>"
-    type="text/javascript"></script>
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>"
+    type="text/javascript"></script> -->
 </head>
 <body>
   <header class="header">
@@ -516,11 +516,11 @@
           </li>
         
       </ul>
-      <div class="brc__arrow">
+      <!-- <div class="brc__arrow">
         <svg>
           <use xlink:href="img/sprites/sprite.svg#curve-arrow-right"></use>
         </svg>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -638,7 +638,7 @@
                   </ul>
                 </div>
                 <div class="filter__item">
-                  <button class="btn3 filter__apply js-apply-filter">Применить</button>
+                  <button class="btn3 filter__apply js-reset-filter">Сбросить</button>
                 </div>
               </div>
             </div>
@@ -721,7 +721,7 @@
             <img src="img/pshenica.png" alt="">
           </div>
           <div class="card__title-wrap">
-            <div class="card__title">Пшеница 2 класса в Новгородской области</div>
+            <a href="#" class="card__title">Пшеница 2 класса в Новгородской области</a>
             <div class="card__price-wrap">
               <div class="card__price">12 000 ₽/тн </div>
               <div class="card__tags">
@@ -796,7 +796,7 @@
                 <dd>14%</dd>
               </dl>
             </li>
-            <li class="hide">
+            <li>
               <dl>
                 <dt>Протеин</dt>
                 <dd>14%</dd>
@@ -804,11 +804,11 @@
             </li>
           </ul>
           <div class="card__data-more">
-            <a href="" class="open-more2"><span class="str">Все характеристики</span>
+            <button class="open-more2"><span class="str">Все характеристики</span>
               <svg>
                 <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -887,7 +887,7 @@
         <button class="btn9">
           Открыть объявление
         </button>
-        <button class="to-favourite to-favourite--sm">
+        <button class="to-favourite to-favourite--sm" data-favorite="add" title="Добавлено в Избранное">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
           </svg>
@@ -905,7 +905,7 @@
             <img src="img/pshenica.png" alt="">
           </div>
           <div class="card__title-wrap">
-            <div class="card__title">Пшеница 2 класса в Новгородской области</div>
+            <a href="#" class="card__title">Пшеница 2 класса в Новгородской области</a>
             <div class="card__price-wrap">
               <div class="card__price">12 000 ₽/тн </div>
               <div class="card__tags">
@@ -980,7 +980,7 @@
                 <dd>14%</dd>
               </dl>
             </li>
-            <li class="hide">
+            <li>
               <dl>
                 <dt>Протеин</dt>
                 <dd>14%</dd>
@@ -988,11 +988,11 @@
             </li>
           </ul>
           <div class="card__data-more">
-            <a href="" class="open-more2"><span class="str">Все характеристики</span>
+            <button class="open-more2"><span class="str">Все характеристики</span>
               <svg>
                 <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -1071,7 +1071,7 @@
         <button class="btn9">
           Открыть объявление
         </button>
-        <button class="to-favourite to-favourite--sm">
+        <button class="to-favourite to-favourite--sm" data-favorite="add" title="Добавлено в Избранное">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
           </svg>
@@ -1089,7 +1089,7 @@
             <img src="img/pshenica.png" alt="">
           </div>
           <div class="card__title-wrap">
-            <div class="card__title">Пшеница 2 класса в Новгородской области</div>
+            <a href="#" class="card__title">Пшеница 2 класса в Новгородской области</a>
             <div class="card__price-wrap">
               <div class="card__price">12 000 ₽/тн </div>
               <div class="card__tags">
@@ -1164,7 +1164,7 @@
                 <dd>14%</dd>
               </dl>
             </li>
-            <li class="hide">
+            <li>
               <dl>
                 <dt>Протеин</dt>
                 <dd>14%</dd>
@@ -1172,11 +1172,11 @@
             </li>
           </ul>
           <div class="card__data-more">
-            <a href="" class="open-more2"><span class="str">Все характеристики</span>
+            <button class="open-more2"><span class="str">Все характеристики</span>
               <svg>
                 <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -1255,7 +1255,7 @@
         <button class="btn9">
           Открыть объявление
         </button>
-        <button class="to-favourite to-favourite--sm">
+        <button class="to-favourite to-favourite--sm" data-favorite="add" title="Добавлено в Избранное">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
           </svg>
@@ -1273,7 +1273,7 @@
             <img src="img/pshenica.png" alt="">
           </div>
           <div class="card__title-wrap">
-            <div class="card__title">Пшеница 2 класса в Новгородской области</div>
+            <a href="#" class="card__title">Пшеница 2 класса в Новгородской области</a>
             <div class="card__price-wrap">
               <div class="card__price">12 000 ₽/тн </div>
               <div class="card__tags">
@@ -1348,7 +1348,7 @@
                 <dd>14%</dd>
               </dl>
             </li>
-            <li class="hide">
+            <li>
               <dl>
                 <dt>Протеин</dt>
                 <dd>14%</dd>
@@ -1356,11 +1356,11 @@
             </li>
           </ul>
           <div class="card__data-more">
-            <a href="" class="open-more2"><span class="str">Все характеристики</span>
+            <button class="open-more2"><span class="str">Все характеристики</span>
               <svg>
                 <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -1439,7 +1439,7 @@
         <button class="btn9">
           Открыть объявление
         </button>
-        <button class="to-favourite to-favourite--sm">
+        <button class="to-favourite to-favourite--sm" data-favorite="add" title="Добавлено в Избранное">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
           </svg>
@@ -1569,7 +1569,7 @@
                   </ul>
                 </div>
                 <div class="filter__item">
-                  <button class="btn3 filter__apply js-apply-filter">Применить</button>
+                  <button class="btn3 filter__apply js-reset-filter">Сбросить</button>
                 </div>
               </div>
             </div>
@@ -1742,7 +1742,7 @@
         <button class="btn9">
           Подробнее
         </button>
-        <button class="to-favourite to-favourite--sm">
+        <button class="to-favourite to-favourite--sm" data-favorite="add" title="Добавлено в Избранное">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
           </svg>
@@ -1850,7 +1850,7 @@
         <button class="btn9">
           Подробнее
         </button>
-        <button class="to-favourite to-favourite--sm">
+        <button class="to-favourite to-favourite--sm" data-favorite="add" title="Добавлено в Избранное">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
           </svg>
@@ -1958,7 +1958,7 @@
         <button class="btn9">
           Подробнее
         </button>
-        <button class="to-favourite to-favourite--sm">
+        <button class="to-favourite to-favourite--sm" data-favorite="add" title="Добавлено в Избранное">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
           </svg>
@@ -2066,7 +2066,7 @@
         <button class="btn9">
           Подробнее
         </button>
-        <button class="to-favourite to-favourite--sm">
+        <button class="to-favourite to-favourite--sm" data-favorite="add" title="Добавлено в Избранное">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#favourite-w"></use>
           </svg>
@@ -2209,6 +2209,66 @@
         <textarea class="textarea1" name="" id="" placeholder="Введите сообщение здесь"></textarea>
         <button class="btn3">Отправить</button>
       </form>
+    </div>
+  </div>
+</div>
+        <div class="modal close-x" data-modal="sent-to-moderation">
+  <div class="modal__inner">
+    <div class="modal__top">
+      <div class="modal__title"></div>
+      <button class="modal__close close-x" type="button">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__content">
+      <div class="modal-message">
+        <div class="modal-message__title">Отзыв отправлен на модерацию!</div>
+        <div class="modal-message__content">
+          Спасибо за отзыв. Наша команда обязательно опубликует его после проверки
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="modal close-x" data-modal="modalMakeReview">
+  <div class="modal__inner">
+    <div class="modal__top">
+      <div class="modal__title">Оставить отзыв</div>
+      <button class="modal__close close-x" type="button">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__content">
+      <div class="make-review">
+        <div class="stars">
+          <div class="stars__point">1,0</div>
+          <div class="stars__inner">
+            <input type="radio" name="stars" value="star_5" id="star_5" class="visually-hidden" required>
+            <label for="star_5"></label>
+            <input type="radio" name="stars" value="star_4" id="star_4" class="visually-hidden" required>
+            <label for="star_4"></label>
+            <input type="radio" name="stars" value="star_3" id="star_3" class="visually-hidden" required>
+            <label for="star_3"></label>
+            <input type="radio" name="stars" value="star_2" id="star_2" class="visually-hidden" required>
+            <label for="star_2"></label>
+            <input type="radio" name="stars" value="star_1" id="star_1" class="visually-hidden" required>
+            <label for="star_1"></label>
+          </div>
+          <div class="stars__point">5,0</div>
+        </div>
+        <div class="my-input-wrap">
+          <label class="my-input">
+            <textarea class="my-input__textarea my-input__textarea--big2"  name="" id="" placeholder="Введите сообщение здесь"></textarea>
+          </label>
+        </div>
+        <div class="make-review__actions">
+          <button class="btn3 btn3--full">Отправить</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
