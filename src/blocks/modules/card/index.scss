@@ -28,6 +28,9 @@
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 0.8rem;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   &__price-wrap {
     display: flex;

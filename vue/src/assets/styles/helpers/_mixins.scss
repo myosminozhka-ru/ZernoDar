@@ -5,13 +5,13 @@
 }
 
 @mixin tab {
-	@media (max-width: 840px) {
+	@media (max-width: 760px) {
 		@content;
 	}
 }
 
 @mixin mob {
-	@media (max-width: 519px) {
+	@media (max-width: 440px) {
 		@content;
 	}
 }
