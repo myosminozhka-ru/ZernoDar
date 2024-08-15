@@ -24,6 +24,7 @@
     width: 57.6rem;
     position: sticky;
     top: 1rem;
+    font-size: 1.8rem;
   }
   &__user-mob {
     display: none;
@@ -51,6 +52,7 @@
     &__right {
       width: 100%;
       display: none;
+      font-size: 1.4rem;
     }
     &__user-mob {
       display: block;
@@ -139,13 +141,20 @@
       z-index: 100;
       width: 100%;
       height: 100%;
+      padding-top: 2rem;
       overflow: auto;
       display: none;
+      background: var(--blur-black, rgba(0, 0, 0, 0.20));
       .modal__top {
         display: flex;
+        position: sticky;
+        top: -2rem;
+        background-color: #fff;
+        z-index: 5;
       }
       .base-tab__text-block {
         padding: 0;
+        position: relative;
       }
       .base-tab__text-title {
         display: none;
@@ -173,6 +182,7 @@
     }
     &__text-title {
       font-size: 1.4rem;
+      padding-bottom: 0;
       margin-bottom: 2.4rem;
     }
     &__text {

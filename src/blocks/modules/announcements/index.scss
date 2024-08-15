@@ -366,9 +366,12 @@
     &--big {
       height: 14.6rem;
     }
+    &--big2 {
+      height: 23.1rem;
+    }
   }
   @include tab {
-    padding: 2.4rem;
+    padding: 1.2rem;
     &--50 {
       width: 100%;
     }
@@ -404,6 +407,9 @@
       &--big {
         font-size: 1.2rem;
         height: 10rem;
+      }
+      &--big2 {
+        height: 12rem;
       }
     }
   }

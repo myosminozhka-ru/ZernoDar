@@ -1351,6 +1351,8 @@ function authCode() {
 }
 // ==== auth code end
 
+// ==== stars start
+// ==== stars end
 
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
@@ -1445,15 +1447,18 @@ addEventListener("DOMContentLoaded", () => {
     textSellerModal: new Modal("text-seller"),
     tabReqModal: new Modal("tab-req"),
     ratingModal: new Modal("rating"),
+    sentToModerationModal: new Modal("sent-to-moderation"),
     sortCatalogModal: new Modal("sort-catalog"),
     sortCompamyModal: new Modal("sort-compamy"),
     newsSubsModal: new Modal("news-subs"),
     modalReviewComplaint: new Modal("review-complaint"),
+    modalMakeReview: new Modal("modalMakeReview"),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     catalogSidebarRange: Sidebar.initRange('catalogSidebar', '.catalog-wrapper'),
     copy: new Copy(),
   };
+  // window.octo.sentToModerationModal.open()
 });
 // ***** invoke scripts end
 
