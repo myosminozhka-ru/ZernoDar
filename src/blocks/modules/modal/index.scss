@@ -110,7 +110,10 @@
     &__content {
       position: relative;
       z-index: 2;
-      padding: 2.4rem 1.6rem 0.8rem;
+      padding: 2.4rem 2.4rem 0.8rem;
+      @include mob {
+        padding: 2.4rem 1.6rem 0.8rem;
+      }
     }
     &--text-seller {
       .btn3 {
@@ -123,6 +126,30 @@
         padding: 0.8rem;
         margin-bottom: 1.6rem;
       }
+    }
+  }
+}
+
+.modal-message {
+  max-width: 52.8rem;
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2.4rem;
+  }
+  &__content {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  @include tab {
+    max-width: auto;
+    &__title {
+      font-size: 2rem;
+      margin-bottom: 1.6rem;
+    }
+    &__content {
+      font-size: 1.4rem;
     }
   }
 }
@@ -150,5 +177,71 @@
     opacity: 0;
     display: none;
     z-index: -100;
+  }
+}
+
+.make-review {
+  max-width: 51.2rem;
+  &__actions {
+    padding-top: 1.2rem;
+  }
+  @include tab {
+    .my-input-wrap {
+      margin-bottom: 0;
+    }
+    &__actions {
+      padding-top: 0rem;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__point {
+    font-size: 1.8rem;
+    padding: 0 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+  }
+  label {
+    background-image: url(../img/empty-star.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    flex-shrink: 0;
+    height: 5rem;
+    width: 5rem;
+  }
+
+  label:hover,
+  label:hover~label {
+    background-image: url(../img/fill-star.svg)
+  }
+
+  input:checked~label {
+    background-image: url(../img/fill-star.svg)
+  }
+  @include tab {
+    &__point {
+      font-size: 1.4rem;
+      padding: 0 1.6rem;
+    }
+    &__inner {
+      gap: 1.2rem;
+    }
+    label {
+      height: 3rem;
+      width: 3rem;
+    }
   }
 }
