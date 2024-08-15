@@ -610,6 +610,15 @@ class Sidebar {
       $('.map-point').removeClass('open')
     })
 
+
+    $('.js-open-allcaterories').on('click', () => {
+      $('.allcaterories').addClass('open')
+    })
+
+    $('.js-close-allcaterories').on('click', () => {
+      $('.allcaterories').removeClass('open')
+    })
+
     $(document).click(function(event) {
       if (
         !$(event.target).closest('.js-open-map').length &&
@@ -669,13 +678,6 @@ class Sidebar {
 
   }
 }
-
-$(".select--sort select").selectmenu({
-  classes: {
-    "ui-selectmenu-button": "ui-selectmenu-button-border",
-    "ui-selectmenu-menu": "ui-selectmenu-menu-border"
-  }
-});
 // ==== Sidebar end
 
 // ==== review start
