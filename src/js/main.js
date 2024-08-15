@@ -610,7 +610,7 @@ class Sidebar {
       $('.map-point').removeClass('open')
     })
 
-
+    $('.allcaterories').appendTo($('.catalog-sidebar__inner'));
     $('.js-open-allcaterories').on('click', () => {
       $('.allcaterories').addClass('open')
     })
