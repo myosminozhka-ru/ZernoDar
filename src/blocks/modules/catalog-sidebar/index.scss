@@ -764,6 +764,8 @@
     }
   }
   &__item {
+    display: block;
+    width: 100%;
     padding: 2.4rem;
     border-bottom: 0.1rem solid $lightgrey;
     font-size: 1.4rem;
