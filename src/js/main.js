@@ -376,7 +376,7 @@ class Header {
     $('.nav__item').removeClass('active')
   }
   moveElementPlaceHandler() {
-    const mediaQuery = window.matchMedia("(max-width: 840px)");
+    const mediaQuery = window.matchMedia("(max-width: 760px)");
 
     // Function to handle the event
     const  handleMediaQueryChange = (event) => {
@@ -669,6 +669,13 @@ class Sidebar {
 
   }
 }
+
+$(".select--sort select").selectmenu({
+  classes: {
+    "ui-selectmenu-button": "ui-selectmenu-button-border",
+    "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+  }
+});
 // ==== Sidebar end
 
 // ==== review start
@@ -1385,11 +1392,19 @@ addEventListener("DOMContentLoaded", () => {
 
   window.showMore.mainCardDetails = () => more(
     ".card__data li",
-    ".card__bot .open-more3",
+    ".card__bot .open-more3, .card__data .open-more2",
     6,
     ".catalog-update .card"
   );
   window.showMore.mainCardDetails()
+
+  window.showMore.catalogCardDetails = () => more(
+    ".card__data li",
+    ".card__bot .open-more3, .card__data .open-more2",
+    5,
+    ".catalog-wrapper .card"
+  );
+  window.showMore.catalogCardDetails()
 
 
 
