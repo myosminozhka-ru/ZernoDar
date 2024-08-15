@@ -5,13 +5,13 @@
 }
 
 @mixin tab {
-	@media (max-width: 840px) {
+	@media (max-width: 760px) {
 		@content;
 	}
 }
 
 @mixin mob {
-	@media (max-width: 519px) {
+	@media (max-width: 440px) {
 		@content;
 	}
 }
@@ -74,4 +74,12 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+@mixin hide-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

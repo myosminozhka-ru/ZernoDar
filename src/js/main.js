@@ -1,5 +1,7 @@
 // all scripts here
+window.showMore = () => {
 
+};
 // ==== copy start
 class Copy {
   constructor() {
@@ -144,34 +146,42 @@ class Modal {
 // ==== modal end
 
 // ==== more start
-function more(element, button, count = 1) {
-  let fistClick = true;
-  let btnStr = $(button).children(".str");
-  let btnText = btnStr.text();
+function more(element, button, count = 1, parent) {
+  $(parent + ':not(.inited)').each(function (idx, el) {
+    $(el).addClass("inited")
+    let btn = $(el).find(button)
+    let els = $(el).find(element)
 
-  function start(make) {
-    for (let index = count; index < $(element).length; index++) {
-      if (make === "hide") {
-        $(element).eq(index).addClass("hide");
+    if (els.length <= count) {
+      btn.addClass("hide")
+      return;
+    }
+    let btnStr = btn.children(".str").eq(0);
+    let btnText = btnStr.text();
+    let isOpen = false;
+    btn.on("click", function (e) {
+      isOpen = btn.hasClass("open") // $(this).find(button).hasClass("open")
+      btn.toggleClass("open");
+      if (isOpen) {
+        btnStr.text(btnText);
+        start(els, "hide");
       } else {
-        $(element).eq(index).removeClass("hide");
+        start(els, "show");
+        btnStr.text("Свернуть");
+      }
+    });
+    start(els, "hide");
+  })
+
+  function start(elements, make) {
+    for (let index = count; index < elements.length; index++) {
+      if (make === "hide") {
+        elements.eq(index).addClass("hide");
+      } else {
+        elements.eq(index).removeClass("hide");
       }
     }
   }
-  start("hide");
-
-  let isOpen = false;
-  $(document).on("click", button, function (e) {
-    isOpen = $(button).hasClass("open")
-    $(button).toggleClass("open");
-    if (isOpen) {
-      btnStr.text(btnText);
-      start("hide");
-    } else {
-      start("show");
-      btnStr.text("Свернуть");
-    }
-  });
 }
 // ==== more end
 
@@ -374,7 +384,7 @@ class Header {
     $('.nav__item').removeClass('active')
   }
   moveElementPlaceHandler() {
-    const mediaQuery = window.matchMedia("(max-width: 840px)");
+    const mediaQuery = window.matchMedia("(max-width: 760px)");
 
     // Function to handle the event
     const  handleMediaQueryChange = (event) => {
@@ -606,6 +616,15 @@ class Sidebar {
 
     $('.js-close-map').on('click', () => {
       $('.map-point').removeClass('open')
+    })
+
+    $('.allcaterories').appendTo($('.catalog-sidebar__inner'));
+    $('.js-open-allcaterories').on('click', () => {
+      $('.allcaterories').addClass('open')
+    })
+
+    $('.js-close-allcaterories').on('click', () => {
+      $('.allcaterories').removeClass('open')
     })
 
     $(document).click(function(event) {
@@ -1332,47 +1351,75 @@ function authCode() {
 }
 // ==== auth code end
 
+// ==== stars start
+// ==== stars end
 
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
-  more(
-    ".card-ad-top__list ul li",
-    ".card-ad-top__list .card-ad-top__table-more .open-more2",
-    6
-  );
+  window.showMore = () => {
+    more(
+      "ul li",
+      ".card-ad-top__table-more .open-more2",
+      6,
+      ".card-ad-top__list"
+    );
 
-  more(
-    ".card-ad-top__table--harakteristitki tr",
-    ".card-ad-top__table--harakteristitki .card-ad-top__table-more .open-more",
-    4
-  );
+    more(
+      "tr",
+      ".card-ad-top__table-more .open-more",
+      4,
+      ".card-ad-top__table--harakteristitki"
+    );
 
-  more(
-    ".card-ad-description__content ul li",
-    ".card-ad-description__more .open-more2",
-    1
-  );
+    more(
+      ".card-ad-description__content ul li",
+      ".card-ad-description__more .open-more2",
+      1,
+      ".card-ad-description"
+    );
 
-  more(
-    ".catalog-update__top2 .switch-train li",
-    ".catalog-update__top2 .btn4",
-    6
-  );
-
-  more(".edit-about__text-part", ".edit-about__more .open-more2", 1);
+    more(".edit-about__text-part", ".edit-about__more .open-more2", 1, ".edit-about");
 
 
-  more(
-    ".contact-requisites__list .contact-requisites__item",
-    ".js-contact-requisites-open",
-    7
-  );
+    more(
+      ".contact-requisites__item",
+      ".js-contact-requisites-open",
+      7,
+      ".contact-requisites__list"
+    );
 
-  more(
-    ".agreement__content>p",
-    ".agreement__more .open-more2",
-    4
-  );
+    more(
+      ".agreement__content>p",
+      ".agreement__more .open-more2",
+      4,
+      ".agreement"
+    );
+
+    more(
+      ".switch-train li",
+      ".btn4",
+      6,
+      ".catalog-update__top2"
+    );
+
+    more(
+      ".card__data li",
+      ".card__bot .open-more3, .card__data .open-more2",
+      6,
+      ".catalog-update .card"
+    );
+
+    more(
+      ".card__data li",
+      ".card__bot .open-more3, .card__data .open-more2",
+      5,
+      ".catalog-wrapper .card"
+    );
+
+  }
+  window.showMore();
+
+
 
   hideShowBlock(
     ".article .article__nav .article-nav__list",
@@ -1400,15 +1447,18 @@ addEventListener("DOMContentLoaded", () => {
     textSellerModal: new Modal("text-seller"),
     tabReqModal: new Modal("tab-req"),
     ratingModal: new Modal("rating"),
+    sentToModerationModal: new Modal("sent-to-moderation"),
     sortCatalogModal: new Modal("sort-catalog"),
     sortCompamyModal: new Modal("sort-compamy"),
     newsSubsModal: new Modal("news-subs"),
     modalReviewComplaint: new Modal("review-complaint"),
+    modalMakeReview: new Modal("modalMakeReview"),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     catalogSidebarRange: Sidebar.initRange('catalogSidebar', '.catalog-wrapper'),
     copy: new Copy(),
   };
+  // window.octo.sentToModerationModal.open()
 });
 // ***** invoke scripts end
 

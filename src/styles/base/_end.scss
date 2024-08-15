@@ -2,3 +2,7 @@
 .visually-hidden {
   @include vhidden;
 }
+
+.hide {
+  display: none !important;
+}

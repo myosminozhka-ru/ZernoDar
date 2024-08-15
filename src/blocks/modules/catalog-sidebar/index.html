@@ -150,16 +150,42 @@
                     </div>
                 </div>
                 <div class="filter__item on-tab">
-                  <div class="select select--full">
-                    <select name="" id="" class="">
-                      <option value="">Все категории</option>
-                      <option value="">Пшеница</option>
-                      <option value="">Бобы</option>
-                      <option value="">Горох</option>
-                    </select>
+                  <div class="filter__allcaterories-wrap js-open-allcaterories">
+                    <span class="filter__allcaterories-title">Все категории</span>
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
                     </svg>
+                  </div>
+                  <div class="allcaterories">
+                    <div class="allcaterories__head">
+                      <button class="allcaterories__head-close js-close-allcaterories">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#x"></use>
+                        </svg>
+                      </button>
+                      <span class="str">Зерновые культуры</span>
+                    </div>
+                    <div class="allcaterories__list">
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Все категории</label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Пшеница <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Бобы <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Горох <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Пшеница <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Бобы <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Горох <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Пшеница <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Бобы <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Горох <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Пшеница <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Бобы <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Горох <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Пшеница <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Бобы <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Горох <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Пшеница <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Бобы <span>163</span></label>
+                      <label class="allcaterories__item"><input type="radio" name="allcaterories" id="" class="visually-hidden">Горох <span>163</span></label>
+                    </div>
                   </div>
                 </div>
                 <div class="filter__item">
@@ -315,12 +341,13 @@
                   <div class="filter__title">Гост
                     <label class="switch-slide">
                       <input type="checkbox">
+                      <span></span>
                       <i></i>
                     </label>
                   </div>
                 </div>
                 <div class="filter__item">
-                  <button class="btn3 filter__apply js-apply-filter">Применить</button>
+                  <button class="btn3 filter__apply js-reset-filter">Сбросить</button>
                 </div>
               </div>
             </div>

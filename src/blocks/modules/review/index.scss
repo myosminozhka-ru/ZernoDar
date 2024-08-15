@@ -143,6 +143,7 @@
   align-items: center;
   gap: 2.4rem;
   &__item {
+    cursor: pointer;
     &.active {
       font-weight: 500;
     }
@@ -290,10 +291,16 @@
       margin-bottom: 0;
       margin-top: 0.8rem;
     }
+    .user-rating__ave-date {
+      color: $darkgrey;
+    }
   }
   @include mob {
     &__item {
       padding: 1.6rem;
+    }
+    .user-rating__ave-date {
+      font-size: 1.2rem;
     }
   }
 }
