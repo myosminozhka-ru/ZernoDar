@@ -1390,21 +1390,21 @@ addEventListener("DOMContentLoaded", () => {
   );
   window.showMore.mainTrainDetails()
 
-  window.showMore.mainCardDetails = () => more(
+  window.showMore.mainCard = () => more(
     ".card__data li",
     ".card__bot .open-more3, .card__data .open-more2",
     6,
     ".catalog-update .card"
   );
-  window.showMore.mainCardDetails()
+  window.showMore.mainCard()
 
-  window.showMore.catalogCardDetails = () => more(
+  window.showMore.catalogCard = () => more(
     ".card__data li",
     ".card__bot .open-more3, .card__data .open-more2",
     5,
     ".catalog-wrapper .card"
   );
-  window.showMore.catalogCardDetails()
+  window.showMore.catalogCard()
 
 
 
