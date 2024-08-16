@@ -6,3 +6,16 @@
 .hide {
   display: none !important;
 }
+
+.only-pc {
+  @include tab {
+    display: none;
+  }
+}
+
+.on-tab {
+  display: none;
+  @include tab {
+    display: block;
+  }
+}
