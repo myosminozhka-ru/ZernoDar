@@ -29,8 +29,12 @@
     .user-contact {
       display: none;
     }
+    .user-head {
+      margin-top: 2.4rem;
+    }
     .to-seller {
       padding: 3.2rem 2.4rem;
+      padding-bottom: 0;
       position: relative;
       left: -2.4rem;
       width: 100vw;
@@ -39,9 +43,18 @@
   }
   @include mob {
     padding: 0 1.6rem;
+    .user-head {
+      margin-top: 1.6rem;
+    }
     .to-seller {
       padding: 3.2rem 1.6rem;
+      padding-bottom: 0;
       left: -1.6rem;
+    }
+    &__user-tags {
+      .tag-user {
+        font-size: 1.2rem;
+      }
     }
   }
 }
