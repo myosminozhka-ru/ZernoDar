@@ -1459,6 +1459,7 @@ addEventListener("DOMContentLoaded", () => {
     newsSubsModal: new Modal("news-subs"),
     modalReviewComplaint: new Modal("review-complaint"),
     modalMakeReview: new Modal("modalMakeReview"),
+    modalPersonalTariff: new Modal("modalPersonalTariff"),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     catalogSidebarRange: Sidebar.initRange('catalogSidebar', '.catalog-wrapper'),

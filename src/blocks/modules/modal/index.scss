@@ -90,6 +90,7 @@
       }
     }
     &__title {
+      text-align: center;
       font-size: 1.4rem;
     }
     &__inner {
@@ -177,6 +178,21 @@
     opacity: 0;
     display: none;
     z-index: -100;
+  }
+}
+
+.modal-content {
+  max-width: 51.2rem;
+  &__actions {
+    padding-top: 1.2rem;
+  }
+  @include tab {
+    .my-input-wrap {
+      margin-bottom: 0;
+    }
+    &__actions {
+      padding-top: 0rem;
+    }
   }
 }
 
