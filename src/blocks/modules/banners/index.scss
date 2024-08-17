@@ -98,6 +98,9 @@
       &__title {
         font-size: 8rem;
       }
+      &__inner {
+        padding: 8.6rem 2.4rem;
+      }
     }
   }
   &__inner {
@@ -142,12 +145,15 @@
         &__title {
           font-size: 2rem;
         }
+        &__inner {
+          padding: 2.4rem;
+        }
       }
     }
     &__inner {
       padding: 2.4rem;
       position: relative;
-      min-height: 18rem;
+      min-height: 19rem;
       display: flex;
       align-items: center;
       justify-content: center;

@@ -26,8 +26,13 @@
       flex-direction: column;
       gap: 2.4rem;
       padding: 2.4rem;
+      padding-top: 0;
       background-color: $white;
       border-radius: 0 0 1.2rem 1.2rem;
+    }
+    &__mbtitle {
+      font-size: 2rem;
+      font-weight: 500;
     }
     &__btns {
       display: flex;
@@ -98,6 +103,7 @@
   }
   @include mob {
     &__mobile {
+      padding-top: 0;
       padding: 1.6rem;
     }
     &__head {
