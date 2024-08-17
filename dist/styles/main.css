@@ -7691,6 +7691,10 @@ a {
   font-size: 8rem;
 }
 
+.page-banner--about .page-banner__inner {
+  padding: 8.6rem 2.4rem;
+}
+
 .page-banner__inner {
   padding: 8.8rem 2.4rem;
   position: relative;
@@ -9986,8 +9990,14 @@ a {
     flex-direction: column;
     gap: 2.4rem;
     padding: 2.4rem;
+    padding-top: 0;
     background-color: #ffffff;
     border-radius: 0 0 1.2rem 1.2rem;
+  }
+
+  .catalog-sidebar__mbtitle {
+    font-size: 2rem;
+    font-weight: 500;
   }
 
   .catalog-sidebar__btns {
@@ -13067,10 +13077,14 @@ a {
     font-size: 2rem;
   }
 
+  .page-banner--about .page-banner__inner {
+    padding: 2.4rem;
+  }
+
   .page-banner__inner {
     padding: 2.4rem;
     position: relative;
-    min-height: 18rem;
+    min-height: 19rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14504,6 +14518,7 @@ a {
   }
 
   .catalog-sidebar__mobile {
+    padding-top: 0;
     padding: 1.6rem;
   }
 
