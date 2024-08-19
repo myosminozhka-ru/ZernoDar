@@ -1357,8 +1357,14 @@ function authCode() {
 }
 // ==== auth code end
 
-// ==== stars start
-// ==== stars end
+// ==== subscription start
+$(".custom-select").selectmenu({
+  classes: {
+    "ui-selectmenu-button": "ui-selectmenu-button-mini",
+    "ui-selectmenu-menu": "ui-selectmenu-menu-mini"
+  }
+});
+// ==== subscription end
 
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
