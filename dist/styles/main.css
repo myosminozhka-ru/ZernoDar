@@ -2648,6 +2648,85 @@ a {
   background-color: #ECF0F4;
 }
 
+.ui-selectmenu-button-mini.ui-button {
+  width: 12.7rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  padding: 0.8rem 0.8rem;
+  border: 0.1rem solid #8C8C8C;
+  color: #2C2C31;
+  font-size: 1.6rem;
+}
+
+.ui-selectmenu-button-mini.ui-button:focus {
+  border: 0.1rem solid #0F582D;
+}
+
+.ui-selectmenu-button-mini.ui-button:hover .ui-selectmenu-icon,
+.ui-selectmenu-button-mini.ui-button:focus .ui-selectmenu-icon {
+  background-image: url(../img/sprites/arrow-down.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ui-selectmenu-button-mini.ui-button .ui-selectmenu-icon {
+  background-image: url(../img/sprites/arrow-down.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ui-selectmenu-menu-mini {
+  padding: 0.6rem 0;
+}
+
+.ui-selectmenu-menu-mini .ui-widget.ui-widget-content {
+  border: none;
+  border-radius: 2rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
+  border: none;
+}
+
+.ui-selectmenu-menu-mini .ui-menu-item {
+  position: relative;
+}
+
+.ui-selectmenu-menu-mini .ui-menu-item::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: calc(100% - 4.8rem);
+  height: 0.1rem;
+  left: 2.4rem;
+  bottom: 0;
+  background-color: #E6E6E6;
+}
+
+.ui-selectmenu-menu-mini .ui-menu-item:last-child::after {
+  display: none;
+}
+
+.ui-selectmenu-menu-mini .ui-menu-item-wrapper {
+  padding: 2.4rem;
+  font-size: 1.8rem;
+  color: #2C2C31;
+  position: relative;
+  margin: 0;
+}
+
+.ui-selectmenu-menu-mini .ui-menu-item-wrapper.ui-state-active {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+}
+
+.ui-selectmenu-menu-mini .ui-menu-item-wrapper:hover {
+  background-color: #ECF0F4;
+}
+
 .favourite-tooltip {
   padding: 1rem;
   font-size: 1.6rem;
@@ -9062,6 +9141,31 @@ a {
   }
 
   .ui-selectmenu-menu-border .ui-menu-item-wrapper::after {
+    width: calc(100% - 2.4rem);
+    left: 1.2rem;
+  }
+
+  .ui-selectmenu-button-mini.ui-button {
+    width: 9rem;
+    border-radius: 0.8rem;
+    font-size: 1.2rem;
+  }
+
+  .ui-selectmenu-menu-mini {
+    padding: 0.9rem 0;
+  }
+
+  .ui-selectmenu-menu-mini .ui-widget.ui-widget-content {
+    border-radius: 1.2rem;
+    box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
+  }
+
+  .ui-selectmenu-menu-mini .ui-menu-item-wrapper {
+    padding: 1.6rem;
+    font-size: 1.2rem;
+  }
+
+  .ui-selectmenu-menu-mini .ui-menu-item-wrapper::after {
     width: calc(100% - 2.4rem);
     left: 1.2rem;
   }
