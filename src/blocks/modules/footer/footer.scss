@@ -91,6 +91,7 @@
   @include tab {
     border-radius: 2rem 2rem 0 0;
     background-color: $palegreen;
+    margin-bottom: 0rem;
     &__inner {
       flex-wrap: wrap;
       justify-content: space-between;
