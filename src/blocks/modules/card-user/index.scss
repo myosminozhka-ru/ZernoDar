@@ -181,12 +181,12 @@
       }
     }
     &__text-title {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       padding-bottom: 0;
       margin-bottom: 2.4rem;
     }
     &__text {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
     &__text-block {
       padding: 2.4rem;
@@ -222,6 +222,14 @@
         width: 100%;
         padding: 0 1.6rem;
       }
+    }
+    &__text-title {
+      font-size: 1.4rem;
+      padding-bottom: 0;
+      margin-bottom: 2.4rem;
+    }
+    &__text {
+      font-size: 1.4rem;
     }
 
   }
