@@ -8842,8 +8842,8 @@ a {
   }
 
   .btn3 {
-    padding: 1.1rem;
-    font-size: 1.4rem;
+    padding: 1.2rem;
+    font-size: 1.6rem;
     border-radius: 0.8rem;
   }
 
@@ -9059,12 +9059,12 @@ a {
   .user-rating {
     gap: 0.4rem;
     margin-bottom: 1.6rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .user-rating__stars {
-    width: 10rem;
-    height: 1.8rem;
+    width: 12rem;
+    height: 2.16rem;
   }
 
   .user-rating__stars::before {
@@ -9076,6 +9076,15 @@ a {
   .user-rating__procent {
     top: 2%;
     height: 95%;
+  }
+
+  .user-rating--md {
+    font-size: 1.8rem;
+  }
+
+  .user-rating--md .user-rating__stars {
+    width: 14.96rem;
+    height: 2.695rem;
   }
 
   .to-seller {
@@ -9473,6 +9482,7 @@ a {
   .footer {
     border-radius: 2rem 2rem 0 0;
     background-color: #ECF4ED;
+    margin-bottom: 0rem;
   }
 
   .footer__inner {
@@ -10593,32 +10603,32 @@ a {
   }
 
   .card-user__top {
-    padding: 1.6rem 1.6rem 2.4rem;
+    padding: 1.6rem 2.4rem 2.4rem;
     border-bottom: 0.1rem solid #E6E6E6;
   }
 
   .card-user__description {
-    padding: 2.4rem 1.6rem 2.4rem;
+    padding: 2.4rem 2.4rem 2.4rem;
     border-bottom: 0.1rem solid #E6E6E6;
   }
 
   .card-user__description h3 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .card-user__description p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .card-user__bot {
-    padding: 2.4rem 1.6rem 1.6rem;
+    padding: 2.4rem 2.4rem 1.6rem;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
   }
 
   .card-user__cont-title {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
   }
 
   .card-user__bot-right {
@@ -10752,13 +10762,13 @@ a {
   }
 
   .base-tab__text-title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     padding-bottom: 0;
     margin-bottom: 2.4rem;
   }
 
   .base-tab__text {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .base-tab__text-block {
@@ -10823,12 +10833,16 @@ a {
   }
 
   .review-stars__subtitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .review-stars__item svg {
-    width: 9.2rem;
-    height: 1.6rem;
+    width: 11.04rem;
+    height: 1.92rem;
+  }
+
+  .review-stars__val {
+    font-size: 1.7rem;
   }
 
   .review-stars__info {
@@ -10845,15 +10859,15 @@ a {
     margin-top: 1.6rem;
     display: flex;
     background-color: #749E85;
-    padding: 1.1rem;
-    border-radius: 0.8rem;
-    font-size: 1.4rem;
+    padding: 1.3rem;
+    border-radius: 0.9rem;
+    font-size: 1.6rem;
     font-weight: 500;
     margin-top: 0;
   }
 
   .review-sort {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0 2.4rem;
   }
 
@@ -10890,16 +10904,16 @@ a {
   }
 
   .review-list__content {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .review-list__like {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .review-list__like svg {
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
   }
 
   .review-list__to-answer {
@@ -10947,7 +10961,7 @@ a {
   }
 
   .card-user-side-contact__title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .card-user-profile-contact {
@@ -14044,6 +14058,12 @@ a {
     padding: 0;
   }
 
+  .btn3 {
+    padding: 1.1rem;
+    font-size: 1.4rem;
+    border-radius: 0.8rem;
+  }
+
   .btn4 {
     font-size: 1.2rem;
     padding: 1.2rem 1rem;
@@ -14311,6 +14331,37 @@ a {
 
   .user-head .user-rating {
     margin-bottom: 0;
+  }
+
+  .user-rating {
+    gap: 0.4rem;
+    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .user-rating__stars {
+    width: 10rem;
+    height: 1.8rem;
+  }
+
+  .user-rating__stars::before {
+    top: 2%;
+    height: 95%;
+    width: 100%;
+  }
+
+  .user-rating__procent {
+    top: 2%;
+    height: 95%;
+  }
+
+  .user-rating--md {
+    font-size: 1.8rem;
+  }
+
+  .user-rating--md .user-rating__stars {
+    width: 10rem;
+    height: 1.8rem;
   }
 
   .user-contact {
@@ -14782,6 +14833,75 @@ a {
     padding: 2.4rem 1.6rem 0;
   }
 
+  .card-user {
+    padding: 0;
+    border-radius: 2rem;
+    background-color: #ffffff;
+    box-shadow: 14.8rem 36.3rem 11rem 0 rgba(230, 230, 230, 0), 9.5rem 23.2rem 10rem 0 rgba(230, 230, 230, 0.02), 5.3rem 13.1rem 8.5rem 0 rgba(230, 230, 230, 0.07), 2.4rem 5.8rem 6.3rem 0 rgba(230, 230, 230, 0.12), 0.6rem 1.5rem 3.4rem 0 rgba(230, 230, 230, 0.14);
+  }
+
+  .card-user .user-head__name {
+    margin-bottom: 0;
+  }
+
+  .card-user .user-head__ava {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .card-user .user-head .user-rating {
+    display: none;
+  }
+
+  .card-user__user-rating-tab {
+    display: flex;
+  }
+
+  .card-user__inner {
+    display: block;
+  }
+
+  .card-user__top {
+    padding: 1.6rem 1.6rem 2.4rem;
+    border-bottom: 0.1rem solid #E6E6E6;
+  }
+
+  .card-user__description {
+    padding: 2.4rem 1.6rem 2.4rem;
+    border-bottom: 0.1rem solid #E6E6E6;
+  }
+
+  .card-user__description h3 {
+    font-size: 1.4rem;
+  }
+
+  .card-user__description p {
+    font-size: 1.4rem;
+  }
+
+  .card-user__bot {
+    padding: 2.4rem 1.6rem 1.6rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .card-user__cont-title {
+    font-size: 1.4rem;
+  }
+
+  .card-user__bot-right {
+    margin-top: 2.4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .card-user__bot-right .btn9 {
+    flex-grow: 1;
+  }
+
   .card-user-wrapper__user-mob .card-ad-user-rating {
     padding: 2.4rem 1.6rem;
   }
@@ -14816,6 +14936,16 @@ a {
     padding: 0 1.6rem;
   }
 
+  .base-tab__text-title {
+    font-size: 1.4rem;
+    padding-bottom: 0;
+    margin-bottom: 2.4rem;
+  }
+
+  .base-tab__text {
+    font-size: 1.4rem;
+  }
+
   .card-user-top {
     padding: 0.8rem 1.6rem;
     padding-bottom: 2.4rem;
@@ -14827,6 +14957,38 @@ a {
 
   .review-stars {
     padding: 1.6rem;
+    background-color: #ffffff;
+    border-radius: 1.2rem;
+    box-shadow: 7rem 15rem 5rem 0 rgba(230, 230, 230, 0), 5rem 10rem 5rem 0 rgba(230, 230, 230, 0.02), 2rem 6rem 4rem 0 rgba(230, 230, 230, 0.07), 1rem 2rem 3rem 0 rgba(230, 230, 230, 0.12), 0.3rem 1rem 2rem 0 rgba(230, 230, 230, 0.14);
+  }
+
+  .review-stars .user-rating {
+    margin-bottom: 0.8rem;
+  }
+
+  .review-stars__top {
+    margin-bottom: 2.4rem;
+  }
+
+  .review-stars__inner {
+    display: block;
+  }
+
+  .review-stars__subtitle {
+    font-size: 1.4rem;
+  }
+
+  .review-stars__item svg {
+    width: 9.2rem;
+    height: 1.6rem;
+  }
+
+  .review-stars__val {
+    font-size: 1.6rem;
+  }
+
+  .review-stars__info {
+    display: none;
   }
 
   .review-stars__out {
@@ -14834,8 +14996,19 @@ a {
     padding: 0 1.6rem;
   }
 
+  .review-stars__leave-review {
+    margin-top: 1.6rem;
+    display: flex;
+    background-color: #749E85;
+    padding: 1.1rem;
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 0;
+  }
+
   .review-sort {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding: 0 1.6rem;
   }
 
@@ -14845,6 +15018,19 @@ a {
 
   .review-list .user-rating__ave-date {
     font-size: 1.2rem;
+  }
+
+  .review-list__content {
+    font-size: 1.4rem;
+  }
+
+  .review-list__like {
+    font-size: 1.2rem;
+  }
+
+  .review-list__like svg {
+    width: 2rem;
+    height: 2rem;
   }
 
   .card-user-side-contact {
