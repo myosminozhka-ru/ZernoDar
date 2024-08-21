@@ -314,6 +314,11 @@
     width: 100%;
   }
   @include tab {
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    border-radius: 0.8rem;
+  }
+  @include mob {
     padding: 1.1rem;
     font-size: 1.4rem;
     border-radius: 0.8rem;
@@ -1997,6 +2002,33 @@
   @include tab {
     gap: 0.4rem;
     margin-bottom: 1.6rem;
+    font-size: 1.8rem;
+    &__stars {
+      width: 12rem;
+      height: 2.16rem;
+    }
+    &__stars::before {
+      top: 2%;
+      height: 95%;
+      width: 100%;
+    }
+    &__procent {
+      top: 2%;
+      height: 95%;
+    }
+    &--md {
+      font-size: 1.8rem;
+      .user-rating {
+        &__stars {
+          width: 14.96rem;
+          height: 2.695rem;
+        }
+      }
+    }
+  }
+  @include mob {
+    gap: 0.4rem;
+    margin-bottom: 1.6rem;
     font-size: 1.4rem;
     &__stars {
       width: 10rem;
@@ -2010,6 +2042,15 @@
     &__procent {
       top: 2%;
       height: 95%;
+    }
+    &--md {
+      font-size: 1.8rem;
+      .user-rating {
+        &__stars {
+          width: 10rem;
+          height: 1.8rem;
+        }
+      }
     }
   }
 }
