@@ -136,6 +136,9 @@
     a {
       color: $linkblue;
     }
+    &--alt-log {
+      margin-bottom: 0.8rem;
+    }
   }
 
   &__actions {
@@ -175,6 +178,9 @@
 
     &__text {
       font-size: 1.2rem;
+      &--alt-log {
+        margin-bottom: 0.5rem;
+      }
     }
   }
   @include mob {
@@ -205,6 +211,12 @@
     }
     &__police {
       font-size: 1.2rem;
+    }
+    &__text {
+      font-size: 1.2rem;
+      &--alt-log {
+        margin-bottom: 0.3rem;
+      }
     }
   }
 }
