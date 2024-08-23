@@ -435,71 +435,6 @@ class Header {
 Header.setHeaderPosition();
 // ==== Header end
 
-// ==== cardAdMap start
-function cardAdMap() {
-  if (!$('#map').length) {
-    return false;
-  }
-  try {
-    
-    ymaps.ready(function () {
-              
-      // let breakpoint = window.matchMedia('(max-width: 48em)');
-      // let descOptions = {
-      //     iconLayout: 'default#image',
-      //     iconImageHref: 'img/map-point.svg',
-      //     iconImageSize: [50, 50],
-      //     iconImageOffset: [-25, -25]
-      // };
-      // if (breakpoint) {
-      //     descOptions.iconImageSize = [50, 50],
-      //     descOptions.iconImageOffset = [-25, -25]
-      // }                            
-      var myMap = new ymaps.Map('map', {
-          center: [55.699467, 37.625594],
-          zoom: 12
-      });
-
-      var searchControl = new ymaps.control.SearchControl({
-        options: {
-            provider: 'yandex#map'
-        }
-      }); 
-
-      myMap.controls.add(searchControl);
-
-
-      searchControl.search('Дворцовая площадь, 2');
-
-      const input = document.querySelector('.card-ad-map__input input')
-      
-      input.addEventListener('change', (e) => {
-        console.log(e);
-        searchControl.search('Дворцовая площадь, 2');
-        var result = searchControl.getResult(0);
-        result.then(function (res) {
-            console.log("Результат " + res );
-        }, function (err) {
-            console.log("Ошибка");
-        });
-      })
-      // myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-      //   hintContent: 'Варшавское ш., <br/> 9 строение 1 (Метро Тульская)',
-      //   balloonContent: 'Зикаар'
-      // }, descOptions);
-      // myMap.geoObjects.add(myPlacemark);
-
-      $('.card-ad-map__input button').click(function() {
-        $('.card-ad-map__map').toggleClass('open');
-      })
-    });
-  } catch(e) {
-    console.log(e);
-    
-  }
-}
-// ==== cardAdMap end
-
 // ==== Sidebar start
 window.rangeInstance = {};
 class Sidebar {
@@ -1397,14 +1332,7 @@ addEventListener("DOMContentLoaded", () => {
       ".contact-requisites__item",
       ".js-contact-requisites-open",
       7,
-      ".contact-requisites__list"
-    );
-
-    more(
-      ".agreement__content>p",
-      ".agreement__more .open-more2",
-      4,
-      ".agreement"
+      ".contact-requisites__inner"
     );
 
     more(
@@ -1438,7 +1366,6 @@ addEventListener("DOMContentLoaded", () => {
     ".article .article__nav .open-more2"
   );
 
-  cardAdMap();
   review();
   cardAdRelative(".card-ad-relative");
   cardRatingModal();
@@ -1471,7 +1398,7 @@ addEventListener("DOMContentLoaded", () => {
     catalogSidebarRange: Sidebar.initRange('catalogSidebar', '.catalog-wrapper'),
     copy: new Copy(),
   };
-  // window.octo.sentToModerationModal.open()
+  // window.octo.textSellerModal.open()
 });
 // ***** invoke scripts end
 

@@ -227,3 +227,59 @@
     }
   }
 }
+
+.map-popup {
+  &__top {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+  &__icon {
+    width: 6.4rem;
+    height: 6.4rem;
+    flex-shrink: 0;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  &__price {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  &__tags {
+    display: flex;
+    gap: 0.8rem;
+    span {    
+      padding: 1.6rem 1.6rem;
+      border-radius: 1.6rem;
+      background-color: #F8F8F8;
+    }
+  }
+  @include tab {
+    &__top {
+      gap: 0.2rem;
+      margin-bottom: 0.6rem;
+    }
+    &__icon {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+    &__price {
+      font-size: 1.2rem;
+    }
+    &__tags {
+      gap: 0.2rem;
+      span {    
+        font-size: 0.8rem;
+        padding: 0.6rem 0.6rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
