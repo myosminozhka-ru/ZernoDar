@@ -1332,7 +1332,7 @@ addEventListener("DOMContentLoaded", () => {
       ".contact-requisites__item",
       ".js-contact-requisites-open",
       7,
-      ".contact-requisites__list"
+      ".contact-requisites__inner"
     );
 
     more(
