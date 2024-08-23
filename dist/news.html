@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="styles/libs/jquery-ui.min.css">
   <link rel="stylesheet" href="styles/main.css">
 
-  <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>"
-    type="text/javascript"></script> -->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=45d3a6fe-9237-429a-bda9-8b736c401b92"
+    type="text/javascript"></script>
 </head>
 <body>
   <header class="header">
@@ -528,7 +528,12 @@
   <div class="news__inner">
     <div class="news__head">
       <div class="h1 news__mtitle">Новости</div>
-      <button class="btn3 btn3--green"  data-class="news-subs">Подписаться на новости</button>
+      <button class="btn3"  data-class="news-subs">
+        Подписаться на новости 
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#notificationBellCurrent"></use>
+        </svg>
+      </button>
     </div>
     <div class="news__list">
       <div class="card-news">
