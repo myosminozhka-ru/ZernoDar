@@ -289,12 +289,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.8rem;
   font-weight: 500;
   font-size: 1.6rem;
   padding: 1.6rem;
   border-radius: 1.6rem;
   background-color: $paleblue;
   transition: background 200ms;
+  svg {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 200ms;
+  }
   &:hover {
     background-color: $palegreen;
   }
