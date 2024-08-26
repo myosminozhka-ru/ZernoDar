@@ -248,12 +248,14 @@ class Header {
   open() {
     this.isNavOpen = true
     $('.header__burger').addClass('active')
+    $('.header').addClass('open')
     $('.nav').addClass('open')
     $('body').addClass('lock')
   }
   close() {
     this.isNavOpen = false
     $('.header__burger').removeClass('active')
+    $('.header').removeClass('open')
     $('.nav').removeClass('open')
     $('body').removeClass('lock')
   }

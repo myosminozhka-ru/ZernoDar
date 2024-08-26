@@ -83,7 +83,7 @@
     backdrop-filter: unset;
     background-color: rgba($color: $bckgrnd, $alpha: 1);
     border-bottom: 0.16rem solid $palegreen;
-    &__inner {
+    &.open &__inner {
       &::before {
         content: '';
         display: block;
@@ -165,7 +165,7 @@
 
 
   @include mob {
-    &__inner {
+    &.open &__inner {
       padding: 1.6rem 0;
       &::before {
         height: 5.6rem;
