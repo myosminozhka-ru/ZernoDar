@@ -1417,6 +1417,14 @@ addEventListener("DOMContentLoaded", () => {
     copy: new Copy(),
   };
   // window.octo.textSellerModal.open()
+  // $('[data-filter-geo="range_container"] input').ionRangeSlider({
+  //   onChange: function (data) {
+  //     const currentValue = data.input.val();
+  //     console.log(currentValue);
+  //     // currentValue - текущее значение ползунка
+  //     // тут можно вызвать функция ajax для передачи данных карты/фильтра на бэк 
+  //   },
+  // });
 });
 // ***** invoke scripts end
 
