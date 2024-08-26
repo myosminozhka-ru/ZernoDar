@@ -2190,6 +2190,7 @@
     width: 4.6rem;
     height: 4.6rem;
     object-fit: contain;
+    color: transparent;
   }
   transition: background 200ms;
   &:hover {
@@ -2198,6 +2199,9 @@
   &.active, 
   &[data-favorite='delete'] {
     background-color: $green;
+    svg {
+      color: #fff;
+    }
   }
   &--sm {
     padding: 1.3rem;
