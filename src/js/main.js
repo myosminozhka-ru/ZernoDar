@@ -248,12 +248,14 @@ class Header {
   open() {
     this.isNavOpen = true
     $('.header__burger').addClass('active')
+    $('.header').addClass('open')
     $('.nav').addClass('open')
     $('body').addClass('lock')
   }
   close() {
     this.isNavOpen = false
     $('.header__burger').removeClass('active')
+    $('.header').removeClass('open')
     $('.nav').removeClass('open')
     $('body').removeClass('lock')
   }
@@ -310,13 +312,16 @@ class Header {
   }
   navDropItemHandler(mod, e) {
     e.preventDefault()
+    // debugger
+    if ($(e.target).closest('.nav-drop').length) {
+      return
+    }
+    $('.nav__item').removeClass('active')
     if (this[mod + 'IsOpen']) {
-      $('.nav__item').removeClass('active')
       this.closeNavDrop('.nav-drop--' + mod)
       this.supplyIsOpen = false
       this.demandIsOpen = false
     } else {
-      $('.nav__item').removeClass('active')
       $('.nav__item--' + mod).addClass('active')
       this.openNavDrop('.nav-drop--' + mod)
       this.supplyIsOpen = false
@@ -325,15 +330,19 @@ class Header {
     }
   }
   navDropHandler() {
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    if (!isMobile) {
-      $('.nav__item--supply').on('mouseenter' ,this.navDropItemHandler.bind(this, "supply"))
-      $('.nav__item--demand').on('mouseenter' , this.navDropItemHandler.bind(this, "demand"))
-    } else {
-      $('.nav__item--supply svg').on('click' ,this.navDropItemHandler.bind(this, "supply"))
-      $('.nav__item--demand svg').on('click' , this.navDropItemHandler.bind(this, "demand"))
-    }
+    // if (!isMobile) {
+    //   $('.nav__item--supply').on('mouseenter' ,this.navDropItemHandler.bind(this, "supply"))
+    //   $('.nav__item--demand').on('mouseenter' , this.navDropItemHandler.bind(this, "demand"))
+    // } else {
+    //   $('.nav__item--supply svg').on('click' ,this.navDropItemHandler.bind(this, "supply"))
+    //   $('.nav__item--demand svg').on('click' , this.navDropItemHandler.bind(this, "demand"))
+    // }
+
+    $('.nav__item--supply').on('click' ,this.navDropItemHandler.bind(this, "supply"))
+    $('.nav__item--demand').on('click' , this.navDropItemHandler.bind(this, "demand"))
 
     $(document).click((event) => {
       if (
@@ -341,6 +350,7 @@ class Header {
         !$(event.target).closest('.nav-drop__inner').length &&
         !$(event.target).closest('.nav__item--drop').length
       ) {
+        // debugger
         this.closeNavDrop()
         this.supplyIsOpen = false
         this.demandIsOpen = false
@@ -348,11 +358,19 @@ class Header {
     });
 
     $('.nav-drop').each(function(index, element) {
-      $(element).find('.nav-drop__arrow').each(function(index, arrow) {
-        $(arrow).on('click', function() {
+
+      $(element).find('.nav-drop__title').each(function(index, arrow) {
+        $(arrow).on('click', function(e) {
+          e.preventDefault()
           const isOpen = $(element).find(`.nav-drop__block:eq(${index})`).hasClass('open')
-          $(element).find('.nav-drop__title').removeClass('active')
-          $(element).find('.nav-drop__block').removeClass('open')
+
+          if (!mediaQuery.matches && isOpen) {
+            // если это десктоп и нажали на уже открытое, то ничего не делаем
+          } else {
+            // если это мобилка
+            $(element).find('.nav-drop__title').removeClass('active')
+            $(element).find('.nav-drop__block').removeClass('open')
+          }
           if (!isOpen) {
             $(element).find(`.nav-drop__title:eq(${index})`).addClass('active')
             $(element).find(`.nav-drop__block:eq(${index})`).addClass('open')
@@ -360,16 +378,16 @@ class Header {
         })
       })
 
-      $(element).find('.nav-drop__title').each(function(index, title) {
-        $(title).on('mouseenter', function() {
-          if (!isMobile) {
-            $(element).find('.nav-drop__title').removeClass('active')
-            $(element).find('.nav-drop__block').removeClass('open')
-            $(element).find(`.nav-drop__title:eq(${index})`).addClass('active')
-            $(element).find(`.nav-drop__block:eq(${index})`).addClass('open')
-          }
-        })
-      })
+      // $(element).find('.nav-drop__title').each(function(index, title) {
+      //   $(title).on('mouseenter', function() {
+      //     if (!isMobile) {
+      //       $(element).find('.nav-drop__title').removeClass('active')
+      //       $(element).find('.nav-drop__block').removeClass('open')
+      //       $(element).find(`.nav-drop__title:eq(${index})`).addClass('active')
+      //       $(element).find(`.nav-drop__block:eq(${index})`).addClass('open')
+      //     }
+      //   })
+      // })
     })
 
   }
@@ -384,7 +402,7 @@ class Header {
     $('.nav__item').removeClass('active')
   }
   moveElementPlaceHandler() {
-    const mediaQuery = window.matchMedia("(max-width: 760px)");
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
     // Function to handle the event
     const  handleMediaQueryChange = (event) => {
