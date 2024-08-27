@@ -462,7 +462,6 @@ class Sidebar {
     this.modal()
     this.category()
     this.resetListener()
-    this.initMapRadiusRange()
   }
 
   static initRange(name, parentSelector) {
@@ -594,10 +593,6 @@ class Sidebar {
         $('.map-point').removeClass('open')
       }
     });
-  }
-
-  initMapRadiusRange() {
-    $(".map-point .js-range-slider").ionRangeSlider();
   }
 
   category() {
