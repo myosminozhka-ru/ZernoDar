@@ -35,11 +35,25 @@
   @include tab {
     &__top {
       padding: 0 2.4rem;
-      margin-bottom: 2rem;
-      @include mob {
-        padding: 0 1.6rem;
-        margin-bottom: 1.6rem;
-      }
+      margin-bottom: 2.2rem;
+    }
+    &__mtitle {
+      font-size: 2.2rem;
+      margin-bottom: 2.2rem;
+    }
+    &__tabs {
+      justify-content: space-between;
+    }
+    &__tab {
+      font-size: 1.4rem;
+      padding: 1.2rem 0.8rem;
+      border-bottom: 0.1rem solid transparent;
+    }
+  }
+  @include mob {
+    &__top {
+      padding: 0 1.6rem;
+      margin-bottom: 1.6rem;
     }
     &__mtitle {
       font-size: 2rem;

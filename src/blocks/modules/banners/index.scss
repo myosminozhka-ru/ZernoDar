@@ -44,6 +44,52 @@
   }
   @include tab {
     &__inner {
+      padding: 6.6rem 2.4rem;
+      padding-bottom: 15rem;
+    }
+    &__content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__title {
+      font-size: 2.2rem;
+      text-align: center;
+    }
+    &__img {
+      position: absolute;
+      object-fit: contain;
+      &--1 {
+        width: 80%;
+        height: 15rem;
+        top: auto;
+        bottom: -2.5rem;
+        right: -4.3rem;
+        z-index: 4;
+      }
+      &--2 {    
+        width: 41%;
+        height: 13rem;
+        top: auto;
+        bottom: -4rem;
+        right: auto;
+        left: 0rem;
+        z-index: 3;
+      }
+      &--3 {
+        width: 190%;
+        height: 100%;
+        top: auto;
+        bottom: 0rem;
+        right: auto;
+        left: 0rem;
+        z-index: 2;
+      }
+    }
+  }
+  @include mob {
+    &__inner {
       padding: 4.6rem 1.6rem;
       padding-bottom: 12rem;
     }
@@ -138,6 +184,47 @@
     font-weight: 500;
   }
   @include tab {
+    padding: 0;
+    margin-bottom: 5rem;
+    &--about {
+      .page-banner {
+        &__title {
+          font-size: 2.2rem;
+        }
+        &__inner {
+          padding: 2.6rem;
+          min-height: 21rem;
+        }
+      }
+    }
+    &__inner {
+      padding: 2.4rem;
+      position: relative;
+      min-height: 28rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__bg {
+      border-radius: 2.4rem;
+    }
+    &__content {
+      text-align: center;
+      color: $white;
+      position: relative;
+      z-index: 2;
+    }
+    &__title {
+      font-size: 2.2rem;
+      margin-bottom: 0;
+    }
+    &__text {
+      margin-top: 2rem;
+      font-size: 1.6rem;
+      // display: none;
+    }
+  }
+  @include mob {
     padding: 0;
     margin-bottom: 4rem;
     &--about {

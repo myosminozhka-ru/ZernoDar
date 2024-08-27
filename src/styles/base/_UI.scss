@@ -859,6 +859,13 @@
       font-size: 1.6rem;
       border-radius: 0.8rem;
     }
+    &--fit {
+      width: 100%;
+      display: inline-flex;
+      .switch-button__item {
+        min-width: 14rem;
+      }
+    }
   }
   @include mob {
     border-radius: 1.6rem;
@@ -2372,7 +2379,7 @@
     }
   }
 }
-
+// mini start
 .ui-selectmenu-button-mini.ui-button {
   width: 12.7rem;
   background: $white;
@@ -2446,6 +2453,30 @@
 
 @include tab {
   .ui-selectmenu-button-mini.ui-button {
+    width: 12rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .ui-selectmenu-menu-mini {
+    padding: 1.2rem 0;
+    .ui-widget.ui-widget-content {
+      border-radius: 1.6rem;
+      box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
+    }
+    .ui-menu-item-wrapper {
+      padding: 1.8rem;
+      font-size: 1.4rem;
+      &::after {
+        width: calc(100% - 3.6rem);
+        left: 1.8rem;
+      }
+    }
+  }
+}
+
+@include mob {
+  .ui-selectmenu-button-mini.ui-button {
     width: 9rem;
     border-radius: 0.8rem;
     font-size: 1.2rem;
@@ -2467,6 +2498,7 @@
     }
   }
 }
+// mini end
 
 .favourite-tooltip {
   padding: 1rem;

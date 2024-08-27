@@ -46,6 +46,12 @@
     align-items: center;
     flex-wrap: wrap;
   }
+  &__tags2 {
+    display: none;
+  }
+  &__tags3 {
+    display: none;
+  }
   &__data {
     ul {
       display: flex;
@@ -143,6 +149,9 @@
     }
     &__tags {
       display: none;
+    }
+    &__tags3 {
+      display: flex;
     }
     &__tags2 {
       display: flex;

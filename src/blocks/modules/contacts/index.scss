@@ -190,17 +190,44 @@
     &__mtitle {
       margin-bottom: 2.4rem;
       padding: 0 2.4rem;
-      @include mob {
-        padding: 0  1.6rem;
+    }
+    &__inner {
+      border-radius: 1.6rem;
+      background-color: $paleblue;
+      padding: 2.4rem;
+    }
+    &__label {
+      margin-bottom: 1rem;
+      input, textarea {
+        font-size: 1.4rem;
+        padding: 1.6rem 1rem;
+        border-radius: 1rem;
       }
+      textarea {
+        height: 5.4rem;
+      }
+    }
+    &__actions {
+      margin-top: 2.4rem;
+    }
+    &__send {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    &__police {
+      font-size: 1.4rem;
+    }
+
+  }
+  @include mob {
+    &__mtitle {
+      margin-bottom: 2.4rem;
+      padding: 0  1.6rem;
     }
     &__inner {
       border-radius: 1.2rem;
       background-color: $paleblue;
-      padding: 2.4rem;
-      @include mob {
-        padding: 1.6rem;
-      }
+      padding: 1.6rem;
     }
     &__label {
       margin-bottom: 0.8rem;
@@ -295,19 +322,60 @@
         margin: 0;
       }
       padding: 0 2.4rem;
-      @include mob {
-        padding: 0 1.6rem;
+    }
+    &__mtitle.h1 {
+      font-size: 2rem;
+    }
+    &__inner {
+      border-radius: 1.6rem;
+      padding: 2.4rem;
+    }
+    &__list {
+      border-bottom: 0.1rem solid $lightgrey;
+      margin-bottom: 2rem;
+    }
+    &__item {
+      padding: 1rem 0;
+      border-bottom: none;
+      display: block;
+    }
+    &__name {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    &__value {
+      font-size: 1.6rem;
+    }
+    &__more {
+      display: none;
+    }
+    &__more2 {
+      display: flex;
+      width: 100%;
+    }
+  }
+  @include mob {
+    margin-bottom: 6rem;
+    &__head {
+      margin-bottom: 2.4rem;
+      .open-more {
+        background-color: transparent;
+        padding: 0;
       }
+      .open-more .str {
+        display: none;
+      }
+      .open-more svg {
+        margin: 0;
+      }
+      padding: 0 1.6rem;
     }
     &__mtitle.h1 {
       font-size: 1.8rem;
     }
     &__inner {
       border-radius: 1.2rem;
-      padding: 2.4rem;
-      @include mob {
-        padding: 1.6rem;
-      }
+      padding: 1.6rem;
     }
     &__list {
       border-bottom: 0.1rem solid $lightgrey;

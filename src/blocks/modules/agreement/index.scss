@@ -18,6 +18,40 @@
     display: none;
   }
   @include tab {
+    padding: 1.4rem 0 6rem;
+    .container {
+      padding: 0;
+    }
+    &__inner {
+      background-color: $white;
+      @include block-shadow2;
+      border-radius: 1.6rem;
+    }
+    &__mtitle {
+      font-size: 2rem;
+      margin-bottom: 4rem;
+      padding: 0 2.4rem;
+    }
+    &__content {
+      font-size: 1.6rem;
+      padding: 0 2.4rem;
+      *.hide {
+        display: none;
+      }
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+    &__more {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.6rem;
+      padding: 1.8rem;
+      border-top: 0.1rem solid $lightgrey;
+      display: none;
+    }
+  }
+  @include mob {
     padding: 1rem 0 4rem;
     .container {
       padding: 0;
@@ -30,19 +64,13 @@
     &__mtitle {
       font-size: 1.8rem;
       margin-bottom: 4rem;
-      padding: 0 2.4rem;
-      @include mob {
-        padding: 0 1.6rem;
-      }
+      padding: 0 1.6rem;
     }
     &__content {
       font-size: 1.4rem;
-      padding: 0 2.4rem;
+      padding: 0 1.6rem;
       *.hide {
         display: none;
-      }
-      @include mob {
-        padding: 0 1.6rem;
       }
       p {
         margin-bottom: 1.8rem;
