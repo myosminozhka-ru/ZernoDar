@@ -42,6 +42,33 @@
   @include tab {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+    margin-top: 3.2rem;
+    margin-bottom: 4rem;
+
+    &__description {
+      font-size: 2.2rem;
+      width: 90vw;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+      width: 90vw;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    &__background,
+    &__background--reversed {
+      display: none;
+    }
+  }
+
+  @include mob {
+    display: flex;
+    flex-direction: column;
     gap: 1.6rem;
     margin-top: 3.2rem;
     margin-bottom: 4rem;
@@ -151,6 +178,54 @@
   }
 
   @include tab {
+    margin: 0 auto;
+    width: 97vw;
+    padding-bottom: 5rem;
+
+    &__title {
+      text-align: left;
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 2.4rem;
+      margin-left: 1.4rem;
+    }
+
+    &__icon {
+      display: none;
+    }
+
+    &__icon--mobile {
+      display: block;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+
+    &__number {
+      display: none;
+    }
+
+    &__button {
+      padding: 2.4rem 1.4rem 2.4rem 0.5rem;
+      font-size: 1.4rem;
+      background-color: #fff;
+    }
+
+    &__button:hover {
+      background-color: transparent;
+    }
+
+    &__input:checked + .accordion__button .accordion__icon--mobile {
+      transform: rotate(180deg);
+    }
+
+    &__content {
+      padding: 1.4rem;
+      font-size: 1.6rem;
+      padding: 2.4rem;
+    }
+  }
+
+  @include mob {
     margin: 0 auto;
     width: 99vw;
     padding-bottom: 3rem;

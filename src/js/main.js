@@ -1213,20 +1213,6 @@ function profile() {
 }
 // ==== profile end
 
-// ==== contactMap start
-function contactMap() {
-  if (!$('#contact-map').length) {
-    return false;
-  }
-  ymaps.ready(function () {                         
-    var contactMap = new ymaps.Map('contact-map', {
-        center: [55.699467, 37.625594],
-        zoom: 12
-    });
-  });
-}
-// ==== contactMap end
-
 // ==== cookies start
 function cookies() {
   if (localStorage.getItem('cookies') == 'true') {
@@ -1390,7 +1376,6 @@ addEventListener("DOMContentLoaded", () => {
   signupSwitch();
   search();
   profile();
-  contactMap();
   cookies();
   announcements();
   authCode();

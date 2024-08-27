@@ -40,6 +40,10 @@
       color: #8c8c8c;
 
       @include tab {
+        font-size: 1.6rem;
+        padding-left: 1.6rem;
+      }
+      @include mob {
         font-size: 1.4rem;
         padding-left: 1.6rem;
       }
@@ -399,9 +403,9 @@
 
     &__cancel {
       flex-shrink: 0;
-      width: 4rem;
-      height: 4rem;
-      border-radius: 0.8rem;
+      width: 6.7rem;
+      height: 6.7rem;
+      border-radius: 1.6rem;
       background-color: $green;
       color: $white;
       font-size: 0;
@@ -410,8 +414,8 @@
       justify-content: center;
       svg {
         display: block;
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
         object-fit: contain;
         flex-shrink: 0;
       }
@@ -426,6 +430,15 @@
     &__actions {
       padding: 0 1.6rem;
       margin-top: 3.2rem;
+    }
+    &__cancel {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.8rem;
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
 }

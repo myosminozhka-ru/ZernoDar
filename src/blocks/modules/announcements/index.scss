@@ -28,14 +28,10 @@
   }
   @include tab {
     &__mtitle {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 2.4rem;
       padding-left: 2.4rem;
       padding-right: 2.4rem;
-      @include mob {
-        padding-left: 1.6rem;
-        padding-right: 1.6rem;
-      }
     }
     &__btns {
       &--newann.announcements__btns--top {
@@ -45,21 +41,14 @@
         display: block;
       }
       padding: 0 2.4rem;
-      @include mob {
-        padding: 0 1.6rem;
-      }
     }
     &__date {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       border-bottom: 0.1rem solid $lightgrey;
       padding-left: 2.4rem;
       padding-right: 2.4rem;
-      padding-bottom: 0.8rem;
+      padding-bottom: 1rem;
       margin-bottom: 0rem;
-      @include mob {
-        padding-left: 1.6rem;
-        padding-right: 1.6rem;
-      }
     }
     &__pag {
       margin-bottom: 2.4rem;
@@ -71,10 +60,43 @@
       }
       padding-left: 2.4rem;
       padding-right: 2.4rem;
-      @include mob {
-        padding-left: 1.6rem;
-        padding-right: 1.6rem;
+    }
+
+  }
+  @include mob {
+    &__mtitle {
+      font-size: 1.8rem;
+      margin-bottom: 2.4rem;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+    }
+    &__btns {
+      &--newann.announcements__btns--top {
+        display: none;
       }
+      &--newann.announcements__btns--bot {
+        display: block;
+      }
+      padding: 0 1.6rem;
+    }
+    &__date {
+      font-size: 1.2rem;
+      border-bottom: 0.1rem solid $lightgrey;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+      padding-bottom: 0.8rem;
+      margin-bottom: 0rem;
+    }
+    &__pag {
+      margin-bottom: 2.4rem;
+      .pags {
+        display: none;
+      }
+      .btn10 {
+        display: flex;
+      }
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
     }
 
   }
@@ -97,20 +119,24 @@
   }
   @include tab {
     &__mtitle {
-      font-size: 1.8rem;
-      margin-bottom: 2.4rem;
+      font-size: 2rem;
+      margin-bottom: 3.2rem;
       padding-left: 2.4rem;
       padding-right: 2.4rem;
-      @include mob {
-        padding-left: 1.6rem;
-        padding-right: 1.6rem;
-      }
     }
     &__btns {
       padding: 0 2.4rem;
-      @include mob {
-        padding: 0 1.6rem;
-      }
+    }
+  }
+  @include mob {
+    &__mtitle {
+      font-size: 1.8rem;
+      margin-bottom: 2.4rem;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+    }
+    &__btns {
+      padding: 0 1.6rem;
     }
     &__list {
       gap: 2.4rem;
@@ -188,6 +214,84 @@
   }
   @include tab {
     padding: 2.4rem;
+    border-radius: 2.4rem;
+    &__head {
+      flex-direction: column;
+      align-items: stretch;
+      border-bottom: none;
+      padding-bottom: 2.4rem;
+    }
+    &__mtitle {
+      font-size: 1.8rem;
+      margin-bottom: 1.6rem;
+    }
+    &__body {
+      padding-top: 2.4rem;
+    }
+    &__row {
+      margin-bottom: 2.4rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &--actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+        gap: 1.6rem;
+        button {
+          min-width: auto;
+          width: 100%;
+          font-size: 1.6rem;
+          font-weight: 500;
+        }
+      }
+    }
+    &__remove-row {
+      bottom: auto;
+      top: 0.5rem;
+      right: 0.6rem;
+      opacity: 1;
+      transform: translateY(0);
+      z-index: 10;
+    }
+    &__cancel {
+      margin-bottom: 1.6rem;
+      border: none;
+      color: $green;
+      &:hover, &:active, &:focus {
+        color: $green;
+        background-color: #fff;
+      }
+    }
+    &__save {
+      margin-bottom: 1.6rem;
+      border: none;
+      color: $green;
+      background-color: $palegreen;
+      &:hover, &:active, &:focus {
+        color: $green;
+        background-color: $paleblue;
+      }
+    }
+    &__title {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    &--clean {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: transparent;
+      box-shadow: none;
+      .add-ann-block {
+        &__body {
+          padding: 0;
+        }
+      }
+    }
+
+  }
+  @include mob {
+    padding: 1.6rem;
     border-radius: 1.6rem;
     &__head {
       flex-direction: column;
@@ -262,21 +366,6 @@
         }
       }
     }
-
-  }
-  @include mob {
-    padding: 1.6rem;
-    &--clean {
-      padding-top: 0;
-      padding-bottom: 0;
-      background-color: transparent;
-      box-shadow: none;
-      .add-ann-block {
-        &__body {
-          padding: 0;
-        }
-      }
-    }
   }
 }
 
@@ -300,6 +389,9 @@
     background-color: $paleorange;
   }
   @include tab {
+    font-size: 1.5rem;
+  }
+  @include mob {
     font-size: 1.4rem;
   }
 }
@@ -382,6 +474,49 @@
       width: 100%;
     }
     &__label {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    &__input, &__textarea  {
+      font-size: 1.4rem;
+      border-radius: 1rem;
+    }
+    &__input {
+      height: 5.4rem;
+      padding: 1.6rem 1rem;
+      font-size: 1.4rem;
+      &--lg {
+        height: 5.4rem;
+        padding: 1.6rem 1rem;
+      }
+    }
+    &__textarea {
+      font-size: 1.4rem;
+      height: 7rem;
+      padding: 1.5rem 0.8rem;
+      padding-top: 1.4rem;
+      &--big {
+        font-size: 1.4rem;
+        height: 13rem;
+      }
+      &--big2 {
+        height: 15rem;
+      }
+    }
+  }
+  @include mob {
+    padding: 0.8rem;
+    &--50 {
+      width: 100%;
+    }
+    &--25 {
+      width: 100%;
+    }
+    &--33 {
+      width: 100%;
+    }
+    &__label {
       font-size: 1.4rem;
       font-weight: 400;
       margin-bottom: 0.8rem;
@@ -411,18 +546,6 @@
       &--big2 {
         height: 12rem;
       }
-    }
-  }
-  @include mob {
-    padding: 0.8rem;
-    &--50 {
-      width: 100%;
-    }
-    &--25 {
-      width: 100%;
-    }
-    &--33 {
-      width: 100%;
     }
   }
 }
@@ -483,6 +606,26 @@
     }
   }
   @include tab {
+    height: 5.4rem;
+    svg {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+    select {
+      height: 5.4rem;
+      font-size: 1.4rem;
+      padding: 1.6rem 1rem;
+      border-radius: 1rem;
+    }
+    &--lg {
+      select {
+        height: 5.4rem;
+        padding: 1.6rem 1rem;
+        border-radius: 1rem;
+      }
+    }
+  }
+  @include mob {
     height: 4.6rem;
     svg {
       width: 2rem;
@@ -553,6 +696,21 @@
   }
   @include tab {
     flex-direction: column;
+    gap: 1rem;
+
+    .tag-torg {
+      justify-content: flex-start;
+      svg {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+    }
+    &__item, .tag-torg {
+      width: 100%;
+    }
+  }
+  @include mob {
+    flex-direction: column;
     gap: 0.8rem;
 
     .tag-torg {
@@ -591,6 +749,10 @@
     }
   }
   @include tab {
+    gap: 1rem;
+    font-size: 1.6rem;
+  }
+  @include mob {
     gap: 0.8rem;
     font-size: 1.4rem;
   }
@@ -614,6 +776,17 @@
     color: $darkgrey;
   }
   @include tab {
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 0;
+    margin-bottom: 1.6rem;
+    border-bottom: none;
+    &__title {
+      font-size: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+  @include mob {
     flex-direction: column;
     align-items: stretch;
     padding-bottom: 0;
@@ -652,6 +825,27 @@
     }
   }
   @include tab {
+    border-radius: 2rem;
+    label {
+      min-width: auto;
+      width: 50%;
+      min-height: 5.4rem;
+      span {
+        font-size: 1.4rem;
+      }
+      &:first-child {
+        span {
+          border-radius: 1.6rem 0.8rem 0.8rem 1.6rem;
+        }
+      }
+      &:last-child {
+        span {
+          border-radius: 0.8rem 1.6rem 1.6rem 0.8rem;
+        }
+      }
+    }
+  }
+  @include mob {
     border-radius: 1.6rem;
     label {
       min-width: auto;

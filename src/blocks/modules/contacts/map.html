@@ -83,3 +83,16 @@
     </div>
   </div>
 </div>
+<script>
+  try {
+    ymaps.ready(function () {                         
+      var contactMap = new ymaps.Map('contact-map', {
+        center: [55.699467, 37.625594],
+        zoom: 12
+      });
+    });
+  } catch (error) {
+    console.log(error);
+    
+  }
+</script>
