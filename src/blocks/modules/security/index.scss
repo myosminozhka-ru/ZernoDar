@@ -15,8 +15,8 @@
     padding: 3.2rem;
     border-radius: 2rem;
     background: #ffffff;
-    box-shadow: 2px 20px 20px rgba(119, 119, 119, 0.03),
-      4px 20px 20px rgba(115, 115, 115, 0.01);
+    box-shadow: 0.2rem 2rem 2rem rgba(119, 119, 119, 0.03),
+      0.4rem 2rem 2rem rgba(115, 115, 115, 0.01);
 
     @include tab {
       width: 100%;
@@ -62,6 +62,20 @@
 
     @include tab {
       position: relative;
+      padding: 2.4rem;
+
+      &:first-of-type {
+        border-top: none;
+      }
+
+      &:last-child {
+        padding: 2.4rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    @include mob {
+      position: relative;
       padding: 1.6rem;
 
       &:first-of-type {
@@ -99,18 +113,26 @@
     }
   }
 
-  &__label,
   &__info {
     font-size: 1.8rem;
 
     @include tab {
+      font-size: 1.6rem;
+    }
+
+    @include mob {
       font-size: 1.4rem;
     }
   }
 
   &__label {
+    font-size: 1.8rem;
     color: #8c8c8c;
     width: 20rem;
+
+    @include tab {
+      font-size: 1.4rem;
+    }
 
     @include tab {
       font-size: 1.2rem;
@@ -128,6 +150,12 @@
       display: none;
 
       @include tab {
+        display: block;
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+
+      @include mob {
         display: block;
         width: 1.8rem;
         height: 1.8rem;
@@ -333,6 +361,21 @@
       align-items: normal;
       padding: 1.6rem;
       margin: 1.6rem;
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    @include mob {
+      position: static;
+      align-items: normal;
+      padding: 1.6rem;
+      margin: 1.6rem;
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
 

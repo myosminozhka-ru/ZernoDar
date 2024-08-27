@@ -106,10 +106,27 @@
   }
   @include tab {
     &__img {
-      height: 18rem;
+      height: 24rem;
     }
     &__content {
       padding: 1.6rem 2.4rem;
+    }
+    &__title {
+      font-size: 1.6rem;
+    }
+    &__date {
+      font-size: 1.4rem;
+    }
+    &__descrtiption {
+      font-size: 1.6rem;
+    }
+  }
+  @include mob {
+    &__img {
+      height: 18rem;
+    }
+    &__content {
+      padding: 1.6rem;
     }
     &__title {
       font-size: 1.4rem;
@@ -119,11 +136,6 @@
     }
     &__descrtiption {
       font-size: 1.4rem;
-    }
-  }
-  @include mob {
-    &__content {
-      padding: 1.6rem;
     }
   }
 }
@@ -272,7 +284,7 @@
     display: none;
   }
   @include tab {
-    padding-bottom: 6rem;
+    padding-bottom: 8rem;
     .container {
       padding: 0;
     }
@@ -289,18 +301,126 @@
     &__top {
       padding: 0 2.4rem;
       margin-bottom: 3.2rem;
-      @include mob {
-        padding: 0 1.6rem;
+    }
+    &__mtitle {
+      font-size: 2.2rem;
+      margin-bottom: 0.4rem;
+      padding: 0 2.4rem;
+      text-align: center;
+    }
+    &__img {
+      height: 22rem;
+      margin-bottom: 2rem;
+      img {
+        @include img-cover;
       }
+    }
+    &__meta {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem 0;
+      font-size: 1.4rem;
+      span {
+        width: 50%;
+        &:nth-child(even) {
+          text-align: right;
+        }
+      }
+    }
+    &__content {
+      margin-bottom: 7rem;
+      font-size: 1.6rem;
+      padding: 0 2.4rem;
+      h2 {
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+      }
+      p {
+        margin-bottom: 1.6rem;
+      }
+      blockquote {
+        font-size: 1.5rem;
+        margin: 1.6rem 0;
+        padding: 2.4rem;
+        padding-top: 5rem;
+        border-radius: 1.2rem;
+        background-size: 1.4rem 4.4rem;
+        background-position: 3.2rem 1.6rem;
+        position: relative;
+        width: 100vw;
+        left: -2.4rem;
+        text-indent: 3rem;
+        address {
+          margin-top: 2rem;
+          font-size: 1.4rem;
+          text-indent: 0;
+        }
+      }
+    }
+    &__bot {
+      padding: 2.4rem;
+      background-color: $white;
+      @include block-shadow2;
+    }
+    &__auth {
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    &__ava {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 1rem;
+    }
+    &__author {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+    &__name {
+      font-size: 1.6rem;
+    }
+    &__sign {
+      font-size: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+    &__mob-share {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 1.6rem;
+      color: $darkgrey;
+      border-bottom: 0.1rem solid $lightgrey;
+      padding-bottom: 1.6rem;
+    }
+    &__nav {
+      display: block;
+      margin-bottom: 4.8rem;
+    }
+  }
+  @include mob {
+    padding-bottom: 6rem;
+    .container {
+      padding: 0;
+    }
+    &__inner {
+      display: block;
+      position: static;
+    }
+    &__left {
+      flex-grow: 1;
+    }
+    &__right {
+      display: none;
+    }
+    &__top {
+      padding: 0 1.6rem;
+      margin-bottom: 3.2rem;
     }
     &__mtitle {
       font-size: 2rem;
       margin-bottom: 0.2rem;
-      padding: 0 2.4rem;
+      padding: 0 1.6rem;
       text-align: center;
-      @include mob {
-        padding: 0 1.6rem;
-      }
     }
     &__img {
       height: 18rem;
@@ -324,10 +444,7 @@
     &__content {
       margin-bottom: 6.5rem;
       font-size: 1.4rem;
-      padding: 0 2.4rem;
-      @include mob {
-        padding: 0 1.6rem;
-      }
+      padding: 0 1.6rem;
       h2 {
         margin-top: 1.6rem;
         margin-bottom: 0.8rem;
@@ -339,34 +456,26 @@
       blockquote {
         font-size: 1.4rem;
         margin: 1.6rem 0;
-        padding: 2.4rem;
-        padding-top: 5rem;
         border-radius: 1.2rem;
         background-size: 1.4rem 4.4rem;
         background-position: 3.2rem 1.6rem;
         position: relative;
         width: 100vw;
-        left: -2.4rem;
         text-indent: 3rem;
+        padding: 1.6rem;
+        padding-top: 4rem;
+        left: -1.6rem;
         address {
           margin-top: 2rem;
           font-size: 1.4rem;
           text-indent: 0;
         }
-        @include mob {
-          padding: 1.6rem;
-          padding-top: 4rem;
-          left: -1.6rem;
-        }
       }
     }
     &__bot {
-      padding: 2.4rem;
+      padding: 1.6rem;
       background-color: $white;
       @include block-shadow2;
-      @include mob {
-        padding: 1.6rem;
-      }
     }
     &__auth {
       gap: 0.4rem;
@@ -443,10 +552,6 @@
       text-align: center;
       border-bottom: 0.1rem solid $lightgrey;
       padding: 2.4rem;
-      @include mob {
-        padding: 1.6rem;
-        padding-bottom: 2.4rem;
-      }
     }
     &__list {
       display: flex;
@@ -454,9 +559,36 @@
       gap: 2.4rem;
       padding: 2.4rem;
       border-bottom: 0.1rem solid $lightgrey;
-      @include mob {
-        padding: 2.4rem 1.6rem;
+      li {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
       }
+      a {
+        padding: 0.4rem 0;
+        font-size: 1.6rem;
+        padding-left: 2.8rem;
+        background-size: 2.4rem;
+      }
+    }
+    &__bot {
+      padding: 2.4rem;
+    }
+  }
+  @include mob {
+    padding: 0;
+    &__top {
+      text-align: center;
+      border-bottom: 0.1rem solid $lightgrey;
+      padding: 1.6rem;
+      padding-bottom: 2.4rem;
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      padding: 2.4rem 1.6rem;
+      border-bottom: 0.1rem solid $lightgrey;
       li {
         padding-bottom: 0;
         margin-bottom: 0;
@@ -470,10 +602,7 @@
       }
     }
     &__bot {
-      padding: 2.4rem;
-      @include mob {
-        padding: 2.4rem 1.6rem;
-      }
+      padding: 2.4rem 1.6rem;
     }
   }
 }
