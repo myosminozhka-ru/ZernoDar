@@ -623,6 +623,19 @@
     </div>
   </div>
 </div>
+<script>
+  try {
+    ymaps.ready(function () {                         
+      var contactMap = new ymaps.Map('contact-map', {
+        center: [55.699467, 37.625594],
+        zoom: 12
+      });
+    });
+  } catch (error) {
+    console.log(error);
+    
+  }
+</script>
       <div class="contact-feedback">
   <div class="h1 contact-feedback__mtitle">Свяжитесь с нами</div>
   <div class="contact-feedback__inner">

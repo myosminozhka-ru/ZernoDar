@@ -998,8 +998,8 @@
       </span>
     </div>
     <div class="map-point__title hide">Расширение радиуса поиска, км</div>
-    <div class="filter-range hide">
-      <input type="text" class="js-range-slider" name="my_range" value=""
+    <div class="map-radius-range hide" data-filter-geo="range_container">
+      <input type="text" class="js-map-radius-range" name="map-radius" value=""
         data-type="single"
         data-min="0"
         data-max="600"
@@ -1009,24 +1009,7 @@
         data-step="100"
         data-input-values-separator="_"
       />
-      <div class="filter-range__inputs visually-hidden">
-        <div class="filter-range__input-wrap">
-          <span class="filter-range__label">Минимум</span>
-          <input type="number" 
-          value="10"
-          class="filter-range__input filter-range__input--from visually-hidden">
-          <span class="filter-range__val filter-range__val--from"><span>10</span> т</span>
-        </div>
-        <span class="filter-range__sep"></span>
-        <div class="filter-range__input-wrap">
-          <span class="filter-range__label">Максимум</span>
-          <input type="number" 
-          value="300"
-          class="filter-range__input filter-range__input--to visually-hidden">
-          <span class="filter-range__val filter-range__val--to"><span>500</span> т</span>
-        </div>
-      </div>
-      <div class="filter-range__distance">
+      <div class="map-radius-range__distance">
         <span>0</span>
         <span>100</span>
         <span>200</span>
@@ -1066,7 +1049,7 @@
             </div>
           </div>
         </div>
-        <div class="card__tags2 on-tab">
+        <div class="card__tags2">
           <span class="tag1">
             <svg>
               <use xlink:href="img/sprites/sprite.svg#map-point"></use>
@@ -1250,7 +1233,7 @@
             </div>
           </div>
         </div>
-        <div class="card__tags2 on-tab">
+        <div class="card__tags2">
           <span class="tag1">
             <svg>
               <use xlink:href="img/sprites/sprite.svg#map-point"></use>
@@ -1434,7 +1417,7 @@
             </div>
           </div>
         </div>
-        <div class="card__tags2 on-tab">
+        <div class="card__tags2">
           <span class="tag1">
             <svg>
               <use xlink:href="img/sprites/sprite.svg#map-point"></use>
@@ -1618,7 +1601,7 @@
             </div>
           </div>
         </div>
-        <div class="card__tags2 on-tab">
+        <div class="card__tags2">
           <span class="tag1">
             <svg>
               <use xlink:href="img/sprites/sprite.svg#map-point"></use>
@@ -2079,8 +2062,8 @@
       </span>
     </div>
     <div class="map-point__title hide">Расширение радиуса поиска, км</div>
-    <div class="filter-range hide">
-      <input type="text" class="js-range-slider" name="my_range" value=""
+    <div class="map-radius-range hide" data-filter-geo="range_container">
+      <input type="text" class="js-map-radius-range" name="map-radius" value=""
         data-type="single"
         data-min="0"
         data-max="600"
@@ -2090,24 +2073,7 @@
         data-step="100"
         data-input-values-separator="_"
       />
-      <div class="filter-range__inputs visually-hidden">
-        <div class="filter-range__input-wrap">
-          <span class="filter-range__label">Минимум</span>
-          <input type="number" 
-          value="10"
-          class="filter-range__input filter-range__input--from visually-hidden">
-          <span class="filter-range__val filter-range__val--from"><span>10</span> т</span>
-        </div>
-        <span class="filter-range__sep"></span>
-        <div class="filter-range__input-wrap">
-          <span class="filter-range__label">Максимум</span>
-          <input type="number" 
-          value="300"
-          class="filter-range__input filter-range__input--to visually-hidden">
-          <span class="filter-range__val filter-range__val--to"><span>500</span> т</span>
-        </div>
-      </div>
-      <div class="filter-range__distance">
+      <div class="map-radius-range__distance">
         <span>0</span>
         <span>100</span>
         <span>200</span>

@@ -1003,11 +1003,19 @@
       }); 
 
       myMap.controls.add(searchControl);
-
+      var foundPlacemark = null;
+      var myPolyline = null;
       function findDistance(res) {
+        if (foundPlacemark) {
+          myMap.geoObjects.remove(foundPlacemark);
+        }
+        if (myPolyline) {
+          myMap.geoObjects.remove(myPolyline);
+        }
+
         var foundCoordinates = res.geometry.getCoordinates();
         // Добавляем метку на найденное место
-        var foundPlacemark = new ymaps.Placemark(foundCoordinates, {
+        foundPlacemark = new ymaps.Placemark(foundCoordinates, {
           balloonContent: 'Найденное место'
         }, {
           iconLayout: 'default#image',
@@ -1016,6 +1024,21 @@
           iconImageOffset: [-15, -42]             // Смещение иконки
         });
         myMap.geoObjects.add(foundPlacemark);
+
+       // Создадим ломаную.
+       polyline = new ymaps.Polyline([
+            myPlacemark.geometry.getCoordinates(), foundPlacemark.geometry.getCoordinates()
+        ], {
+            hintContent: "Ломаная"
+        }, {
+            draggable: true,
+            strokeColor: '#000000',
+            strokeWidth: 4,
+              // Первой цифрой задаем длину штриха. Второй — длину разрыва.
+            strokeStyle: '1 5'
+        });
+        // Добавляем линию на карту.
+        myMap.geoObjects.add(polyline);
 
         // Рассчитываем расстояние от найденного места до целевой точки
         var distance = ymaps.coordSystem.geo.getDistance(foundCoordinates, coord);
