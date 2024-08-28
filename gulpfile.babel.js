@@ -21,8 +21,6 @@ const requireDir = require("require-dir"),
             dist: "./dist/styles/",
             srcLibs: "./src/styles/libs/*.css",
             distLibs: "./dist/styles/libs",
-            srcSass: "./src/styles/helpers/*.scss",
-            distSass: "./vue/src/assets/styles/helpers",
             distVue: "./dist/styles",
             watch: [
                 "./src/blocks/**/*.{scss,sass}",

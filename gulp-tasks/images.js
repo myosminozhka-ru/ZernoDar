@@ -51,7 +51,6 @@ gulp.task("images", () => {
             })
         ])))
         .pipe(gulp.dest(paths.images.dist))
-        .pipe(gulp.dest(vueStr(paths.images.dist)))
         .pipe(debug({
             "title": "Images"
         }))
