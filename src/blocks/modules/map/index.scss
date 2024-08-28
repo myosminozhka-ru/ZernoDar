@@ -1,0 +1,495 @@
+.app {
+  padding: 3.2rem;
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 3.5rem;
+    position: relative;
+  }
+  &__map {
+    flex-grow: 1;
+  }
+  &__sidbar {
+    flex-shrink: 0;
+    width: 59.5rem;
+  }
+  &__search {
+    margin-bottom: 2.5rem;
+  }
+  @include tab {
+    padding: 0;
+    &__inner {
+      display: block;
+    }
+    &__map {
+      height: calc(100vh - 7.3rem);
+      width: 100%;
+    }
+    &__sidbar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 70;
+    }
+    &__search {
+      display: none;
+    }
+  }
+  @include mob {
+    padding: 0;
+    &__inner {
+      display: block;
+    }
+    &__map {
+      height: calc(100vh - 6.3rem);
+      width: 100%;
+    }
+    &__sidbar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 70;
+    }
+    &__search {
+      display: none;
+    }
+  }
+}
+
+.app-map {
+  &__inner {
+  }
+  #map-search {
+    height: calc(100vh - 15rem);
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include tab {
+    #map-search {
+      height: calc(100vh - 7.3rem);
+      border-radius: 0;
+    }
+  }
+  @include mob {
+    #map-search {
+      height: calc(100vh - 6.3rem);
+      border-radius: 0;
+    }
+  }
+}
+
+.app-item {
+  border: 0.1rem solid $lightgrey;
+  border-radius: 1.5rem;
+  @include block-shadow2;
+  background-color: $white;
+  &__top {
+    display: flex;
+    align-items: center;
+    padding: 2.4rem 1.3rem 0;
+    margin-bottom: 1.2rem;
+  }
+  &__ava {
+    display: inline-block;
+    width: 6.4rem;
+    height: 6.4rem;
+    flex-shrink: 0;
+    margin-right: .8rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__name {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: .8rem;
+  }
+  &__prices {
+    display: flex;
+    align-items: center;
+  }
+  &__price {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-right: 1.6rem;
+  }
+  &__torg2 {
+    display: none;
+  }
+  &__mid {
+    padding: 0 1.3rem 2.4rem;
+    .user-head,
+    .tag-user {
+      margin-bottom: 1.2rem;
+    }
+  }
+  &__data {
+    margin-bottom: 1.2rem;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+    }
+    dl, dt, dd {
+      margin: 0;
+    }
+    dl {
+      display: flex;
+      align-items: center;
+    }
+    li {
+      padding: 1.6rem 1.6rem;
+      border-radius: 1.6rem;
+      background-color: $bckgrnd2;
+    }
+
+  }
+  &__bot {
+    border-top: 0.1rem solid $lightgrey;
+    padding: 1.8rem 1.3rem 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  @include tab {
+    border: none;
+    border-radius: 1.2rem;
+    &__top {
+      display: block;
+      padding: 1.6rem 1.5rem 0;
+      margin-bottom: 1.6rem;
+    }
+    &__ava {
+      display: none;
+    }
+    &__names {
+      margin-bottom: 1.6rem;
+    }
+    &__name {
+      font-size: 1.4rem;
+      margin-bottom: 0;
+    }
+    &__prices {
+      margin-right: 1.6rem;
+    }
+    &__price {
+      font-size: 1.8rem;
+      margin-right: 0;
+    }
+    &__torg {
+      display: none;
+    }
+    &__torg2 {
+      display: flex;
+      gap: 1.6rem;
+    }
+    &__tag {
+      flex: 1;
+    }
+    &__mid {
+      padding: 0 1.6rem 0.8rem;
+      .user-head,
+      .tag-user,
+      .user-contact {
+        display: none;
+      }
+    }
+    &__data {
+      margin-bottom: 0;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        margin-bottom: 0;
+      }
+      li {
+        width: 100%;
+        padding: 0.8rem 0;
+        background-color: transparent;
+        border-radius: 0;
+      }
+      dl, dt, dd {
+        margin: 0;
+      }
+      dl {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        font-size: 1.7rem;
+        gap: 0.8rem;
+      }
+      dt, dd {
+        display: inline-flex;
+        align-items: center;
+        svg {
+          width: 2rem;
+          height: 2rem;
+          object-fit: contain;
+          margin-left: 0.4rem;
+        }
+      }
+      dd {
+        text-align: right;
+      }
+  
+    }
+    &__bot {
+      border-top: none;
+      padding: 0.8rem 0.8rem 1.6rem;
+      flex-direction: row-reverse;
+      .btn9 {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.app-filter {
+  &__head  {
+    position: absolute;
+    top: 1.8rem;
+    left: 1.8rem;
+    z-index: 10;
+    padding: 1.1rem;
+    border-radius: 1.2rem;
+    background-color: $white;
+    backdrop-filter: blur(12px);
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  &__icon {
+    color: $black;
+    border: 1px solid $lightgrey;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 0;
+    svg {
+      color: $black;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+  &__fast-filters {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  &__fast-filter {
+    min-width: 21.2rem;
+  }
+
+  .modal {
+    fill: var(--blur-black, rgba(0, 0, 0, 0.20));
+    backdrop-filter: blur(8px);
+  }
+
+  &__inner {
+    margin: auto;
+    width: 71rem;
+    background-color: $white;
+  }
+
+  &__top {
+    margin-bottom: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  &__close {
+    width: 2.4rem;
+    height: 2.4rem;
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__mid {
+    display: flex;
+    justify-content: space-between;
+    .filter {
+      width: calc(50% - 4rem);
+    }
+  }
+
+  &__mob-mid {
+    display: none;
+  }
+
+  &__bot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+  }
+
+  &__apply {
+    min-width: 24rem;
+  }
+
+  @include tab {
+    &__head  {
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 1.6rem;
+      border-radius: 0px 0px 2rem 2rem;
+      background-color: unset;
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.34);
+    }
+    &__icon {
+      border: none;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      gap: 0.4rem;
+      background-color: $white;
+      svg {
+        width: 2rem;
+        height: 2rem;
+        color: $green;
+      }
+    }
+    &__fast-filters {
+      display: none;
+    }
+
+    &__inner {
+      width: 100%;
+    }
+
+    &__top {
+      margin-bottom: 2.5rem;
+      flex-direction: row-reverse;
+      font-size: 1.4rem;
+      &::before {
+        content: "";
+        width: 2rem;
+        height: 2rem;
+        display: block;
+      }
+    }
+    &__close {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &__mid {
+      display: block;
+      .filter {
+        width: 100%;
+        border-bottom: 1px solid #e6e6e6;        
+        margin-bottom: 2.4rem;
+        padding-bottom: 2.4rem;
+        &:last-child {
+          border-bottom: none;        
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+
+    &__mob-mid {
+      display: block;
+    }
+
+    &__switch {
+      border-top: 1px solid #e6e6e6; 
+      padding-top: 2.4rem;
+      margin-bottom: 2.4rem;
+    }
+
+    &__train {
+      margin-bottom: 2.4rem;
+    }
+
+    &__category {
+      border-bottom: 1px solid #e6e6e6; 
+      padding-bottom: 2.4rem;
+      margin-bottom: 2.4rem;
+    }
+
+    &__bot {
+      z-index: 40;
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    &__apply {
+      min-width: 100%;
+    }
+  }
+}
+
+.app-list {
+  &__mtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2.4rem;
+  }
+  &__list {
+    height: calc(100vh - 26rem);
+    overflow: auto;
+    display: none;
+  }
+  &__item {
+    margin-bottom: 2.5rem;
+    height: auto;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__swiper {
+    height: calc(100vh - 20rem);
+  }
+  @include tab {
+    overflow: hidden;
+    &__mtitle {
+      display: none;
+    }
+    &__list {
+      display: none;
+    }
+    &__slider {
+      display: block;
+      padding: 0 1.6rem;
+      padding-bottom: 1.6rem;
+    }
+    &__item {
+      width: 100%;
+      margin-right: 0.8rem;
+      margin-bottom: 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__swiper {
+      overflow: visible !important;
+      height: auto;
+    }
+  }
+}

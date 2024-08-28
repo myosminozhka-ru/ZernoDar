@@ -115,6 +115,37 @@
       }
     }
   }
+  &--map {
+    border: 0.1rem solid $lightgrey;
+    border-radius: 2rem;
+    padding: 0;
+    .card {
+
+      &__inner {
+        display: block;
+      }
+      &__top {
+        display: block;
+        padding: 3.2rem;
+        padding-bottom: 2.4rem;
+      }
+      &__top-left {
+        margin-bottom: 2.4rem;
+      }
+      &__data {
+        .helptip {
+          display: none;
+        }
+      }
+      &__bot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3.2rem;
+        padding-top: 0;
+      }
+    }
+  }
   @include tab {
     padding: 0;
     border-radius: 0;
@@ -274,6 +305,49 @@
         }
         &__bot-right {
           
+        }
+      }
+    }
+    &--map {
+      border: 0.1rem solid $lightgrey;
+      border-radius: 2rem;
+      padding: 0;
+      .card {
+        &__inner {
+          padding: 0;
+        }
+        &__top {
+          padding: 2.4rem;
+          padding: 0;
+        }
+        &__top-left {
+          margin-bottom: 0;
+          border: none;
+        }
+        &__data {
+          border-top: none;
+          border-bottom: none;
+          padding-top: 0;
+          .helptip {
+            display: inline-block;
+          }
+          ul {
+            gap: 1.6rem;
+            margin: 0;
+          }
+          li {
+            padding: 0;
+            background-color:transparent;
+          }
+        }
+        &__top-right {
+          display: none;
+        }
+        &__bot {
+          padding: 0;
+        }
+        &__bot-right {
+          flex: row-reverse;
         }
       }
     }

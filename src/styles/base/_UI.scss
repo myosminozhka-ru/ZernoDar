@@ -2500,6 +2500,106 @@
 }
 // mini end
 
+// with border start
+.ui-selectmenu-button-with-border.ui-button {
+  width: 100%;
+  background: #f8f8f8;
+  border-radius: 1.6rem;
+  padding: 1.3rem 2.4rem;
+  border: none;
+  color: #8c8c8c;
+  font-size: 1.8rem;
+  border: 0.1rem solid $darkgrey;
+  &:focus {
+    border: 0.1rem solid $green;
+  }
+  &:hover .ui-selectmenu-icon,
+  &:focus .ui-selectmenu-icon {
+    background-image: url(../img/sprites/arrow-down.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .ui-selectmenu-icon {
+    background-image: url(../img/sprites/arrow-down.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.ui-selectmenu-menu-with--border {
+  padding: 0.6rem 0;
+  .ui-widget.ui-widget-content {
+    border: none;
+    border-radius: 2rem;
+    overflow: hidden;
+    background-color: $white;
+    box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
+    border: none;
+  }
+  .ui-menu-item {
+    position: relative;
+    &::after {
+      content: "";
+      position: relative;
+      display: block;
+      width: calc(100% - 4.8rem);
+      height: 0.1rem;
+      left: 2.4rem;
+      bottom: 0;
+      background-color: $lightgrey;
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .ui-menu-item-wrapper {
+    padding: 2.4rem;
+    font-size: 1.8rem;
+    color: $black;
+    position: relative;
+    margin: 0;
+    &.ui-state-active {
+      border: none;
+      background-color: transparent;
+      margin: 0;
+    }
+    &:hover {
+      background-color: $paleblue;
+    }
+  }
+}
+
+@include tab {
+  .ui-selectmenu-button-with--border.ui-button {
+    border-radius: 0.8rem;
+    padding: 1.3rem 0.8rem;
+    font-size: 1.2rem;
+    .ui-selectmenu-icon {
+    }
+  }
+
+  .ui-selectmenu-menu-with--border {
+    padding: 0.9rem 0;
+    .ui-widget.ui-widget-content {
+      border-radius: 1.2rem;
+      box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
+    }
+    .ui-menu-item-wrapper {
+      padding: 1.6rem;
+      font-size: 1.2rem;
+      &::after {
+        width: calc(100% - 2.4rem);
+        left: 1.2rem;
+      }
+    }
+  }
+}
+// with border end
+
 .favourite-tooltip {
   padding: 1rem;
   font-size: 1.6rem;
