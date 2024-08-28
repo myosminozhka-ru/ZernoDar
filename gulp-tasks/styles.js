@@ -24,15 +24,7 @@ gulp.task("styles", () => {
 
     gulp.src(paths.styles.srcLibs)
     .pipe(gulp.dest(paths.styles.distLibs))
-    .pipe(gulp.dest(vueStr(paths.styles.distLibs)))
 
-    gulp.src(paths.styles.srcSass)
-    .pipe(gulp.dest(paths.styles.distSass))
-
-    gulpif(production, 
-      gulp.src(paths.styles.srcVue)
-      .pipe(gulp.dest(paths.styles.distVue))
-    )
     return gulp.src(paths.styles.src)
         .pipe(gulpif(!production, sourcemaps.init()))
         .pipe(plumber())
@@ -65,7 +57,6 @@ gulp.task("styles", () => {
         .pipe(plumber.stop())
         .pipe(gulpif(!production, sourcemaps.write("./maps/")))
         .pipe(gulp.dest(paths.styles.dist))
-        .pipe(gulp.dest(vueStr(paths.styles.dist)))
         .pipe(debug({
             "title": "CSS files"
         }))

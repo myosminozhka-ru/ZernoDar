@@ -5,9 +5,9 @@
         <div class="app-map__inner">
           <div class="app-map__map">
             <div class="app-map__filter">
-              <div class="app-filter">
+              <form class="app-filter">
                 <div class="app-filter__head">
-                    <button class="app-filter__icon" data-class="modalMapFilter">
+                    <button type="button" class="app-filter__icon" data-class="modalMapFilter">
                       <svg width="21" height="21"
                         viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -18,7 +18,7 @@
                     </button>
                   <div class="app-filter__fast-filters">
                     <div class="app-filter__fast-filter">
-                      <div class="switch-button"><button class="switch-button__item active">Предложение</button><button
+                      <div class="switch-button"><button type="button" class="switch-button__item active">Предложение</button><button type="button"
                           class="switch-button__item">Спрос</button></div>
                     </div>
                     <div class="app-filter__fast-filter">
@@ -43,7 +43,7 @@
                   <div class="modal__inner">
                     <div class="modal__top">
                       <div class="modal__title">Фильтры</div>
-                      <button class="modal__close close-x" type="button">
+                      <button type="button"  class="modal__close close-x" type="button">
                         <svg>
                           <use xlink:href="img/sprites/sprite.svg#x"></use>
                         </svg>
@@ -55,8 +55,8 @@
                           <div class="app-filter__mob-mid">
                             <div class="app-filter__switch">
                               <div class="switch-button">
-                                <button class="switch-button__item active">Предложение</button>
-                                <button class="switch-button__item">Спрос</button>
+                                <button type="button"  class="switch-button__item active">Предложение</button>
+                                <button type="button"  class="switch-button__item">Спрос</button>
                               </div>
                             </div>
                             <div class="app-filter__train">
@@ -175,15 +175,17 @@
                           </div>
                         </div>
                         <div class="app-filter__bot">
-                          <button class="btn3 app-filter__apply">Применить</button>
+                          <button type="button"  class="btn3 app-filter__apply">Применить</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
-            <div id="map-search"><img src="img/map.jpg" class="app-map__img" alt=""></div>
+            <div id="map-search">
+              <!-- <img src="img/map.jpg" class="app-map__img" alt=""> -->
+            </div>
           </div>
         </div>
       </div>

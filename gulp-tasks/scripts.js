@@ -21,18 +21,13 @@ webpackConfig.devtool = production ? false : "source-map";
 gulp.task("scripts", () => {
     gulp.src(paths.scripts.srcLibs)
     .pipe(gulp.dest(paths.scripts.distLibs))
-    .pipe(gulp.dest(vueStr(paths.scripts.distLibs)))
-    gulpif(production, 
-      gulp.src(paths.scripts.srcVue)
-      .pipe(gulp.dest(paths.scripts.distVue))
-    )
+    
     return gulp.src(paths.scripts.src)
         // .pipe(webpackStream(webpackConfig), webpack)
         // .pipe(gulpif(production, rename({
         //     suffix: ".min"
         // })))
         .pipe(gulp.dest(paths.scripts.dist))
-        .pipe(gulp.dest(vueStr(paths.scripts.dist)))
         .pipe(debug({
             "title": "JS files"
         }))

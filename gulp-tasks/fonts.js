@@ -8,7 +8,6 @@ import vueStr from "./vue.js";
 gulp.task("fonts", () => {
     return gulp.src(paths.fonts.src)
         .pipe(gulp.dest(paths.fonts.dist))
-        .pipe(gulp.dest(vueStr(paths.fonts.dist)))
         .pipe(debug({
             "title": "Fonts"
         }));
