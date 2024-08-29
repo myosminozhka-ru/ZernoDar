@@ -628,11 +628,11 @@ class Sidebar {
   resetFilter() {
     $(this.parentSelector + ' .catalog-sidebar').trigger("reset");
     $(this.parentSelector + ' .catalog-head__top').trigger("reset");
+    $(this.parentSelector + ' .app-filter').trigger("reset");
     this.resetRange()
   }
 
   resetRange(name) {
-
     window.rangeInstance[name || this.name].forEach(instance => {
       instance.instance.reset()
       instance.resetInputs()
@@ -1393,7 +1393,9 @@ addEventListener("DOMContentLoaded", () => {
     modalPersonalTariff: new Modal("modalPersonalTariff"),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
+    mapFilter: new Sidebar('mapFilter', '.app'),
     catalogSidebarRange: Sidebar.initRange('catalogSidebar', '.catalog-wrapper'),
+    mapFilterRange: Sidebar.initRange('mapFilter', '.app'),
     copy: new Copy(),
   };
   // window.octo.textSellerModal.open()
