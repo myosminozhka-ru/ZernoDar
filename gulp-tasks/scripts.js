@@ -19,6 +19,9 @@ webpackConfig.mode = production ? "production" : "development";
 webpackConfig.devtool = production ? false : "source-map";
 
 gulp.task("scripts", () => {
+    gulp.src("./src/js/map.js")
+    .pipe(gulp.dest("./dist/js/"))
+
     gulp.src(paths.scripts.srcLibs)
     .pipe(gulp.dest(paths.scripts.distLibs))
     
