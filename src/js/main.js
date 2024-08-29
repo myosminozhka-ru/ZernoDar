@@ -1391,6 +1391,8 @@ addEventListener("DOMContentLoaded", () => {
     modalReviewComplaint: new Modal("review-complaint"),
     modalMakeReview: new Modal("modalMakeReview"),
     modalPersonalTariff: new Modal("modalPersonalTariff"),
+    modalVerifyAccount: new Modal("modalVerifyAccount"),
+    modalTariffPayNotification: new Modal("modalTariffPayNotification"),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     mapFilter: new Sidebar('mapFilter', '.app'),

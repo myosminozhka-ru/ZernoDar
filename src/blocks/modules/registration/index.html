@@ -19,6 +19,15 @@
         <input
           type="text"
           class="registration__input"
+          placeholder="*ИНН"
+          required
+        />
+        <div class="registration__input-subtitle">После ввода ИНН осуществится проверка </div>
+      </label>
+      <label class="registration__input-wrap">
+        <input
+          type="text"
+          class="registration__input"
           placeholder="*Название организации"
           required
         />
@@ -35,14 +44,6 @@
             <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
           </svg> -->
         </div>
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input"
-          placeholder="*ИНН"
-          required
-        />
       </label>
       <label class="registration__input-wrap">
         <input
@@ -115,16 +116,16 @@
       <label class="registration__input-wrap">
         <input
           type="text"
-          class="registration__input"
-          placeholder="*Название организации"
+          class="registration__input phone-input"
+          placeholder="*Телефон"
           required
         />
       </label>
       <label class="registration__input-wrap">
         <input
           type="text"
-          class="registration__input phone-input"
-          placeholder="*Телефон"
+          class="registration__input"
+          placeholder="*Название организации"
           required
         />
       </label>
@@ -176,3 +177,6 @@
     </div>
   </form>
 </div>
+@@include("../modal/modalVerifyAccount.html", {
+  name: "modalVerifyAccount",
+})
