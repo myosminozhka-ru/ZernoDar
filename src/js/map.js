@@ -158,6 +158,11 @@ addEventListener("DOMContentLoaded", () => {
   // Инициализация карты
   try {
     ymaps.ready(function () {
+
+      if (!document.querySelector("#map-search")) {
+        return;
+      }
+      
       const map = new ymaps.Map("map-search", {
         center: [55.76, 37.64],
         zoom: 10,
