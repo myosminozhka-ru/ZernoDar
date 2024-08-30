@@ -344,19 +344,49 @@
   border: 0.1rem solid $lightgrey;
   background-color: $white;
   transition: 200ms all;
+  position: relative;
+  overflow: hidden;
   &:hover {
-    font-weight: 600;
+    .svg-wrap {
+      transform: translateY(200%);
+    }
+  }
+  .svg-wrap {
+    position: relative;
+    transition: transform 300ms;
   }
   svg {
     width: 2rem;
     height: 2rem;
     object-fit: contain;
     flex-shrink: 0;
+    margin-left: 1rem;
     transition: transform 200ms;
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-200%);
+    }
   }
   &.open {
+    .svg-wrap {
+      transform: translateY(200%);
+    }
     svg {
-      transform: rotate(-180deg);
+      &:first-child {
+        transform: rotate(-180deg);
+        transform-origin: center;
+      }
+      &:nth-child(2) {
+        transform: translateY(-200%) rotate(-180deg);
+        transform-origin: center;
+      }
+    }
+    &:hover {
+      .svg-wrap {
+        transform: translateY(0%);
+      }
     }
   }
   &--lg {
@@ -399,6 +429,33 @@
     height: 2.4rem;
     object-fit: contain;
     flex-shrink: 0;
+  }
+  &--animate-icon {
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      .svg-wrap {
+        transform: translateY(200%);
+      }
+    }
+    .svg-wrap {
+      position: relative;
+      transition: transform 300ms;
+    }
+    svg {
+      width: 2rem;
+      height: 2rem;
+      object-fit: contain;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      transition: transform 200ms;
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-200%);
+      }
+    }
   }
 }
 

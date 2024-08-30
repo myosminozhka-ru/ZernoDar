@@ -146,8 +146,8 @@ class Modal {
 // ==== modal end
 
 // ==== more start
-function more(element, button, count = 1, parent) {
-  $(parent + ':not(.inited)').each(function (idx, el) {
+function more(element, button, count = 1, parent, all) {
+  $(parent + all ? '' : ':not(.inited)').each(function (idx, el) {
     $(el).addClass("inited")
     let btn = $(el).find(button)
     let els = $(el).find(element)
@@ -1323,7 +1323,7 @@ $('.add-ann-block .my-input .my-select select').selectmenu({
 
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
-  window.showMore = () => {
+  window.showMore = (all) => {
     more(
       "ul li",
       ".card-ad-top__table-more .open-more2",
@@ -1359,7 +1359,8 @@ addEventListener("DOMContentLoaded", () => {
       ".switch-train li",
       ".btn4",
       6,
-      ".catalog-update__top2"
+      ".catalog-update__top2",
+      all
     );
 
     more(
