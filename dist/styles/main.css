@@ -4088,6 +4088,7 @@ a {
 
 .catalog-sidebar__btns .btn4 {
   flex: 1;
+  white-space: nowrap;
 }
 
 .catalog-sidebar__mobile,
@@ -6118,6 +6119,7 @@ a {
   flex-shrink: 0;
   gap: 0.8rem;
   padding: 1.26rem 1.6rem;
+  width: 22rem;
 }
 
 .catalog-update__top2 .catalog-map {
@@ -12466,6 +12468,10 @@ a {
 
   .catalog-update__top2 .catalog-map {
     display: flex;
+  }
+
+  .catalog-update__top2 .switch-train li.hide {
+    display: list-item !important;
   }
 
   .catalog-update__content {
