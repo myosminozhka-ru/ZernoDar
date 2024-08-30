@@ -147,7 +147,7 @@ class Modal {
 
 // ==== more start
 function more(element, button, count = 1, parent, all) {
-  $(parent + all ? '' : ':not(.inited)').each(function (idx, el) {
+  $(parent + (all ? '' : ':not(.inited)')).each(function (idx, el) {
     $(el).addClass("inited")
     let btn = $(el).find(button)
     let els = $(el).find(element)
