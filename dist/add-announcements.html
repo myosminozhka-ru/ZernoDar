@@ -669,12 +669,7 @@
               </span>
             </div>
             <div class="add-ann-block__body">
-              <div class="my-input-wrap add-ann-block__row js-add-ann-new-row-clone">
-                <!-- 
-                  id и name у
-                  select_test__0 и input_test1__0 будут инкрементироватся при добавлении новых строк  
-                  пример: select_test__1, input_test1__1
-                -->
+              <div class="my-input-wrap add-ann-block__row">
                 <label class="my-input my-input--lg my-input--25">
                   <div class="my-input__label">Класс</div>
                   <div class="my-select my-select--full">
@@ -690,7 +685,7 @@
                 </label>
                 <label class="my-input my-input--lg my-input--25">
                   <div class="my-input__label">Влажность</div>
-                  <input id="input_test1__0" name="input_test1__0" type="text" class="my-input__input" placeholder="%">
+                  <input id="input_test1__0" name="input_test1__0" type="text" class="my-input__input --orange" placeholder="%">
                 </label>
                 <label class="my-input my-input--lg my-input--25">
                   <div class="my-input__label">Частота падения</div>
@@ -700,21 +695,31 @@
                   <div class="my-input__label">Протеин</div>
                   <input id="input_test3__0" name="input_test3__0" type="text" class="my-input__input" placeholder="%">
                 </label>
-                <button class="add-ann-block__remove-row js-add-ann-new-row-remove" title="Удалить">
-                  <svg title="Удалить">
-                    <use xlink:href="img/sprites/sprite.svg#x"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="add-ann-block__row js-add-ann-new-row-before">
-                <button class="add-new-char js-add-ann-new-row-button">
-                  <span class="add-new-char__icon">
+                <label class="my-input my-input--lg my-input--25">
+                  <div class="my-input__label">Год урожая</div>
+                  <div class="my-select my-select--full">
+                    <select name="select_test__0" id="select_test__0" class="">
+                      <option value="" selected disabled>Выбрать</option>
+                      <option value="">2024</option>
+                      <option value="">2023</option>
+                      <option value="">2022</option>
+                    </select>
                     <svg>
-                      <use xlink:href="img/sprites/sprite.svg#plus"></use>
+                      <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
                     </svg>
+                  </div>
+                </label>
+              </div>
+              <div class="add-ann-block__row">
+                <span class="my-notification my-notification--orange">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
+                  </svg>
+                  <span>
+                    Мы проанализировали ваше описание с помощью искусственного интеллекта и автоматически заполнили недостающие характеристики
+Пожалуйста, проверьте обновлённые данные и убедитесь, что всё соответствует вашим ожиданиям и опубликуйте или сохраните объявление
                   </span>
-                  Добавить еще характеристики
-                </button>
+                </span>
               </div>
             </div>
           </div>
@@ -755,6 +760,74 @@
                     <input type="radio" name="name2" class="visually-hidden">
                     <span>Нет</span>
                   </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="add-ann-block">
+            <div class="add-ann-block__head">
+              <div class="add-ann-block__mtitle">Время публикации</div>
+              <span class="my-notification my-notification--blue">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
+                </svg>
+                <span>
+                  Настройте расписание публикаций объявления
+                </span>
+              </span>
+            </div>
+            <div class="add-ann-block__body">
+              <div class="add-ann-publish add-ann-block__row">
+                <label class="add-ann-publish__radio">
+                  <input type="radio" name="publish" id="publish-now" class="visually-hidden">
+                  <span class="add-ann-publish__check"></span>
+                  Опубликовать сейчас
+                </label>
+              </div>
+              <div class="add-ann-publish add-ann-block__row">
+                <label class="add-ann-publish__radio">
+                  <input type="radio" name="publish" id="publish-later" class="visually-hidden" checked>
+                  <span class="add-ann-publish__check"></span>
+                  Опубликовать по расписанию
+                </label>
+                <div class="add-ann-publish__drop">
+                  <div class="add-ann-publish__dates">
+                    <div class="add-ann-publish__date">
+                      <div class="add-ann-publish__date-title">День недели</div>
+                      <select name="publish-weekdays" id="publish-weekdays" data-publish-select="publish-weekdays">
+                        <option value="0" selected disabled>Выбрать </option>
+                        <option value="1">Понедельник</option>
+                        <option value="2">Вторник</option>
+                        <option value="3">Среда</option>
+                        <option value="4">Четверг</option>
+                        <option value="5">Пятница</option>
+                        <option value="6">Суббота</option>
+                        <option value="7">Воскресенье</option>
+                      </select>
+                    </div>
+                    <div class="add-ann-publish__date">
+                      <div class="add-ann-publish__date-title">Время</div>
+                      <select name="publish-time" id="publish-time" data-publish-select="publish-time">
+                        <option value="1">10:00 - 11:00</option>
+                        <option value="2">11:00 - 12:00</option>
+                        <option value="3">12:00 - 13:00</option>
+                        <option value="4">14:00 - 15:00</option>
+                        <option value="5">15:00 - 16:00</option>
+                        <option value="6">16:00 - 17:00</option>
+                        <option value="7">18:00 - 19:00</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="switch-radio">
+                    <label>
+                      <input type="radio" name="publish-repeat" class="visually-hidden" checked>
+                      <span>Единоразово</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="publish-repeat" class="visually-hidden">
+                      <span>Еженедельно</span>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -949,6 +1022,65 @@
         </div>
         <div class="make-review__actions">
           <button class="btn3 btn3--full">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="modal modal--center close-x" data-modal="modalVerifyAccount">
+  <div class="modal__inner">
+    <div class="modal__top">
+      <div class="modal__title modal__title--center"> Данные о пользователе уже есть в системе, <br>
+        подтвердите доступ к аккаунту</div>
+      <button class="modal__close close-x" type="button">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__content">
+      <div class="modalVerifyAccount">
+        <div class="modalVerifyAccount__title">Отзыв отправлен на модерацию!</div>
+        <div class="modalVerifyAccount__content">
+          <div class="modalVerifyAccount__radiobuttons">
+            <div class="radio-group">
+              <label class="radio-group__item">
+                <input type="radio" name="modalVerifyAccount" id="" class="visually-hidden" checked>
+                <span class="radio-group__check"></span>
+                Sms по номеру телефона +7*** 56 45
+              </label>
+              <label class="radio-group__item">
+                <input type="radio" name="modalVerifyAccount" id="" class="visually-hidden">
+                <span class="radio-group__check"></span>
+                На email sh***@y**.ru 
+              </label>
+            </div>
+          </div>
+          <div class="modalVerifyAccount__actions">
+            <button class="btn3 btn3--full">Отправить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="modal modal--center close-x" data-modal="modalTariffPayNotification">
+  <div class="modal__inner">
+    <div class="modal__top">
+      <div class="modal__title">Редактировать объявление</div>
+      <button class="modal__close close-x" type="button">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__content">
+      <div class="modalTariffPayNotification">
+        <div class="modalTariffPayNotification__content">
+          <div class="modalTariffPayNotification__text">Ваше объявление с других сайтов, чтобы отредактировать его оплатите тариф в подписках</div>
+          <div class="modalTariffPayNotification__actions">
+            <a href="#" class="btn9 btn9--lg btn9--full">Перейти в подписки</a>
+          </div>
         </div>
       </div>
     </div>
