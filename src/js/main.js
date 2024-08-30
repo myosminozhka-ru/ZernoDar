@@ -1225,35 +1225,6 @@ function cookies() {
 }
 // ==== cookies end
 
-// ==== announcements start
-function announcements() {
-  let indexOfRow = 0;
-  const row = $('.js-add-ann-new-row-block .js-add-ann-new-row-clone').eq(0);
-  const putPlace = $(".js-add-ann-new-row-block .js-add-ann-new-row-before")
-
-  $(".js-add-ann-new-row-block .js-add-ann-new-row-button").on('click', function() {
-    indexOfRow = indexOfRow + 1;
-    const clonedRow = row.clone();
-    const inputs = $(clonedRow).find("select, input, textarea");
-    inputs.each(function (idx, element) {
-      const el =  $(element);
-      let id = el.attr("id");
-      id = id.slice(0, -1) + indexOfRow;
-      el.attr("id", id);
-      el.attr("name", id);
-    })
-    putPlace.before(clonedRow);
-    $(clonedRow).find(".js-add-ann-new-row-remove").on('click', removeRow)
-  })
-
-  function removeRow() {
-    $(this).parent(".js-add-ann-new-row-clone").remove()
-  }
-
-
-}
-// ==== announcements end
-
 // ==== auth code start
 function authCode() {
   const inputs = document.querySelectorAll(".code-input");
@@ -1299,6 +1270,56 @@ $(".custom-select").selectmenu({
   }
 });
 // ==== subscription end
+
+
+// ==== publish time start
+function publishTime() {
+  $('[data-publish-select="publish-weekdays"]').selectmenu({
+    classes: {
+      "ui-selectmenu-button": "ui-selectmenu-button-border",
+      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+    }
+  });
+  $('[data-publish-select="publish-time"]').selectmenu({
+    classes: {
+      "ui-selectmenu-button": "ui-selectmenu-button-border",
+      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+    }
+  });
+  function changePublish(e, selector) {
+
+    let parent = null;
+    if (selector) {
+      if (!$(selector).length) {
+        return;
+      }
+      $(selector).each((index, el) => {
+        if ($(el).prop('checked')) {
+          parent = $(el).closest('.add-ann-publish');
+          return;
+        }
+      })
+    } else {
+      parent = $(e.target).closest('.add-ann-publish');
+    }
+    const siblings = $(parent).siblings('.add-ann-publish');
+    siblings.removeClass('open')
+    parent.addClass('open')
+  }
+  changePublish(null, '[name="publish"]')
+  $('[name="publish"]').on('change', changePublish)
+}
+// ==== publish time end
+
+// ==== publish time start
+
+$('.add-ann-block .my-input .my-select select').selectmenu({
+  classes: {
+    "ui-selectmenu-button": "ui-selectmenu-button-border",
+    "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+  }
+});
+// ==== publish time end
 
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
@@ -1377,8 +1398,8 @@ addEventListener("DOMContentLoaded", () => {
   search();
   profile();
   cookies();
-  announcements();
   authCode();
+  publishTime();
   window.octo = {
     header: new Header(),
     textSellerModal: new Modal("text-seller"),

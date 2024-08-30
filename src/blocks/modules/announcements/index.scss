@@ -182,6 +182,16 @@
     &:first-child .add-ann-block__remove-row {
       display: none;
     }
+    &.add-ann-publish {
+      padding-bottom: 2.4rem;
+      margin-bottom: 2.4rem;
+      border-bottom: 0.1rem solid #E6E6E6;
+      &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+    }
   }
   &__remove-row {
     position: absolute;
@@ -211,6 +221,9 @@
         padding: 0;
       }
     }
+  }
+  .my-input .my-select>svg {
+    display: none;
   }
   @include tab {
     padding: 2.4rem;
@@ -440,6 +453,10 @@
     color: $black;
     &::placeholder {
       color: $darkgrey;
+    }
+    &.--orange {
+      border: 0.1rem solid $orange;
+      background-color: $paleorange;
     }
   }
   &__input {
@@ -803,7 +820,7 @@
   box-shadow: inset 0 0 0 0.1rem $lightgrey;
   background-color: $bckgrnd2;
   border-radius: 1.6rem;
-  display: flex;
+  display: inline-flex;
   label {
     min-width: 8rem;
     min-height: 3.6rem;
@@ -864,6 +881,122 @@
           border-radius: 0.8rem 1.6rem 1.6rem 0.8rem;
         }
       }
+    }
+  }
+}
+
+.add-ann-publish {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  &.open {
+    .add-ann-publish__drop  {
+      display: block;
+    }
+  }
+  &__radio {
+    display: flex;
+    gap: 1.2rem;
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    cursor: pointer;
+    input:checked + .add-ann-publish__check::after {
+      opacity: 1;
+    }
+  }
+  &__check {
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    position: relative;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 86%;
+      height: 86%;
+      border: 0.2rem solid $linkblue;
+      border-radius: 100%;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 37%;
+      height: 37%;
+      border-radius: 100%;
+      background-color: $linkblue;
+      opacity: 0;
+    }
+  }
+  &__drop {
+    display: none;
+  }
+  &__dates {
+    display: flex;
+    gap: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+  &__date {
+    .ui-selectmenu-button-border {
+      min-width: 27.8rem;
+    }
+  }
+  &__date-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+  }
+  @include tab {
+    gap: 2rem;
+    &__radio {
+      font-size: 1.4rem;
+    }
+    &__check {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+    &__drop {
+      .switch-radio {
+        width: 100%;
+      }
+    }
+    &__dates {
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    &__date {
+      .ui-selectmenu-button-border {
+        min-width: auto;
+        width: 100%;
+      }
+    }
+    &__date-title {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+  }
+  @include mob {
+    gap: 1.6rem;
+    &__radio {
+      color: $darkgrey;
+      font-size: 1.2rem;
+    }
+    &__check {
+      width: 2rem;
+      height: 2rem;
+    }
+    &__dates {
+      gap: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+    &__date-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
     }
   }
 }
