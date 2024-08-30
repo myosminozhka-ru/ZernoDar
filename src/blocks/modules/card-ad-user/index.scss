@@ -19,6 +19,15 @@
   }
   &__user-tags {
     margin-bottom: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__mine {
+    margin-top: 1.6rem;
+    color: $linkblue;
+    font-size: 1.4rem;
+    text-decoration: underline;
   }
   @include tab {
     padding: 0 2.4rem;
