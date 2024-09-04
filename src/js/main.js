@@ -616,10 +616,6 @@ class Sidebar {
   }
 
   resetListener() {
-    $( ".catalog-sidebar, .catalog-head__top" ).on( "submit", function( event ) {
-      event.preventDefault();
-    });
-
     $('.js-reset-filter').on('click', () => {
       this.resetFilter()
     })
@@ -1274,18 +1270,18 @@ $(".custom-select").selectmenu({
 
 // ==== publish time start
 function publishTime() {
-  $('[data-publish-select="publish-weekdays"]').selectmenu({
-    classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-border",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
-    }
-  });
-  $('[data-publish-select="publish-time"]').selectmenu({
-    classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-border",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
-    }
-  });
+  // $('[data-publish-select="publish-weekdays"]').selectmenu({
+  //   classes: {
+  //     "ui-selectmenu-button": "ui-selectmenu-button-border",
+  //     "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+  //   }
+  // });
+  // $('[data-publish-select="publish-time"]').selectmenu({
+  //   classes: {
+  //     "ui-selectmenu-button": "ui-selectmenu-button-border",
+  //     "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+  //   }
+  // });
   function changePublish(e, selector) {
 
     let parent = null;
@@ -1311,15 +1307,15 @@ function publishTime() {
 }
 // ==== publish time end
 
-// ==== publish time start
+// ==== others selectmenu start
 
-$('.add-ann-block .my-input .my-select select').selectmenu({
-  classes: {
-    "ui-selectmenu-button": "ui-selectmenu-button-border",
-    "ui-selectmenu-menu": "ui-selectmenu-menu-border"
-  }
-});
-// ==== publish time end
+// $('.add-ann-block .my-input .my-select select').selectmenu({
+//   classes: {
+//     "ui-selectmenu-button": "ui-selectmenu-button-border",
+//     "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+//   }
+// });
+// ==== others selectmenu end
 
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {

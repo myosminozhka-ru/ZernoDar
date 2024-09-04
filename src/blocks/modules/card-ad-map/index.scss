@@ -30,6 +30,13 @@
     #map {
       height: 100%;
     }
+    *[title="Как добраться"],
+    *[title="Доехать на такси"],
+    *[title="Доехать на такси"] + *,
+    *[class$="controls__control_toolbar"] {
+      display: none !important;
+    }
+    
   }
   &__bottom {
     display: flex;
