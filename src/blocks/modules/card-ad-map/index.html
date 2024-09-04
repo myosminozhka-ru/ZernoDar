@@ -44,7 +44,8 @@
     ymaps.ready(function () {             
       var myMap = new ymaps.Map('map', {
           center: coord,
-          zoom: 12
+          zoom: 12,
+          controls: []
       });
       // Создание кастомной иконки маркера
       var myPlacemark = new ymaps.Placemark(coord, {
@@ -110,7 +111,7 @@
         myMap.geoObjects.add(foundPlacemark);
 
        // Создадим ломаную.
-       polyline = new ymaps.Polyline([
+       myPolyline = new ymaps.Polyline([
             myPlacemark.geometry.getCoordinates(), foundPlacemark.geometry.getCoordinates()
         ], {
             hintContent: "Ломаная"
@@ -122,7 +123,7 @@
             strokeStyle: '1 5'
         });
         // Добавляем линию на карту.
-        myMap.geoObjects.add(polyline);
+        myMap.geoObjects.add(myPolyline);
 
         // Рассчитываем расстояние от найденного места до целевой точки
         var distance = ymaps.coordSystem.geo.getDistance(foundCoordinates, coord);
