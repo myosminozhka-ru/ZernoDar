@@ -11,6 +11,7 @@
   padding: 1rem 0;
   z-index: -100;
   opacity: 0;
+  backdrop-filter: blur(8px);
   &.hide {
     animation-name: modalHide;
     animation-iteration-count: 1;
