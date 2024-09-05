@@ -34,6 +34,12 @@ body {
 }
 .main-wrapper {
   // min-height: 75dvh;
+  textarea {
+    resize: none;
+  }
+}
+*[data-copy-trigger] {
+  cursor: pointer;
 }
 body {
   min-height: 100vh;

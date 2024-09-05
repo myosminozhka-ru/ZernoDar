@@ -145,16 +145,22 @@
       overflow: auto;
       display: none;
       background: var(--blur-black, rgba(0, 0, 0, 0.20));
+      &.active {
+        display: flex;
+      }
       .modal__top {
         display: flex;
         position: sticky;
         top: -2rem;
         background-color: #fff;
         z-index: 5;
+        border-radius: 2rem 2rem 0 0;
       }
       .base-tab__text-block {
         padding: 0;
         position: relative;
+        margin: auto;
+        margin-bottom: 0;
       }
       .base-tab__text-title {
         display: none;
