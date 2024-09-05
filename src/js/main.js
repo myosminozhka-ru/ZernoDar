@@ -1317,6 +1317,36 @@ function publishTime() {
 // });
 // ==== others selectmenu end
 
+
+// ==== sms code time start
+window.startTimeSMSCode = function(seconds) {
+  $('[data-resend-code]').attr('disabled', true)
+  let timeRemaining = seconds;
+
+  const intervalId = setInterval(() => {
+      // Рассчитываем часы, минуты и секунды
+      const hours = Math.floor(timeRemaining / 3600);
+      const minutes = Math.floor((timeRemaining % 3600) / 60);
+      const remainingSeconds = timeRemaining % 60;
+
+      // Форматируем результат в человекопонятный вид
+      const timeString = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+
+      // Выводим результат в тег <p>
+      $("[data-timer]").text(timeString);
+
+      // Останавливаем таймер, когда время закончится
+      if (timeRemaining === 0) {
+          clearInterval(intervalId);
+          $('[data-resend-code]').attr('disabled', false)
+      }
+
+      // Уменьшаем оставшееся время на 1 секунду
+      timeRemaining--;
+  }, 1000); // Запускаем таймер с интервалом в 1 секунду
+}
+// ==== sms code time end
+
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
   window.showMore = (all) => {
