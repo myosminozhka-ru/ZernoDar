@@ -76,7 +76,7 @@ addEventListener("DOMContentLoaded", () => {
                       <img src="${warehouse.icon}" alt="">
                     </div>
                     <div>
-                      <div class="map-popup__title">${warehouse.name}</div>
+                      <a href="${warehouse.href}" class="map-popup__title">${warehouse.name}</a>
                       <div class="map-popup__price">${warehouse.price}</div>
                     </div>
                   </div>
@@ -102,7 +102,7 @@ addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  window.removeAllWarehousesOnMap = function showWarehousesOnMap() {
+  window.removeAllWarehousesOnMap = function() {
     window.catalogMap.geoObjects.removeAll();
   }
 
@@ -114,32 +114,9 @@ addEventListener("DOMContentLoaded", () => {
     //   name: "name 1",
     //   price: "price 1",
     //   icon: 'img/first-screen1.jpg',
-    //   tags: ["tag 1", "tag 1"]
+    //   tags: ["tag 1", "tag 1"],
+    //   ownerHref: '/href',
     // },
-    // {
-    //   id: '2',
-    //   coordinates: [55.813376, 37.630301],
-    //   name: "name 2",
-    //   price: "price 1",
-    //   icon: 'img/first-screen2.jpg',
-    //   tags: ["tag 1", "tag 1"]
-    // },
-    // {
-    //   id: '3',
-    //   coordinates: [55.742848, 37.605283],
-    //   name: "name 3",
-    //   price: "price 1",
-    //   icon: 'img/first-screen3.jpg',
-    //   tags: ["tag 1", "tag 1"]
-    // },
-    // {
-    //   id: '4',
-    //   coordinates: [55.750630, 37.674063],
-    //   name: "name 4",
-    //   price: "price 1",
-    //   icon: 'img/first-screen1.jpg',
-    //   tags: ["tag 1", "tag 1"]
-    // }
   ];
 
   // debounce функция, которая «откладывает» вызов другой функции до того момента, когда с последнего вызова пройдёт определённое количество времени
