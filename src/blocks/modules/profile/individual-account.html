@@ -2,7 +2,12 @@
   @@include("../lk-nav/index.html")
 
   <div class="lk-inner">
-    @@include("../banners/entity.html")
-    @@include("./edit-individual-account.html")
+    <div data-tab-edit-block="account-form" data-tab-edit-block-id="individual-account-form">
+      @@include("../banners/entity.html")
+      @@include("./edit-individual-account.html")
+    </div>
+    <div data-tab-edit-block="account-form" data-tab-edit-block-id="business-account-form" class="hide">
+      @@include("./edit-to-business.html")
+    </div>
   </div>
 </div>

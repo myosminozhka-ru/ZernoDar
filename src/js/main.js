@@ -1368,6 +1368,35 @@ window.startTimeSMSCode = function(seconds) {
 }
 // ==== sms code time end
 
+
+// ==== tab data attr start
+$(document).on('click', '[data-tab-edit-block-trigger]', function(e) {
+  const id = e.target.dataset.tabEditBlockTriggerId;
+  const trigger = e.target.dataset.tabEditBlockTrigger;
+  $(`[data-tab-edit-block-trigger="${trigger}"]`).removeClass('active');
+  $(`[data-tab-edit-block-trigger-id="${id}"]`).addClass('active');
+  $(`[data-tab-edit-block="${trigger}"]`).addClass('hide');
+  $(`[data-tab-edit-block-id="${id}"]`).removeClass('hide');
+})
+// ==== tab data attr end
+
+
+// ==== scroll to data attr start
+$(document).on('click', '[data-scroll-to]', function(e) {
+  const val = e.target.dataset.scrollTo;
+  const isId = (/^#.*/).test(val);
+  if (isId) {
+    $(val).length ? $(val)[0].scrollIntoView({
+      block: 'center', // Выровнять по нижней части экрана
+      behavior: 'smooth' // Плавная прокрутка
+    }) : null;
+  } else {
+    $("html").animate({ scrollTop: 0 }, "slow");
+  }
+})
+// ==== scroll to data attr end
+
+
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
   window.showMore = (all) => {

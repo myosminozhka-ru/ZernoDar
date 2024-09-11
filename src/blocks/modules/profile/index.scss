@@ -22,6 +22,11 @@
     font-size: 2rem;
     font-weight: 500;
   }
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2.4rem;
+  }
   @include tab {
     &__inner {
       gap: 4rem;
@@ -65,6 +70,11 @@
     &__mtitle {
       font-size: 2rem;
     }
+    &__actions {
+      flex-direction: column;
+      gap: 1.6rem;
+      padding: 2.4rem;
+    }
   }
   @include mob {
     &__inner {
@@ -89,6 +99,9 @@
     }
     &__mtitle {
       font-size: 1.8rem;
+    }
+    &__actions {
+      padding: 1.6rem;
     }
   }
 }
