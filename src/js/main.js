@@ -462,9 +462,24 @@ class Sidebar {
     this.modal()
     this.category()
     this.resetListener()
+    this.initRange(name, parentSelector)
+    this.onChangeRangeCallbacks = []
   }
 
-  static initRange(name, parentSelector) {
+  onChangeRange(callback) {
+    this.onChangeRangeCallbacks.push(callback)
+  }
+
+  clearOnChangeRange() {
+    this.onChangeRangeCallbacks = [];
+  }
+
+  callOnChangeRangeCallbacks() {
+    this.onChangeRangeCallbacks.forEach(callback => callback());
+  }
+
+  initRange(name, parentSelector) {
+    const that = this;
     const rangeInstanceArray = []
 
     const rangeNodes = document.querySelectorAll(parentSelector + ' .filter-range:not(.inited)')
@@ -479,18 +494,22 @@ class Sidebar {
       const placeholderFromStr = element.querySelector('.filter-range__val--from span')
       const placeholderToStr = element.querySelector('.filter-range__val--to span')
       $(inputRange).ionRangeSlider({
-
         onChange: function (data) {
           inputFrom.value = data.from
           inputTo.value = data.to
           placeholderFromStr.textContent = data.from
           placeholderToStr.textContent = data.to
+          console.log("onChange");
+          that.callOnChangeRangeCallbacks()
+          
         },
         onUpdate: function (data) {
           inputFrom.value = data.from
           inputTo.value = data.to
           placeholderFromStr.textContent = data.from
           placeholderToStr.textContent = data.to
+          console.log("onUpdate");
+          that.callOnChangeRangeCallbacks()
         }
       });
 
@@ -1320,6 +1339,7 @@ function publishTime() {
 
 // ==== sms code time start
 window.startTimeSMSCode = function(seconds) {
+  window.startTimeSMSCodeID ? clearInterval(window.startTimeSMSCodeID) : null;
   $('[data-resend-code]').attr('disabled', true)
   let timeRemaining = seconds;
 
@@ -1344,6 +1364,7 @@ window.startTimeSMSCode = function(seconds) {
       // Уменьшаем оставшееся время на 1 секунду
       timeRemaining--;
   }, 1000); // Запускаем таймер с интервалом в 1 секунду
+  window.startTimeSMSCodeID = intervalId;
 }
 // ==== sms code time end
 
@@ -1444,8 +1465,6 @@ addEventListener("DOMContentLoaded", () => {
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     mapFilter: new Sidebar('mapFilter', '.app'),
-    catalogSidebarRange: Sidebar.initRange('catalogSidebar', '.catalog-wrapper'),
-    mapFilterRange: Sidebar.initRange('mapFilter', '.app'),
     copy: new Copy(),
   };
   // window.octo.textSellerModal.open()
