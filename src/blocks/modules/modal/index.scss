@@ -96,6 +96,58 @@
       flex-direction: row-reverse;
       justify-content: space-between;
       margin-bottom: 0;
+      padding: 2.4rem;
+      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.10);
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+    }
+    &__title {
+      text-align: center;
+      font-size: 1.7rem;
+    }
+    &__inner {
+      margin: auto;
+      margin-bottom: 0;
+      padding: 0;
+      min-width: auto;
+      width: 100%;
+      border-radius: 2.2rem 2.2rem 0 0;
+    }
+    &__close {
+      width: 2.2rem;
+      height: 2.2rem;
+      svg {
+        @include img-contain;
+      }
+    }
+    &__content {
+      position: relative;
+      z-index: 2;
+      padding: 2.4rem 2.4rem 0.8rem;
+    }
+    &--text-seller {
+      .btn3 {
+        width: 100%;
+      }
+      .textarea1 {
+        height: 17rem;
+        font-size: 1.6rem;
+        border-radius: 1.2rem;
+        padding: 1.2rem;
+        margin-bottom: 1.8rem;
+      }
+    }
+  }
+  @include mob {
+    padding-bottom: 0;
+    &__top {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin-bottom: 0;
       padding: 1.6rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.10);
       &::before {
@@ -127,10 +179,7 @@
     &__content {
       position: relative;
       z-index: 2;
-      padding: 2.4rem 2.4rem 0.8rem;
-      @include mob {
-        padding: 2.4rem 1.6rem 0.8rem;
-      }
+      padding: 2.4rem 1.6rem 0.8rem;
     }
     &--text-seller {
       .btn3 {

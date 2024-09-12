@@ -2,6 +2,8 @@
 window.showMore = () => {
 
 };
+
+window.imagesFolderURL = window.location.href.includes('localhost') ? '' : window.location.origin + '/local/templates/zernodar/';
 // ==== copy start
 class Copy {
   constructor() {
@@ -962,12 +964,14 @@ function profile() {
       content.removeClass('hide')
       open.addClass('hide')
       cancel.removeClass('hide')
+      $(this).addClass('open')
     }
     const itIsCanceler = $(target).closest('.js-edit-contact-cancel')
     if (itIsCanceler && itIsCanceler.length) {
       content.addClass('hide')
       open.removeClass('hide')
       cancel.addClass('hide')
+      $(this).removeClass('open')
     }
   })
 
@@ -1050,7 +1054,7 @@ function profile() {
         <label class="dropfile__add">
           <input type="file" name="" id="" accept=".png, .jpg, .jpeg, .pdf" hidden>
           <svg>
-            <use xlink:href="img/sprites/sprite.svg#plus"></use>
+            <use xlink:href="${window.imagesFolderURL}img/sprites/sprite.svg#plus"></use>
           </svg>
         </label>
         <div class="dropfile__img">
@@ -1058,13 +1062,13 @@ function profile() {
         </div>
         <div class="dropfile__delete">
           <svg>
-            <use xlink:href="img/sprites/sprite.svg#trash"></use>
+            <use xlink:href="${window.imagesFolderURL}img/sprites/sprite.svg#trash"></use>
           </svg>
         </div>
         <div class="dropfile__info">
           <div class="dropfile__icon">
             <svg>
-              <use xlink:href="img/sprites/sprite.svg#picture"></use>
+              <use xlink:href="${window.imagesFolderURL}img/sprites/sprite.svg#picture"></use>
             </svg>
           </div>
           <div class="dropfile__name-wrap">
