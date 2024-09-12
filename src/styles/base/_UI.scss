@@ -354,6 +354,10 @@
   .svg-wrap {
     position: relative;
     transition: transform 300ms;
+    svg {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   svg {
     width: 2rem;
@@ -441,6 +445,10 @@
     .svg-wrap {
       position: relative;
       transition: transform 300ms;
+      svg {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
     svg {
       width: 2rem;
