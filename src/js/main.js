@@ -320,7 +320,6 @@ class Header {
   }
   navDropItemHandler(mod, e) {
     e.preventDefault()
-    // debugger
     if ($(e.target).closest('.nav-drop').length) {
       return
     }
@@ -349,7 +348,7 @@ class Header {
     $('.nav__item--supply').on('click' ,this.navDropItemHandler.bind(this, "supply"))
     $('.nav__item--demand').on('click' , this.navDropItemHandler.bind(this, "demand"))
 
-    $(document).click((event) => {
+    $(document).on('click',(event) => {
       if (
         this.isDropOpen &&
         !$(event.target).closest('.nav-drop__inner').length &&
@@ -366,7 +365,11 @@ class Header {
 
       $(element).find('.nav-drop__title').each(function(index, arrow) {
         $(arrow).on('click', function(e) {
-          e.preventDefault()
+          if ($(e.target).is($(arrow).find('a.str'))) {
+            console.log("is");
+            e.preventDefault()
+          }
+          e.stopPropagation()
           const isOpen = $(element).find(`.nav-drop__block:eq(${index})`).hasClass('open')
 
           if (!mediaQuery.matches && isOpen) {
