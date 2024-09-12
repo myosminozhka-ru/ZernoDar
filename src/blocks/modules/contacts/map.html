@@ -85,11 +85,36 @@
 </div>
 <script>
   try {
-    ymaps.ready(function () {                         
+    ymaps.ready(function () {  
+      const coord = [55.699467, 37.625594]                       
       var contactMap = new ymaps.Map('contact-map', {
-        center: [55.699467, 37.625594],
-        zoom: 12
+        center: coord,
+        zoom: 12,
+        controls: []
       });
+      // Создание кастомной иконки маркера
+      var myPlacemark = new ymaps.Placemark(coord, {
+        // Данные для попапа
+        balloonContent: `
+          <div class="map-popup">
+            <div class="map-popup__inner">
+              <div class="map-popup__top">
+                <div>
+                  <div class="map-popup__title">Зернодар</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      }, {
+        // Опции для кастомной иконки
+        iconLayout: 'default#image',
+        iconImageHref: '/img/sprites/marker-map.svg', // Путь к вашей иконке
+        iconImageSize: [30, 42],                // Размер иконки
+        iconImageOffset: [-15, -42]             // Смещение иконки
+      });
+      // Добавление маркера на карту
+      contactMap.geoObjects.add(myPlacemark);
     });
   } catch (error) {
     console.log(error);
