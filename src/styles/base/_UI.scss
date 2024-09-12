@@ -2571,3 +2571,19 @@
     font-weight: 500;
   }
 }
+
+
+.veri + .edit-requisites__list {
+  .edit-requisites__item {
+    justify-content: space-between;
+  }
+  .edit-requisites__value {
+    flex: 0;
+  }
+  @include tab {
+    padding: 2.4rem;
+  }
+  @include tab {
+    padding: 1.6rem;
+  }
+}
