@@ -293,7 +293,12 @@
   &__tags {
     display: flex;
     gap: 0.8rem;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     span {    
+      white-space: nowrap;
       padding: 1.6rem 1.6rem;
       border-radius: 1.6rem;
       background-color: #F8F8F8;

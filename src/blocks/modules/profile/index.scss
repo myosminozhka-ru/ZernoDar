@@ -10,6 +10,11 @@
     border-radius: 2rem;
     background-color: $white;
     @include block-shadow2;
+    &--file {
+      .profile-edit__head {
+        align-items: flex-start;
+      }
+    }
   }
   &__head {
     display: flex;
