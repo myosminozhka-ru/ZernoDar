@@ -4,6 +4,12 @@ window.showMore = () => {
 };
 
 window.imagesFolderURL = window.location.href.includes('localhost') ? '' : window.location.origin + '/local/templates/zernodar/';
+
+const mediaQuery = window.matchMedia("(max-width: 1023px)");
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+function hasMouseSupport() {
+  return window.matchMedia('(pointer: fine)').matches;
+}
 // ==== copy start
 class Copy {
   constructor() {
@@ -332,9 +338,6 @@ class Header {
     }
   }
   navDropHandler() {
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
     // if (!isMobile) {
     //   $('.nav__item--supply').on('mouseenter' ,this.navDropItemHandler.bind(this, "supply"))
     //   $('.nav__item--demand').on('mouseenter' , this.navDropItemHandler.bind(this, "demand"))
@@ -404,8 +407,6 @@ class Header {
     $('.nav__item').removeClass('active')
   }
   moveElementPlaceHandler() {
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
-
     // Function to handle the event
     const  handleMediaQueryChange = (event) => {
         if (event.matches) {
@@ -846,11 +847,6 @@ function security() {
     const labelMobile = item.querySelector(".security__label.label-mobile");
     const isPassword = item.classList.contains('security__item--password')
 
-
-    function isMobile() {
-      return window.innerWidth < 700;
-    }
-
     toggleButton.addEventListener("click", function () {
       body.style.display = "block";
       toggleButton.style.display = "none";
@@ -861,7 +857,7 @@ function security() {
 
       if (
         isPassword &&
-        !isMobile()
+        !mediaQuery.matches
       ) {
         labelMobile.style.display = "none";
       }
@@ -878,7 +874,7 @@ function security() {
 
         if (
           isPassword &&
-          !isMobile()
+          !mediaQuery.matches
         ) {
           labelMobile.style.display = "block";
         }
@@ -1203,10 +1199,7 @@ function profile() {
     console.log('Action performed!');
   }
 
-  // Check if device is mobile
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  if (isMobile) {
+  if (!hasMouseSupport()) {
     $(document).on('click', '.dropfile__item.show', function() {
       $('.dropfile__item.show').removeClass('hover')
       $(this).addClass('hover')
