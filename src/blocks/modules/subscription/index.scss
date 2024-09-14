@@ -224,7 +224,11 @@
 
     .subscription__history-table {
       width: 100%;
-
+      .history-body {
+        border-radius: 2.4rem;
+        overflow: hidden;
+        @include block-shadow2;
+      }
       .history-row,
       .row-titles {
         display: flex;
@@ -239,6 +243,7 @@
         background: white;
         border-radius: 2.4rem;
         box-shadow: 0 4px 10px rgba(234, 234, 234, 0.1);
+        font-weight: 500;
 
         div {
           flex: 1;
@@ -264,17 +269,6 @@
         }
 
         button {
-          padding: 1.4rem 0rem;
-          width: 20rem;
-          background: #ecf0f4;
-          border: none;
-          border-radius: 10rem;
-          cursor: pointer;
-          transition: background-color 0.3s;
-
-          &:hover {
-            background: #d4d7db;
-          }
         }
       }
 
@@ -292,6 +286,10 @@
         display: none;
       }
     }
+  }
+
+  .pags {
+    justify-content: space-between;
   }
 }
 

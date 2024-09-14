@@ -1496,6 +1496,17 @@ addEventListener("DOMContentLoaded", () => {
     mapFilter: new Sidebar('mapFilter', '.app'),
     copy: new Copy(),
   };
+
+  window.octo.catalogSidebar.onChangeRange(() => {
+    // window.rangeInstance.catalogSidebar - спиоск ползунов на боковом сайдбаре
+    if (window.rangeInstance?.catalogSidebar?.length) {
+      window.rangeInstance?.catalogSidebar.forEach(i => {
+        // при изменении ползунка или ручного ввода инпути снизу
+        // выводит в консоль каждый инпут с id и value
+        console.log(i.instance.input.id + ': ' + i.instance.input.value)
+      })
+    }
+  })
   // window.octo.textSellerModal.open()
   // $('[data-filter-geo="range_container"] input').ionRangeSlider({
   //   onChange: function (data) {

@@ -99,7 +99,20 @@ addEventListener("DOMContentLoaded", () => {
         iconImageOffset: [-15, -42]             // Смещение иконки
       });
       window.catalogMap.geoObjects.add(placemark);
+      placemark.events.add('click', () => window.slideTo(warehouse.id));
     });
+  }
+
+  window.slideTo = function(id) {
+    try {
+      setTimeout(() => {
+        const index = $(`[data-id="${id}"]`).attr("aria-label").split('/')[0].trim();
+        console.log(index);
+        window.mapSlider.slideTo(index, 100, false);
+      }, 500);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   window.removeAllWarehousesOnMap = function() {

@@ -767,6 +767,21 @@
     }
   }
 }
+.btn15 {
+  padding: 1.3rem 2.5rem;
+  white-space: nowrap;
+  min-width: 20rem;
+  background: #ecf0f4;
+  border: none;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background: #d4d7db;
+  }
+}
 .open-more {
   display: inline-flex;
   align-items: center;
@@ -1357,17 +1372,18 @@
 .pags {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  &::after {
-    content: "";
-    display: inline-block;
-    flex: 1;
-  }
   .pag {
-    flex: 1;
+    min-width: calc(50% - 8.5rem);
+    margin-right: 1rem;
   }
   .btn2 {
     flex: 0.5;
+  }
+  @include tab {
+    .pag {
+      min-width: auto;
+      margin-right: 0;
+    }
   }
 }
 .pag {
