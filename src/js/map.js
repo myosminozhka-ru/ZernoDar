@@ -105,9 +105,11 @@ addEventListener("DOMContentLoaded", () => {
 
   window.slideTo = function(id) {
     try {
-      const index = $(`[data-id="${id}"]`).attr("aria-label").split('/')[0].trim();
-      console.log(index);
-      window.mapSlider.slideTo(index, 100, false);
+      setTimeout(() => {
+        const index = $(`[data-id="${id}"]`).attr("aria-label").split('/')[0].trim();
+        console.log(index);
+        window.mapSlider.slideTo(index, 100, false);
+      }, 500);
     } catch (error) {
       console.error(error);
     }
