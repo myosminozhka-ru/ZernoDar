@@ -2,6 +2,14 @@
 window.showMore = () => {
 
 };
+
+window.imagesFolderURL = window.location.href.includes('localhost') ? '' : window.location.origin + '/local/templates/zernodar/';
+
+const mediaQuery = window.matchMedia("(max-width: 1023px)");
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+function hasMouseSupport() {
+  return window.matchMedia('(pointer: fine)').matches;
+}
 // ==== copy start
 class Copy {
   constructor() {
@@ -312,7 +320,6 @@ class Header {
   }
   navDropItemHandler(mod, e) {
     e.preventDefault()
-    // debugger
     if ($(e.target).closest('.nav-drop').length) {
       return
     }
@@ -330,9 +337,6 @@ class Header {
     }
   }
   navDropHandler() {
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
     // if (!isMobile) {
     //   $('.nav__item--supply').on('mouseenter' ,this.navDropItemHandler.bind(this, "supply"))
     //   $('.nav__item--demand').on('mouseenter' , this.navDropItemHandler.bind(this, "demand"))
@@ -344,7 +348,7 @@ class Header {
     $('.nav__item--supply').on('click' ,this.navDropItemHandler.bind(this, "supply"))
     $('.nav__item--demand').on('click' , this.navDropItemHandler.bind(this, "demand"))
 
-    $(document).click((event) => {
+    $(document).on('click',(event) => {
       if (
         this.isDropOpen &&
         !$(event.target).closest('.nav-drop__inner').length &&
@@ -361,7 +365,11 @@ class Header {
 
       $(element).find('.nav-drop__title').each(function(index, arrow) {
         $(arrow).on('click', function(e) {
-          e.preventDefault()
+          if ($(e.target).is($(arrow).find('a.str'))) {
+            console.log("is");
+            e.preventDefault()
+          }
+          e.stopPropagation()
           const isOpen = $(element).find(`.nav-drop__block:eq(${index})`).hasClass('open')
 
           if (!mediaQuery.matches && isOpen) {
@@ -402,8 +410,6 @@ class Header {
     $('.nav__item').removeClass('active')
   }
   moveElementPlaceHandler() {
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
-
     // Function to handle the event
     const  handleMediaQueryChange = (event) => {
         if (event.matches) {
@@ -462,9 +468,24 @@ class Sidebar {
     this.modal()
     this.category()
     this.resetListener()
+    this.initRange(name, parentSelector)
+    this.onChangeRangeCallbacks = []
   }
 
-  static initRange(name, parentSelector) {
+  onChangeRange(callback) {
+    this.onChangeRangeCallbacks.push(callback)
+  }
+
+  clearOnChangeRange() {
+    this.onChangeRangeCallbacks = [];
+  }
+
+  callOnChangeRangeCallbacks() {
+    this.onChangeRangeCallbacks.forEach(callback => callback());
+  }
+
+  initRange(name, parentSelector) {
+    const that = this;
     const rangeInstanceArray = []
 
     const rangeNodes = document.querySelectorAll(parentSelector + ' .filter-range:not(.inited)')
@@ -479,18 +500,22 @@ class Sidebar {
       const placeholderFromStr = element.querySelector('.filter-range__val--from span')
       const placeholderToStr = element.querySelector('.filter-range__val--to span')
       $(inputRange).ionRangeSlider({
-
         onChange: function (data) {
           inputFrom.value = data.from
           inputTo.value = data.to
           placeholderFromStr.textContent = data.from
           placeholderToStr.textContent = data.to
+          console.log("onChange");
+          that.callOnChangeRangeCallbacks()
+          
         },
         onUpdate: function (data) {
           inputFrom.value = data.from
           inputTo.value = data.to
           placeholderFromStr.textContent = data.from
           placeholderToStr.textContent = data.to
+          console.log("onUpdate");
+          that.callOnChangeRangeCallbacks()
         }
       });
 
@@ -825,11 +850,6 @@ function security() {
     const labelMobile = item.querySelector(".security__label.label-mobile");
     const isPassword = item.classList.contains('security__item--password')
 
-
-    function isMobile() {
-      return window.innerWidth < 700;
-    }
-
     toggleButton.addEventListener("click", function () {
       body.style.display = "block";
       toggleButton.style.display = "none";
@@ -840,7 +860,7 @@ function security() {
 
       if (
         isPassword &&
-        !isMobile()
+        !mediaQuery.matches
       ) {
         labelMobile.style.display = "none";
       }
@@ -857,7 +877,7 @@ function security() {
 
         if (
           isPassword &&
-          !isMobile()
+          !mediaQuery.matches
         ) {
           labelMobile.style.display = "block";
         }
@@ -943,12 +963,14 @@ function profile() {
       content.removeClass('hide')
       open.addClass('hide')
       cancel.removeClass('hide')
+      $(this).addClass('open')
     }
     const itIsCanceler = $(target).closest('.js-edit-contact-cancel')
     if (itIsCanceler && itIsCanceler.length) {
       content.addClass('hide')
       open.removeClass('hide')
       cancel.addClass('hide')
+      $(this).removeClass('open')
     }
   })
 
@@ -1031,7 +1053,7 @@ function profile() {
         <label class="dropfile__add">
           <input type="file" name="" id="" accept=".png, .jpg, .jpeg, .pdf" hidden>
           <svg>
-            <use xlink:href="img/sprites/sprite.svg#plus"></use>
+            <use xlink:href="${window.imagesFolderURL}img/sprites/sprite.svg#plus"></use>
           </svg>
         </label>
         <div class="dropfile__img">
@@ -1039,13 +1061,13 @@ function profile() {
         </div>
         <div class="dropfile__delete">
           <svg>
-            <use xlink:href="img/sprites/sprite.svg#trash"></use>
+            <use xlink:href="${window.imagesFolderURL}img/sprites/sprite.svg#trash"></use>
           </svg>
         </div>
         <div class="dropfile__info">
           <div class="dropfile__icon">
             <svg>
-              <use xlink:href="img/sprites/sprite.svg#picture"></use>
+              <use xlink:href="${window.imagesFolderURL}img/sprites/sprite.svg#picture"></use>
             </svg>
           </div>
           <div class="dropfile__name-wrap">
@@ -1180,10 +1202,7 @@ function profile() {
     console.log('Action performed!');
   }
 
-  // Check if device is mobile
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  if (isMobile) {
+  if (!hasMouseSupport()) {
     $(document).on('click', '.dropfile__item.show', function() {
       $('.dropfile__item.show').removeClass('hover')
       $(this).addClass('hover')
@@ -1317,6 +1336,67 @@ function publishTime() {
 // });
 // ==== others selectmenu end
 
+
+// ==== sms code time start
+window.startTimeSMSCode = function(seconds) {
+  window.startTimeSMSCodeID ? clearInterval(window.startTimeSMSCodeID) : null;
+  $('[data-resend-code]').attr('disabled', true)
+  let timeRemaining = seconds;
+
+  const intervalId = setInterval(() => {
+      // Рассчитываем часы, минуты и секунды
+      const hours = Math.floor(timeRemaining / 3600);
+      const minutes = Math.floor((timeRemaining % 3600) / 60);
+      const remainingSeconds = timeRemaining % 60;
+
+      // Форматируем результат в человекопонятный вид
+      const timeString = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+
+      // Выводим результат в тег <p>
+      $("[data-timer]").text(timeString);
+
+      // Останавливаем таймер, когда время закончится
+      if (timeRemaining === 0) {
+          clearInterval(intervalId);
+          $('[data-resend-code]').attr('disabled', false)
+      }
+
+      // Уменьшаем оставшееся время на 1 секунду
+      timeRemaining--;
+  }, 1000); // Запускаем таймер с интервалом в 1 секунду
+  window.startTimeSMSCodeID = intervalId;
+}
+// ==== sms code time end
+
+
+// ==== tab data attr start
+$(document).on('click', '[data-tab-edit-block-trigger]', function(e) {
+  const id = e.target.dataset.tabEditBlockTriggerId;
+  const trigger = e.target.dataset.tabEditBlockTrigger;
+  $(`[data-tab-edit-block-trigger="${trigger}"]`).removeClass('active');
+  $(`[data-tab-edit-block-trigger-id="${id}"]`).addClass('active');
+  $(`[data-tab-edit-block="${trigger}"]`).addClass('hide');
+  $(`[data-tab-edit-block-id="${id}"]`).removeClass('hide');
+})
+// ==== tab data attr end
+
+
+// ==== scroll to data attr start
+$(document).on('click', '[data-scroll-to]', function(e) {
+  const val = e.target.dataset.scrollTo;
+  const isId = (/^#.*/).test(val);
+  if (isId) {
+    $(val).length ? $(val)[0].scrollIntoView({
+      block: 'center', // Выровнять по нижней части экрана
+      behavior: 'smooth' // Плавная прокрутка
+    }) : null;
+  } else {
+    $("html").animate({ scrollTop: 0 }, "slow");
+  }
+})
+// ==== scroll to data attr end
+
+
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
   window.showMore = (all) => {
@@ -1414,10 +1494,19 @@ addEventListener("DOMContentLoaded", () => {
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     mapFilter: new Sidebar('mapFilter', '.app'),
-    catalogSidebarRange: Sidebar.initRange('catalogSidebar', '.catalog-wrapper'),
-    mapFilterRange: Sidebar.initRange('mapFilter', '.app'),
     copy: new Copy(),
   };
+
+  window.octo.catalogSidebar.onChangeRange(() => {
+    // window.rangeInstance.catalogSidebar - спиоск ползунов на боковом сайдбаре
+    if (window.rangeInstance?.catalogSidebar?.length) {
+      window.rangeInstance?.catalogSidebar.forEach(i => {
+        // при изменении ползунка или ручного ввода инпути снизу
+        // выводит в консоль каждый инпут с id и value
+        console.log(i.instance.input.id + ': ' + i.instance.input.value)
+      })
+    }
+  })
   // window.octo.textSellerModal.open()
   // $('[data-filter-geo="range_container"] input').ionRangeSlider({
   //   onChange: function (data) {

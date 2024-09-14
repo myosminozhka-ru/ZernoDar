@@ -1,5 +1,7 @@
 *, *::before, *::after {
   box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 html {
   font-family: $main-font;
@@ -29,11 +31,17 @@ body {
     padding-top: 8.3rem;
   }  
   @include mob {
-    padding-top: 5.6rem;
+    padding-top: 7.3rem;
   }
 }
 .main-wrapper {
   // min-height: 75dvh;
+  textarea {
+    resize: none;
+  }
+}
+*[data-copy-trigger] {
+  cursor: pointer;
 }
 body {
   min-height: 100vh;

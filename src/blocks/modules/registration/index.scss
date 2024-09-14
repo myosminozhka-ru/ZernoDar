@@ -226,6 +226,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 2.4rem;
     @include tab {
       padding: 2.4rem;
     }
@@ -481,39 +482,44 @@
       border-radius: 1.6rem;
       padding: 1.6rem;
     }
+  }
 
-    p {
-      font-size: 1.8rem;
-      text-align: center;
-      line-height: 2.8rem;
+  &__timer {
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 2.8rem;
 
-      @include tab {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-      }
-      @include mob {
-        font-size: 1.4rem;
-        line-height: 2.4rem;
-      }
+    @include tab {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+    @include mob {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+    }
+  }
+
+  &__resend-code {
+    margin-top: 3.2rem;
+    display: block;
+    text-align: center;
+    color: #0084cf;
+    
+    &[disabled="disabled"] {
+      color: $lightgrey;
+      pointer-events: none;
     }
 
-    span {
-      margin-top: 3.2rem;
-      display: block;
-      text-align: center;
-      color: #0084cf;
-
-      @include tab {
-        font-size: 1.4rem;
-        margin-top: 1.6rem;
-        margin-bottom: 0.4rem;
-      }
-      
-      @include mob {
-        font-size: 1.2rem;
-        margin-top: 1.6rem;
-        margin-bottom: 0.4rem;
-      }
+    @include tab {
+      font-size: 1.4rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+    
+    @include mob {
+      font-size: 1.2rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
     }
   }
 
@@ -521,12 +527,14 @@
   &__agreement {
     display: flex;
     align-items: center;
+    margin-bottom: 3.4rem;
 
     @include tab {
       align-items: baseline;
       font-size: 1.4rem;
       padding: 2.4rem;
       padding-bottom: 1.6rem;
+      margin-bottom: 0;
     }
 
     @include mob {

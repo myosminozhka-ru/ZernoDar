@@ -36,12 +36,12 @@
     *[class$="controls__control_toolbar"] {
       display: none !important;
     }
-    
   }
   &__bottom {
     display: flex;
     align-items: center;
     gap: 1.6rem;
+    position: relative;
   }
   &__input-label {
     display: none;
@@ -84,6 +84,26 @@
     border: 1px solid $lightgrey;
     padding: 1.3rem 1.6rem;
   }
+  .suggestions-suggestions {
+    min-width: 57.2rem;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #F8F8F8;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+  .suggestions-suggestion {
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .suggestions-hint {
+    font-size: 1.2rem;
+  }
   @include tab {
     margin-bottom: 0;
     &__mtitle {
@@ -110,7 +130,7 @@
       display: none;
     }
     &__map {
-      height: 40vw;
+      height: 80vw;
       margin-bottom: 1rem;
       display: none;
       &.open {
@@ -129,8 +149,8 @@
       position: relative;
       background-color: $bckgrnd2;
       border-radius: 0.8rem;
-      overflow: hidden;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       padding-left: 1.6rem;
@@ -156,7 +176,11 @@
         font-weight: 500;
         padding: 1.6rem;
         background-color: $paleblue;
-        border-radius: 1.6rem;
+        border-radius: 0.8rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 3.42rem;
       }
       svg {
         display: inline-block;
@@ -185,6 +209,16 @@
       border-radius: 0;
       border: 0;
       padding: 0;
+    }
+    .suggestions-suggestions {
+      min-width: 100%;
+      border-radius: 0.8rem;
+      padding: 1rem;
+      font-size: 1.4rem;
+      position: static;
+    }
+    .suggestions-hint {
+      font-size: 1rem;
     }
   }
   @include mob {
@@ -215,6 +249,7 @@
         font-size: 1.2rem;
         padding: 1.5rem;
         border-radius: 0.8rem;
+        height: 3.159rem;
       }
       svg {
         width: 1.7rem;
@@ -258,7 +293,12 @@
   &__tags {
     display: flex;
     gap: 0.8rem;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     span {    
+      white-space: nowrap;
       padding: 1.6rem 1.6rem;
       border-radius: 1.6rem;
       background-color: #F8F8F8;

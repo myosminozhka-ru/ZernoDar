@@ -354,6 +354,10 @@
   .svg-wrap {
     position: relative;
     transition: transform 300ms;
+    svg {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   svg {
     width: 2rem;
@@ -441,6 +445,10 @@
     .svg-wrap {
       position: relative;
       transition: transform 300ms;
+      svg {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
     svg {
       width: 2rem;
@@ -757,6 +765,21 @@
       padding-bottom: 1.1rem;
       font-size: 1.4rem;
     }
+  }
+}
+.btn15 {
+  padding: 1.3rem 2.5rem;
+  white-space: nowrap;
+  min-width: 20rem;
+  background: #ecf0f4;
+  border: none;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background: #d4d7db;
   }
 }
 .open-more {
@@ -1349,17 +1372,18 @@
 .pags {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  &::after {
-    content: "";
-    display: inline-block;
-    flex: 1;
-  }
   .pag {
-    flex: 1;
+    min-width: calc(50% - 8.5rem);
+    margin-right: 1rem;
   }
   .btn2 {
     flex: 0.5;
+  }
+  @include tab {
+    .pag {
+      min-width: auto;
+      margin-right: 0;
+    }
   }
 }
 .pag {
@@ -2570,4 +2594,31 @@
   .ui-tooltip-content {
     font-weight: 500;
   }
+}
+
+
+.veri + .edit-requisites__list {
+  .edit-requisites__item {
+    justify-content: space-between;
+  }
+  .edit-requisites__value {
+    flex: 0;
+  }
+  @include tab {
+    padding: 2.4rem;
+  }
+  @include tab {
+    padding: 1.6rem;
+  }
+}
+
+.form-message-place {
+  text-align: center;
+  width: 100%;
+}
+.green-message {
+  color: $green;
+}
+.red-message {
+  color: $red;
 }

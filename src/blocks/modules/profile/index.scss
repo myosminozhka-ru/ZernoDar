@@ -10,6 +10,11 @@
     border-radius: 2rem;
     background-color: $white;
     @include block-shadow2;
+    &--file {
+      .profile-edit__head {
+        align-items: flex-start;
+      }
+    }
   }
   &__head {
     display: flex;
@@ -21,6 +26,11 @@
   &__mtitle {
     font-size: 2rem;
     font-weight: 500;
+  }
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2.4rem;
   }
   @include tab {
     &__inner {
@@ -65,6 +75,11 @@
     &__mtitle {
       font-size: 2rem;
     }
+    &__actions {
+      flex-direction: column;
+      gap: 1.6rem;
+      padding: 2.4rem;
+    }
   }
   @include mob {
     &__inner {
@@ -89,6 +104,9 @@
     }
     &__mtitle {
       font-size: 1.8rem;
+    }
+    &__actions {
+      padding: 1.6rem;
     }
   }
 }
@@ -196,6 +214,14 @@
       padding: 2.4rem;
       &--logo {
         .edit-contact__value {
+          display: none;
+        }
+      }
+      &.open {
+        .edit-contact__value {
+          display: none;
+        }
+        .edit-contact__body .edit-contact__name {
           display: none;
         }
       }
@@ -393,6 +419,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    label {
+      flex: 7;
+      display: none;
+    }
   }
   &__name {
     flex: 3;
@@ -416,12 +446,11 @@
     }
   }
   &__input {
-    flex: 7;
     padding: 1.4rem;
     background-color: #f8f8f8;
     border: none;
     border-radius: 1.6rem;
-    display: none;
+    width: 100%;
   }
   &__action {
     flex: 10;
@@ -430,13 +459,14 @@
     justify-content: flex-end;
     gap: 1.6rem;
     display: none;
+    margin-top: 2rem;
   }
   &.active {
     .edit-requisites {
       &__value {
         display: none;
       }
-      &__input {
+      &__item label {
         display: block;
       }
       &__action {

@@ -32,6 +32,13 @@
       height: 32rem;
       border-radius: 3.2rem;
       overflow: hidden;
+      *[title="Как добраться"],
+      *[title="Открыть в Яндекс.Картах"],
+      *[title="Доехать на такси"],
+      *[title="Доехать на такси"] + *,
+      *[class$="controls__control_toolbar"] {
+        display: none !important;
+      }
     }
   }
   &__show-on-map {
