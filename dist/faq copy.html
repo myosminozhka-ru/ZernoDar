@@ -512,7 +512,7 @@
         </li>
         
           <li>
-            <a href="#" class="link">Регистрация</a>
+            <a href="#" class="link">FAQ</a>
           </li>
         
       </ul>
@@ -524,182 +524,205 @@
     </div>
   </div>
 </div>
-  <div class="registration">
-  <h1 class="registration__title">Регистрация</h1>
-  <div class="registration__switch">
-    <input type="radio" id="juridical" name="switch" checked />
-    <input type="radio" id="physical" name="switch" />
-    <label for="juridical" class="registration__label" id="juridicalLabel"
-      >Юр. лицо</label
-    >
-    <label for="physical" class="registration__label" id="physicalLabel"
-      >Физ. лицо</label
-    >
-    <div class="registration__slider"></div>
+  <section class="page-banner">
+  <div class="page-banner__inner">
+    <div class="page-banner__bg">
+      <img src="img/faq-bg.jpg" alt="">
+    </div>
+    <div class="page-banner__content">
+      <h1 class="page-banner__title">FAQ</h1>
+      <p class="page-banner__text">Если у вас есть вопросы по продуктам компании, сотрудничеству или хотите <br>
+        стать частью нашей команды, оставьте контакты и мы свяжемся с вами.</p>
+    </div>
   </div>
-  <form method="post" id="juridicalForm" class="registration__block  registration__block--active">
-    <div
-      class="registration__form"
+</section>
+  <div class="accordion">
+  <div class="accordion__item">
+    <input type="checkbox" id="accordion-item-1" class="accordion__input" />
+    <label
+      for="accordion-item-1"
+      class="accordion__button accordion__button--inactive"
     >
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input"
-          placeholder="*ИНН"
-          required
-        />
-        <div class="registration__input-subtitle">После ввода ИНН осуществится проверка </div>
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input"
-          placeholder="*Название организации"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <div class="select select--full select--typeorg">
-          <select name="" id="typeorg" class="" required aria-placeholder="*Тип организации">
-            <option value="" selected disabled>*Тип организации</option>
-            <option value="">Частный производитель</option>
-            <option value="">Мелкое хозяйство</option>
-            <option value="">Среднее хозяйство</option>
-          </select>
-          <!-- <svg>
-            <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
-          </svg> -->
-        </div>
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input phone-input"
-          placeholder="*Телефон"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="email"
-          class="registration__input"
-          placeholder="*Email"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input"
-          placeholder="Контактное лицо"
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input type="text" class="registration__input" placeholder="Адрес" />
-      </label>
-      <label class="registration__input-wrap">
-        <input type="text" class="registration__input" placeholder="Сайт" />
-      </label>
-      <span class="divider"></span>
-      <label class="registration__input-wrap">
-        <input
-          type="password"
-          class="registration__input"
-          placeholder="Пароль"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="password"
-          class="registration__input"
-          placeholder="Повторите пароль"
-          required
-        />
-      </label>
-    </div>
-
-    <div class="registration__confirm">
-      <p>Отправить подтверждающий код</p>
-      <span class="registration__checkboxes">
-        <label>
-          <input type="radio" id="option1" name="radio-group" />
-          <span class="radio-label">Sms по номеру телефона</span>
-        </label>
-        <label>
-          <input type="radio" id="option2" name="radio-group" checked />
-          <span class="radio-label">На email</span>
-        </label>
+      <span class="accordion__number">01/</span>
+      <span class="accordion__text">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit
       </span>
+      <img
+        src="img/sprites/accordion-arrow.svg"
+        alt=""
+        class="accordion__icon"
+      />
+      <img
+        src="img/sprites/accordion-arrow-mob.svg"
+        alt=""
+        class="accordion__icon--mobile"
+      />
+    </label>
+    <div class="accordion__panel">
+      <p class="accordion__content">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+        mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor
+        sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
+        est a, mattis tellus. <br />
+        <br />
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus.
+      </p>
     </div>
-    <div class="registration__submit-wrapper">
-      <button type="submit" class="registration__submit">Продолжить</button>
-    </div>
-  </form>
+  </div>
 
-  <form method="post" id="physicalForm" class="registration__block">
-    <div class="registration__form">
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input phone-input"
-          placeholder="*Телефон"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input"
-          placeholder="*Название организации"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="email"
-          class="registration__input"
-          placeholder="*Email"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input type="text" class="registration__input" placeholder="Адрес" />
-      </label>
-      <span class="divider"></span>
-      <label class="registration__input-wrap">
-        <input
-          type="password"
-          class="registration__input"
-          placeholder="Пароль"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="password"
-          class="registration__input"
-          placeholder="Повторите пароль"
-          required
-        />
-      </label>
-    </div>
-
-    <div class="registration__confirm">
-      <p>Отправить подтверждающий код</p>
-      <span class="registration__checkboxes">
-        <label>
-          <input type="radio" id="option1" name="radio-group" />
-          <span class="radio-label">Sms по номеру телефона</span>
-        </label>
-        <label>
-          <input type="radio" id="option2" name="radio-group" checked />
-          <span class="radio-label">На email</span>
-        </label>
+  <div class="accordion__item">
+    <input type="checkbox" id="accordion-item-2" class="accordion__input" />
+    <label
+      for="accordion-item-2"
+      class="accordion__button accordion__button--inactive"
+    >
+      <span class="accordion__number">02/</span>
+      <span class="accordion__text">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit
       </span>
+      <img
+        src="img/sprites/accordion-arrow.svg"
+        alt=""
+        class="accordion__icon"
+      />
+      <img
+        src="img/sprites/accordion-arrow-mob.svg"
+        alt=""
+        class="accordion__icon--mobile"
+      />
+    </label>
+    <div class="accordion__panel">
+      <p class="accordion__content">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+        mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor
+        sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
+        est a, mattis tellus. <br />
+        <br />
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus.
+      </p>
     </div>
-    <div class="registration__submit-wrapper">
-      <button type="submit" class="registration__submit">Продолжить</button>
+  </div>
+
+  <div class="accordion__item">
+    <input type="checkbox" id="accordion-item-3" class="accordion__input" />
+    <label
+      for="accordion-item-3"
+      class="accordion__button accordion__button--inactive"
+    >
+      <span class="accordion__number">03/</span>
+      <span class="accordion__text">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit
+      </span>
+      <img
+        src="img/sprites/accordion-arrow.svg"
+        alt=""
+        class="accordion__icon"
+      />
+      <img
+        src="img/sprites/accordion-arrow-mob.svg"
+        alt=""
+        class="accordion__icon--mobile"
+      />
+    </label>
+    <div class="accordion__panel">
+      <p class="accordion__content">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+        mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor
+        sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
+        est a, mattis tellus. <br />
+        <br />
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion__item">
+    <input type="checkbox" id="accordion-item-4" class="accordion__input" />
+    <label
+      for="accordion-item-4"
+      class="accordion__button accordion__button--inactive"
+    >
+      <span class="accordion__number">04/</span>
+      <span class="accordion__text">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit
+      </span>
+      <img
+        src="img/sprites/accordion-arrow.svg"
+        alt=""
+        class="accordion__icon"
+      />
+      <img
+        src="img/sprites/accordion-arrow-mob.svg"
+        alt=""
+        class="accordion__icon--mobile"
+      />
+    </label>
+    <div class="accordion__panel">
+      <p class="accordion__content">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+        mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor
+        sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
+        est a, mattis tellus. <br />
+        <br />
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+        molestie, dictum est a, mattis tellus.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div class="faq-form">
+  <h1 class="faq-form__title">Свяжитесь с нами</h1>
+  <p class="faq-form__text">
+    Если у вас есть вопросы по продуктам компании, сотрудничеству или хотите
+    стать частью нашей команды, оставьте контакты и мы свяжемся с вами.
+  </p>
+
+  <form class="faq-form__inputs-wrapper" method="POST" action="#">
+    <div class="faq-form__input-group">
+      <p class="faq-form__input-text">
+        Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+        libero et velit interdum, ac aliquet odio mattis.
+      </p>
+      <label>
+        <input type="text" name="first_name" placeholder="Имя" required />
+      </label>
+      <label>
+        <input type="text" name="last_name" placeholder="Фамилия" required />
+      </label>
+      <label>
+        <input type="tel" name="phone" placeholder="Телефон" required />
+      </label>
+      <label>
+        <input type="email" name="email" placeholder="Email" required />
+      </label>
+      <label>
+        <textarea name="message" placeholder="Сообщение" required></textarea>
+      </label>
+    </div>
+    <div class="faq-form__submit">
+      <button class="faq-form__button btn10" type="submit">
+        Задать вопрос
+      </button>
+      <p class="faq-form__disclaimer">
+        Нажимая «Задать вопрос», вы соглашаетесь с условиями Пользовательского
+        соглашения и Политикой обработки персональных данных
+      </p>
     </div>
   </form>
 </div>
@@ -741,6 +764,12 @@
               </div>
               <div class="footer__col">
                 <div class="footer__soc">
+                  <a href="">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#vk-f"></use>
+                    </svg>
+                    Наша группа ВКонтакте
+                  </a>
                   <a href="">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#tg-f"></use>

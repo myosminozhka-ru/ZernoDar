@@ -850,7 +850,7 @@
     <div class="user-head__ava">
       <img src="img/user-ava.png" alt="">
     </div>
-    <div class="user-head__name">АО "Сельскозозяйственная Маревская Корпорация"</div>
+    <a href="#" class="user-head__name">АО "Сельскозозяйственная Маревская Корпорация"</a>
   </div>
   <div class="user-rating">
     <div class="user-rating__ave-num">4.8</div>
@@ -924,9 +924,9 @@
     </div>
     <div class="card-ad-map__content">
       <div class="card-ad-map__top">
-        <div class="card-ad-map__address">
+        <div class="card-ad-map__address" data-copy-text="copy-address">
           Ульяновская обл., Россия, 433315
-          <div class="copy">
+          <div class="copy" data-copy-trigger="copy-address">
             <svg>
               <use xlink:href="img/sprites/sprite.svg#copy"></use>
             </svg>
@@ -944,6 +944,7 @@
             <use xlink:href="img/sprites/sprite.svg#input-map"></use>
           </svg>
           <input type="text" placeholder="Укажите ваш адрес">
+          <div class="suggestions-suggestions" style=""><div class="suggestions-hint">Выберите вариант или продолжите ввод</div><div class="suggestions-suggestion" data-index="0"><span class="suggestions-value">г <strong>М</strong>осква</span></div><div class="suggestions-suggestion" data-index="1"><span class="suggestions-value"><strong>М</strong>осковская обл</span></div><div class="suggestions-suggestion" data-index="2"><span class="suggestions-value">Ханты-<strong>М</strong>ансийский Автономный округ - Югра</span></div><div class="suggestions-suggestion" data-index="3"><span class="suggestions-value">Респ <strong>М</strong>ордовия</span></div><div class="suggestions-suggestion" data-index="4"><span class="suggestions-value"><strong>М</strong>урманская обл</span></div><div class="suggestions-promo"></div></div>
           <button>Карта</button>
         </div>
         <button class="card-ad-map__calc">Расcчитать расстояние</button>
@@ -959,7 +960,9 @@
 <script>
   try {
     const coord = document.querySelector("#map").getAttribute("data-map-coordinates").split(',').map(c => +c);
-    ymaps.ready(function () {             
+    ymaps.ready(function () {
+      
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       var myMap = new ymaps.Map('map', {
           center: coord,
           zoom: 12,
@@ -995,6 +998,11 @@
         iconImageSize: [30, 42],                // Размер иконки
         iconImageOffset: [-15, -42]             // Смещение иконки
       });
+
+      // Отключение скролла одним пальцем
+      if (isMobile) {
+        myMap.behaviors.disable('drag')
+      }
 
       // Добавление маркера на карту
       myMap.geoObjects.add(myPlacemark);
@@ -1085,9 +1093,14 @@
           });
         })
       })
-
+      var mapDistanceOpened = false;
       document.querySelector('.card-ad-map__input button').addEventListener("click", function() {
         document.querySelector('.card-ad-map__map').classList.toggle('open');
+        mapDistanceOpened = !mapDistanceOpened;
+        mapDistanceOpened ? document.querySelector(".card-ad-map__distance").scrollIntoView({
+          block: 'end', // Выровнять по нижней части экрана
+          behavior: 'smooth' // Плавная прокрутка
+        }) : null;
       })
     });
   } catch(e) {
@@ -1199,7 +1212,7 @@
     <div class="user-head__ava">
       <img src="img/user-ava.png" alt="">
     </div>
-    <div class="user-head__name">АО "Сельскозозяйственная Маревская Корпорация"</div>
+    <a href="#" class="user-head__name">АО "Сельскозозяйственная Маревская Корпорация"</a>
   </div>
   <div class="user-rating">
     <div class="user-rating__ave-num">4.8</div>
@@ -1343,12 +1356,6 @@
               </div>
               <div class="footer__col">
                 <div class="footer__soc">
-                  <a href="">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#vk-f"></use>
-                    </svg>
-                    Наша группа ВКонтакте
-                  </a>
                   <a href="">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#tg-f"></use>

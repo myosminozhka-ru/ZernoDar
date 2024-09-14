@@ -500,210 +500,19 @@
 
 
 <div class="main-wrapper">
-  <div class="brc">
-  <div class="container container--full">
-    <div class="brc__inner">
-      <ul class="brc__list">
-        <li>
-          <svg>
-            <use xlink:href="img/sprites/sprite.svg#left-circle"></use>
-          </svg>
-          <a href="/">Главная</a>
-        </li>
-        
-          <li>
-            <a href="#" class="link">Регистрация</a>
-          </li>
-        
-      </ul>
-      <!-- <div class="brc__arrow">
-        <svg>
-          <use xlink:href="img/sprites/sprite.svg#curve-arrow-right"></use>
-        </svg>
-      </div> -->
+  <div class="page-banner page-banner--letter">
+  <div class="page-banner__inner">
+    <div class="page-banner__bg">
+      <img src="img/letter-banner.jpg" alt="">
+    </div>
+    <div class="page-banner__content">
+      <h1 class="page-banner__title">
+        <img src="img/letter-logo.svg" alt="">
+      </h1>
     </div>
   </div>
 </div>
-  <div class="registration">
-  <h1 class="registration__title">Регистрация</h1>
-  <div class="registration__switch">
-    <input type="radio" id="juridical" name="switch" checked />
-    <input type="radio" id="physical" name="switch" />
-    <label for="juridical" class="registration__label" id="juridicalLabel"
-      >Юр. лицо</label
-    >
-    <label for="physical" class="registration__label" id="physicalLabel"
-      >Физ. лицо</label
-    >
-    <div class="registration__slider"></div>
-  </div>
-  <form method="post" id="juridicalForm" class="registration__block  registration__block--active">
-    <div
-      class="registration__form"
-    >
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input"
-          placeholder="*ИНН"
-          required
-        />
-        <div class="registration__input-subtitle">После ввода ИНН осуществится проверка </div>
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input"
-          placeholder="*Название организации"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <div class="select select--full select--typeorg">
-          <select name="" id="typeorg" class="" required aria-placeholder="*Тип организации">
-            <option value="" selected disabled>*Тип организации</option>
-            <option value="">Частный производитель</option>
-            <option value="">Мелкое хозяйство</option>
-            <option value="">Среднее хозяйство</option>
-          </select>
-          <!-- <svg>
-            <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
-          </svg> -->
-        </div>
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input phone-input"
-          placeholder="*Телефон"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="email"
-          class="registration__input"
-          placeholder="*Email"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input"
-          placeholder="Контактное лицо"
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input type="text" class="registration__input" placeholder="Адрес" />
-      </label>
-      <label class="registration__input-wrap">
-        <input type="text" class="registration__input" placeholder="Сайт" />
-      </label>
-      <span class="divider"></span>
-      <label class="registration__input-wrap">
-        <input
-          type="password"
-          class="registration__input"
-          placeholder="Пароль"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="password"
-          class="registration__input"
-          placeholder="Повторите пароль"
-          required
-        />
-      </label>
-    </div>
-
-    <div class="registration__confirm">
-      <p>Отправить подтверждающий код</p>
-      <span class="registration__checkboxes">
-        <label>
-          <input type="radio" id="option1" name="radio-group" />
-          <span class="radio-label">Sms по номеру телефона</span>
-        </label>
-        <label>
-          <input type="radio" id="option2" name="radio-group" checked />
-          <span class="radio-label">На email</span>
-        </label>
-      </span>
-    </div>
-    <div class="registration__submit-wrapper">
-      <button type="submit" class="registration__submit">Продолжить</button>
-    </div>
-  </form>
-
-  <form method="post" id="physicalForm" class="registration__block">
-    <div class="registration__form">
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input phone-input"
-          placeholder="*Телефон"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="text"
-          class="registration__input"
-          placeholder="*Название организации"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="email"
-          class="registration__input"
-          placeholder="*Email"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input type="text" class="registration__input" placeholder="Адрес" />
-      </label>
-      <span class="divider"></span>
-      <label class="registration__input-wrap">
-        <input
-          type="password"
-          class="registration__input"
-          placeholder="Пароль"
-          required
-        />
-      </label>
-      <label class="registration__input-wrap">
-        <input
-          type="password"
-          class="registration__input"
-          placeholder="Повторите пароль"
-          required
-        />
-      </label>
-    </div>
-
-    <div class="registration__confirm">
-      <p>Отправить подтверждающий код</p>
-      <span class="registration__checkboxes">
-        <label>
-          <input type="radio" id="option1" name="radio-group" />
-          <span class="radio-label">Sms по номеру телефона</span>
-        </label>
-        <label>
-          <input type="radio" id="option2" name="radio-group" checked />
-          <span class="radio-label">На email</span>
-        </label>
-      </span>
-    </div>
-    <div class="registration__submit-wrapper">
-      <button type="submit" class="registration__submit">Продолжить</button>
-    </div>
-  </form>
-</div>
-
+  
 </div>
 
 
@@ -741,6 +550,12 @@
               </div>
               <div class="footer__col">
                 <div class="footer__soc">
+                  <a href="">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#vk-f"></use>
+                    </svg>
+                    Наша группа ВКонтакте
+                  </a>
                   <a href="">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#tg-f"></use>

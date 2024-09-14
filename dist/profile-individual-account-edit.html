@@ -568,11 +568,12 @@
 
 
   <div class="lk-inner">
-    <div class="banner-entity">
+    <div data-tab-edit-block="account-form" data-tab-edit-block-id="individual-account-form">
+      <div class="banner-entity">
   <div class="banner-entity__inner">
     <div class="banner-entity__content">
       <div class="banner-entity__title">Больше доверия пользователей и собственная карточка компании доступна при регистрации юридического лица</div>
-      <a href="#" class="btn11 banner-entity__btn">Зарегистрироваться</a>
+      <a href="#" class="btn11 banner-entity__btn" data-tab-edit-block-trigger="account-form" data-tab-edit-block-trigger-id="business-account-form" data-scroll-to="#inn">Зарегистрироваться</a>
     </div>
     <div class="banner-entity__img banner-entity__img--1">
       <img src="img/banner-entity1.png" alt="">
@@ -585,7 +586,7 @@
     </div>
   </div>
 </div>
-    <div class="profile-edit">
+      <div class="profile-edit">
   <div class="profile-edit__inner">
     <div class="profile-edit__block profile-edit__block--contact">
       <div class="profile-edit__head">
@@ -831,6 +832,668 @@
     </div>
   </div>
 </div>
+    </div>
+    <div data-tab-edit-block="account-form" data-tab-edit-block-id="business-account-form" class="hide">
+      <div class="profile-edit">
+  <div class="profile-edit__inner">
+    <div class="profile-edit__block profile-edit__block--contact">
+      <div class="profile-edit__head">
+        <div class="profile-edit__mtitle">Информация о компании</div>
+        <div class="infotip">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#warning"></use>
+          </svg>
+          Информация видна на сайте
+        </div>
+      </div>
+      <div class="profile-edit__content">
+        <div class="edit-contact">
+  <div class="edit-contact__inner">
+    <div class="edit-contact__list">
+      <div class="edit-contact__item edit-contact__item--logo">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Лого</div>
+          <div class="edit-contact__value"><a href="#">Добавить фотографию</a></div>
+          <div class="edit-contact__change">
+            <div class="edit-contact__logo-change">
+              <div class="edit-contact__logo-img">
+                <img src="img/profile-logo.jpg" alt="">
+              </div>
+              <div class="edit-contact__logo-icon">
+                <img src="img/sprites/camera.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item" id="inn">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Регистрационный ИНН</div>
+          <div class="edit-contact__value">-</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <label class="edit-contact__label">
+              <input class="edit-contact__input" type="text" placeholder="Новое название">
+            </label>
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Название</div>
+          <div class="edit-contact__value">-</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <label class="edit-contact__label">
+              <input class="edit-contact__input" type="text" placeholder="Новое название">
+            </label>
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Телефон</div>
+          <div class="edit-contact__value">+7 000 000 000</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <label class="edit-contact__label">
+              <input class="edit-contact__input" type="text" placeholder="Новое название">
+            </label>
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">
+            <img src="img/sprites/logos_telegram.svg" alt="">
+            Telegram
+          </div>
+          <div class="edit-contact__value">@ignat_ignat</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <label class="edit-contact__label">
+              <input class="edit-contact__input" type="text" placeholder="Новое название">
+            </label>
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">
+            <img src="img/sprites/logos_whatsapp-icon.svg" alt="">
+            Whatsapp
+          </div>
+          <div class="edit-contact__value">+7 000 000 000</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <label class="edit-contact__label">
+              <input class="edit-contact__input" type="text" placeholder="Новое название">
+            </label>
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">
+            <img src="img/sprites/basil_viber-solid.svg" alt="">
+            Viber
+          </div>
+          <div class="edit-contact__value">+7 000 000 000</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <label class="edit-contact__label">
+              <input class="edit-contact__input" type="text" placeholder="Новое название">
+            </label>
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Сайт</div>
+          <div class="edit-contact__value"><a href="#" target="_blank">-</a></div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <label class="edit-contact__label">
+              <input class="edit-contact__input" type="text" placeholder="Новое название">
+            </label>
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Адрес</div>
+          <div class="edit-contact__value">Новгородская область</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <label class="edit-contact__label">
+              <input class="edit-contact__input" type="text" placeholder="Новое название">
+            </label>
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-contact__item">
+        <div class="edit-contact__row">
+          <div class="edit-contact__name">Контактное лицо</div>
+          <div class="edit-contact__value">Иван Иванов</div>
+          <button type="button" class="edit-contact__change js-edit-contact-change">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#edit"></use>
+            </svg>
+            Изменить
+          </button>
+          <button type="button" class="edit-contact__change js-edit-contact-cancel hide">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+            </svg>
+            Отмена
+          </button>
+        </div>
+        <div class="edit-contact__body hide">
+          <div class="edit-contact__row">
+            <div class="edit-contact__name">Новое название</div>
+            <label class="edit-contact__label">
+              <input class="edit-contact__input" type="text" placeholder="Новое название">
+            </label>
+          </div>
+          <div class="edit-contact__row">
+            <div class="edit-contact__name"></div>
+            <div class="edit-contact__action">
+              <button class="btn12 btn12--paleblue edit-contact__save">Сохранить</button>
+              <button class="btn12 btn12--transparent btn12--border btn3--transparent edit-contact__cancel js-edit-contact-cancel" type="button">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="profile-edit__block">
+      <div class="profile-edit__head">
+        <div class="profile-edit__mtitle">О компании</div>
+        <button type="button" class="change-blue js-edit-about-open">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#edit"></use>
+          </svg>
+          Изменить
+        </button>
+        <button type="button" class="change-blue js-edit-about-cancel hide">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+          </svg>
+          Отмена
+        </button>
+      </div>
+      <div class="profile-edit__content">
+        <div class="edit-about">
+  <div class="edit-about__inner">
+    <div class="edit-about__text">
+        <div class="edit-about__text-part">
+          Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+        </div>
+        <div class="edit-about__text-part">
+          <br><br>
+          Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+          <br><br>
+          Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+          <br><br>
+          Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+      </div>
+    </div>
+    <div class="edit-about__body hide">
+      <textarea name="" id="" class="edit-about__textarea">
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+        
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+        
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+        
+        Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. 
+      </textarea>
+      <div class="edit-about__actions">
+        <button class="btn3 edit-about__save">Сохранить</button>
+        <button class="btn3 btn3--transparent edit-about__cancel" type="button">Отмена</button>
+      </div>
+    </div>
+    <div class="edit-about__more">
+      <button class="open-more2"><span class="str">Развернуть</span>
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#arrow-down"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="profile-edit__block">
+      <div class="profile-edit__head">
+        <div class="profile-edit__mtitle">Реквизиты</div>
+        <button type="button" class="change-blue js-edit-requisites-open">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#edit"></use>
+          </svg>
+          Изменить
+        </button>
+        <button type="button" class="change-blue js-edit-requisites-cancel hide">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#cancel"></use>
+          </svg>
+          Отмена
+        </button>
+      </div>
+      <div class="profile-edit__content">
+        <div class="edit-requisites">
+  <div class="edit-requisites__inner">
+    <div class="edit-requisites__list">
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Краткое наименование</div>
+        <div class="edit-requisites__value">АО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Краткое наименование" value='АО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Полное наименование</div>
+        <div class="edit-requisites__value"> АКЦИОНЕРНОЕ ОБЩЕСТВО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Полное наименование" value=' АКЦИОНЕРНОЕ ОБЩЕСТВО "СЕЛЬСКОХОЗЯЙСТВЕННАЯ МАРЁВСКАЯ КОРПОРАЦИЯ"'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Юридический адрес</div>
+        <div class="edit-requisites__value">175353, НОВГОРОДСКАЯ ОБЛАСТЬ, М.О. МАРЁВСКИЙ, С ВЕЛИЛЫ, УЛ СОВЕТОВ, Д. 7, 
+          ПОМЕЩ. 2, КАБ. 15</div>
+        <label>
+            
+          <input class="edit-requisites__input" type="text" placeholder="Юридический адрес" value='175353, НОВГОРОДСКАЯ ОБЛАСТЬ, М.О. МАРЁВСКИЙ, С ВЕЛИЛЫ, УЛ СОВЕТОВ, Д. 7, 
+          ПОМЕЩ. 2, КАБ. 15'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">ИНН:</div>
+        <div class="edit-requisites__value">5300005224</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="ИНН:" value='5300005224'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">ОГРН</div>
+        <div class="edit-requisites__value">1225300003147</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="ОГРН" value='1225300003147'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">КПП</div>
+        <div class="edit-requisites__value">530001001</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="КПП" value='530001001'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Дата регистрации</div>
+        <div class="edit-requisites__value">11 Августа 2022</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Дата регистрации" value='11 Августа 2022'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Тип организации:</div>
+        <div class="edit-requisites__value">Юридическое лицо</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Тип организации:" value='Юридическое лицо'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Статус организации</div>
+        <div class="edit-requisites__value">Действующая</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Статус организации" value='Действующая'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">ФИО руководителя</div>
+        <div class="edit-requisites__value">Духанин Дмитрий Юрьевич</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="ФИО руководителя" value='Духанин Дмитрий Юрьевич'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Должность руководителя</div>
+        <div class="edit-requisites__value">ПРЕЗИДЕНТ</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Должность руководителя" value='ПРЕЗИДЕНТ'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Тип подразделения</div>
+        <div class="edit-requisites__value">Головная организация</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Тип подразделения" value='Головная организация'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Количество филиалов</div>
+        <div class="edit-requisites__value">0</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Количество филиалов" value='0'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Код ОКВЭД</div>
+        <div class="edit-requisites__value">01.11 — основной код ОКВЭД</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Код ОКВЭД" value='01.11 — основной код ОКВЭД'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">Код ОКОПФ</div>
+        <div class="edit-requisites__value">12267</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="Код ОКОПФ" value='12267'>
+        </label>
+      </div>
+      <div class="edit-requisites__item">
+        <div class="edit-requisites__name">ОПФ</div>
+        <div class="edit-requisites__value">Непубличное акционерное общество (НАО)</div>
+        <label>
+          <input class="edit-requisites__input" type="text" placeholder="ОПФ" value='Непубличное акционерное общество (НАО)'>
+        </label>
+      </div>
+    </div>
+    <div class="edit-requisites__action">
+      <button class="btn3 edit-requisites__save js-edit-requisites-save">Сохранить</button>
+      <button class="btn3 btn3--transparent edit-requisites__cancel js-edit-requisites-cancel" type="button">Отмена</button>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="profile-edit__block profile-edit__block--file">
+      <div class="profile-edit__head">
+        <div>
+          <div class="profile-edit__mtitle">Верификация по документам</div>
+          <div class="profile-edit__subtitle">Для верификации необходимо загрузить два документа: <br>
+            Свидетельство о постановке на учет в налоговом органе (Свидетельство ИНН).<br>
+            Приказ о назначении генерального директора.<br>
+            Форматы файлов: PDF, JPG, PNG.<br>
+            Максимальное количество файлов: 2.<br>
+            Размер каждого файла: до 25 МБ<br>
+            Допускаются сканы или фотографии документов.</div>
+        </div>
+        <button type="button" class="btn12 js-send-profile-docs" disabled="true">
+          Отправить
+        </button>
+      </div>
+      <div class="veri">
+  <form action="" method="post" class="veri__inner veri__inner--draganddrop">
+    <div class="veri__bg">
+      <img src="img/doc-bg-before.jpg" alt="" class="">
+    </div>
+    <div class="veri__content">
+      <div class="veri__text veri__text--greeting">
+        <label for="firstDocID" class="veri__link">Переместите файлы сюда или загрузите из документов</label>
+      </div>
+      <div class="dropfile veri__labels hide">
+        <div class="dropfile__list">
+          <!-- <div class="dropfile__item show">
+            <label class="dropfile__add">
+              <input type="file" name="" id="" accept=".png, .jpg, .jpeg, .pdf" hidden>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#plus"></use>
+              </svg>
+            </label>
+            <div class="dropfile__img">
+              <img src="img/picture.jpg" alt="">
+            </div>
+            <div class="dropfile__delete">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#trash"></use>
+              </svg>
+            </div>
+            <div class="dropfile__info">
+              <div class="dropfile__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#picture"></use>
+                </svg>
+              </div>
+              <div class="dropfile__name-wrap">
+                <div class="dropfile__name">Photo halushhalush...</div>
+                <div class="dropfile__size">408 KB</div>
+              </div>
+            </div>
+          </div> -->
+          <div class="dropfile__item active">
+            <label class="dropfile__add">
+              <input type="file" name="firstDocID" id="firstDocID" accept=".png, .jpg, .jpeg, .pdf" hidden>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#plus"></use>
+              </svg>
+            </label>
+            <div class="dropfile__img">
+              <img src="" alt="">
+            </div>
+            <div class="dropfile__delete">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#trash"></use>
+              </svg>
+            </div>
+            <div class="dropfile__info">
+              <div class="dropfile__icon">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#picture"></use>
+                </svg>
+              </div>
+              <div class="dropfile__name-wrap">
+                <div class="dropfile__name"></div>
+                <div class="dropfile__size"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="veri__inner veri__inner--verified hide">
+    <div class="veri__bg">
+      <img src="img/doc-bg-after.jpg" alt="" class="">
+    </div>
+    <div class="veri__content">
+      <div class="veri__text">
+        <div class="veri__title">Верификация пройдена</div>
+        <button type="button" class="veri__subtitle">Изменить документы</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn12 js-send-profile-docs veri__send" disabled="true">
+    Отправить
+  </button>
+</div>
+    </div>
+    <div class="profile-edit__block profile-edit__block--actions">
+      <div class="profile-edit__actions">
+        <button type="button" class="btn12"  data-tab-edit-block-trigger="account-form" data-tab-edit-block-trigger-id="individual-account-form" data-scroll-to="top">
+          Отмена
+        </button>
+        <button type="button" class="btn12" disabled="true">
+          Изменить аккаунт
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
   </div>
 </div>
 
@@ -871,12 +1534,6 @@
               </div>
               <div class="footer__col">
                 <div class="footer__soc">
-                  <a href="">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#vk-f"></use>
-                    </svg>
-                    Наша группа ВКонтакте
-                  </a>
                   <a href="">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#tg-f"></use>

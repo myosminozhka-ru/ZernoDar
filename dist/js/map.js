@@ -76,7 +76,7 @@ addEventListener("DOMContentLoaded", () => {
                       <img src="${warehouse.icon}" alt="">
                     </div>
                     <div>
-                      <div class="map-popup__title">${warehouse.name}</div>
+                      <a href="${warehouse.ownerHref}" class="map-popup__title">${warehouse.name}</a>
                       <div class="map-popup__price">${warehouse.price}</div>
                     </div>
                   </div>
@@ -99,10 +99,23 @@ addEventListener("DOMContentLoaded", () => {
         iconImageOffset: [-15, -42]             // Смещение иконки
       });
       window.catalogMap.geoObjects.add(placemark);
+      placemark.events.add('click', () => window.slideTo(warehouse.id));
     });
   }
 
-  window.removeAllWarehousesOnMap = function showWarehousesOnMap() {
+  window.slideTo = function(id) {
+    try {
+      setTimeout(() => {
+        const index = $(`[data-id="${id}"]`).attr("aria-label").split('/')[0].trim();
+        console.log(index);
+        window.mapSlider.slideTo(index, 100, false);
+      }, 500);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  window.removeAllWarehousesOnMap = function() {
     window.catalogMap.geoObjects.removeAll();
   }
 
@@ -114,7 +127,8 @@ addEventListener("DOMContentLoaded", () => {
       name: "name 1",
       price: "price 1",
       icon: 'img/first-screen1.jpg',
-      tags: ["tag 1", "tag 1"]
+      tags: ["tag 1", "tag 1"],
+      ownerHref: '/href',
     },
     {
       id: '2',
@@ -122,7 +136,8 @@ addEventListener("DOMContentLoaded", () => {
       name: "name 2",
       price: "price 1",
       icon: 'img/first-screen2.jpg',
-      tags: ["tag 1", "tag 1"]
+      tags: ["tag 1", "tag 1"],
+      ownerHref: '/href',
     },
     {
       id: '3',
@@ -130,7 +145,8 @@ addEventListener("DOMContentLoaded", () => {
       name: "name 3",
       price: "price 1",
       icon: 'img/first-screen3.jpg',
-      tags: ["tag 1", "tag 1"]
+      tags: ["tag 1", "tag 1"],
+      ownerHref: '/href',
     },
     {
       id: '4',
@@ -138,7 +154,8 @@ addEventListener("DOMContentLoaded", () => {
       name: "name 4",
       price: "price 1",
       icon: 'img/first-screen1.jpg',
-      tags: ["tag 1", "tag 1"]
+      tags: ["tag 1", "tag 1"],
+      ownerHref: '/href',
     }
   ];
 
