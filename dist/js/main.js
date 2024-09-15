@@ -470,10 +470,15 @@ class Sidebar {
     this.resetListener()
     this.initRange(name, parentSelector)
     this.onChangeRangeCallbacks = []
+    this.onChangeRangeCallback = null
   }
 
   onChangeRange(callback) {
     this.onChangeRangeCallbacks.push(callback)
+  }
+
+  onChangeRangeCurrent(callback) {
+    this.onChangeRangeCallback = callback
   }
 
   clearOnChangeRange() {
@@ -482,6 +487,29 @@ class Sidebar {
 
   callOnChangeRangeCallbacks() {
     this.onChangeRangeCallbacks.forEach(callback => callback());
+  }
+
+  onChangeCurrent(data) {
+    const id = data.input[0].id;
+    const findInstance = this.findCurrentRangeInstance(id);
+    const instance = findInstance.instance;
+    const datas = {id: '', value: '', element: null}
+    if (instance.target === 'from') {
+      datas.id = instance.fromId
+      datas.value = instance.old_from
+      datas.element = $("#" + instance.fromId)
+      // console.log(instance.fromId + ': ' + instance.old_from);
+    } else if (instance.target === 'to') {
+      datas.id = instance.toId
+      datas.value = instance.old_to
+      datas.element = $("#" + instance.toId)
+      // console.log(instance.toId + ': ' + instance.old_to);
+    }
+    return this.onChangeRangeCallback ? this.onChangeRangeCallback(datas) : datas;
+  }
+
+  findCurrentRangeInstance(id) {
+    return window.rangeInstance[this.name].find(instance => instance.instance.input.id == id)
   }
 
   initRange(name, parentSelector) {
@@ -505,22 +533,24 @@ class Sidebar {
           inputTo.value = data.to
           placeholderFromStr.textContent = data.from
           placeholderToStr.textContent = data.to
-          console.log("onChange");
           that.callOnChangeRangeCallbacks()
-          
+          that.onChangeCurrent(data)
         },
         onUpdate: function (data) {
           inputFrom.value = data.from
           inputTo.value = data.to
           placeholderFromStr.textContent = data.from
           placeholderToStr.textContent = data.to
-          console.log("onUpdate");
           that.callOnChangeRangeCallbacks()
+          that.onChangeCurrent(data)
         }
       });
 
       // 2. Save instance to variable
       const rangeInstance = $(inputRange).data("ionRangeSlider");
+      rangeInstance.toId = inputTo.id;
+      rangeInstance.fromId = inputFrom.id;
+      
       rangeInstanceArray.push({
         instance: rangeInstance,
         resetInputs,
@@ -1497,16 +1527,31 @@ addEventListener("DOMContentLoaded", () => {
     copy: new Copy(),
   };
 
-  window.octo.catalogSidebar.onChangeRange(() => {
-    // window.rangeInstance.catalogSidebar - спиоск ползунов на боковом сайдбаре
-    if (window.rangeInstance?.catalogSidebar?.length) {
-      window.rangeInstance?.catalogSidebar.forEach(i => {
-        // при изменении ползунка или ручного ввода инпути снизу
-        // выводит в консоль каждый инпут с id и value
-        console.log(i.instance.input.id + ': ' + i.instance.input.value)
-      })
-    }
-  })
+  function debounce(func, delay) {
+    let timeoutId;
+    return function () {
+      const context = this;
+      const args = arguments;
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(context, args);
+      }, delay);
+    };
+  }
+  window.octo.catalogSidebar.onChangeRangeCurrent(debounce(function (data) {
+    // в data данные текущего ползунка
+    console.log(data)
+  }, 2000));
+  // window.octo.catalogSidebar.onChangeRange(debounce(function (e) {
+  //   // window.rangeInstance.catalogSidebar - спиоск ползунов на боковом сайдбаре
+  //   if (window.rangeInstance?.catalogSidebar?.length) {
+  //     window.rangeInstance?.catalogSidebar.forEach(i => {
+  //       // при изменении ползунка или ручного ввода инпути снизу
+  //       // выводит в консоль каждый инпут с id и value
+  //       console.log(i.instance.input.id + ': ' + i.instance.input.value)
+  //     })
+  //   }
+  // }, 2000));
   // window.octo.textSellerModal.open()
   // $('[data-filter-geo="range_container"] input').ionRangeSlider({
   //   onChange: function (data) {
