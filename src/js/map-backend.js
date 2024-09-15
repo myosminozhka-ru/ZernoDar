@@ -76,7 +76,7 @@ addEventListener("DOMContentLoaded", () => {
                       <img src="${warehouse.icon}" alt="">
                     </div>
                     <div>
-                      <a href="${warehouse.href}" class="map-popup__title">${warehouse.name}</a>
+                      <a href="${warehouse.href}" target="_black" class="map-popup__title">${warehouse.name}</a>
                       <div class="map-popup__price">${warehouse.price}</div>
                     </div>
                   </div>
@@ -106,7 +106,7 @@ addEventListener("DOMContentLoaded", () => {
   window.slideTo = function(id) {
     try {
       setTimeout(() => {
-        const index = $(`[data-id="${id}"]`).attr("aria-label").split('/')[0].trim();
+        const index = $(`[data-item-id="${id}"]`).attr("aria-label").split('/')[0].trim();
         console.log(index);
         window.mapSlider.slideTo(index, 100, false);
       }, 500);
