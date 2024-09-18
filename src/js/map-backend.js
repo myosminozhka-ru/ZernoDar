@@ -1,4 +1,5 @@
 addEventListener("DOMContentLoaded", () => {
+  const mediaQuery = window.matchMedia("(max-width: 1023px)");
   // выпадашки select
   $('[data-select="name_44"]').selectmenu({
     classes: {
@@ -19,6 +20,11 @@ addEventListener("DOMContentLoaded", () => {
       console.log(event, ui);
     },
   });
+
+  // скрыть footer
+  if ($('.app').length) {
+    $('.footer').css({display: 'none'})
+  }
 
   // фильтр модалка
   // открыть window.modalMapFilter.open()
@@ -68,7 +74,7 @@ addEventListener("DOMContentLoaded", () => {
     warehouses.forEach(function (warehouse) {
       var placemark = new ymaps.Placemark(warehouse.coordinates, {
         // Данные для попапа
-        balloonContent: `
+        balloonContent: !mediaQuery.matches ? `
               <div class="map-popup">
                 <div class="map-popup__inner">
                   <div class="map-popup__top">
@@ -90,7 +96,7 @@ addEventListener("DOMContentLoaded", () => {
                   </div>
                 </div>
               </div>
-            `
+            ` : ``
       }, {
         // Опции для кастомной иконки
         iconLayout: 'default#image',
@@ -103,15 +109,44 @@ addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  window.slideTo = function(id) {
+  window.lastClickedCatalogMapPlacemarkId = null;
+
+  window.slideTo = function(idParam) {
     try {
       setTimeout(() => {
-        const index = $(`[data-item-id="${id}"]`).attr("aria-label").split('/')[0].trim();
+        let id = idParam;
+        if (!id && window.lastClickedCatalogMapPlacemarkId) {
+          id = window.lastClickedCatalogMapPlacemarkId;
+        }
+        window.lastClickedCatalogMapPlacemarkId = id;
+        const index = $(`[data-item-id="${id}"]`).attr("aria-label").split('/')[0].trim() - 1;
         console.log(index);
         window.mapSlider.slideTo(index, 100, false);
+        window.catalogMapSliderView(true);
       }, 500);
     } catch (error) {
+      window.catalogMapSliderView(false);
       console.error(error);
+    }
+  }
+
+  $(document).on('click', '.app__sidbar', (e) => {
+    if ($('.app__sidbar').is(e.target)) {
+      window.catalogMapSliderView(false);
+    }
+  })
+
+  $(document).on('click', '.app__sidbar-open .btn3', (e) => {
+    window.catalogMapSliderView(true);
+  })
+
+  window.catalogMapSliderView = function(action) {
+    if (action) {
+      $('.app__sidbar').addClass('open');
+      $('.app__sidbar-open').addClass('close');
+    } else {
+      $('.app__sidbar').removeClass('open');
+      $('.app__sidbar-open').removeClass('close');
     }
   }
 
@@ -130,6 +165,33 @@ addEventListener("DOMContentLoaded", () => {
     //   tags: ["tag 1", "tag 1"],
     //   ownerHref: '/href',
     // },
+    // {
+    //   id: '2',
+    //   coordinates: [55.813376, 37.630301],
+    //   name: "name 2",
+    //   price: "price 1",
+    //   icon: 'img/first-screen2.jpg',
+    //   tags: ["tag 1", "tag 1"]
+    //   ownerHref: '/href',
+    // },
+    // {
+    //   id: '3',
+    //   coordinates: [55.742848, 37.605283],
+    //   name: "name 3",
+    //   price: "price 1",
+    //   icon: 'img/first-screen3.jpg',
+    //   tags: ["tag 1", "tag 1"]
+    //   ownerHref: '/href',
+    // },
+    // {
+    //   id: '4',
+    //   coordinates: [55.750630, 37.674063],
+    //   name: "name 4",
+    //   price: "price 1",
+    //   icon: 'img/first-screen1.jpg',
+    //   tags: ["tag 1", "tag 1"]
+    //   ownerHref: '/href',
+    // }
   ];
 
   // debounce функция, которая «откладывает» вызов другой функции до того момента, когда с последнего вызова пройдёт определённое количество времени

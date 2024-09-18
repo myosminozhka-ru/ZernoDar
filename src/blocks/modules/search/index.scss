@@ -45,8 +45,8 @@
       justify-content: space-between;
     }
     &__tab {
-      font-size: 1.4rem;
-      padding: 1.2rem 0.8rem;
+      font-size: 1.6rem;
+      padding: 1.4rem 1rem;
       border-bottom: 0.1rem solid transparent;
     }
   }
@@ -127,6 +127,40 @@
     // box-shadow: none;
   }
   @include tab {
+    padding-top: 0.8rem;    
+    padding-right: 0;
+    height: calc(100vh - 8rem);
+    
+    @include mob {
+      height: calc(100vh - 5.6rem);
+    }
+    &__inner {
+      width: 100%;
+      border-radius: 1.6rem;
+      padding: 2.4rem;
+      @include mob {
+        padding: 1.6rem;
+      }
+    }
+    &__tabs {
+      justify-content: space-between;
+    }
+    &__tab {
+      font-size: 1.8rem;
+      padding: 1rem 0;
+      border-bottom: 0.1rem solid transparent;
+    }
+    .card-ad-relative {
+      box-shadow: none;
+      margin: 0;
+    }
+    .card-ad-relative__thead,
+    .card-ad-relative__tbody {
+      box-shadow: none;
+    }
+
+  }
+  @include mob {
     padding-top: 0.8rem;    
     padding-right: 0;
     height: calc(100vh - 8rem);

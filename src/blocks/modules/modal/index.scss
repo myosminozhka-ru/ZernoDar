@@ -211,6 +211,16 @@
   @include tab {
     max-width: auto;
     &__title {
+      font-size: 2.2rem;
+      margin-bottom: 1.6rem;
+    }
+    &__content {
+      font-size: 1.6rem;
+    }
+  }
+  @include mob {
+    max-width: auto;
+    &__title {
       font-size: 2rem;
       margin-bottom: 1.6rem;
     }
@@ -287,6 +297,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    white-space: nowrap;
   }
   &__inner {
     display: flex;
@@ -314,8 +325,21 @@
   }
   @include tab {
     &__point {
+      font-size: 1.6rem;
+      padding: 0 1.2rem;
+    }
+    &__inner {
+      gap: 1.4rem;
+    }
+    label {
+      height: 3.4rem;
+      width: 3.4rem;
+    }
+  }
+  @include mob {
+    &__point {
       font-size: 1.4rem;
-      padding: 0 1.6rem;
+      padding: 0 1rem;
     }
     &__inner {
       gap: 1.2rem;

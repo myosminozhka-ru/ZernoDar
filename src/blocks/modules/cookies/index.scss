@@ -21,6 +21,10 @@
       }
     }
   }
+  &__btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
   @include tab {
     padding: 2.4rem;
     &__inner {
