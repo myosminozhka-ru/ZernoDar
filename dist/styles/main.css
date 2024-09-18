@@ -428,6 +428,10 @@ template {
   overflow-wrap: break-word;
 }
 
+textarea {
+  resize: none;
+}
+
 html {
   font-family: "TRY Grtsk";
   background-color: #FDFDFD;
@@ -2551,7 +2555,6 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  flex-shrink: 0;
 }
 
 .user-contact__link svg,
@@ -2855,7 +2858,8 @@ a {
 }
 
 .veri + .edit-requisites__list .edit-requisites__value {
-  flex: 0;
+  flex: 1;
+  text-align: right;
 }
 
 .form-message-place {
@@ -3493,6 +3497,7 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
+  white-space: nowrap;
 }
 
 .stars__inner {
@@ -4300,7 +4305,8 @@ a {
   color: #2C2C31;
 }
 
-.catalog-map button {
+.catalog-map button,
+.catalog-map a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -4984,6 +4990,7 @@ a {
   display: flex;
   align-items: center;
   gap: 2.4rem;
+  flex-shrink: 0;
 }
 
 .card-user-wrapper {
@@ -6039,6 +6046,11 @@ a {
   text-decoration: underline;
 }
 
+.cookies__btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .banner-404 {
   padding: 0 3.2rem;
   margin-bottom: 10rem;
@@ -6642,10 +6654,6 @@ a {
 
 .accordion__button--inactive .accordion__icon {
   transform: rotate(0deg);
-}
-
-.accordion__button:hover {
-  background-color: #f8f1ec;
 }
 
 .accordion__text {
@@ -8614,6 +8622,10 @@ a {
   outline: none;
 }
 
+.ui-selectmenu-menu .ui-state-disabled {
+  display: none;
+}
+
 .ui-selectmenu-button-typeorg.ui-button {
   width: 100%;
   background: #f8f8f8;
@@ -8903,6 +8915,8 @@ a {
 .my-input {
   width: 100%;
   padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .my-input--50 {
@@ -8920,7 +8934,8 @@ a {
 .my-input__label {
   font-size: 1.8rem;
   font-weight: 500;
-  margin-bottom: 1.6rem;
+  margin-bottom: auto;
+  padding-bottom: 1.6rem;
 }
 
 .my-input__input,
@@ -9637,12 +9652,12 @@ a {
   }
 
   .my-tag {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
   }
 
   .tag1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
   }
 
@@ -9660,12 +9675,12 @@ a {
   }
 
   .tag3 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     padding: 1.6rem 1.2rem;
   }
 
   .tag-torg {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
   }
 
@@ -9675,18 +9690,18 @@ a {
   }
 
   .tag-torg2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
   }
 
   .tag-user {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
   }
 
   .btn3 {
     padding: 1.2rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     border-radius: 0.8rem;
   }
 
@@ -9824,7 +9839,7 @@ a {
   }
 
   .brc {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     overflow: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -9904,13 +9919,13 @@ a {
   }
 
   .select svg {
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
   }
 
   .select select {
-    height: 4.6rem;
-    font-size: 1.2rem;
+    height: 5.4rem;
+    font-size: 1.6rem;
   }
 
   .radio-group {
@@ -9958,6 +9973,35 @@ a {
     height: 2.695rem;
   }
 
+  .user-contact {
+    font-size: 1.8rem;
+  }
+
+  .user-contact__item {
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .user-contact__links {
+    gap: 0.8rem;
+  }
+
+  .user-contact__links--lg .user-contact__link svg,
+  .user-contact__links--lg .user-contact__link img {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .user-contact__link {
+    gap: 1rem;
+  }
+
+  .user-contact__link svg,
+  .user-contact__link img {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
   .to-seller {
     gap: 0.8rem;
   }
@@ -9985,6 +10029,10 @@ a {
   .to-favourite--sm svg {
     width: 2.4rem;
     height: 2.4rem;
+  }
+
+  .infotip {
+    font-size: 1.4rem;
   }
 
   .change-blue {
@@ -10095,8 +10143,8 @@ a {
   }
 
   .header__act {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 4rem;
+    height: 4rem;
     padding: 0.6rem;
   }
 
@@ -10118,8 +10166,8 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 1.6rem;
-    height: 1.3rem;
+    width: 2rem;
+    height: 1.8rem;
     position: relative;
     z-index: 21;
   }
@@ -10136,11 +10184,11 @@ a {
   }
 
   .header__burger.active:before {
-    transform: translateY(0.5rem) rotate(135deg);
+    transform: translateY(0.8rem) rotate(135deg);
   }
 
   .header__burger.active:after {
-    transform: translateY(-0.6rem) rotate(-135deg);
+    transform: translateY(-0.8rem) rotate(-135deg);
   }
 
   .header__burger.active div {
@@ -10171,7 +10219,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: 500;
     gap: 0;
   }
@@ -10185,8 +10233,8 @@ a {
   }
 
   .nav__list > li svg {
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
   }
 
   .nav__list > li:hover {
@@ -10195,7 +10243,7 @@ a {
 
   .nav__list a {
     display: inline-block;
-    padding: 1.6rem 0;
+    padding: 2rem 0;
   }
 
   .nav__list a:hover {
@@ -10230,14 +10278,14 @@ a {
   }
 
   .header-search__magnific svg {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   .header-search__input {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     flex-grow: 1;
-    padding: 0.8rem;
+    padding: rem;
     border-bottom: none;
   }
 
@@ -10280,7 +10328,7 @@ a {
   }
 
   .nav-drop__left {
-    gap: 1.6rem;
+    gap: 2rem;
     padding-right: 0;
     border-right: none;
   }
@@ -10298,7 +10346,7 @@ a {
     align-items: center;
     margin-right: 0;
     padding: 0;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
 
@@ -10347,7 +10395,7 @@ a {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 4rem;
     margin-right: 0;
   }
 
@@ -10365,7 +10413,7 @@ a {
   }
 
   .nav-drop__list a {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0;
     font-weight: 400;
   }
@@ -10506,12 +10554,12 @@ a {
   }
 
   .modal-message__title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 1.6rem;
   }
 
   .modal-message__content {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .modal-content .my-input-wrap {
@@ -10531,17 +10579,17 @@ a {
   }
 
   .stars__point {
-    font-size: 1.4rem;
-    padding: 0 1.6rem;
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
   }
 
   .stars__inner {
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 
   .stars label {
-    height: 3rem;
-    width: 3rem;
+    height: 3.4rem;
+    width: 3.4rem;
   }
 
   .modalVerifyAccount {
@@ -11214,7 +11262,7 @@ a {
   .filter__item {
     margin-bottom: 2.4rem;
     padding-bottom: 2.4rem;
-    border-bottom: 1px solid #E6E6E6;
+    border-bottom: 0.1 solid #E6E6E6;
   }
 
   .filter__item:last-child {
@@ -11224,7 +11272,7 @@ a {
   }
 
   .filter__title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .filter__allcaterories-wrap {
@@ -11237,40 +11285,40 @@ a {
   }
 
   .filter__allcaterories-wrap svg {
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     object-fit: contain;
   }
 
   .filter__allcaterories-title {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .checkbox-list {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .checkbox-list i {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .filter-range__label,
   .map-radius-range__label {
     color: #8C8C8C;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .filter-range__input,
   .filter-range__val,
   .map-radius-range__input,
   .map-radius-range__val {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .filter-range__distance,
   .map-radius-range__distance {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .map-point {
@@ -12013,13 +12061,13 @@ a {
   }
 
   .card-rating-modal__item {
-    font-size: 1.4rem;
-    padding: 1.4rem 1.6rem;
-    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    padding: 1.6rem 1.8rem;
+    border-radius: 1rem;
   }
 
   .card-rating-modal__title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .card-rating-modal__table {
@@ -12028,15 +12076,15 @@ a {
 
   .card-rating-modal__thead {
     display: flex;
-    gap: 0.8rem;
+    gap: 1rem;
     margin-bottom: 1.6rem;
   }
 
   .card-rating-modal__thead button {
     padding: 1.6rem;
     border-radius: 10rem;
-    border: 0.1 solid #E6E6E6;
-    font-size: 1.2rem;
+    border: 0.1rem solid #E6E6E6;
+    font-size: 1.6rem;
   }
 
   .card-rating-modal__thead button.active {
@@ -12119,7 +12167,7 @@ a {
   .news-subs__input {
     border-radius: 0.8rem;
     padding: 1.3rem 0.8rem;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .news-subs__btn {
@@ -12128,7 +12176,7 @@ a {
   }
 
   .news-subs__policy {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .article {
@@ -13447,8 +13495,8 @@ a {
   }
 
   .main-tab__tab {
-    font-size: 1.4rem;
-    padding: 1.2rem 0.8rem;
+    font-size: 1.6rem;
+    padding: 1.4rem 1rem;
     border-bottom: 0.1rem solid transparent;
   }
 
@@ -13469,7 +13517,7 @@ a {
   }
 
   .drop-search__tab {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     padding: 1rem 0;
     border-bottom: 0.1rem solid transparent;
   }
@@ -13558,12 +13606,12 @@ a {
   }
 
   .payment-details__card img {
-    width: 4rem;
-    height: 3rem;
+    width: 6rem;
+    height: 4rem;
   }
 
   .payment-details__card > span {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .payment-details__card .card-type {
@@ -13605,8 +13653,8 @@ a {
   .payment-details__toggle-mob .switch {
     position: relative;
     display: inline-block;
-    width: 3.6rem;
-    height: 2.2rem;
+    width: 4.6rem;
+    height: 2.6rem;
   }
 
   .payment-details__toggle-mob .switch input {
@@ -13630,8 +13678,8 @@ a {
   .payment-details__toggle-mob .slider:before {
     position: absolute;
     content: "";
-    height: 1.6rem;
-    width: 1.6rem;
+    height: 2rem;
+    width: 2rem;
     left: 0.3rem;
     bottom: 0.32rem;
     background-color: white;
@@ -13644,7 +13692,7 @@ a {
   }
 
   .payment-details__toggle-mob input:checked + .slider:before {
-    transform: translateX(1.3rem);
+    transform: translateX(2rem);
   }
 
   .payment-details__toggle-mob .switch input {
@@ -13827,12 +13875,12 @@ a {
 
   .edit-contact__name {
     flex: unset;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     order: -2;
   }
 
   .edit-contact__value {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     flex: unset;
     width: 100%;
   }
@@ -14155,11 +14203,7 @@ a {
   }
 
   .security__label {
-    font-size: 1.4rem;
-  }
-
-  .security__label {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .security__toggle img {
@@ -14759,7 +14803,7 @@ a {
   }
 
   .my-notification {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .my-input-wrap {
@@ -14787,7 +14831,7 @@ a {
   .my-input__label {
     font-size: 1.6rem;
     font-weight: 400;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
   }
 
   .my-input__input,
@@ -15424,14 +15468,29 @@ a {
     height: 2rem;
   }
 
-  .tag-torg {
+  .tag3 {
     font-size: 1.2rem;
+    padding: 1.6rem 1.2rem;
+  }
+
+  .tag-torg {
+    font-size: 1.4rem;
     padding: 0.8rem 1.2rem;
   }
 
   .tag-torg--transparent {
     background-color: transparent;
     padding: 0;
+  }
+
+  .tag-torg2 {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .tag-user {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.2rem;
   }
 
   .btn3 {
@@ -15629,6 +15688,16 @@ a {
     font-size: 1.4rem;
   }
 
+  .select svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .select select {
+    height: 4.6rem;
+    font-size: 1.2rem;
+  }
+
   .radio-group {
     gap: 0.8rem;
   }
@@ -15781,6 +15850,10 @@ a {
     height: 2rem;
   }
 
+  .infotip {
+    font-size: 1.2rem;
+  }
+
   .ui-selectmenu-button-mini.ui-button {
     width: 9rem;
     border-radius: 0.8rem;
@@ -15871,12 +15944,162 @@ a {
     padding: 5rem 1.6rem;
   }
 
+  .nav__list {
+    font-size: 1.2rem;
+  }
+
   .header-search {
     padding: 1.221rem 1.6rem;
   }
 
   .header-search.open {
     transform: translateY(0%);
+  }
+
+  .header-search__magnific {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .header-search__magnific svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .header-search__input {
+    font-size: 1.2rem;
+    flex-grow: 1;
+    padding: 0.8rem;
+    border-bottom: none;
+  }
+
+  .header-search__close {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: translateY(0);
+  }
+
+  .nav-drop {
+    position: static;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    padding-bottom: 1.4rem;
+  }
+
+  .nav-drop.open {
+    display: block;
+  }
+
+  .nav-drop--supply {
+    padding-left: 0;
+  }
+
+  .nav-drop--demand {
+    padding-left: 0;
+  }
+
+  .nav-drop__inner {
+    display: block;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .nav-drop__left {
+    gap: 1.6rem;
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .nav-drop__title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .nav-drop__title .str {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .nav-drop__title.active .nav-drop__arrow {
+    transform: rotate(270deg);
+  }
+
+  .nav-drop__icon {
+    display: none;
+  }
+
+  .nav-drop__arrow {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0;
+    margin-right: 0.4rem;
+    transform: rotate(180deg);
+  }
+
+  .nav-drop__right {
+    padding-left: 0;
+  }
+
+  .nav-drop__block {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-drop__block.open {
+    display: block;
+  }
+
+  .nav-drop__subtitle {
+    display: none;
+  }
+
+  .nav-drop__lists {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+  }
+
+  .nav-drop__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 0;
+  }
+
+  .nav-drop__list:last-child {
+    margin-right: 0;
+  }
+
+  .nav-drop__list li {
+    white-space: wrap;
+    padding-left: 2.4rem;
+  }
+
+  .nav-drop__list span {
+    display: none;
+  }
+
+  .nav-drop__list a {
+    font-size: 1.4rem;
+    padding: 0;
+    font-weight: 400;
   }
 
   .footer {
@@ -16002,6 +16225,33 @@ a {
     border-radius: 0.8rem;
     padding: 0.8rem;
     margin-bottom: 1.6rem;
+  }
+
+  .modal-message {
+    max-width: auto;
+  }
+
+  .modal-message__title {
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .modal-message__content {
+    font-size: 1.4rem;
+  }
+
+  .stars__point {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+  }
+
+  .stars__inner {
+    gap: 1.2rem;
+  }
+
+  .stars label {
+    height: 3rem;
+    width: 3rem;
   }
 
   .modalVerifyAccount__title {
@@ -16201,10 +16451,73 @@ a {
     padding: 1.5rem 0.8rem;
   }
 
-  .catalog-map button {
+  .catalog-map button,
+  .catalog-map a {
     font-size: 1.2rem;
     padding: 1.5rem 1.6rem;
     border-radius: 0.8rem;
+  }
+
+  .filter__item {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid #E6E6E6;
+  }
+
+  .filter__item:last-child {
+    margin-bottom: 0;
+    border: none;
+    padding-bottom: 0;
+  }
+
+  .filter__title {
+    font-size: 1.4rem;
+  }
+
+  .filter__allcaterories-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 0.8rem;
+    border-radius: 0.8rem;
+    background: #F8F8F8;
+  }
+
+  .filter__allcaterories-wrap svg {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+
+  .filter__allcaterories-title {
+    font-size: 1.2rem;
+  }
+
+  .checkbox-list {
+    font-size: 1.4rem;
+  }
+
+  .checkbox-list i {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .filter-range__label,
+  .map-radius-range__label {
+    color: #8C8C8C;
+    font-size: 1.4rem;
+  }
+
+  .filter-range__input,
+  .filter-range__val,
+  .map-radius-range__input,
+  .map-radius-range__val {
+    font-size: 1.2rem;
+  }
+
+  .filter-range__distance,
+  .map-radius-range__distance {
+    font-size: 1.2rem;
   }
 
   .map-point__inner {
@@ -16526,6 +16839,50 @@ a {
     font-size: 1.4rem;
   }
 
+  .card-rating-modal {
+    min-width: auto;
+  }
+
+  .card-rating-modal__item {
+    font-size: 1.4rem;
+    padding: 1.4rem 1.6rem;
+    border-radius: 0.8rem;
+  }
+
+  .card-rating-modal__title {
+    font-size: 1.4rem;
+  }
+
+  .card-rating-modal__table {
+    display: none;
+  }
+
+  .card-rating-modal__thead {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .card-rating-modal__thead button {
+    padding: 1.6rem;
+    border-radius: 10rem;
+    border: 0.1 solid #E6E6E6;
+    font-size: 1.2rem;
+  }
+
+  .card-rating-modal__thead button.active {
+    background-color: #ECF0F4;
+    border-color: #ECF0F4;
+  }
+
+  .card-rating-modal__mobile {
+    display: block;
+  }
+
+  .card-rating-modal__mobile .card-rating-modal__list.hide {
+    display: none;
+  }
+
   .news__head {
     padding: 0 1.6rem;
   }
@@ -16552,6 +16909,25 @@ a {
 
   .card-news__descrtiption {
     font-size: 1.4rem;
+  }
+
+  .news-subs {
+    width: 100%;
+  }
+
+  .news-subs__input {
+    border-radius: 0.8rem;
+    padding: 1.3rem 0.8rem;
+    font-size: 1.2rem;
+  }
+
+  .news-subs__btn {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .news-subs__policy {
+    font-size: 1.2rem;
   }
 
   .article {
@@ -17304,6 +17680,38 @@ a {
     border-bottom: 0.1rem solid transparent;
   }
 
+  .drop-search {
+    padding-top: 0.8rem;
+    padding-right: 0;
+    height: calc(100vh - 8rem);
+  }
+
+  .drop-search__inner {
+    width: 100%;
+    border-radius: 1.6rem;
+    padding: 2.4rem;
+  }
+
+  .drop-search__tabs {
+    justify-content: space-between;
+  }
+
+  .drop-search__tab {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 0.1rem solid transparent;
+  }
+
+  .drop-search .card-ad-relative {
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .drop-search .card-ad-relative__thead,
+  .drop-search .card-ad-relative__tbody {
+    box-shadow: none;
+  }
+
   .payment-details__auto-section p {
     font-size: 1.4rem;
     padding-left: 1.6rem;
@@ -17323,6 +17731,79 @@ a {
   .payment-details__cancel svg {
     width: 2rem;
     height: 2rem;
+  }
+
+  .payment-details__card {
+    font-size: 1.4rem;
+    color: #8c8c8c;
+  }
+
+  .payment-details__card img {
+    width: 4rem;
+    height: 3rem;
+  }
+
+  .payment-details__card > span {
+    font-size: 1.4rem;
+  }
+
+  .payment-details__card .card-type {
+    display: none;
+  }
+
+  .payment-details__toggle-mob {
+    display: block;
+    padding-top: 0.6rem;
+  }
+
+  .payment-details__toggle-mob .switch {
+    position: relative;
+    display: inline-block;
+    width: 3.6rem;
+    height: 2.2rem;
+  }
+
+  .payment-details__toggle-mob .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .payment-details__toggle-mob .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 3.4rem;
+  }
+
+  .payment-details__toggle-mob .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.6rem;
+    width: 1.6rem;
+    left: 0.3rem;
+    bottom: 0.32rem;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .payment-details__toggle-mob input:checked + .slider {
+    background-color: #0e582d;
+  }
+
+  .payment-details__toggle-mob input:checked + .slider:before {
+    transform: translateX(1.3rem);
+  }
+
+  .payment-details__toggle-mob .switch input {
+    width: 100%;
+    height: 100%;
   }
 
   .payment-card {
@@ -17582,6 +18063,10 @@ a {
 
   .security__info {
     font-size: 1.4rem;
+  }
+
+  .security__label {
+    font-size: 1.2rem;
   }
 
   .security__toggle img {
@@ -17993,7 +18478,7 @@ a {
   }
 
   .my-notification {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .my-input-wrap {
@@ -18021,7 +18506,7 @@ a {
   .my-input__label {
     font-size: 1.4rem;
     font-weight: 400;
-    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
   }
 
   .my-input__input,
@@ -18226,5 +18711,15 @@ a {
   .app-map #map-search {
     height: calc(100vh - 6.3rem);
     border-radius: 0;
+  }
+}
+
+@media (max-width: 400px) and (max-width: 400px) {
+  .drop-search {
+    height: calc(100vh - 5.6rem);
+  }
+
+  .drop-search__inner {
+    padding: 1.6rem;
   }
 }
