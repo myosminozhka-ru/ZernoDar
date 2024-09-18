@@ -611,7 +611,9 @@
   }
 }
 
-
+.ui-selectmenu-menu .ui-state-disabled {
+  display: none;
+}
 
 .ui-selectmenu-button-typeorg.ui-button {
   width: 100%;

@@ -282,7 +282,7 @@
       color: $black;
     }
   }
-  button {
+  button, a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -307,7 +307,7 @@
       font-size: 1.2rem;
       padding: 1.5rem 0.8rem;
     }
-    button {
+    button, a {
       font-size: 1.2rem;
       padding: 1.5rem 1.6rem;
       border-radius: 0.8rem;
@@ -334,6 +334,37 @@
     width: 100%;
   }
   @include tab {
+    &__item {
+      margin-bottom: 2.4rem;
+      padding-bottom: 2.4rem;
+      border-bottom: 0.1 solid $lightgrey;
+      &:last-child {
+        margin-bottom: 0;
+        border: none;
+        padding-bottom: 0;
+      }
+    }
+    &__title {
+      font-size: 1.8rem;
+    }
+    &__allcaterories-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.6rem 0.8rem;
+      border-radius: 0.8rem;
+      background: $bckgrnd2;
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        object-fit: contain;
+      }
+    }
+    &__allcaterories-title {
+      font-size: 1.6rem;
+    }
+  }
+  @include mob {
     &__item {
       margin-bottom: 2.4rem;
       padding-bottom: 2.4rem;
@@ -446,6 +477,13 @@
     background-image: url(../img/sprites/checkbox-green.svg);
   }
   @include tab {
+    font-size: 1.6rem;
+    i {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  @include mob {
     font-size: 1.4rem;
     i {
       width: 1.8rem;
@@ -540,6 +578,19 @@
     }
   }
   @include tab {
+    &__label {
+      color: $darkgrey;
+      font-size: 1.6rem;
+    }
+    &__input,
+    &__val {
+      font-size: 1.5rem;
+    }
+    &__distance {
+      font-size: 1.4rem;
+    }
+  }
+  @include mob {
     &__label {
       color: $darkgrey;
       font-size: 1.4rem;
