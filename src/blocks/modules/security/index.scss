@@ -131,10 +131,10 @@
     width: 20rem;
 
     @include tab {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
 
-    @include tab {
+    @include mob {
       font-size: 1.2rem;
     }
   }

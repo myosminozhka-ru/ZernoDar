@@ -1351,8 +1351,8 @@ function publishTime() {
     siblings.removeClass('open')
     parent.addClass('open')
   }
-  changePublish(null, '[name="publish"]')
-  $('[name="publish"]').on('change', changePublish)
+  changePublish(null, '[name="PUBLISH"]')
+  $('[name="PUBLISH"]').on('change', changePublish)
 }
 // ==== publish time end
 

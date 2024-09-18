@@ -131,7 +131,7 @@
     background-color: transparent;
   }
   @include tab {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
   }
   @include mob {
@@ -155,7 +155,7 @@
     color: $linkblue;
   }
   @include tab {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
     svg {
       width: 2.4rem;
@@ -203,6 +203,10 @@
     color: $black;
   }
   @include tab {
+    font-size: 1.6rem;
+    padding: 1.6rem 1.2rem;
+  }
+  @include mob {
     font-size: 1.2rem;
     padding: 1.6rem 1.2rem;
   }
@@ -230,7 +234,7 @@
     padding: 0;
   }
   @include tab {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
     &--transparent {
       background-color: transparent;
@@ -238,7 +242,7 @@
     }
   }
   @include mob {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding: 0.8rem 1.2rem;
     &--transparent {
       background-color: transparent;
@@ -262,6 +266,10 @@
     color: $red;
   }
   @include tab {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem;
+  }
+  @include mob {
     font-size: 1.4rem;
     padding: 0.8rem 1.2rem;
   }
@@ -281,6 +289,10 @@
     margin-right: 0.4rem;
   }
   @include tab {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem;
+  }
+  @include mob {
     font-size: 1.4rem;
     padding: 0.8rem 1.2rem;
   }
@@ -323,7 +335,7 @@
   }
   @include tab {
     padding: 1.2rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     border-radius: 0.8rem;
   }
   @include mob {
@@ -1304,7 +1316,7 @@
     display: none;
   }
   @include tab {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     overflow: auto;
     @include hide-scroll;
     .container {
@@ -1746,6 +1758,16 @@
   }
   @include tab {
     svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+    select {
+      height: 5.4rem;
+      font-size: 1.6rem;
+    }
+  }
+  @include mob {
+    svg {
       width: 2rem;
       height: 2rem;
     }
@@ -2177,7 +2199,6 @@
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    flex-shrink: 0;
     svg,
     img {
       width: 2.4rem;
@@ -2196,6 +2217,31 @@
   }
   a.user-contact__link {
     color: $linkblue;
+  }
+  @include tab {
+    font-size: 1.8rem;
+    &__item {
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    &__links {
+      gap: 0.8rem;
+      &--lg {
+        .user-contact__link svg,
+        .user-contact__link img {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+    }
+    &__link {
+      gap: 1rem;
+      svg,
+      img {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
   }
   @include mob {
     font-size: 1.4rem;
@@ -2341,6 +2387,12 @@
     width: 2rem;
     height: 2rem;
     flex-shrink: 0;
+  }
+  @include tab {
+    font-size: 1.4rem;
+  }
+  @include mob {
+    font-size: 1.2rem;
   }
 }
 
