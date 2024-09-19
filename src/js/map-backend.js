@@ -119,7 +119,7 @@ addEventListener("DOMContentLoaded", () => {
           id = window.lastClickedCatalogMapPlacemarkId;
         }
         window.lastClickedCatalogMapPlacemarkId = id;
-        const index = $(`[data-item-id="${id}"]`).attr("aria-label").split('/')[0].trim() - 1;
+        const index = $(`[data-item-id="${id}"]`).index();
         console.log(index);
         window.mapSlider.slideTo(index, 100, false);
         window.catalogMapSliderView(true);
@@ -163,7 +163,7 @@ addEventListener("DOMContentLoaded", () => {
     //   price: "price 1",
     //   icon: 'img/first-screen1.jpg',
     //   tags: ["tag 1", "tag 1"],
-    //   ownerHref: '/href',
+    //   href: '/href',
     // },
     // {
     //   id: '2',
@@ -172,7 +172,7 @@ addEventListener("DOMContentLoaded", () => {
     //   price: "price 1",
     //   icon: 'img/first-screen2.jpg',
     //   tags: ["tag 1", "tag 1"]
-    //   ownerHref: '/href',
+    //   href: '/href',
     // },
     // {
     //   id: '3',
@@ -181,7 +181,7 @@ addEventListener("DOMContentLoaded", () => {
     //   price: "price 1",
     //   icon: 'img/first-screen3.jpg',
     //   tags: ["tag 1", "tag 1"]
-    //   ownerHref: '/href',
+    //   href: '/href',
     // },
     // {
     //   id: '4',
@@ -190,7 +190,7 @@ addEventListener("DOMContentLoaded", () => {
     //   price: "price 1",
     //   icon: 'img/first-screen1.jpg',
     //   tags: ["tag 1", "tag 1"]
-    //   ownerHref: '/href',
+    //   href: '/href',
     // }
   ];
 

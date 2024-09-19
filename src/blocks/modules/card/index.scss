@@ -114,6 +114,11 @@
       &__bot-right {
         
       }
+      &__data {
+        .helptip {
+          display: none;
+        }
+      }
     }
   }
   &--map {
@@ -289,6 +294,9 @@
         &__data {
           ul {
             margin-bottom: 0;
+          }
+          .helptip {
+            display: inline-block;
           }
         }
         &__bot {
