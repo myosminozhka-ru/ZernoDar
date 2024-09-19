@@ -110,9 +110,14 @@
           <div class="nav-drop__title">
             <a  href="" class="str">
               <span class="nav-drop__icon">
-                <svg>
-                  <use xlink:href="img/sprites/sprite.svg#icon1"></use>
-                </svg>
+                <div class="svg-wrap">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon1"></use>
+                  </svg>
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon1"></use>
+                  </svg>
+                </div>
               </span>
               Зерновые культуры
             </a>
@@ -125,9 +130,14 @@
           <div class="nav-drop__title">
             <a  href="" class="str">
               <span class="nav-drop__icon">
-                <svg>
-                  <use xlink:href="img/sprites/sprite.svg#icon2"></use>
-                </svg>
+                <div class="svg-wrap">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon2"></use>
+                  </svg>
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon2"></use>
+                  </svg>
+                </div>
               </span>
               Масличные культуры
             </a>
@@ -140,9 +150,14 @@
           <div class="nav-drop__title">
             <a  href="" class="str">
               <span class="nav-drop__icon">
-                <svg>
-                  <use xlink:href="img/sprites/sprite.svg#icon3"></use>
-                </svg>
+                <div class="svg-wrap">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon3"></use>
+                  </svg>
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon3"></use>
+                  </svg>
+                </div>
               </span>
               Посевной материал
             </a>
@@ -239,9 +254,14 @@
           <div class="nav-drop__title">
             <a  href="" class="str">
               <span class="nav-drop__icon">
-                <svg>
-                  <use xlink:href="img/sprites/sprite.svg#icon1"></use>
-                </svg>
+                <div class="svg-wrap">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon1"></use>
+                  </svg>
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon1"></use>
+                  </svg>
+                </div>
               </span>
               Зерновые культуры
             </a>
@@ -254,9 +274,14 @@
           <div class="nav-drop__title">
             <a  href="" class="str">
               <span class="nav-drop__icon">
-                <svg>
-                  <use xlink:href="img/sprites/sprite.svg#icon2"></use>
-                </svg>
+                <div class="svg-wrap">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon2"></use>
+                  </svg>
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon2"></use>
+                  </svg>
+                </div>
               </span>
               Масличные культуры
             </a>
@@ -269,9 +294,14 @@
           <div class="nav-drop__title">
             <a  href="" class="str">
               <span class="nav-drop__icon">
-                <svg>
-                  <use xlink:href="img/sprites/sprite.svg#icon3"></use>
-                </svg>
+                <div class="svg-wrap">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon3"></use>
+                  </svg>
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#icon3"></use>
+                  </svg>
+                </div>
               </span>
               Посевной материал
             </a>
@@ -623,16 +653,16 @@
                                   <div class="filter__title">Количество</div>
                                   <div class="filter-range"><input type="text" class="js-range-slider" name="my_range"
                                       value="" data-type="double" data-min="10" data-max="500" data-from="10" data-to="300"
-                                      data-hide-min-max="true" data-hide-from-to="true" data-input-values-separator="_">
+                                      data-hide-min-max="true" data-hide-from-to="true" data-input-values-separator="_" id="count">
                                     <div class="filter-range__inputs">
                                       <div class="filter-range__input-wrap"><span
                                           class="filter-range__label">Минимум</span><input type="number" value="10"
-                                          class="filter-range__input filter-range__input--from visually-hidden"><span
+                                          class="filter-range__input filter-range__input--from visually-hidden" id="countfrom"><span
                                           class="filter-range__val filter-range__val--from"><span>10</span> т</span></div>
                                       <span class="filter-range__sep"></span>
                                       <div class="filter-range__input-wrap"><span
                                           class="filter-range__label">Максимум</span><input type="number" value="300"
-                                          class="filter-range__input filter-range__input--to visually-hidden"><span
+                                          class="filter-range__input filter-range__input--to visually-hidden" id="countto"><span
                                           class="filter-range__val filter-range__val--to"><span>300</span> т</span></div>
                                     </div>
                                   </div>
@@ -641,16 +671,16 @@
                                   <div class="filter__title">Цена </div>
                                   <div class="filter-range"><input type="text" class="js-range-slider" name="my_range"
                                       value="" data-type="double" data-min="10" data-max="500" data-from="10" data-to="300"
-                                      data-hide-min-max="true" data-hide-from-to="true" data-input-values-separator="_">
+                                      data-hide-min-max="true" data-hide-from-to="true" data-input-values-separator="_" id="price">
                                     <div class="filter-range__inputs">
                                       <div class="filter-range__input-wrap"><span
                                           class="filter-range__label">Минимум</span><input type="number" value="10"
-                                          class="filter-range__input filter-range__input--from visually-hidden"><span
+                                          class="filter-range__input filter-range__input--from visually-hidden" id="pricefrom"><span
                                           class="filter-range__val filter-range__val--from"><span>10</span> ₽</span></div>
                                       <span class="filter-range__sep"></span>
                                       <div class="filter-range__input-wrap"><span
                                           class="filter-range__label">Максимум</span><input type="number" value="300"
-                                          class="filter-range__input filter-range__input--to visually-hidden"><span
+                                          class="filter-range__input filter-range__input--to visually-hidden" id="priceto"><span
                                           class="filter-range__val filter-range__val--to"><span>300</span> ₽</span></div>
                                     </div>
                                   </div>
@@ -1388,7 +1418,7 @@
         <div class="modal close-x" data-modal="sent-to-moderation">
   <div class="modal__inner">
     <div class="modal__top">
-      <div class="modal__title"></div>
+      <div class="modal__title">Отзыв отправлен на модерацию!</div>
       <button class="modal__close close-x" type="button">
         <svg>
           <use xlink:href="img/sprites/sprite.svg#x"></use>
@@ -1397,7 +1427,6 @@
     </div>
     <div class="modal__content">
       <div class="modal-message">
-        <div class="modal-message__title">Отзыв отправлен на модерацию!</div>
         <div class="modal-message__content">
           Спасибо за отзыв. Наша команда обязательно опубликует его после проверки
         </div>
