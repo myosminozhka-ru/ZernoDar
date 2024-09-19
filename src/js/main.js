@@ -22,10 +22,10 @@ class Copy {
     this.copyHandler()
   }
   copy(id) {
-    
+
     if (id) {
       const text = document.querySelector(`[data-copy-text=${id}]`)
-      
+
       this.textarea.innerHTML = text.textContent
     } else {
       this.textarea.innerHTML = window.location.href;
@@ -50,7 +50,7 @@ class Copy {
 
 // ==== helper start
 const helper = {
-  textSlice (text, length){
+  textSlice(text, length) {
     const number = Number(length)
     const txt = text.trim()
     if (typeof number !== 'number' || typeof txt !== 'string' || txt.length <= length) return text
@@ -72,7 +72,7 @@ function hideShowBlock(element, button) {
 
   let isOpen = $(element).hasClass('hide');
   $(button).click(
-    function() {
+    function () {
       $(button).toggleClass('open');
       if (isOpen) {
         btnStr.text('Свернуть')
@@ -131,17 +131,17 @@ class Modal {
   closeHendler() {
     this.modal
       ? this.modal.addEventListener("click", (e) => {
-          if (e.target.classList.contains("close-x")) {
-            this.close();
-          }
-        })
+        if (e.target.classList.contains("close-x")) {
+          this.close();
+        }
+      })
       : null;
     this.modal
       ? this.modal
-          .querySelector("button.close-x")
-          .addEventListener("click", (e) => {
-            this.close();
-          })
+        .querySelector("button.close-x")
+        .addEventListener("click", (e) => {
+          this.close();
+        })
       : null;
   }
   onClose(callback) {
@@ -304,7 +304,7 @@ class Header {
 
     $('.trig-open-search').click(this.openSearch.bind(this));
     $('.trig-close-search').click(this.closeSearch.bind(this));
-    
+
     $(document).click((event) => {
       if (
         !$(event.target).closest('.header-search').length &&
@@ -345,10 +345,10 @@ class Header {
     //   $('.nav__item--demand svg').on('click' , this.navDropItemHandler.bind(this, "demand"))
     // }
 
-    $('.nav__item--supply').on('click' ,this.navDropItemHandler.bind(this, "supply"))
-    $('.nav__item--demand').on('click' , this.navDropItemHandler.bind(this, "demand"))
+    $('.nav__item--supply').on('click', this.navDropItemHandler.bind(this, "supply"))
+    $('.nav__item--demand').on('click', this.navDropItemHandler.bind(this, "demand"))
 
-    $(document).on('click',(event) => {
+    $(document).on('click', (event) => {
       if (
         this.isDropOpen &&
         !$(event.target).closest('.nav-drop__inner').length &&
@@ -361,10 +361,10 @@ class Header {
       }
     });
 
-    $('.nav-drop').each(function(index, element) {
+    $('.nav-drop').each(function (index, element) {
 
-      $(element).find('.nav-drop__title').each(function(index, arrow) {
-        $(arrow).on('click', function(e) {
+      $(element).find('.nav-drop__title').each(function (index, arrow) {
+        $(arrow).on('click', function (e) {
           if ($(e.target).is($(arrow).find('a.str'))) {
             console.log("is");
             e.preventDefault()
@@ -411,14 +411,14 @@ class Header {
   }
   moveElementPlaceHandler() {
     // Function to handle the event
-    const  handleMediaQueryChange = (event) => {
-        if (event.matches) {
-            this.moveElementPlace("out")
-            this.moveNavBlocks("out")
-        } else {
-            this.moveElementPlace("home")
-            this.moveNavBlocks("home")
-        }
+    const handleMediaQueryChange = (event) => {
+      if (event.matches) {
+        this.moveElementPlace("out")
+        this.moveNavBlocks("out")
+      } else {
+        this.moveElementPlace("home")
+        this.moveNavBlocks("home")
+      }
     }
 
     // Add the listener to the media query
@@ -429,7 +429,7 @@ class Header {
   }
   moveNavBlocks(direction = "home") {
     if (direction == "home") {
-      $('.nav-drop').each(function(index, element) {
+      $('.nav-drop').each(function (index, element) {
         $(element).find('.nav-drop__block').removeClass('open')
         $(element).find('.nav-drop__title').removeClass('active')
         $(element).find(`.nav-drop__block:eq(0)`).addClass('open')
@@ -437,10 +437,10 @@ class Header {
 
       })
     } else {
-      $('.nav-drop').each(function(index, element) {
+      $('.nav-drop').each(function (index, element) {
         $(element).find('.nav-drop__block').removeClass('open')
         $(element).find('.nav-drop__title').removeClass('active')
-        $(element).find('.nav-drop__title').each(function(index, title) {
+        $(element).find('.nav-drop__title').each(function (index, title) {
           $(element).find(`.nav-drop__block:eq(${index})`).appendTo(title)
         })
       })
@@ -493,7 +493,7 @@ class Sidebar {
     const id = data.input[0].id;
     const findInstance = this.findCurrentRangeInstance(id);
     const instance = findInstance.instance;
-    const datas = {id: '', value: '', element: null}
+    const datas = { id: '', value: '', element: null }
     if (instance.target === 'from') {
       datas.id = instance.fromId
       datas.value = instance.old_from
@@ -550,7 +550,7 @@ class Sidebar {
       const rangeInstance = $(inputRange).data("ionRangeSlider");
       rangeInstance.toId = inputTo.id;
       rangeInstance.fromId = inputFrom.id;
-      
+
       rangeInstanceArray.push({
         instance: rangeInstance,
         resetInputs,
@@ -640,7 +640,7 @@ class Sidebar {
       $('.allcaterories').removeClass('open')
     })
 
-    $(document).click(function(event) {
+    $(document).click(function (event) {
       if (
         !$(event.target).closest('.js-open-map').length &&
         !$(event.target).closest('.map-point').length
@@ -651,11 +651,11 @@ class Sidebar {
   }
 
   category() {
-    $('.catalog-wrapper').each(function( index ) {
+    $('.catalog-wrapper').each(function (index) {
       const thatwrapper = this;
-      $(thatwrapper).find('.filter-list__item').each(function( index ) {
+      $(thatwrapper).find('.filter-list__item').each(function (index) {
         const that = this
-        $(this).find('.filter-list__title').on('click', function() {
+        $(this).find('.filter-list__title').on('click', function () {
           if ($(that).hasClass('open')) {
             $(thatwrapper).find('.filter-list__item').removeClass('hide')
             $(that).removeClass('open')
@@ -717,7 +717,7 @@ function review() {
     targetSection.addClass('active')
   });
 
-  $(document).on('click', ' .review-list__to-answer .review-to-answer', function(e) {
+  $(document).on('click', ' .review-list__to-answer .review-to-answer', function (e) {
     const target = e.target
     const open = $(this).find('.review-to-answer__open .btn3')[0]
     const cancel = $(this).find('.review-to-answer__btns .btn3--transparent')[0]
@@ -734,7 +734,7 @@ function review() {
   })
 
 
-  $(document).on('click', ' .review-list__answers', function(e) {
+  $(document).on('click', ' .review-list__answers', function (e) {
     const target = e.target
     const open = $(this).find('.review-list__edit')
     const cancel = $(this).find('.review-to-answer__btns .btn3--transparent')[0]
@@ -754,7 +754,7 @@ function review() {
 
 // ==== cardAdRelative start
 function cardAdRelative(className) {
-  $(document).on('click', className + ' .switch-button__item',function (e) {
+  $(document).on('click', className + ' .switch-button__item', function (e) {
     e.preventDefault();
     $(className + ' .switch-button__item').removeClass('active')
     $(this).addClass('active')
@@ -945,12 +945,31 @@ function signupSwitch() {
   phoneMask(".phone-input");
 
 
-  $(".select--typeorg select").selectmenu({
+
+  // Extend the selectmenu widget with a unique name (customSelectmenu)
+  $.widget("custom.customSelectmenu", $.ui.selectmenu, {
+    _renderItem: function (ul, item) {
+      var li = $("<li>");
+      if ( item.disabled ) {
+        li.addClass( "ui-state-disabled" );
+      }
+      // Custom rendering logic
+      var wrapper = $('<div class="custom-item">');
+      var description = $('<span class="custom-item-description">').text(item.element.attr('data-description'));
+      wrapper.append(item.label).append(description);
+      return li.append(wrapper).appendTo(ul);
+    }
+  });
+  "ui-selectmenu-button ui-selectmenu-button-typeorg ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" === 
+  "ui-selectmenu-button ui-selectmenu-button-typeorg ui-button ui-widget ui-selectmenu-button-closed ui-corner-all"
+
+  $(".select--typeorg select").customSelectmenu({
     classes: {
       "ui-selectmenu-button": "ui-selectmenu-button-typeorg",
       "ui-selectmenu-menu": "ui-selectmenu-menu-typeorg"
     }
   });
+
 }
 // ==== signupSwitch end
 
@@ -1233,21 +1252,21 @@ function profile() {
   }
 
   if (!hasMouseSupport()) {
-    $(document).on('click', '.dropfile__item.show', function() {
+    $(document).on('click', '.dropfile__item.show', function () {
       $('.dropfile__item.show').removeClass('hover')
       $(this).addClass('hover')
     })
   } else {
-    $(document).on('mouseenter', '.dropfile__item.show', function() {
+    $(document).on('mouseenter', '.dropfile__item.show', function () {
       $(this).addClass('hover')
     })
-    $(document).on('mouseleave', '.dropfile__item.show', function() {
+    $(document).on('mouseleave', '.dropfile__item.show', function () {
       $('.dropfile__item.show').removeClass('hover')
     })
   }
 
 
-  $(document).click(function(event) {
+  $(document).click(function (event) {
     if (
       !$(event.target).closest('.dropfile__item.show').length
     ) {
@@ -1263,7 +1282,7 @@ function cookies() {
   if (localStorage.getItem('cookies') == 'true') {
     $('.cookies').addClass('hide')
   }
-  $('.cookies__btn').on('click', function() {
+  $('.cookies__btn').on('click', function () {
     $('.cookies').addClass('hide')
     localStorage.setItem('cookies', true)
   })
@@ -1368,31 +1387,31 @@ function publishTime() {
 
 
 // ==== sms code time start
-window.startTimeSMSCode = function(seconds) {
+window.startTimeSMSCode = function (seconds) {
   window.startTimeSMSCodeID ? clearInterval(window.startTimeSMSCodeID) : null;
   $('[data-resend-code]').attr('disabled', true)
   let timeRemaining = seconds;
 
   const intervalId = setInterval(() => {
-      // Рассчитываем часы, минуты и секунды
-      const hours = Math.floor(timeRemaining / 3600);
-      const minutes = Math.floor((timeRemaining % 3600) / 60);
-      const remainingSeconds = timeRemaining % 60;
+    // Рассчитываем часы, минуты и секунды
+    const hours = Math.floor(timeRemaining / 3600);
+    const minutes = Math.floor((timeRemaining % 3600) / 60);
+    const remainingSeconds = timeRemaining % 60;
 
-      // Форматируем результат в человекопонятный вид
-      const timeString = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    // Форматируем результат в человекопонятный вид
+    const timeString = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 
-      // Выводим результат в тег <p>
-      $("[data-timer]").text(timeString);
+    // Выводим результат в тег <p>
+    $("[data-timer]").text(timeString);
 
-      // Останавливаем таймер, когда время закончится
-      if (timeRemaining === 0) {
-          clearInterval(intervalId);
-          $('[data-resend-code]').attr('disabled', false)
-      }
+    // Останавливаем таймер, когда время закончится
+    if (timeRemaining === 0) {
+      clearInterval(intervalId);
+      $('[data-resend-code]').attr('disabled', false)
+    }
 
-      // Уменьшаем оставшееся время на 1 секунду
-      timeRemaining--;
+    // Уменьшаем оставшееся время на 1 секунду
+    timeRemaining--;
   }, 1000); // Запускаем таймер с интервалом в 1 секунду
   window.startTimeSMSCodeID = intervalId;
 }
@@ -1400,7 +1419,7 @@ window.startTimeSMSCode = function(seconds) {
 
 
 // ==== tab data attr start
-$(document).on('click', '[data-tab-edit-block-trigger]', function(e) {
+$(document).on('click', '[data-tab-edit-block-trigger]', function (e) {
   const id = e.target.dataset.tabEditBlockTriggerId;
   const trigger = e.target.dataset.tabEditBlockTrigger;
   $(`[data-tab-edit-block-trigger="${trigger}"]`).removeClass('active');
@@ -1412,7 +1431,7 @@ $(document).on('click', '[data-tab-edit-block-trigger]', function(e) {
 
 
 // ==== scroll to data attr start
-$(document).on('click', '[data-scroll-to]', function(e) {
+$(document).on('click', '[data-scroll-to]', function (e) {
   const val = e.target.dataset.scrollTo;
   const isId = (/^#.*/).test(val);
   if (isId) {
@@ -1538,10 +1557,14 @@ addEventListener("DOMContentLoaded", () => {
       }, delay);
     };
   }
-  window.octo.catalogSidebar.onChangeRangeCurrent(debounce(function (data) {
-    // в data данные текущего ползунка
-    console.log(data)
-  }, 2000));
+  // window.octo.catalogSidebar.onChangeRangeCurrent(debounce(function (data) {
+  //   // в data данные текущего ползунка
+  //   console.log(data)
+  // }, 2000));
+  // window.octo.mapFilter.onChangeRangeCurrent(debounce(function (data) {
+  //   // в data данные текущего ползунка
+  //   console.log(data)
+  // }, 2000));
   // window.octo.catalogSidebar.onChangeRange(debounce(function (e) {
   //   // window.rangeInstance.catalogSidebar - спиоск ползунов на боковом сайдбаре
   //   if (window.rangeInstance?.catalogSidebar?.length) {

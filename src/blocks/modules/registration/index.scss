@@ -679,6 +679,11 @@
   }
 }
 
+.ui-selectmenu-menu-typeorg .custom-item-description {
+  display: block;
+  font-size: 0.8em;
+}
+
 @include tab {
   .ui-selectmenu-button-typeorg.ui-button {
     border-radius: 1rem;

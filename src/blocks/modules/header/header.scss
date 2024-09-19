@@ -198,8 +198,8 @@
     }
 
     &__burger {
-      // width: 1.2rem;
-      // height: 1rem;
+      width: 2rem;
+      height: 1.8rem;
       position: relative;
       &:before,
       &:after,
@@ -212,10 +212,10 @@
         transition: 0.5s;
       }
       &.active:before {
-        transform: translateY(0.5rem) rotate(135deg);
+        transform: translateY(0.75rem) rotate(135deg);
       }
       &.active:after {
-        transform: translateY(-0.6rem) rotate(-135deg);
+        transform: translateY(-0.75rem) rotate(-135deg);
       }
       &.active div {
         transform: scale(0);
@@ -275,6 +275,12 @@
       }
     }
   }
+  &__item {
+    &.active > a {
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
   @include tab {
     opacity: 0;
     transition: all 400ms;
@@ -325,7 +331,7 @@
   @include mob {
     padding: 5rem 1.6rem;
     &__list {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
   }
 }
@@ -489,6 +495,11 @@
     align-items: center;
     font-size: 2rem;
     font-weight: 500;
+    &:hover {
+      .svg-wrap {
+        transform: translateY(200%);
+      }
+    }
     .str {
       display: flex;
       align-items: center;
@@ -503,8 +514,31 @@
     height: 6.4rem;
     flex-shrink: 0;
     margin-right: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f1ed;
+    border-radius: 1.4rem;
+    .svg-wrap {
+      position: relative;
+      transition: transform 300ms;
+      svg {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
     svg {
-      @include img-contain;
+      width: 6.4rem;
+      height: 6.4rem;
+      object-fit: contain;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      transition: transform 200ms;
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-200%);
+      }
     }
   }
   &__arrow {
