@@ -119,7 +119,7 @@ addEventListener("DOMContentLoaded", () => {
           id = window.lastClickedCatalogMapPlacemarkId;
         }
         window.lastClickedCatalogMapPlacemarkId = id;
-        const index = $(`[data-item-id="${id}"]`).attr("aria-label").split('/')[0].trim() - 1;
+        const index = $(`[data-item-id="${id}"]`).index();
         console.log(index);
         window.mapSlider.slideTo(index, 100, false);
         window.catalogMapSliderView(true);

@@ -28,6 +28,22 @@
     margin-bottom: 4rem;
     &__inner {
       border-radius: 2rem;
+      padding: 10.3rem 2.4rem;
+    }
+    &__bg {
+      right: -13.7rem;
+      top: 0rem;
+      width: 35.5rem;
+    }
+    &__content {
+      width: 18.7rem;
+    }
+  }
+  @include mob {
+    padding: 0;
+    margin-bottom: 4rem;
+    &__inner {
+      border-radius: 2rem;
       padding: 5.3rem 1.6rem;
     }
     &__bg {
@@ -60,12 +76,34 @@
   &__text {
     font-size: 1.8rem;
   }
+  &--fav {
+    padding-top: 10rem;
+  }
   .btn9 {
     font-size: 2rem;
     padding: 1.7rem 3.3rem;
     border-radius: 2rem;
   }
   @include tab {
+    margin-bottom: 4rem;
+    &__inner {
+      padding: 0 2.4rem;
+      gap: 2.4rem;
+      width: 100%;
+    }
+    &__mtitle {
+      font-size: 2rem;
+    }
+    &__text {
+      font-size: 1.8rem;
+    }
+    .btn9 {
+      font-size: 1.6rem;
+      padding: 1.4rem 2.8rem;
+      border-radius: 1.2rem;
+    }
+  }
+  @include mob {
     margin-bottom: 4rem;
     &__inner {
       padding: 0 2.4rem;
