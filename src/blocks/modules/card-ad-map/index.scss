@@ -23,6 +23,7 @@
     font-size: 1.6rem;
     font-weight: 500;
     color: $linkblue;
+    flex-shrink: 0;
   }
   &__map {
     height: 40rem;
