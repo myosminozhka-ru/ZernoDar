@@ -354,7 +354,6 @@ class Header {
         !$(event.target).closest('.nav-drop__inner').length &&
         !$(event.target).closest('.nav__item--drop').length
       ) {
-        // debugger
         this.closeNavDrop()
         this.supplyIsOpen = false
         this.demandIsOpen = false
@@ -950,8 +949,8 @@ function signupSwitch() {
   $.widget("custom.customSelectmenu", $.ui.selectmenu, {
     _renderItem: function (ul, item) {
       var li = $("<li>");
-      if ( item.disabled ) {
-        li.addClass( "ui-state-disabled" );
+      if (item.disabled) {
+        li.addClass("ui-state-disabled");
       }
       // Custom rendering logic
       var wrapper = $('<div class="custom-item">');
@@ -960,8 +959,8 @@ function signupSwitch() {
       return li.append(wrapper).appendTo(ul);
     }
   });
-  "ui-selectmenu-button ui-selectmenu-button-typeorg ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" === 
-  "ui-selectmenu-button ui-selectmenu-button-typeorg ui-button ui-widget ui-selectmenu-button-closed ui-corner-all"
+  "ui-selectmenu-button ui-selectmenu-button-typeorg ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" ===
+    "ui-selectmenu-button ui-selectmenu-button-typeorg ui-button ui-widget ui-selectmenu-button-closed ui-corner-all"
 
   $(".select--typeorg select").customSelectmenu({
     classes: {
@@ -1338,20 +1337,19 @@ $(".custom-select").selectmenu({
 
 // ==== publish time start
 function publishTime() {
-  // $('[data-publish-select="publish-weekdays"]').selectmenu({
-  //   classes: {
-  //     "ui-selectmenu-button": "ui-selectmenu-button-border",
-  //     "ui-selectmenu-menu": "ui-selectmenu-menu-border"
-  //   }
-  // });
-  // $('[data-publish-select="publish-time"]').selectmenu({
-  //   classes: {
-  //     "ui-selectmenu-button": "ui-selectmenu-button-border",
-  //     "ui-selectmenu-menu": "ui-selectmenu-menu-border"
-  //   }
-  // });
+  $('[data-publish-select="publish-weekdays"]').selectmenu({
+    classes: {
+      "ui-selectmenu-button": "ui-selectmenu-button-border",
+      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+    }
+  });
+  $('[data-publish-select="publish-time"]').selectmenu({
+    classes: {
+      "ui-selectmenu-button": "ui-selectmenu-button-border",
+      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+    }
+  });
   function changePublish(e, selector) {
-
     let parent = null;
     if (selector) {
       if (!$(selector).length) {
@@ -1366,9 +1364,14 @@ function publishTime() {
     } else {
       parent = $(e.target).closest('.add-ann-publish');
     }
+    const id = $(parent).find('input').attr('id');
+    
     const siblings = $(parent).siblings('.add-ann-publish');
     siblings.removeClass('open')
     parent.addClass('open')
+    
+    $(`[data-publish-notification]`).addClass('hide')
+    $(`[data-publish-notification="${id}"]`).removeClass('hide')
   }
   changePublish(null, '[name="PUBLISH"]')
   $('[name="PUBLISH"]').on('change', changePublish)
@@ -1444,6 +1447,79 @@ $(document).on('click', '[data-scroll-to]', function (e) {
   }
 })
 // ==== scroll to data attr end
+
+// ==== auto height input-wrap start
+function autoHeightInputWrap(reinit) {
+  function setEqualHeight(container) {
+
+    const wraps = $(container).find('.my-input')
+    var grouped = groupElementsByPosition(wraps);
+    grouped.forEach(array => {
+      // Сброс высоты всех элементов
+      array.forEach((element => {
+        $(element).find('.my-input__label').css('height', 'auto');
+      }))
+      // Находим самый высокий элемент
+      let maxHeight = 0;
+      array.forEach(element => {
+        const height = $(element).find('.my-input__label').outerHeight();
+        if (height > maxHeight) {
+          maxHeight = height;
+        }
+      })
+      // Задаем максимальную высоту всем элементам
+      array.forEach((element => {
+        $(element).find('.my-input__label').css('height', maxHeight + 'px');
+      }))
+    })
+  }
+  const container = '.autoHeightInputWrap';
+  $(container).each(function() {
+    const els = $(this).find('.my-input__label')
+    if (!els.length || mediaQuery.matches) {
+      return;
+    }
+    // Вызываем функцию при загрузке страницы
+    setEqualHeight(this);
+    if (!reinit) {
+      // Наблюдатель за изменениями в DOM
+      const observer = new MutationObserver(() => setEqualHeight(this));
+
+      // Настройки наблюдателя
+      observer.observe(this, {
+        childList: true,
+        subtree: true
+      });
+
+      mediaQuery.addEventListener('change', () => setEqualHeight(this));
+    }
+  });
+}
+
+function groupElementsByPosition(selector) {
+  var elements = $(selector);
+  var groupedArray = [];
+  var currentTop = null;
+
+  elements.each(function() {
+      // Получаем позицию элемента относительно страницы
+      var elementTop = $(this).offset().top;
+
+      // Если элемент находится на новой строке (новая координата по оси Y)
+      if (elementTop !== currentTop) {
+          currentTop = elementTop;
+          // Начинаем новый подмассив
+          groupedArray.push([]);
+      }
+
+      // Добавляем элемент в последнюю строку (подмассив)
+      groupedArray[groupedArray.length - 1].push(this);
+  });
+
+  return groupedArray;
+}
+window.autoHeightInputWrap = autoHeightInputWrap;
+// ==== auto height input-wrap end
 
 
 // ***** invoke scripts start
@@ -1526,6 +1602,7 @@ addEventListener("DOMContentLoaded", () => {
   cookies();
   authCode();
   publishTime();
+  autoHeightInputWrap();
   window.octo = {
     header: new Header(),
     textSellerModal: new Modal("text-seller"),
