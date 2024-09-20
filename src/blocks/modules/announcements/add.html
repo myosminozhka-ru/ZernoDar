@@ -25,18 +25,18 @@
               </span>
             </div>
             <div class="add-ann-block__body">
-              <div class="my-input-wrap add-ann-block__row">
+              <div class="my-input-wrap add-ann-block__row autoHeightInputWrap">
                 <label class="my-input my-input--lg">
                   <div class="my-input__label">Наименование</div>
                   <input type="text" class="my-input__input" placeholder="Пример: Пшеница 2 класса в Новгородской области">
                 </label>
                 <label class="my-input my-input--lg my-input--25">
                   <div class="my-input__label">Цена, ₽</div>
-                  <input type="text" class="my-input__input" placeholder="0,00 ₽">
+                  <input type="text" class="my-input__input" placeholder="0,00 ₽" maxlength="9">
                 </label>
                 <label class="my-input my-input--lg my-input--25">
                   <div class="my-input__label">Количество</div>
-                  <input type="text" class="my-input__input" placeholder="0,00">
+                  <input type="text" class="my-input__input" placeholder="0,00" maxlength="9">
                 </label>
                 <label class="my-input my-input--lg my-input--25">
                   <div class="my-input__label">Культура</div>
@@ -103,7 +103,7 @@
               </span>
             </div>
             <div class="add-ann-block__body">
-              <div class="my-input-wrap add-ann-block__row">
+              <div class="my-input-wrap add-ann-block__row autoHeightInputWrap">
                 <label class="my-input my-input--lg my-input--25">
                   <div class="my-input__label">Класс</div>
                   <div class="my-select my-select--full">
@@ -201,7 +201,7 @@
           <div class="add-ann-block">
             <div class="add-ann-block__head">
               <div class="add-ann-block__mtitle">Время публикации</div>
-              <span class="my-notification my-notification--blue">
+              <span class="my-notification my-notification--blue" data-publish-notification="publish-now">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
                 </svg>
@@ -209,18 +209,26 @@
                   Настройте расписание публикаций объявления
                 </span>
               </span>
+              <span class="my-notification my-notification--blue hide" data-publish-notification="publish-later">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#caution-sign-circle"></use>
+                </svg>
+                <span>
+                  При каждой публикации объявления с вашего счета будет списано одно объявление.
+                </span>
+              </span>
             </div>
             <div class="add-ann-block__body">
               <div class="add-ann-publish add-ann-block__row">
                 <label class="add-ann-publish__radio">
-                  <input type="radio" name="publish" id="publish-now" class="visually-hidden">
+                  <input type="radio" name="PUBLISH" id="publish-now" class="visually-hidden">
                   <span class="add-ann-publish__check"></span>
                   Опубликовать сейчас
                 </label>
               </div>
               <div class="add-ann-publish add-ann-block__row">
                 <label class="add-ann-publish__radio">
-                  <input type="radio" name="publish" id="publish-later" class="visually-hidden" checked>
+                  <input type="radio" name="PUBLISH" id="publish-later" class="visually-hidden" checked>
                   <span class="add-ann-publish__check"></span>
                   Опубликовать по расписанию
                 </label>
@@ -240,7 +248,7 @@
                       </select>
                     </div>
                     <div class="add-ann-publish__date">
-                      <div class="add-ann-publish__date-title">Время</div>
+                      <div class="add-ann-publish__date-title">Время, Мск</div>
                       <select name="publish-time" id="publish-time" data-publish-select="publish-time">
                         <option value="1">10:00 - 11:00</option>
                         <option value="2">11:00 - 12:00</option>
