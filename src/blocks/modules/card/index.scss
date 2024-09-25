@@ -487,6 +487,11 @@
       font-size: 1.8rem;
     }
   }
+  &__user-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
   &__bot {
     display: flex;
     align-items: flex-end;

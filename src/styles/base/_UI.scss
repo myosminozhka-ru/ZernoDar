@@ -242,7 +242,7 @@
     }
   }
   @include mob {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     padding: 0.8rem 1.2rem;
     &--transparent {
       background-color: transparent;
@@ -2490,6 +2490,31 @@
 }
 
 @include tab {
+  .ui-selectmenu-button-border.ui-button {
+    border-radius: 0.8rem;
+    padding: 1.3rem 0.8rem;
+    font-size: 1.2rem;
+    .ui-selectmenu-icon {
+    }
+  }
+
+  .ui-selectmenu-menu-border {
+    padding: 0.9rem 0;
+    .ui-widget.ui-widget-content {
+      border-radius: 1.2rem;
+      box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
+    }
+    .ui-menu-item-wrapper {
+      padding: 1.6rem;
+      font-size: 1.6rem;
+      &::after {
+        width: calc(100% - 2.4rem);
+        left: 1.2rem;
+      }
+    }
+  }
+}
+@include mob {
   .ui-selectmenu-button-border.ui-button {
     border-radius: 0.8rem;
     padding: 1.3rem 0.8rem;

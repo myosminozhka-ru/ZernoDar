@@ -40,12 +40,12 @@
         </div>
       </div>
       <div class="catalog-sidebar__btns">
-        <button class="btn4" data-class="sort-compamy">
-          <svg>
-            <use xlink:href="img/sprites/sprite.svg#up-down-arrow"></use>
-          </svg>
-          Сортировка
-        </button>
+        <div class="select select--full select--sort select--jqui">
+          <select name="" id="" class="">
+            <option value="">Сначала новые</option>
+            <option value="">Сначала старые </option>
+          </select>
+        </div>
       </div>
     </div>
     <div class="catalog-sidebar__modal">
@@ -157,7 +157,4 @@
       </div>
     </div>
   </div>
-  @@include("../modal/modalSort.html", {
-    name: "sort-compamy"
-  })
 </div>

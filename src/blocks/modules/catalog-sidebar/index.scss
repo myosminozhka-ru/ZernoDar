@@ -37,14 +37,35 @@
     }
     &__btns {
       display: flex;
-      select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        background-color: $white;
-        border: none;
-        width: auto;
-        height: auto;
+      .select--sort {
+        flex: 1;
+        white-space: nowrap;
+        .ui-selectmenu-button-border.ui-button {
+          background-color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.4rem;
+          padding: 1.6rem;
+          border-radius: 1.6rem;
+          border: 0.1rem solid #E6E6E6;
+        }
+        .ui-selectmenu-button-open.ui-button {
+          border-color: $green;
+        }
+        .ui-selectmenu-icon.ui-icon {
+          float: none;
+          width: 2rem;
+          height: 2rem;
+          background-image: url(../img/sprites/up-down-arrow.svg);
+        }
+        .ui-selectmenu-text {
+          margin: 0;
+          color: $black;
+          font-weight: 500;
+          font-size: 1.6rem;
+          font-family: $main-font;
+        }
       }
     }
     &__modal {
@@ -110,11 +131,28 @@
     &__head {
       padding: 1.6rem;
     }
+    &__btns {
+      .select--sort {
+        .ui-selectmenu-button-border.ui-button {
+          gap: 0.4rem;
+          padding: 1.2rem 1rem;
+          border-radius: 0.8rem;
+        }
+        .ui-selectmenu-icon.ui-icon {
+          width: 2rem;
+          height: 2rem;
+        }
+        .ui-selectmenu-text {
+          font-size: 1.2rem;
+        }
+      }
+    }
     &__modal-inner {
       padding: 1.6rem;
     }
   }
 }
+
 
 .catalog-head {
   margin-bottom: 1.6rem;
