@@ -48,15 +48,26 @@
             <ul class="nav__list">
               <li class="nav__item nav__item--drop nav__item--supply">
                 <a href="#">Предложение</a>
-                <svg>
-                  <use xlink:href="img/sprites/sprite.svg#arrow-down-current"></use>
-                </svg>
+                <div class="svg-wrap">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#arrow-down-current"></use>
+                  </svg>
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#arrow-down-current"></use>
+                  </svg>
+                </div>
+              </span>
               </li>
               <li class="nav__item nav__item--drop nav__item--demand">
                 <a href="#">Спрос</a>
-                <svg>
-                  <use xlink:href="img/sprites/sprite.svg#arrow-down-current"></use>
-                </svg>
+                <div class="svg-wrap">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#arrow-down-current"></use>
+                  </svg>
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#arrow-down-current"></use>
+                  </svg>
+                </div>
               </li>
               <li><a href="#">Компании</a></li>
               <li><a href="#">О нас</a></li>
@@ -111,12 +122,8 @@
             <a  href="" class="str">
               <span class="nav-drop__icon">
                 <div class="svg-wrap">
-                  <svg>
-                    <use xlink:href="img/sprites/sprite.svg#icon1"></use>
-                  </svg>
-                  <svg>
-                    <use xlink:href="img/sprites/sprite.svg#icon1"></use>
-                  </svg>
+                  <img src="img/sprites/icon1.svg" alt="">
+                  <img src="img/sprites/icon1.svg" alt="">
                 </div>
               </span>
               Зерновые культуры
@@ -877,6 +884,25 @@
       <div class="modal-message">
         <div class="modal-message__content">
           Спасибо за отзыв. Наша команда обязательно опубликует его после проверки
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="modal close-x" data-modal="modalMessageWait">
+  <div class="modal__inner">
+    <div class="modal__top">
+      <div class="modal__title">Анализируем объявление!</div>
+      <button class="modal__close close-x" type="button">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__content">
+      <div class="modal-message">
+        <div class="modal-message__content">
+          Пожалуйста, подождите
         </div>
       </div>
     </div>

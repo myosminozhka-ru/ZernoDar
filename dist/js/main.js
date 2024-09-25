@@ -959,8 +959,6 @@ function signupSwitch() {
       return li.append(wrapper).appendTo(ul);
     }
   });
-  "ui-selectmenu-button ui-selectmenu-button-typeorg ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" ===
-    "ui-selectmenu-button ui-selectmenu-button-typeorg ui-button ui-widget ui-selectmenu-button-closed ui-corner-all"
 
   $(".select--typeorg select").customSelectmenu({
     classes: {
@@ -1242,7 +1240,11 @@ function profile() {
 
   function isReadyToSend() {
     const btn = $('.js-send-profile-docs');
-    $('.dropfile__item').length > 1 ? btn.attr('disabled', false) : btn.attr('disabled', true);
+    const itemsCount = $('.dropfile__item').length;
+    const itemActive = $('.dropfile__item:last-child');
+    itemsCount > 1 ? btn.attr('disabled', false) : btn.attr('disabled', true);
+    console.log(itemsCount);
+    itemsCount > 2 ? itemActive.addClass('hide') : itemActive.removeClass('hide');
   }
 
   function performAction() {
@@ -1386,6 +1388,13 @@ function publishTime() {
 //     "ui-selectmenu-menu": "ui-selectmenu-menu-border"
 //   }
 // });
+
+$(".select--sort select").selectmenu({
+  classes: {
+    "ui-selectmenu-button": "ui-selectmenu-button-border",
+    "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+  }
+});
 // ==== others selectmenu end
 
 
@@ -1609,7 +1618,7 @@ addEventListener("DOMContentLoaded", () => {
     tabReqModal: new Modal("tab-req"),
     ratingModal: new Modal("rating"),
     sentToModerationModal: new Modal("sent-to-moderation"),
-    sortCatalogModal: new Modal("sort-catalog"),
+    modalMessageWait: new Modal("modalMessageWait"),
     sortCompamyModal: new Modal("sort-compamy"),
     newsSubsModal: new Modal("news-subs"),
     modalReviewComplaint: new Modal("review-complaint"),

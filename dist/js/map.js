@@ -70,7 +70,17 @@ addEventListener("DOMContentLoaded", () => {
   });
 
   // Функция для отображения меток на карте
+  let lastWarehouses = [];
   window.showWarehousesOnMap = function showWarehousesOnMap(warehouses) {
+    function objectsAreEqual(obj1, obj2) {
+      return JSON.stringify(obj1) === JSON.stringify(obj2);
+    }
+
+    if (objectsAreEqual(warehouses, lastWarehouses)) {
+      console.log('lastWarehouses eq');
+      return;
+    }
+    lastWarehouses = warehouses;
     warehouses.forEach(function (warehouse) {
       var placemark = new ymaps.Placemark(warehouse.coordinates, {
         // Данные для попапа
@@ -232,6 +242,7 @@ addEventListener("DOMContentLoaded", () => {
         // удалить старыне window.removeAllWarehousesOnMap();
         // добавить новые window.showWarehousesOnMap(массив данных);
         console.log("getBounds", window.catalogMap.getBounds());
+        window.showWarehousesOnMap(warehouses)
       }, 2000));
     });
   } catch (error) {
