@@ -719,6 +719,9 @@
         }
       }
     }
+    &.hide {
+      display: none;
+    }
   }
   &__img {
     position: absolute;
@@ -826,7 +829,7 @@
         width: 100%;
       }
       &.show {
-        width: calc(50% - 0.4rem);
+        width: calc(50% - 0.5rem);
       }
     }
     &__img {

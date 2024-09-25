@@ -189,7 +189,7 @@
     &__act {
       width: 2.4rem;
       height: 2.4rem;
-      padding: 0.5rem;
+      padding: 0.3rem;
     }
 
     &__burger-wrap {
@@ -247,23 +247,36 @@
       align-items: center;
       gap: 1rem;
       transition: all 200ms;
-      &.active {
-        svg {
-          transform: rotate(-180deg);
+      overflow: hidden;
+      .svg-wrap {
+        position: relative;
+        transition: transform 300ms;
+        svg, img {
+          margin-left: 0;
+          margin-right: 0;
         }
       }
-      svg {
+      .svg-wrap svg, .svg-wrap img {
         width: 2.4rem;
         height: 2.4rem;
         object-fit: contain;
         flex-shrink: 0;
         cursor: pointer;
-        transition: all 200ms;
+        transition: transform 200ms;
+        &:nth-child(2) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateY(-200%);
+        }
       }
-      &:hover {
+      &:hover, &.active {
         color: $linkblue;
         a {
           border-bottom: none;
+        }
+        .svg-wrap {
+          transform: translateY(200%);
         }
       }
     }
@@ -311,7 +324,7 @@
         gap: 0.5rem;
         justify-content: space-between;
         border-bottom: 0.1rem solid $lightgrey;
-        svg {
+        .svg-wrap svg, .svg-wrap img {
           width: 2.4rem;
           height: 2.4rem;
         }
@@ -521,12 +534,12 @@
     .svg-wrap {
       position: relative;
       transition: transform 300ms;
-      svg {
+      svg, img {
         margin-left: 0;
         margin-right: 0;
       }
     }
-    svg {
+    svg, img {
       width: 6.4rem;
       height: 6.4rem;
       object-fit: contain;

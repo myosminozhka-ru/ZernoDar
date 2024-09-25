@@ -1,6 +1,5 @@
 .banner-404 {
   padding: 0 3.2rem;
-  margin-bottom: 10rem;
   &__inner {
     background-color: $green;
     border-radius: 3.2rem;
@@ -25,7 +24,6 @@
   }
   @include tab {
     padding: 0;
-    margin-bottom: 4rem;
     &__inner {
       border-radius: 2rem;
       padding: 10.3rem 2.4rem;
@@ -41,7 +39,6 @@
   }
   @include mob {
     padding: 0;
-    margin-bottom: 4rem;
     &__inner {
       border-radius: 2rem;
       padding: 5.3rem 1.6rem;
@@ -58,6 +55,7 @@
 }
 
 .content-404 {
+  padding-top: 10rem;
   margin-bottom: 6rem;
   &__inner {
     display: flex;
@@ -76,9 +74,6 @@
   &__text {
     font-size: 1.8rem;
   }
-  &--fav {
-    padding-top: 10rem;
-  }
   .btn9 {
     font-size: 2rem;
     padding: 1.7rem 3.3rem;
@@ -86,6 +81,7 @@
   }
   @include tab {
     margin-bottom: 4rem;
+    padding-top: 4rem;
     &__inner {
       padding: 0 2.4rem;
       gap: 2.4rem;
