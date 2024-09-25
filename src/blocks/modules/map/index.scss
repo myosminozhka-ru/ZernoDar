@@ -494,6 +494,12 @@
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__count {
+    font-size: 0.8em;
   }
   &__list {
     height: calc(100vh - 26rem);

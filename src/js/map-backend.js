@@ -82,7 +82,7 @@ addEventListener("DOMContentLoaded", () => {
                       <img src="${warehouse.icon}" alt="">
                     </div>
                     <div>
-                      <a href="${warehouse.href}" target="_black" class="map-popup__title">${warehouse.name}</a>
+                      <a href="${warehouse.ownerHref}" target="_black" class="map-popup__title">${warehouse.name}</a>
                       <div class="map-popup__price">${warehouse.price}</div>
                     </div>
                   </div>
@@ -163,7 +163,7 @@ addEventListener("DOMContentLoaded", () => {
     //   price: "price 1",
     //   icon: 'img/first-screen1.jpg',
     //   tags: ["tag 1", "tag 1"],
-    //   href: '/href',
+    //   ownerHref: '/href',
     // },
     // {
     //   id: '2',
@@ -172,7 +172,7 @@ addEventListener("DOMContentLoaded", () => {
     //   price: "price 1",
     //   icon: 'img/first-screen2.jpg',
     //   tags: ["tag 1", "tag 1"]
-    //   href: '/href',
+    //   ownerHref: '/href',
     // },
     // {
     //   id: '3',
@@ -181,7 +181,7 @@ addEventListener("DOMContentLoaded", () => {
     //   price: "price 1",
     //   icon: 'img/first-screen3.jpg',
     //   tags: ["tag 1", "tag 1"]
-    //   href: '/href',
+    //   ownerHref: '/href',
     // },
     // {
     //   id: '4',
@@ -190,7 +190,7 @@ addEventListener("DOMContentLoaded", () => {
     //   price: "price 1",
     //   icon: 'img/first-screen1.jpg',
     //   tags: ["tag 1", "tag 1"]
-    //   href: '/href',
+    //   ownerHref: '/href',
     // }
   ];
 
@@ -215,9 +215,17 @@ addEventListener("DOMContentLoaded", () => {
         return;
       }
       
+      var coordinates = document.querySelector("#map-search").getAttribute("data-map-coordinates").split(',').map(c => +c),
+        zoom = 12;
+
+      if (!coordinates || !coordinates[0]) {
+        coordinates = [55.76, 37.64];
+        zoom = 10;
+      }
+
       const map = new ymaps.Map("map-search", {
-        center: [55.76, 37.64],
-        zoom: 10,
+        center: coordinates,
+        zoom: zoom,
         controls: ['zoomControl', 'fullscreenControl']
       });
 
