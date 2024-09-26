@@ -1,10 +1,33 @@
 .app {
-  padding: 3.2rem;
+  padding: 0 3.2rem 3.2rem 3.2rem;
   &__inner {
     display: flex;
     align-items: flex-start;
     gap: 3.5rem;
     position: relative;
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    gap: 3.5rem;
+  }
+  &__mtitle {
+    font-size: 2.4rem;
+    font-weight: 500;
+    flex-grow: 1;
+  }
+  &__subtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 59.5rem;
+  }
+  &__count {
+    font-size: 0.8em;
   }
   &__map {
     flex-grow: 1;
@@ -25,6 +48,9 @@
     overflow: hidden;
     &__inner {
       display: block;
+    }
+    &__head {
+      display: none;
     }
     &__map {
       height: calc(100vh - 7.3rem);
@@ -94,15 +120,10 @@
 }
 
 .app-map {
-  &__mtitle {
-    font-size: 2.4rem;
-    font-weight: 500;
-    margin-bottom: 3.1rem;
-  }
   &__map {
   }
   #map-search {
-    height: calc(100vh - 32rem);
+    height: calc(100vh - 24rem);
     border-radius: 2rem;
     overflow: hidden;
   }
@@ -112,9 +133,6 @@
     object-fit: cover;
   }
   @include tab {
-    &__mtitle {
-      display: none;
-    }
     #map-search {
       height: calc(100vh - 7.3rem);
       border-radius: 0;
@@ -490,19 +508,8 @@
 }
 
 .app-list {
-  &__mtitle {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 2.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  &__count {
-    font-size: 0.8em;
-  }
   &__list {
-    height: calc(100vh - 26rem);
+    height: calc(100vh - 24rem);
     overflow: auto;
     display: none;
   }
@@ -514,7 +521,7 @@
     }
   }
   &__swiper {
-    height: calc(100vh - 37rem);
+    height: calc(100vh - 24rem);
   }
   @include tab {
     overflow: hidden;
