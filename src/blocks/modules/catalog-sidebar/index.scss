@@ -359,6 +359,11 @@
     &:last-child {
       margin-bottom: 0;
     }
+    .select {
+      &>svg {
+        display: none;
+      }
+    }
   }
   &__title {
     font-size: 1.8rem;
@@ -452,6 +457,7 @@
       .filter-list__title {
         flex-direction: row;
         justify-content: flex-start;
+        font-weight: 500;
         svg {
           transform: rotate(0deg);
         }
