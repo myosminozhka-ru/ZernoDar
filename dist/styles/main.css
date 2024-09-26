@@ -14094,6 +14094,10 @@ a {
     padding-top: 0;
   }
 
+  .profile-edit__block--actions .profile-edit__actions + .error {
+    padding: 0 2.4rem;
+  }
+
   .profile-edit__head {
     gap: 1rem;
     border-bottom: none;
@@ -18248,6 +18252,10 @@ a {
 
   .profile-edit__block--actions .profile-edit__actions {
     padding-top: 0;
+  }
+
+  .profile-edit__block--actions .profile-edit__actions + .error {
+    padding: 0 2.4rem;
   }
 
   .profile-edit__head {
