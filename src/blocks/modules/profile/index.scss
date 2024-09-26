@@ -65,6 +65,9 @@
         margin-top: -4rem;
         .profile-edit__actions {
           padding-top: 0;
+          & + .error {
+            padding: 0 2.4rem;
+          }
         }
       }
     }
@@ -104,6 +107,9 @@
         margin-top: -2rem;
         .profile-edit__actions {
           padding-top: 0;
+          & + .error {
+            padding: 0 2.4rem;
+          }
         }
       }
     }
