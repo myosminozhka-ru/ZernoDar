@@ -708,6 +708,10 @@
       }
     }
   }
+
+  .ui-selectmenu-menu-typeorg .custom-item-description {
+    display: none;
+  }
 }
 
 @include mob {

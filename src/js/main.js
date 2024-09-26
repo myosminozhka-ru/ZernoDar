@@ -650,7 +650,7 @@ class Sidebar {
   }
 
   category() {
-    $('.catalog-wrapper').each(function (index) {
+    $(this.parentSelector).each(function (index) {
       const thatwrapper = this;
       $(thatwrapper).find('.filter-list__item').each(function (index) {
         const that = this
@@ -1395,6 +1395,12 @@ $(".select--sort select").selectmenu({
     "ui-selectmenu-menu": "ui-selectmenu-menu-border"
   }
 });
+// $(".filter__item .select select").selectmenu({
+//   classes: {
+//     "ui-selectmenu-button": "ui-selectmenu-button-filter",
+//     "ui-selectmenu-menu": "ui-selectmenu-menu-filter"
+//   }
+// });
 // ==== others selectmenu end
 
 

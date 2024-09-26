@@ -2540,7 +2540,8 @@
   }
 }
 // mini start
-.ui-selectmenu-button-mini.ui-button {
+.ui-selectmenu-button-mini.ui-button,
+.ui-selectmenu-button-filter.ui-button {
   width: 12.7rem;
   background: $white;
   border-radius: 0.8rem;
@@ -2565,8 +2566,18 @@
     background-position: center;
   }
 }
+.ui-selectmenu-button-filter.ui-button {
+  width: 100%;
+  padding: 1.3rem 0.8rem;
+  border-color: $lightgrey;
+}
+.ui-selectmenu-button-filter .ui-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
 
-.ui-selectmenu-menu-mini {
+.ui-selectmenu-menu-mini,
+.ui-selectmenu-menu-filter {
   padding: 0.6rem 0;
   .ui-widget.ui-widget-content {
     border: none;
@@ -2612,13 +2623,20 @@
 }
 
 @include tab {
-  .ui-selectmenu-button-mini.ui-button {
+  .ui-selectmenu-button-mini.ui-button,
+  .ui-selectmenu-button-filter.ui-button {
     width: 12rem;
     border-radius: 1rem;
     font-size: 1.6rem;
   }
+  .ui-selectmenu-button-filter.ui-button {
+    width: 100%;
+    border-color: $bckgrnd2;
+    background-color: $bckgrnd2;
+  }
 
-  .ui-selectmenu-menu-mini {
+  .ui-selectmenu-menu-mini,
+  .ui-selectmenu-menu-filter {
     padding: 1.2rem 0;
     .ui-widget.ui-widget-content {
       border-radius: 1.6rem;
@@ -2636,13 +2654,18 @@
 }
 
 @include mob {
-  .ui-selectmenu-button-mini.ui-button {
+  .ui-selectmenu-button-mini.ui-button,
+  .ui-selectmenu-button-filter.ui-button {
     width: 9rem;
     border-radius: 0.8rem;
     font-size: 1.2rem;
   }
+  .ui-selectmenu-button-filter.ui-button {
+    width: 100%;
+  }
 
-  .ui-selectmenu-menu-mini {
+  .ui-selectmenu-menu-mini,
+  .ui-selectmenu-menu-filter {
     padding: 0.9rem 0;
     .ui-widget.ui-widget-content {
       border-radius: 1.2rem;
