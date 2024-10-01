@@ -249,6 +249,9 @@
     font-size: 2rem;
     font-weight: 500;
     padding: 1.6rem;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
     svg {
       display: none;
     }

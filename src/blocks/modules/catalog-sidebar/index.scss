@@ -67,6 +67,11 @@
           font-family: $main-font;
         }
       }
+      .btn4 {
+        svg {
+          margin: 0;
+        }
+      }
     }
     &__modal {
       position: fixed;
@@ -135,7 +140,7 @@
       .select--sort {
         .ui-selectmenu-button-border.ui-button {
           gap: 0.4rem;
-          padding: 1.2rem 1rem;
+          padding: 1.2rem 0.6rem;
           border-radius: 0.8rem;
         }
         .ui-selectmenu-icon.ui-icon {
@@ -144,6 +149,13 @@
         }
         .ui-selectmenu-text {
           font-size: 1.2rem;
+        }
+      }
+      .btn4 {
+        padding-left: 0.6em;
+        padding-right: 0.6rem;
+        svg {
+          margin: 0;
         }
       }
     }
@@ -173,6 +185,7 @@
     display: flex;
     align-items: center;
     gap: 1.6rem;
+    min-height: 5.4rem;
   }
   @include tab {
     margin-bottom: 0;
@@ -198,6 +211,9 @@
       svg {
         display: none;
       }
+    }
+    &__bot {
+      min-height: auto;
     }
   }
   @include mob {

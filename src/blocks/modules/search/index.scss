@@ -126,6 +126,9 @@
   .card-ad-relative__tbody {
     // box-shadow: none;
   }
+  .card-ad-relative__td b {
+    display: contents;
+  }
   @include tab {
     padding-top: 0.8rem;    
     padding-right: 0;
