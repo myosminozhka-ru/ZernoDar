@@ -40,152 +40,154 @@
 </div>
 
 <script>
-  try {
-    const coord = document.querySelector("#map").getAttribute("data-map-coordinates").split(',').map(c => +c);
-    ymaps.ready(function () {
-      
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      var myMap = new ymaps.Map('map', {
-          center: coord,
-          zoom: 12,
-          controls: []
-      });
-      // Создание кастомной иконки маркера
-      var myPlacemark = new ymaps.Placemark(coord, {
-        // Данные для попапа
-        balloonContent: `
-          <div class="map-popup">
-            <div class="map-popup__inner">
-              <div class="map-popup__top">
-                <div class="map-popup__icon">
-                  <img src="img/pshenica.png" alt="">
+  addEventListener("DOMContentLoaded", () => {
+    try {
+      const coord = document.querySelector("#map").getAttribute("data-map-coordinates").split(',').map(c => +c);
+      ymaps.ready(function () {
+        
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var myMap = new ymaps.Map('map', {
+            center: coord,
+            zoom: 12,
+            controls: []
+        });
+        // Создание кастомной иконки маркера
+        var myPlacemark = new ymaps.Placemark(coord, {
+          // Данные для попапа
+          balloonContent: `
+            <div class="map-popup">
+              <div class="map-popup__inner">
+                <div class="map-popup__top">
+                  <div class="map-popup__icon">
+                    <img src="img/pshenica.png" alt="">
+                  </div>
+                  <div>
+                    <div class="map-popup__title">Пшеница 2 класса в Новгородской области</div>
+                    <div class="map-popup__price">12 000 ₽/тн </div>
+                  </div>
                 </div>
-                <div>
-                  <div class="map-popup__title">Пшеница 2 класса в Новгородской области</div>
-                  <div class="map-popup__price">12 000 ₽/тн </div>
-                </div>
-              </div>
-              <div class="map-popup__bot">
-                <div class="map-popup__tags">
-                  <span>Объем продажи: до 100 т</span>
+                <div class="map-popup__bot">
+                  <div class="map-popup__tags">
+                    <span>Объем продажи: до 100 т</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        `
-      }, {
-        // Опции для кастомной иконки
-        iconLayout: 'default#image',
-        iconImageHref: '/img/sprites/marker-map.svg', // Путь к вашей иконке
-        iconImageSize: [30, 42],                // Размер иконки
-        iconImageOffset: [-15, -42]             // Смещение иконки
-      });
-
-      // Отключение скролла одним пальцем
-      if (isMobile) {
-        myMap.behaviors.disable('drag')
-      }
-
-      // Добавление маркера на карту
-      myMap.geoObjects.add(myPlacemark);
-
-      var searchControl = new ymaps.control.SearchControl({
-        options: {
-            provider: 'yandex#map'
-        }
-      }); 
-
-      myMap.controls.add(searchControl);
-      var foundPlacemark = null;
-      var myPolyline = null;
-      function findDistance(res) {
-        if (foundPlacemark) {
-          myMap.geoObjects.remove(foundPlacemark);
-        }
-        if (myPolyline) {
-          myMap.geoObjects.remove(myPolyline);
-        }
-
-        var foundCoordinates = res.geometry.getCoordinates();
-        // Добавляем метку на найденное место
-        foundPlacemark = new ymaps.Placemark(foundCoordinates, {
-          balloonContent: 'Найденное место'
+          `
         }, {
+          // Опции для кастомной иконки
           iconLayout: 'default#image',
           iconImageHref: '/img/sprites/marker-map.svg', // Путь к вашей иконке
           iconImageSize: [30, 42],                // Размер иконки
           iconImageOffset: [-15, -42]             // Смещение иконки
         });
-        myMap.geoObjects.add(foundPlacemark);
 
-       // Создадим ломаную.
-       myPolyline = new ymaps.Polyline([
-            myPlacemark.geometry.getCoordinates(), foundPlacemark.geometry.getCoordinates()
-        ], {
-            hintContent: "Ломаная"
-        }, {
-            draggable: true,
-            strokeColor: '#000000',
-            strokeWidth: 4,
-              // Первой цифрой задаем длину штриха. Второй — длину разрыва.
-            strokeStyle: '1 5'
-        });
-        // Добавляем линию на карту.
-        myMap.geoObjects.add(myPolyline);
-
-        // Рассчитываем расстояние от найденного места до целевой точки
-        var distance = ymaps.coordSystem.geo.getDistance(foundCoordinates, coord);
-        myMap.setBounds(myMap.geoObjects.getBounds(), {
-          checkZoomRange: true, // Позволяет учитывать диапазон зума
-          zoomMargin: 100        // Отступы от краев карты в пикселях
-        });
-        // Открываем балун найденного места
-        foundPlacemark.balloon.open();
-
-        // Закрываем балун через 3 секунды (или можно закрыть по другому событию)
-        setTimeout(function() {
-          foundPlacemark.balloon.close();
-        }, 3000);
-
-        const distMeters = Math.round(distance);
-        // Выводим расстояние в метрах
-        console.log("Расстояние: " + distMeters + " метров");
-        function convertMetersToKilometers(meters) {
-            if (typeof meters !== 'number' || meters < 0) {
-                throw new Error("Введите корректное значение в метрах");
-            }
-            return meters / 1000;
+        // Отключение скролла одним пальцем
+        if (isMobile) {
+          myMap.behaviors.disable('drag')
         }
-        document.querySelector('.card-ad-map__distance-val').textContent = convertMetersToKilometers(distMeters) + "км";
-        return distMeters;
-      }
-      searchControl.events.add("resultselect", function (e) {
-        var index = e.get('index');
-        searchControl.getResult(index).then(function (res) {
-          findDistance(res)
-        });
-      });
 
-      const input = document.querySelector('.card-ad-map__input input')
-      
-      input.addEventListener('change', (e) => {
-        searchControl.search(e.target.value).then(function (res) {
-          searchControl.getResult(0).then(function (res) {
+        // Добавление маркера на карту
+        myMap.geoObjects.add(myPlacemark);
+
+        var searchControl = new ymaps.control.SearchControl({
+          options: {
+              provider: 'yandex#map'
+          }
+        }); 
+
+        myMap.controls.add(searchControl);
+        var foundPlacemark = null;
+        var myPolyline = null;
+        function findDistance(res) {
+          if (foundPlacemark) {
+            myMap.geoObjects.remove(foundPlacemark);
+          }
+          if (myPolyline) {
+            myMap.geoObjects.remove(myPolyline);
+          }
+
+          var foundCoordinates = res.geometry.getCoordinates();
+          // Добавляем метку на найденное место
+          foundPlacemark = new ymaps.Placemark(foundCoordinates, {
+            balloonContent: 'Найденное место'
+          }, {
+            iconLayout: 'default#image',
+            iconImageHref: '/img/sprites/marker-map.svg', // Путь к вашей иконке
+            iconImageSize: [30, 42],                // Размер иконки
+            iconImageOffset: [-15, -42]             // Смещение иконки
+          });
+          myMap.geoObjects.add(foundPlacemark);
+
+        // Создадим ломаную.
+        myPolyline = new ymaps.Polyline([
+              myPlacemark.geometry.getCoordinates(), foundPlacemark.geometry.getCoordinates()
+          ], {
+              hintContent: "Ломаная"
+          }, {
+              draggable: true,
+              strokeColor: '#000000',
+              strokeWidth: 4,
+                // Первой цифрой задаем длину штриха. Второй — длину разрыва.
+              strokeStyle: '1 5'
+          });
+          // Добавляем линию на карту.
+          myMap.geoObjects.add(myPolyline);
+
+          // Рассчитываем расстояние от найденного места до целевой точки
+          var distance = ymaps.coordSystem.geo.getDistance(foundCoordinates, coord);
+          myMap.setBounds(myMap.geoObjects.getBounds(), {
+            checkZoomRange: true, // Позволяет учитывать диапазон зума
+            zoomMargin: 100        // Отступы от краев карты в пикселях
+          });
+          // Открываем балун найденного места
+          foundPlacemark.balloon.open();
+
+          // Закрываем балун через 3 секунды (или можно закрыть по другому событию)
+          setTimeout(function() {
+            foundPlacemark.balloon.close();
+          }, 3000);
+
+          const distMeters = Math.round(distance);
+          // Выводим расстояние в метрах
+          console.log("Расстояние: " + distMeters + " метров");
+          function convertMetersToKilometers(meters) {
+              if (typeof meters !== 'number' || meters < 0) {
+                  throw new Error("Введите корректное значение в метрах");
+              }
+              return meters / 1000;
+          }
+          document.querySelector('.card-ad-map__distance-val').textContent = convertMetersToKilometers(distMeters) + "км";
+          return distMeters;
+        }
+        searchControl.events.add("resultselect", function (e) {
+          var index = e.get('index');
+          searchControl.getResult(index).then(function (res) {
             findDistance(res)
           });
+        });
+
+        const input = document.querySelector('.card-ad-map__input input')
+        
+        input.addEventListener('change', (e) => {
+          searchControl.search(e.target.value).then(function (res) {
+            searchControl.getResult(0).then(function (res) {
+              findDistance(res)
+            });
+          })
         })
-      })
-      var mapDistanceOpened = false;
-      document.querySelector('.card-ad-map__input button').addEventListener("click", function() {
-        document.querySelector('.card-ad-map__map').classList.toggle('open');
-        mapDistanceOpened = !mapDistanceOpened;
-        mapDistanceOpened ? document.querySelector(".card-ad-map__distance").scrollIntoView({
-          block: 'end', // Выровнять по нижней части экрана
-          behavior: 'smooth' // Плавная прокрутка
-        }) : null;
-      })
-    });
-  } catch(e) {
-    console.log(e);
-  }
+        var mapDistanceOpened = false;
+        document.querySelector('.card-ad-map__input button').addEventListener("click", function() {
+          document.querySelector('.card-ad-map__map').classList.toggle('open');
+          mapDistanceOpened = !mapDistanceOpened;
+          mapDistanceOpened ? document.querySelector(".card-ad-map__distance").scrollIntoView({
+            block: 'end', // Выровнять по нижней части экрана
+            behavior: 'smooth' // Плавная прокрутка
+          }) : null;
+        })
+      });
+    } catch(e) {
+      console.log(e);
+    }
+  });
 </script>

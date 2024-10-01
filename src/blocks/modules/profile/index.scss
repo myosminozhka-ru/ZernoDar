@@ -61,6 +61,15 @@
           font-size: 1.4rem;
         }
       }
+      &--actions {
+        margin-top: -4rem;
+        .profile-edit__actions {
+          padding-top: 0;
+          & + .error {
+            padding: 0 2.4rem;
+          }
+        }
+      }
     }
     &__head {
       gap: 1rem;
@@ -92,6 +101,15 @@
         .profile-edit__subtitle {
           margin-top: 4rem;
           font-size: 1.2rem;
+        }
+      }
+      &--actions {
+        margin-top: -2rem;
+        .profile-edit__actions {
+          padding-top: 0;
+          & + .error {
+            padding: 0 2.4rem;
+          }
         }
       }
     }
@@ -214,7 +232,9 @@
       padding: 2.4rem;
       &--logo {
         .edit-contact__value {
-          display: none;
+          .edit-contact__value {
+            display: none;
+          }
         }
       }
       &.open {
@@ -473,6 +493,9 @@
         display: flex;
       }
     }
+  }
+  &__list:empty {
+    display: none;
   }
   @include tab {
     &__inner {
