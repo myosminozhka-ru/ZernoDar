@@ -1328,12 +1328,19 @@ function authCode() {
 // ==== auth code end
 
 // ==== subscription start
-$(".custom-select").selectmenu({
-  classes: {
-    "ui-selectmenu-button": "ui-selectmenu-button-mini",
-    "ui-selectmenu-menu": "ui-selectmenu-menu-mini"
-  }
-});
+$(".custom-select").each(function(index, el)  {
+  $(el).selectmenu({
+    classes: {
+      "ui-selectmenu-button": "ui-selectmenu-button-mini",
+      "ui-selectmenu-menu": "ui-selectmenu-menu-mini"
+    },
+    appendTo: $(this).closest(".subs-mob__inner, .tariff-cards"),
+    position: {
+      my: 'center bottom',
+      at: 'center top'
+    }
+  });
+})
 // ==== subscription end
 
 
@@ -1467,7 +1474,7 @@ $(document).on('click', '[data-scroll-to]', function (e) {
 function autoHeightInputWrap(reinit) {
   function setEqualHeight(container) {
 
-    const wraps = $(container).find('.my-input')
+    const wraps = $(container).find('.my-input:not(.hide)')
     var grouped = groupElementsByPosition(wraps);
     grouped.forEach(array => {
       // Сброс высоты всех элементов

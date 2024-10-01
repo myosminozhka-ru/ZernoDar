@@ -80,6 +80,7 @@ addEventListener("DOMContentLoaded", () => {
       console.log('lastWarehouses eq');
       return;
     }
+    window.removeAllWarehousesOnMap()
     lastWarehouses = warehouses;
     warehouses.forEach(function (warehouse) {
       var placemark = new ymaps.Placemark(warehouse.coordinates, {
@@ -110,7 +111,7 @@ addEventListener("DOMContentLoaded", () => {
       }, {
         // Опции для кастомной иконки
         iconLayout: 'default#image',
-        iconImageHref: '/img/sprites/marker-map.svg', // Путь к вашей иконке
+        iconImageHref: '/img/marker-map.svg', // Путь к вашей иконке
         iconImageSize: [30, 42],                // Размер иконки
         iconImageOffset: [-15, -42]             // Смещение иконки
       });

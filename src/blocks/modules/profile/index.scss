@@ -232,7 +232,9 @@
       padding: 2.4rem;
       &--logo {
         .edit-contact__value {
-          display: none;
+          .edit-contact__value {
+            display: none;
+          }
         }
       }
       &.open {
