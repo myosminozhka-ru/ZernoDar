@@ -4337,6 +4337,7 @@ a {
   display: flex;
   align-items: center;
   gap: 1.6rem;
+  min-height: 5.4rem;
 }
 
 .switch-train {
@@ -6015,7 +6016,7 @@ a {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  bottom: 2.4rem;
+  top: 1rem;
   left: 2.4rem;
   z-index: 40;
   width: calc(100% - 4.8rem);
@@ -7329,6 +7330,10 @@ a {
   margin: 0;
 }
 
+.drop-search .card-ad-relative__td b {
+  display: contents;
+}
+
 .payment-details {
   display: flex;
   justify-content: center;
@@ -7538,6 +7543,9 @@ a {
   font-size: 2rem;
   font-weight: 500;
   padding: 1.6rem;
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .payment-details__cancel svg {
@@ -11381,6 +11389,10 @@ a {
     font-family: "TRY Grtsk";
   }
 
+  .catalog-sidebar__btns .btn4 svg {
+    margin: 0;
+  }
+
   .catalog-sidebar__modal {
     position: fixed;
     width: 100%;
@@ -11476,6 +11488,10 @@ a {
 
   .catalog-head__reset svg {
     display: none;
+  }
+
+  .catalog-head__bot {
+    min-height: auto;
   }
 
   .switch-train {
@@ -14124,7 +14140,7 @@ a {
     padding: 2.4rem;
   }
 
-  .edit-contact__item--logo .edit-contact__value {
+  .edit-contact__item--logo .edit-contact__value .edit-contact__value {
     display: none;
   }
 
@@ -16725,7 +16741,7 @@ a {
 
   .catalog-sidebar__btns .select--sort .ui-selectmenu-button-border.ui-button {
     gap: 0.4rem;
-    padding: 1.2rem 1rem;
+    padding: 1.2rem 0.6rem;
     border-radius: 0.8rem;
   }
 
@@ -16736,6 +16752,15 @@ a {
 
   .catalog-sidebar__btns .select--sort .ui-selectmenu-text {
     font-size: 1.2rem;
+  }
+
+  .catalog-sidebar__btns .btn4 {
+    padding-left: 0.6em;
+    padding-right: 0.6rem;
+  }
+
+  .catalog-sidebar__btns .btn4 svg {
+    margin: 0;
   }
 
   .catalog-sidebar__modal-inner {
