@@ -1032,7 +1032,7 @@
         }, {
           // Опции для кастомной иконки
           iconLayout: 'default#image',
-          iconImageHref: '/img/sprites/marker-map.svg', // Путь к вашей иконке
+          iconImageHref: '/img/marker-map.svg', // Путь к вашей иконке
           iconImageSize: [30, 42],                // Размер иконки
           iconImageOffset: [-15, -42]             // Смещение иконки
         });
@@ -1122,14 +1122,24 @@
           });
         });
 
-        const input = document.querySelector('.card-ad-map__input input')
-        
+        const input = document.querySelector('.card-ad-map__input input');
+        const suggestionswrapper = document.querySelector('.suggestions-suggestions')
+        suggestionswrapper.addEventListener('click', (e) => {
+          const target = e.target;
+          if (target.classList.contains('suggestions-value') 
+            || target.classList.contains('suggestions-suggestion')
+            || target.closest('suggestions-suggestion')
+          ) {
+            const value = target.closest('suggestions-suggestion')?.textContent || target.textContent
+            input.value = value
+            searchControl.search(value).then(function (res) {
+              searchControl.getResult(0).then(function (res) {
+                findDistance(res)
+              });
+            })
+          }
+        })
         input.addEventListener('change', (e) => {
-          searchControl.search(e.target.value).then(function (res) {
-            searchControl.getResult(0).then(function (res) {
-              findDistance(res)
-            });
-          })
         })
         var mapDistanceOpened = false;
         document.querySelector('.card-ad-map__input button').addEventListener("click", function() {
