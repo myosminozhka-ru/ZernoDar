@@ -354,6 +354,7 @@
           ul {
             gap: 1.6rem;
             margin: 0;
+            max-height: 10.92rem;
           }
           li {
             padding: 0;
@@ -367,7 +368,10 @@
           padding: 0;
         }
         &__bot-right {
-          flex: row-reverse;
+          flex-direction: row-reverse;
+        }
+        &__data-more {
+          display: none;
         }
       }
     }
@@ -451,6 +455,11 @@
       .card {
         &__title {
           max-height: 3.78rem;
+        }
+        &__data {
+          ul {
+            max-height: 9.62rem;
+          }
         }
       }
     }

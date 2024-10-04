@@ -6,8 +6,8 @@
     </div>
     <div class="card-ad-map__content">
       <div class="card-ad-map__top">
-        <div class="card-ad-map__address" data-copy-text="copy-address">
-          Ульяновская обл., Россия, 433315
+        <div class="card-ad-map__address" >
+          <span data-copy-text="copy-address" data-copy-inform="copy-address">Ульяновская обл., Россия, 433315</span>
           <div class="copy" data-copy-trigger="copy-address">
             <svg>
               <use xlink:href="img/sprites/sprite.svg#copy"></use>
@@ -25,8 +25,10 @@
           <svg>
             <use xlink:href="img/sprites/sprite.svg#input-map"></use>
           </svg>
-          <input type="text" placeholder="Укажите ваш адрес">
-          <div class="suggestions-suggestions" style=""><div class="suggestions-hint">Выберите вариант или продолжите ввод</div><div class="suggestions-suggestion" data-index="0"><span class="suggestions-value">г <strong>М</strong>осква</span></div><div class="suggestions-suggestion" data-index="1"><span class="suggestions-value"><strong>М</strong>осковская обл</span></div><div class="suggestions-suggestion" data-index="2"><span class="suggestions-value">Ханты-<strong>М</strong>ансийский Автономный округ - Югра</span></div><div class="suggestions-suggestion" data-index="3"><span class="suggestions-value">Респ <strong>М</strong>ордовия</span></div><div class="suggestions-suggestion" data-index="4"><span class="suggestions-value"><strong>М</strong>урманская обл</span></div><div class="suggestions-promo"></div></div>
+          <input type="text" placeholder="Укажите ваш адрес" data-dadata-distance>
+          <div class="suggestions-wrapper">
+            <div class="suggestions-suggestions" style=""><div class="suggestions-hint">Выберите вариант или продолжите ввод</div><div class="suggestions-suggestion" data-index="0"><span class="suggestions-value">г <strong>М</strong>осква</span></div><div class="suggestions-suggestion" data-index="1"><span class="suggestions-value"><strong>М</strong>осковская обл</span></div><div class="suggestions-suggestion" data-index="2"><span class="suggestions-value">Ханты-<strong>М</strong>ансийский Автономный округ - Югра</span></div><div class="suggestions-suggestion" data-index="3"><span class="suggestions-value">Респ <strong>М</strong>ордовия</span></div><div class="suggestions-suggestion" data-index="4"><span class="suggestions-value"><strong>М</strong>урманская обл</span></div><div class="suggestions-promo"></div></div>
+          </div>
           <button>Карта</button>
         </div>
         <button class="card-ad-map__calc">Расcчитать расстояние</button>
@@ -79,7 +81,8 @@
           iconLayout: 'default#image',
           iconImageHref: '/img/marker-map.svg', // Путь к вашей иконке
           iconImageSize: [30, 42],                // Размер иконки
-          iconImageOffset: [-15, -42]             // Смещение иконки
+          iconImageOffset: [-15, -42],             // Смещение иконки
+          hideIconOnBalloonOpen: false,
         });
 
         // Отключение скролла одним пальцем
@@ -92,26 +95,40 @@
 
         var searchControl = new ymaps.control.SearchControl({
           options: {
-              provider: 'yandex#map'
+              provider: 'yandex#map',
+              noPlacemark: true // Отключаем стандартную метку поиска
           }
         }); 
+        // Переменная для кастомной метки
+        var customPlacemark;
+        // searchControl.events.add("resultselect", function (e) {
+        //   var index = e.get('index');
+        //   searchControl.getResult(index).then(function (res) {
+        //     findDistance(res)
+        //   });
+        // });
 
-        myMap.controls.add(searchControl);
-        var foundPlacemark = null;
+        // myMap.controls.add(searchControl);
+        
         var myPolyline = null;
-        function findDistance(res) {
+        var foundPlacemark = null;
+        function findDistance({data}) {
+          // Если метка уже существует, удаляем её
           if (foundPlacemark) {
-            myMap.geoObjects.remove(foundPlacemark);
+              myMap.geoObjects.remove(foundPlacemark);
           }
           if (myPolyline) {
             myMap.geoObjects.remove(myPolyline);
           }
 
-          var foundCoordinates = res.geometry.getCoordinates();
+          var coordinates = [data.geo_lat, data.geo_lon];
+
           // Добавляем метку на найденное место
-          foundPlacemark = new ymaps.Placemark(foundCoordinates, {
+          foundPlacemark = new ymaps.Placemark(coordinates, {
             balloonContent: 'Найденное место'
           }, {
+            hideIconOnBalloonOpen: false,
+            balloonOffset: [0, -20],
             iconLayout: 'default#image',
             iconImageHref: '/img/sprites/marker-map.svg', // Путь к вашей иконке
             iconImageSize: [30, 42],                // Размер иконки
@@ -119,9 +136,10 @@
           });
           myMap.geoObjects.add(foundPlacemark);
 
+
         // Создадим ломаную.
         myPolyline = new ymaps.Polyline([
-              myPlacemark.geometry.getCoordinates(), foundPlacemark.geometry.getCoordinates()
+              myPlacemark.geometry.getCoordinates(), coordinates
           ], {
               hintContent: "Ломаная"
           }, {
@@ -135,18 +153,13 @@
           myMap.geoObjects.add(myPolyline);
 
           // Рассчитываем расстояние от найденного места до целевой точки
-          var distance = ymaps.coordSystem.geo.getDistance(foundCoordinates, coord);
+          var distance = ymaps.coordSystem.geo.getDistance(coordinates, coord);
           myMap.setBounds(myMap.geoObjects.getBounds(), {
             checkZoomRange: true, // Позволяет учитывать диапазон зума
             zoomMargin: 100        // Отступы от краев карты в пикселях
           });
           // Открываем балун найденного места
           foundPlacemark.balloon.open();
-
-          // Закрываем балун через 3 секунды (или можно закрыть по другому событию)
-          setTimeout(function() {
-            foundPlacemark.balloon.close();
-          }, 3000);
 
           const distMeters = Math.round(distance);
           // Выводим расстояние в метрах
@@ -160,30 +173,36 @@
           document.querySelector('.card-ad-map__distance-val').textContent = convertMetersToKilometers(distMeters) + "км";
           return distMeters;
         }
-        searchControl.events.add("resultselect", function (e) {
-          var index = e.get('index');
-          searchControl.getResult(index).then(function (res) {
-            findDistance(res)
-          });
-        });
+        
 
         const input = document.querySelector('.card-ad-map__input input');
-        const suggestionswrapper = document.querySelector('.suggestions-suggestions')
-        suggestionswrapper.addEventListener('click', (e) => {
-          const target = e.target;
-          if (target.classList.contains('suggestions-value') 
-            || target.classList.contains('suggestions-suggestion')
-            || target.closest('suggestions-suggestion')
-          ) {
-            const value = target.closest('suggestions-suggestion')?.textContent || target.textContent
-            input.value = value
-            searchControl.search(value).then(function (res) {
-              searchControl.getResult(0).then(function (res) {
-                findDistance(res)
-              });
-            })
+        const suggestionswrapper = document.querySelector('.suggestions-wrapper')
+
+        $('[data-dadata-distance]').suggestions({
+          token: 'ae757b2eaac534f7132ac55edd799e19899a1a4c',
+          type: 'ADDRESS',
+          onSelect: function(suggestion) {
+            console.log(suggestion);
+            findDistance(suggestion)
           }
-        })
+        });
+
+        // suggestionswrapper.addEventListener('click', (e) => {
+        //   const target = e.target;
+        //   if (target.classList.contains('suggestions-value') 
+        //     || target.classList.contains('suggestions-suggestion')
+        //     || target.closest('suggestions-suggestion')
+        //   ) {
+        //     const value = target.closest('suggestions-suggestion')?.textContent || target.textContent
+        //     input.value = value
+        //     searchControl.search(value)
+        //     // .then(function (res) {
+        //     //   searchControl.getResult(0).then(function (res) {
+        //     //     findDistance(res)
+        //     //   });
+        //     // })
+        //   }
+        // })
         input.addEventListener('change', (e) => {
         })
         var mapDistanceOpened = false;

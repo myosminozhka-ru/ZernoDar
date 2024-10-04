@@ -13,7 +13,6 @@ function hasMouseSupport() {
 // ==== copy start
 class Copy {
   constructor() {
-    this.nodes = document.querySelectorAll('[data-copy-trigger]')
     this.textarea = document.querySelector('#urlCopy')
     this.init()
   }
@@ -22,28 +21,56 @@ class Copy {
     this.copyHandler()
   }
   copy(id) {
-
+    let text = ''
     if (id) {
-      const text = document.querySelector(`[data-copy-text=${id}]`)
-
-      this.textarea.innerHTML = text.textContent
+      const el = document.querySelector(`[data-copy-text=${id}]`);
+      text = el.textContent
+      this.textarea.innerHTML = el.textContent;
     } else {
       this.textarea.innerHTML = window.location.href;
     }
+    this.textarea.focus();
     this.textarea.select();
-    document.execCommand("copy");
+
+    if (navigator.clipboard && window.isSecureContext) {
+        // Используем Clipboard API
+        navigator.clipboard.writeText(text).then(function() {
+            console.log('Текст скопирован в буфер обмена!');
+        }, function(err) {
+            console.error('Ошибка при копировании текста: ', err);
+        });
+    } else {
+
+        try {
+            document.execCommand('copy');
+            console.log('Текст скопирован в буфер обмена (фоллбэк)!');
+        } catch (err) {
+            console.error('Ошибка при копировании текста (фоллбэк): ', err);
+        }
+    }
   }
   copyHandler() {
-    this.nodes.forEach(el => {
-      el.addEventListener('click', () => {
-        const id = el.getAttribute('data-copy-trigger')
-        this.copy(id)
-        this.alert()
-      })
+    const that = this
+    $(document).on('click', '[data-copy-trigger]', function(event) {
+      event.preventDefault(); 
+      const id = $(this).attr('data-copy-trigger')
+      that.copy(id)
+      that.inform(id, $(this))
     })
   }
-  alert() {
-    alert('Скопировано!')
+  inform(id, jq) {
+    let inform = $(`[data-copy-inform=${id}]`)
+    let text = ''
+    if (inform.length) {
+      text = inform.text()
+    } else {
+      inform = jq
+      text = jq.text()
+    }
+    inform.text('Скопировано!')
+    setTimeout(function() {
+      inform.text(text)
+    }, 2000);
   }
 }
 // ==== copy end
@@ -204,6 +231,20 @@ function phoneMask(selector) {
   return instances;
 }
 // ==== tel mask end
+
+// ==== inn mask start
+function innMask(selector) {
+  const inputs = document.querySelectorAll(selector);
+  const instances = [];
+  inputs.forEach((el) => {
+    instances.push(IMask(el, {
+      mask: /^\d{0,12}$/
+     }));
+  });
+
+  return instances;
+}
+// ==== inn mask end
 
 // ==== Header start
 class Header {
@@ -1543,6 +1584,33 @@ function groupElementsByPosition(selector) {
 window.autoHeightInputWrap = autoHeightInputWrap;
 // ==== auto height input-wrap end
 
+// ==== tooltip start
+$('.helptip').tooltip({
+  classes: {
+    "ui-tooltip": "ui-corner-all ui-widget-shadow ui-helptip"
+  }
+});
+$('.header__act').tooltip({
+  classes: {
+    "ui-tooltip": "ui-corner-all ui-widget-shadow ui-helptip--count-add"
+  }
+});
+// if (hasMouseSupport()) {
+//   $('.helptip').tooltip({
+//     trigger: 'hover',
+//     classes: {
+//       "ui-tooltip": "helptip"
+//     }
+//   });
+// } else {
+//   $('.helptip').tooltip({
+//     trigger: 'click',
+//     classes: {
+//       "ui-tooltip": "helptip"
+//     }
+//   });
+// }
+// ==== tooltip end
 
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
@@ -1643,6 +1711,7 @@ addEventListener("DOMContentLoaded", () => {
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     mapFilter: new Sidebar('mapFilter', '.app'),
     copy: new Copy(),
+    innMasks: innMask(".inn-input"),
   };
 
   function debounce(func, delay) {

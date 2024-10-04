@@ -85,25 +85,11 @@
     border: 1px solid $lightgrey;
     padding: 1.3rem 1.6rem;
   }
-  .suggestions-suggestions {
+  .suggestions-wrapper {
     min-width: 57.2rem;
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #F8F8F8;
-    border-radius: 2rem;
-    padding: 1rem;
-    font-size: 1.5rem;
-  }
-  .suggestions-suggestion {
-    margin-bottom: 0.8rem;
-    cursor: pointer;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .suggestions-hint {
-    font-size: 1.2rem;
   }
   @include tab {
     margin-bottom: 0;
@@ -154,7 +140,6 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding-left: 1.6rem;
       margin-bottom: 2.4rem;
       input {
         flex-grow: 1;
@@ -187,6 +172,7 @@
         display: inline-block;
         width: 2rem;
         height: 2rem;
+        margin-left: 1.8rem;
       }
     }
     &__calc {
@@ -211,15 +197,13 @@
       border: 0;
       padding: 0;
     }
-    .suggestions-suggestions {
+    .suggestions-wrapper {
       min-width: 100%;
-      border-radius: 0.8rem;
-      padding: 1rem;
-      font-size: 1.4rem;
       position: static;
+      padding: 0;
     }
-    .suggestions-hint {
-      font-size: 1rem;
+    .suggestions-suggestions {
+      box-shadow: none;
     }
   }
   @include mob {
@@ -241,7 +225,6 @@
       margin-bottom: 2.4rem;
     }
     &__input {
-      padding-left: 0.8rem;
       input {
         font-size: 1.2rem;
         padding: 0.8rem 0.8rem;
@@ -255,6 +238,7 @@
       svg {
         width: 1.7rem;
         height: 1.7rem;
+        margin-left: 1.5rem;
       }
     }
     &__calc {

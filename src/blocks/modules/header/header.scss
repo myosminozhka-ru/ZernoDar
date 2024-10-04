@@ -65,6 +65,7 @@
     width: 5rem;
     height: 5rem;
     padding: 1.2rem;
+    position: relative;
 
     svg {
       @include img-contain;
@@ -94,6 +95,23 @@
 
   &__burger-wrap {
     display: none;
+  }
+
+  &__count-adds {
+    min-width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: $orange;
+    position: absolute;
+    right: 0.3rem;
+    top: 0.2rem;
+    z-index: 2;
+    font-size: 1.2rem;
+    color: $white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   @include tab {
@@ -144,6 +162,14 @@
       &.trig-open-search.hide {
         display: inline-block;
       }
+    }
+
+    &__count-adds {
+      min-width: 1.8rem;
+      height: 1.8rem;
+      right: 0.1rem;
+      top: 0.1rem;
+      font-size: 1rem;
     }
   
     &__add-btn {
@@ -218,6 +244,14 @@
       width: 2.4rem;
       height: 2.4rem;
       padding: 0.3rem;
+    }
+
+    &__count-adds {
+      min-width: 1.5rem;
+      height: 1.5rem;
+      right: -0.3rem;
+      top: -0.3rem;
+      font-size: 0.8rem;
     }
 
     &__burger-wrap {

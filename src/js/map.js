@@ -68,7 +68,6 @@ addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-
   window.slideTo = function (idParam) {
     try {
       setTimeout(() => {
@@ -108,50 +107,6 @@ addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  window.removeAllWarehousesOnMap = function () {
-    myMap.geoObjects.removeAll();
-  }
-
-  // пример данных у точек на карте
-  const warehouses = [
-    {
-      id: '1',
-      coordinates: [55.829544, 37.436152],
-      name: "name 1",
-      price: "price 1",
-      icon: 'img/first-screen1.jpg',
-      tags: ["tag 1", "tag 1"],
-      ownerHref: '/href',
-    },
-    {
-      id: '2',
-      coordinates: [55.813376, 37.630301],
-      name: "name 2",
-      price: "price 1",
-      icon: 'img/first-screen2.jpg',
-      tags: ["tag 1", "tag 1"],
-      ownerHref: '/href',
-    },
-    {
-      id: '3',
-      coordinates: [55.742848, 37.605283],
-      name: "name 3",
-      price: "price 1",
-      icon: 'img/first-screen3.jpg',
-      tags: ["tag 1", "tag 1"],
-      ownerHref: '/href',
-    },
-    {
-      id: '4',
-      coordinates: [55.750630, 37.674063],
-      name: "name 4",
-      price: "price 1",
-      icon: 'img/first-screen1.jpg',
-      tags: ["tag 1", "tag 1"],
-      ownerHref: '/href',
-    }
-  ];
-
   // debounce функция, которая «откладывает» вызов другой функции до того момента, когда с последнего вызова пройдёт определённое количество времени
   function debounce(func, delay) {
     let timeoutId;
@@ -169,6 +124,18 @@ addEventListener("DOMContentLoaded", () => {
   let geoObjects = new Map();
   let myMap;
   let clusterer;
+  let onBoundsChange = debounce(function (e) {
+    var result = myMap.getBounds();
+
+    if (result) {
+      $('[data-name="ADDRESS_GEO_LAT"]').find('[data-min]').val(result[0][0]);
+      $('[data-name="ADDRESS_GEO_LAT"]').find('[data-max]').val(result[1][0]);
+      $('[data-name="ADDRESS_GEO_LON"]').find('[data-min]').val(result[0][1]);
+      $('[data-name="ADDRESS_GEO_LON"]').find('[data-max]').val(result[1][1]);
+
+      //window.SmartFilterDataChanged(window.filter, true);
+    }
+  }, 2000);
 
   function init() {
 
@@ -176,11 +143,22 @@ addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    var coordinates = document.querySelector("#map-search").getAttribute("data-map-coordinates").split(',').map(c => +c),
+      zoom = 5;
+
+    if (!coordinates || !coordinates[0]) {
+      coordinates = [56.326483, 44.006050];
+      zoom = 5;
+    }
+
     // Инициализация карты
     myMap = new ymaps.Map("map-search", {
-      center: [55.76, 37.64],
-      zoom: 10,
-      controls: ['zoomControl', 'fullscreenControl']
+      center: coordinates,
+      zoom: zoom,
+      controls: []
+    }, {
+      maxZoom: 16,
+      minZoom: 4,
     });
 
     window.catalogMap = myMap;
@@ -194,50 +172,34 @@ addEventListener("DOMContentLoaded", () => {
       clusterBalloonPanelMaxMapArea: 0, // Отключить сворачивание панели при увеличении карты
       // clusterBalloonContentLayoutWidth: 200, // Ширина карусели
       // clusterBalloonContentLayoutHeight: 130, // Высота карусели
-      clusterBalloonPagerSize: 5 // Количество элементов в панели навигации карусели
+      clusterBalloonPagerSize: 5, // Количество элементов в панели навигации карусели
+      margin: 20,
     });
-
-    // Добавляем обработчик клика по кластеру
+    // Обработчик клика на кластер
     clusterer.events.add('click', function (e) {
-      const target = e.get('target'); // Получаем кластер, по которому кликнули
+      var target = e.get('target');
 
-      // Проверяем, что это действительно кластер, а не отдельная метка
-      if (target instanceof ymaps.ClusterPlacemark) {
-        const clusterBounds = target.getBounds(); // Получаем границы кластера
-        const mapZoom = myMap.getZoom(); // Текущий зум карты
-        const geoObjects = target.getGeoObjects(); // Получаем метки внутри кластера
-
-        // Проверяем, находятся ли все метки в одной и той же координате
-        const areAllObjectsInSameCoordinates = geoObjects.every(geoObject =>
-          geoObject.geometry.getCoordinates().toString() === geoObjects[0].geometry.getCoordinates().toString()
-        );
-
-        // Если все метки находятся на одной и той же координате, показываем карусель
-        if (areAllObjectsInSameCoordinates) {
-          // debugger
-          // setTimeout(() => {
-          //   debugger
-          //   target?.balloon?.open(); // Открываем балун с каруселью
-          // }, 500);
-        } else {
-          // Иначе зумируем на границы кластера
-          // myMap.setBounds(clusterBounds, {
-          //   checkZoomRange: true, // Убедиться, что зум не выйдет за пределы minZoom и maxZoom
-          //   zoomMargin: 40 // Установка отступов при зумировании (для комфорта)
-          // }).then(function () {
-          //   const newZoom = myMap.getZoom();
-
-          //   // Если зум не изменился, увеличиваем его на 1 для дальнейшей разгруппировки
-          //   if (newZoom === mapZoom) {
-          //     myMap.setZoom(newZoom + 1);
-          //   }
-          // });
-        }
+      // Проверяем, кликнули ли на кластер
+      if (target.getGeoObjects) {
+        // Отключаем временно событие boundschange
+        myMap.events.remove('boundschange', onBoundsChange);
+        setTimeout(function() {
+          myMap.events.add('boundschange', onBoundsChange);
+        }, 1500);
+        // Увеличиваем зум на кластер и разгруппировываем метки
+        // myMap.setBounds(target.getBounds(), {
+        //   checkZoomRange: true
+        // }).then(function () {
+        //   // Возвращаем слушатель boundschange после завершения анимации
+        //   myMap.events.add('boundschange', onBoundsChange);
+        // });
       }
     });
 
     // Пример начального массива объектов
-    oldObjects = [
+
+    // Отображаем начальные объекты
+    updateMap([
       {
         id: '1',
         coordinates: [55.829544, 37.436152],
@@ -274,50 +236,57 @@ addEventListener("DOMContentLoaded", () => {
         tags: ["tag 1", "tag 1"],
         ownerHref: '/href',
       }
-    ];
-
-    // Отображаем начальные объекты
-    updateMap(oldObjects);
+    ]);
 
 
-    myMap.events.add('boundschange', debounce(function (e) {
-      console.log("getBounds", myMap.getBounds());
-      //updateMap(oldObjects);
-    }, 2000));
+    myMap.events.add('boundschange', onBoundsChange);
   }
 
   // Функция для обновления карты с кластеризацией
   function updateMap(newObjects) {
+    // Добавляем новые объекты, которых не было в старом массиве
+    if (newObjects.length > 60) {
+      // window.startMapCatalogLoader()
+    }
+    const savedObjects = []
     // Удаляем объекты, которых нет в новом массиве
     for (let i = 0; i < oldObjects.length; i++) {
-      if (!isObjectInArray(oldObjects[i], newObjects)) {
-        removeObjectFromMap(oldObjects[i]);
-      }
+        if (!isObjectInArray(oldObjects[i], newObjects)) {
+            // removeObjectFromMap(oldObjects[i]);
+        } else {
+          savedObjects.push(oldObjects[i])
+        }
     }
 
-    // Добавляем новые объекты, которых не было в старом массиве
     for (let i = 0; i < newObjects.length; i++) {
       if (!isObjectInArray(newObjects[i], oldObjects)) {
         addObjectToMap(newObjects[i]);
+        savedObjects.push(newObjects[i])
       }
     }
 
     // Обновляем старый массив
-    oldObjects = [...newObjects];
+    oldObjects = savedObjects
+    // oldObjects = [...oldObjects, ...newObjects].filter((item, index, self) =>
+    //   index === self.findIndex((t) => t.id === item.id)
+    // );
+    // window.finishMapCatalogLoader(200)
   }
 
   window.showWarehousesOnMap = updateMap
 
   // Функция проверки наличия объекта в массиве по id
   function isObjectInArray(obj, array) {
+    if (!array.length) {
+      return false
+    }
     return array.some(item => item.id === obj.id);
   }
 
   // Функция добавления объекта на карту
   function addObjectToMap(obj) {
     const placemark = new ymaps.Placemark(obj.coordinates, {
-      balloonContentHeader: `<strong>${obj.name}</strong>`,
-      balloonContentBody: !mediaQuery.matches ? `
+      balloonContentBody: `
       <div class="map-popup">
         <div class="map-popup__inner">
           <div class="map-popup__top">
@@ -339,18 +308,34 @@ addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       </div>
-    ` : ``,
+    `,
     }, {
       // Опции для кастомной иконки
       iconLayout: 'default#image',
-      iconImageHref: '/img/marker-map.svg', // Путь к вашей иконке
+      iconImageHref: 'img/marker-map.svg', // Путь к вашей иконке
       iconImageSize: [30, 42],                // Размер иконки
       iconImageOffset: [-15, -42]             // Смещение иконки
     });
     geoObjects.set(obj.id, placemark); // Сохраняем метку в Map по её id
     clusterer.add(placemark); // Добавляем метку в кластеризатор
     myMap.geoObjects.add(clusterer); // Добавляем кластеризатор на карту (если еще не добавлен)
-    placemark.events.add('click', () => window.slideTo(obj.id));
+    placemark.events.add('click', () => {
+      // Отключаем временно событие boundschange
+      myMap.events.remove('boundschange', onBoundsChange);
+
+      setTimeout(function() {
+        myMap.events.add('boundschange', onBoundsChange);
+        window.slideTo(obj.id);
+      }, 1500);
+      // Центрируем карту
+      // myMap.setCenter(placemark.geometry.getCoordinates(), null, {
+      //   checkZoomRange: true
+      // }).then(function () {
+      //   // Возвращаем слушатель boundschange после завершения анимации центрирования
+      //   myMap.events.add('boundschange', onBoundsChange);
+      //   window.slideTo(obj.id);
+      // });
+    });
   }
 
   // Функция удаления объекта с карты
@@ -362,6 +347,32 @@ addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function startMapCatalogLoader() {
+    $('.app__loader').removeClass('hide')
+  }
+
+  window.startMapCatalogLoader = startMapCatalogLoader;
+
+  function finishMapCatalogLoader(timer) {
+    if (timer) {
+      setTimeout(function() {
+        $('.app__loader').addClass('hide')
+      }, timer)
+    } else {
+      $('.app__loader').addClass('hide')
+    }
+  }
+  window.finishMapCatalogLoader = finishMapCatalogLoader;
+
+  window.removeAllObjectFromMap = function () {
+    oldObjects = [];
+    geoObjects.clear();
+    clusterer.removeAll();
+  }
+
+  window.removeAllWarehousesOnMap = window.removeAllObjectFromMap;
+
+  // Инициализация карты
   try {
     ymaps.ready(init);
   } catch (error) {

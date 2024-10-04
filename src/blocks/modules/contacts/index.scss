@@ -192,6 +192,11 @@
     text-align: center;
     color: $darkgrey;
     font-size: 1.4rem;
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
   @include tab {
     &__mtitle {
