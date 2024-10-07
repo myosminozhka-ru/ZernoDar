@@ -89,6 +89,12 @@
           name: "modalTariffPayNotification",
         })
         @@include("../cookies/index.html")
+        @@include("../modal/modalConfirm.html", {
+          name: "modalConfirm",
+        })
+        @@include("../modal/modalMessage.html", {
+          name: "modalMessageStatusUpdated",
+        })
         <div class="visually-hidden">
           <textarea id="urlCopy" rows="1" cols="30"></textarea>
         </div>

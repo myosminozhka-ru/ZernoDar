@@ -115,11 +115,12 @@ function hideShowBlock(element, button) {
 
 // modal start
 class Modal {
-  constructor(name, scrollLock = true) {
+  constructor(name, scrollLock = true, type = 'modal') {
     this.name = name;
     this.scrollLock = scrollLock;
     this.modal = document.querySelector(`[data-modal="${name}"]`);
     this.callbackClose = null;
+    this.type = type;
     this.init();
   }
   init() {
@@ -127,7 +128,23 @@ class Modal {
       this.content = this.modal.querySelector(".modal__content");
       this.openHendler();
       this.closeHendler();
+      // if (this.type === 'confirm') {
+      //   this.showCustomConfirm()
+      // }
     }
+  }
+  showCustomConfirm() {
+    return new Promise((resolve, reject) => {
+        this.modal.querySelector(`[data-confirm-yes]`).onclick = () => {
+            resolve(true);
+            this.close()
+        };
+
+        this.modal.querySelector(`[data-confirm-no]`).onclick = () => {
+            resolve(false);
+            this.close()
+        };
+    });
   }
   open() {
     window.lastZIndexModal = window.lastZIndexModal
@@ -159,15 +176,19 @@ class Modal {
     this.modal
       ? this.modal.addEventListener("click", (e) => {
         if (e.target.classList.contains("close-x")) {
-          this.close();
+          if (this.type !== 'confirm') {
+            this.close();
+          }
         }
       })
       : null;
     this.modal
       ? this.modal
         .querySelector("button.close-x")
-        .addEventListener("click", (e) => {
-          this.close();
+        ?.addEventListener("click", (e) => {
+          if (this.type !== 'confirm') {
+            this.close();
+          }
         })
       : null;
   }
@@ -756,6 +777,11 @@ function review() {
     const targetSection = $('#' + targetId);
     targetSection.addClass('active')
   });
+
+  if ($('.base-tab__item--tab').length && !$('.base-tab__item--tab').hasClass('active')) {
+    $('.base-tab__item--tab').eq(0).addClass('active')
+    $('.base-tab__block--tab').eq(0).addClass('active')
+  }
 
   $(document).on('click', ' .review-list__to-answer .review-to-answer', function (e) {
     const target = e.target
@@ -1700,12 +1726,14 @@ addEventListener("DOMContentLoaded", () => {
     ratingModal: new Modal("rating"),
     sentToModerationModal: new Modal("sent-to-moderation"),
     modalMessageWait: new Modal("modalMessageWait"),
+    modalMessageStatusUpdated: new Modal("modalMessageStatusUpdated"),
     sortCompamyModal: new Modal("sort-compamy"),
     newsSubsModal: new Modal("news-subs"),
     modalReviewComplaint: new Modal("review-complaint"),
     modalMakeReview: new Modal("modalMakeReview"),
     modalPersonalTariff: new Modal("modalPersonalTariff"),
     modalVerifyAccount: new Modal("modalVerifyAccount"),
+    modalConfirm: new Modal("modalConfirm", true, 'confirm'),
     modalTariffPayNotification: new Modal("modalTariffPayNotification"),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
@@ -1713,6 +1741,7 @@ addEventListener("DOMContentLoaded", () => {
     copy: new Copy(),
     innMasks: innMask(".inn-input"),
   };
+  //window.octo.modalConfirm.open()
 
   function debounce(func, delay) {
     let timeoutId;
@@ -1725,6 +1754,38 @@ addEventListener("DOMContentLoaded", () => {
       }, delay);
     };
   }
+
+  // $('[name="radio-group"]').on('change', function(e) {
+  //   if (e.target.id === 'option2') {
+  //     window.octo.modalConfirm.open()
+  //     octo.modalConfirm.showCustomConfirm().then((result) => {
+  //       if (result) {
+  //           window.octo.modalMessageStatusUpdated.open()
+  //       } else {
+  //           console.log("Отменено!");
+  //       }
+  //     });
+  //   }
+  // })
+
+  // $('#autopay').on('change', function(e) {
+  //   console.log(e.target.checked);
+    
+  //   if (!e.target.checked) {
+  //     window.octo.modalConfirm.open()
+  //     octo.modalConfirm.showCustomConfirm().then((result) => {
+  //       if (result) {
+  //           window.octo.modalMessageStatusUpdated.open()
+  //           e.target.checked = false
+  //       } else {
+  //           console.log("Отменено!");
+  //           e.target.checked = true
+  //       }
+  //     });
+  //   } else {
+  //     console.log('unchecked');
+  //   }
+  // })
   // window.octo.catalogSidebar.onChangeRangeCurrent(debounce(function (data) {
   //   // в data данные текущего ползунка
   //   console.log(data)
