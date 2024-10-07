@@ -29,7 +29,7 @@ class Copy {
     } else {
       this.textarea.innerHTML = window.location.href;
     }
-    this.textarea.focus();
+    // this.textarea.focus();
     this.textarea.select();
 
     if (navigator.clipboard && window.isSecureContext) {
@@ -51,8 +51,7 @@ class Copy {
   }
   copyHandler() {
     const that = this
-    $(document).on('click', '[data-copy-trigger]', function(event) {
-      event.preventDefault(); 
+    $(document).on('click', '[data-copy-trigger]', function() {
       const id = $(this).attr('data-copy-trigger')
       that.copy(id)
       that.inform(id, $(this))

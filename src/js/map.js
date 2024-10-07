@@ -170,8 +170,8 @@ addEventListener("DOMContentLoaded", () => {
       clusterDisableClickZoom: false, // Включаем зум при клике на кластер
       clusterBalloonContentLayout: 'cluster#balloonCarousel', // Карусель в балуне
       clusterBalloonPanelMaxMapArea: 0, // Отключить сворачивание панели при увеличении карты
-      // clusterBalloonContentLayoutWidth: 200, // Ширина карусели
-      // clusterBalloonContentLayoutHeight: 130, // Высота карусели
+      clusterBalloonContentLayoutWidth: mediaQuery.matches ? 150 : 'auto', // Ширина карусели
+      clusterBalloonContentLayoutHeight: mediaQuery.matches ? 100 : 'auto', // Высота карусели
       clusterBalloonPagerSize: 5, // Количество элементов в панели навигации карусели
       margin: 20,
     });
@@ -235,6 +235,24 @@ addEventListener("DOMContentLoaded", () => {
         icon: 'img/first-screen1.jpg',
         tags: ["tag 1", "tag 1"],
         ownerHref: '/href',
+      },
+      {
+        id: '34',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "price 1",
+        icon: 'img/first-screen1.jpg',
+        tags: ["tag 1", "tag 1"],
+        ownerHref: '/href',
+      },
+      {
+        id: '34',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "price 1",
+        icon: 'img/first-screen1.jpg',
+        tags: ["tag 1", "tag 1"],
+        ownerHref: '/href',
       }
     ]);
 
@@ -248,7 +266,7 @@ addEventListener("DOMContentLoaded", () => {
     if (newObjects.length > 60) {
       // window.startMapCatalogLoader()
     }
-    
+
     // Удаляем объекты, которых нет в новом массиве
     // for (let i = 0; i < oldObjects.length; i++) {
     //     if (!isObjectInArray(oldObjects[i], newObjects)) {

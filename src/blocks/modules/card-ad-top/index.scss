@@ -2,6 +2,9 @@
   margin-bottom: 4.8rem;
   &__top {
     margin-bottom: 1.6rem;
+    .card-ad-top__tag .my-tag--no-price {
+      display: none;
+    }
   }
   &__img, &__price, &__hr {
     display: none;
@@ -135,6 +138,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      .card-ad-top__tag .my-tag--no-price {
+        display: inline-flex;
+      }
     }
     &__title {
       display: flex;

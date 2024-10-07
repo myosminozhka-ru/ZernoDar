@@ -257,6 +257,9 @@
 
 .map-popup {
   font-family: $main-font;
+  min-width: 20rem;
+  max-width: 30rem;
+  min-height: 14.5rem;
   &__top {
     display: flex;
     gap: 0.8rem;
@@ -291,6 +294,9 @@
     }
   }
   @include tab {
+    min-width: 10rem;
+    max-width: 20rem;
+    min-height: 8rem;
     &__top {
       gap: 0.2rem;
       margin-bottom: 0.6rem;
