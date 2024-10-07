@@ -783,8 +783,15 @@ function review() {
   });
 
   if ($('.base-tab__item--tab').length && !$('.base-tab__item--tab').hasClass('active')) {
-    $('.base-tab__item--tab').eq(0).addClass('active')
-    $('.base-tab__block--tab').eq(0).addClass('active')
+    if (mediaQuery.matches) {
+      if (!$('.base-tab__block--tab').eq(0).hasClass('base-tab__block--modal')) {
+        $('.base-tab__item--tab').eq(0).addClass('active')
+        $('.base-tab__block--tab').eq(0).addClass('active')
+      }
+    } else {
+      $('.base-tab__item--tab').eq(0).addClass('active')
+      $('.base-tab__block--tab').eq(0).addClass('active')
+    }
   }
 
   $(document).on('click', ' .review-list__to-answer .review-to-answer', function (e) {
@@ -1775,7 +1782,7 @@ addEventListener("DOMContentLoaded", () => {
       }, delay);
     };
   }
-  
+
   // $(document).on('click', '.payment-card__add, .payment-card__remove', function(e) {
   //     e.preventDefault();
   //     // Получаем выбранное значение
