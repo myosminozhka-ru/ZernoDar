@@ -1,4 +1,3 @@
-
 <div class="card-ad-map">
   <div class="card-ad-map__inner">
     <div class="h2 h2--full card-ad-map__mtitle">
@@ -6,7 +5,7 @@
     </div>
     <div class="card-ad-map__content">
       <div class="card-ad-map__top">
-        <div class="card-ad-map__address" >
+        <div class="card-ad-map__address">
           <span data-copy-text="copy-address" data-copy-inform="copy-address">Ульяновская обл., Россия, 433315</span>
           <div class="copy" data-copy-trigger="copy-address">
             <svg>
@@ -32,26 +31,23 @@
           <button>Карта</button>
         </div>
         <button class="card-ad-map__calc">Расcчитать расстояние</button>
-        <div class="card-ad-map__distance">
-          Расстояние: 
-          <div class="card-ad-map__distance-val">15km</div>
+        <div class="card-ad-map__distance"> Расстояние: <div class="card-ad-map__distance-val">15km</div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <script>
   addEventListener("DOMContentLoaded", () => {
     try {
       const coord = document.querySelector("#map").getAttribute("data-map-coordinates").split(',').map(c => +c);
       ymaps.ready(function () {
-        
+
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         var myMap = new ymaps.Map('map', {
-            center: coord,
-            zoom: 12,
-            controls: []
+          center: coord,
+          zoom: 12,
+          controls: []
         });
         // Создание кастомной иконки маркера
         var myPlacemark = new ymaps.Placemark(coord, {
@@ -95,10 +91,10 @@
 
         var searchControl = new ymaps.control.SearchControl({
           options: {
-              provider: 'yandex#map',
-              noPlacemark: true // Отключаем стандартную метку поиска
+            provider: 'yandex#map',
+            noPlacemark: true // Отключаем стандартную метку поиска
           }
-        }); 
+        });
         // Переменная для кастомной метки
         var customPlacemark;
         // searchControl.events.add("resultselect", function (e) {
@@ -109,13 +105,13 @@
         // });
 
         // myMap.controls.add(searchControl);
-        
+
         var myPolyline = null;
         var foundPlacemark = null;
-        function findDistance({data}) {
+        function findDistance({ data }) {
           // Если метка уже существует, удаляем её
           if (foundPlacemark) {
-              myMap.geoObjects.remove(foundPlacemark);
+            myMap.geoObjects.remove(foundPlacemark);
           }
           if (myPolyline) {
             myMap.geoObjects.remove(myPolyline);
@@ -137,17 +133,17 @@
           myMap.geoObjects.add(foundPlacemark);
 
 
-        // Создадим ломаную.
-        myPolyline = new ymaps.Polyline([
-              myPlacemark.geometry.getCoordinates(), coordinates
+          // Создадим ломаную.
+          myPolyline = new ymaps.Polyline([
+            myPlacemark.geometry.getCoordinates(), coordinates
           ], {
-              hintContent: "Ломаная"
+            hintContent: "Ломаная"
           }, {
-              draggable: true,
-              strokeColor: '#000000',
-              strokeWidth: 4,
-                // Первой цифрой задаем длину штриха. Второй — длину разрыва.
-              strokeStyle: '1 5'
+            draggable: true,
+            strokeColor: '#000000',
+            strokeWidth: 4,
+            // Первой цифрой задаем длину штриха. Второй — длину разрыва.
+            strokeStyle: '1 5'
           });
           // Добавляем линию на карту.
           myMap.geoObjects.add(myPolyline);
@@ -156,7 +152,7 @@
           var distance = ymaps.coordSystem.geo.getDistance(coordinates, coord);
           myMap.setBounds(myMap.geoObjects.getBounds(), {
             checkZoomRange: true, // Позволяет учитывать диапазон зума
-            zoomMargin: 100        // Отступы от краев карты в пикселях
+            zoomMargin: 50        // Отступы от краев карты в пикселях
           });
           // Открываем балун найденного места
           foundPlacemark.balloon.open();
@@ -165,24 +161,50 @@
           // Выводим расстояние в метрах
           console.log("Расстояние: " + distMeters + " метров");
           function convertMetersToKilometers(meters) {
-              if (typeof meters !== 'number' || meters < 0) {
-                  throw new Error("Введите корректное значение в метрах");
-              }
-              return meters / 1000;
+            if (typeof meters !== 'number' || meters < 0) {
+              throw new Error("Введите корректное значение в метрах");
+            }
+            return meters / 1000;
           }
           document.querySelector('.card-ad-map__distance-val').textContent = convertMetersToKilometers(distMeters) + "км";
           return distMeters;
         }
-        
+
 
         const input = document.querySelector('.card-ad-map__input input');
         const suggestionswrapper = document.querySelector('.suggestions-wrapper')
 
+        function join(arr /*, separator */) {
+          var separator = arguments.length > 1 ? arguments[1] : ", ";
+          return arr.filter(function (n) { return n }).join(separator);
+        }
+
+        function makeAddressString(address) {
+          return join([
+            join([address.street_type, address.street], " "),
+            join([address.house_type, address.house,
+            address.block_type, address.block], " "),
+            join([address.settlement_type, address.settlement], " "),
+            (address.city !== address.region && join([address.city_type, address.city], " ") || ""),
+            join([address.area_type, address.area], " "),
+            join([address.region_type, address.region], " ")
+          ]);
+        }
+        function formatResult(value, currentValue, suggestion) {
+          if (!suggestion.data.geo_lat) {
+            return ''
+          }
+
+          // console.log(document.querySelector('.suggestions-wrapper').cloneNode(true))
+          var addressValue = makeAddressString(suggestion.data);
+          return addressValue;
+        }
+
         $('[data-dadata-distance]').suggestions({
           token: 'ae757b2eaac534f7132ac55edd799e19899a1a4c',
           type: 'ADDRESS',
-          onSelect: function(suggestion) {
-            console.log(suggestion);
+          formatResult: formatResult,
+          onSelect: function (suggestion) {
             findDistance(suggestion)
           }
         });
@@ -206,7 +228,7 @@
         input.addEventListener('change', (e) => {
         })
         var mapDistanceOpened = false;
-        document.querySelector('.card-ad-map__input button').addEventListener("click", function() {
+        document.querySelector('.card-ad-map__input button').addEventListener("click", function () {
           document.querySelector('.card-ad-map__map').classList.toggle('open');
           mapDistanceOpened = !mapDistanceOpened;
           mapDistanceOpened ? document.querySelector(".card-ad-map__distance").scrollIntoView({
@@ -215,7 +237,7 @@
           }) : null;
         })
       });
-    } catch(e) {
+    } catch (e) {
       console.log(e);
     }
   });

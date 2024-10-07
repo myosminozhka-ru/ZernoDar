@@ -118,6 +118,7 @@ class Modal {
     this.name = name;
     this.scrollLock = scrollLock;
     this.modal = document.querySelector(`[data-modal="${name}"]`);
+    this.textPlace = null;
     this.callbackClose = null;
     this.type = type;
     this.init();
@@ -125,6 +126,7 @@ class Modal {
   init() {
     if (this.modal) {
       this.content = this.modal.querySelector(".modal__content");
+      this.textPlace = this.modal.querySelector(`[data-text-title]`);
       this.openHendler();
       this.closeHendler();
       // if (this.type === 'confirm') {
@@ -145,7 +147,10 @@ class Modal {
         };
     });
   }
-  open() {
+  open(text) {
+    if (text) {
+      this.textPlace.innerHTML = text;
+    }
     window.lastZIndexModal = window.lastZIndexModal
       ? window.lastZIndexModal + 1
       : 150;
@@ -1749,6 +1754,7 @@ addEventListener("DOMContentLoaded", () => {
     modalPersonalTariff: new Modal("modalPersonalTariff"),
     modalVerifyAccount: new Modal("modalVerifyAccount"),
     modalConfirm: new Modal("modalConfirm", true, 'confirm'),
+    modalConfirmRemoveCard: new Modal("modalConfirmRemoveCard", true, 'confirm'),
     modalTariffPayNotification: new Modal("modalTariffPayNotification"),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
@@ -1769,19 +1775,57 @@ addEventListener("DOMContentLoaded", () => {
       }, delay);
     };
   }
+  
+  // $(document).on('click', '.payment-card__add, .payment-card__remove', function(e) {
+  //     e.preventDefault();
+  //     // Получаем выбранное значение
+  //     var autopaymentStatus = $(this).data('value');
 
-  // $('[name="radio-group"]').on('change', function(e) {
-  //   if (e.target.id === 'option2') {
+  //     var data = {
+  //         type: 'change_data',
+  //         value: autopaymentStatus,
+  //     }
+
+  //     window.octo.modalConfirmRemoveCard.open()
+  //     octo.modalConfirmRemoveCard.showCustomConfirm().then((result) => {
+  //         if (result) {
+  //           console.log('ajaxRequest', data);
+  //         } else {
+  //             console.log("Отменено!");
+  //         }
+  //     });
+
+  // });
+  // let previousRadio = $('input[name="autopayment"]:checked');
+  // $('input[name="autopayment"]').change(function (e) { 
+  //   e.preventDefault();
+
+  //   var autopaymentStatus = $(this).val();
+  //   var data = {
+  //       type: 'change_status',
+  //       value: autopaymentStatus,
+  //   }
+
+  //   if (autopaymentStatus === 'N') {
   //     window.octo.modalConfirm.open()
   //     octo.modalConfirm.showCustomConfirm().then((result) => {
   //       if (result) {
-  //           window.octo.modalMessageStatusUpdated.open()
+  //           console.log('ajaxRequest 1', data);
+  //           window.octo.modalMessageStatusUpdated.open("отключен")
   //       } else {
   //           console.log("Отменено!");
+  //           $(this).prop('checked', false);
+  //           if (previousRadio) {
+  //             previousRadio.prop('checked', true);
+  //           }
   //       }
   //     });
+  //   } else if (autopaymentStatus === 'Y') {
+  //     previousRadio = $(this);
+  //     console.log('ajaxRequest 2', data);
+  //     window.octo.modalMessageStatusUpdated.open("включен")
   //   }
-  // })
+  // });
 
   // $('#autopay').on('change', function(e) {
   //   console.log(e.target.checked);
@@ -1801,6 +1845,7 @@ addEventListener("DOMContentLoaded", () => {
   //     console.log('unchecked');
   //   }
   // })
+
   // window.octo.catalogSidebar.onChangeRangeCurrent(debounce(function (data) {
   //   // в data данные текущего ползунка
   //   console.log(data)

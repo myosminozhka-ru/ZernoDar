@@ -91,6 +91,9 @@
     left: 0;
     top: 100%;
   }
+  .suggestions-suggestion:empty {
+    display: none;
+  }
   @include tab {
     margin-bottom: 0;
     &__mtitle {
