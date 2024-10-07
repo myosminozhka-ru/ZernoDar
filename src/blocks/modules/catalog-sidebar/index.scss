@@ -537,11 +537,11 @@
     background-image: url(../img/sprites/checkbox-green.svg);
   }
   input:disabled + span {
-    color: $grey;
+    color: #bfc5c6;
     pointer-events: none;
   }
   input:disabled ~ i {
-    border-color: $grey;
+    border-color: #bfc5c6;
     pointer-events: none;
   }
   @include tab {

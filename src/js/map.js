@@ -248,28 +248,24 @@ addEventListener("DOMContentLoaded", () => {
     if (newObjects.length > 60) {
       // window.startMapCatalogLoader()
     }
-    const savedObjects = []
+    
     // Удаляем объекты, которых нет в новом массиве
-    for (let i = 0; i < oldObjects.length; i++) {
-        if (!isObjectInArray(oldObjects[i], newObjects)) {
-            // removeObjectFromMap(oldObjects[i]);
-        } else {
-          savedObjects.push(oldObjects[i])
-        }
-    }
+    // for (let i = 0; i < oldObjects.length; i++) {
+    //     if (!isObjectInArray(oldObjects[i], newObjects)) {
+    //         // removeObjectFromMap(oldObjects[i]);
+    //     }
+    // }
 
     for (let i = 0; i < newObjects.length; i++) {
       if (!isObjectInArray(newObjects[i], oldObjects)) {
         addObjectToMap(newObjects[i]);
-        savedObjects.push(newObjects[i])
       }
     }
 
     // Обновляем старый массив
-    oldObjects = savedObjects
-    // oldObjects = [...oldObjects, ...newObjects].filter((item, index, self) =>
-    //   index === self.findIndex((t) => t.id === item.id)
-    // );
+    oldObjects = [...oldObjects, ...newObjects].filter((item, index, self) =>
+      index === self.findIndex((t) => t.id === item.id)
+    );
     // window.finishMapCatalogLoader(200)
   }
 
@@ -366,8 +362,8 @@ addEventListener("DOMContentLoaded", () => {
 
   window.removeAllObjectFromMap = function () {
     oldObjects = [];
-    geoObjects.clear();
-    clusterer.removeAll();
+    geoObjects?.clear();
+    clusterer?.removeAll();
   }
 
   window.removeAllWarehousesOnMap = window.removeAllObjectFromMap;

@@ -246,7 +246,7 @@ function phoneMask(selector) {
   const inputs = document.querySelectorAll(selector);
   const instances = [];
   inputs.forEach((el) => {
-    instances.push(IMask(el, { mask: "+{7 }000-000-00-00" }));
+    instances.push(IMask(el, { mask: "+{7 }(000)-0000-000" }));
   });
 
   return instances;
@@ -895,6 +895,21 @@ function firstScreen() {
 
 // ==== partners start
 function partners() {
+  const slider = document.querySelector('.partners-slider__wrapper'); // контейнер слайдера
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.partners-slider__slide'); // все слайды
+
+  const minSlides = 12; // минимальное количество слайдов
+
+  if (slides.length < minSlides) {
+      const slidesToAdd = minSlides - slides.length; // количество слайдов, которые нужно добавить
+
+      for (let i = 0; i < slidesToAdd; i++) {
+          const duplicateSlide = slides[i % slides.length].cloneNode(true); // клонирование слайдов
+          slider.appendChild(duplicateSlide); // добавление клона в слайдер
+      }
+  }
   const swiper = new Swiper('.partners-slider__slider', {
     loop: true,
     slidesPerView: 3,
@@ -905,6 +920,7 @@ function partners() {
     },
     breakpoints: {
       840: {
+        loop: true,
         slidesPerView: 'auto',
         grid: {
           rows: 1,

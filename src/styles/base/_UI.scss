@@ -119,6 +119,7 @@
     background-color: $palegreen;
     font-weight: 600;
     gap: 0.7rem;
+    white-space: nowrap;
     svg {
       width: 1.7rem;
       height: 1.7rem;
@@ -2806,6 +2807,7 @@
   }
   .edit-requisites__value {
     flex: 0;
+    white-space: nowrap;
   }
   @include tab {
     padding: 2.4rem;
