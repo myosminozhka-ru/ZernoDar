@@ -144,6 +144,11 @@
     height: calc(100vh - 24rem);
     border-radius: 2rem;
     overflow: hidden;
+    *[class$="carousel__content"] {
+      .map-popup {
+        min-height: 12.5rem;
+      }
+    }
   }
   &__img {
     width: 100%;
@@ -154,6 +159,15 @@
     #map-search {
       height: calc(100vh - 7.3rem);
       border-radius: 0;
+      *[class$="carousel__content"] {
+        .map-popup {
+          min-height: 7.5rem;
+        }
+        .map-popup__price,
+        .map-popup__bot {
+          display: block;
+        }
+      }
     }
   }
   @include mob {

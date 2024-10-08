@@ -262,11 +262,13 @@
   font-family: $main-font;
   min-width: 20rem;
   max-width: 30rem;
-  min-height: 14.5rem;
+  min-height: 7rem;
+  // &--tags {
+  //   min-height: 12.5rem;
+  // }
   &__top {
     display: flex;
     gap: 0.8rem;
-    margin-bottom: 1.6rem;
   }
   &__icon {
     width: 6.4rem;
@@ -277,10 +279,18 @@
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 0.8rem;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 18rem;
   }
   &__price {
     font-size: 2rem;
     font-weight: 700;
+  }
+  &__bot {
+    margin-top: 1.6rem;
   }
   &__tags {
     display: flex;
@@ -299,10 +309,9 @@
   @include tab {
     min-width: 10rem;
     max-width: 20rem;
-    min-height: 8rem;
+    min-height: auto;
     &__top {
       gap: 0.2rem;
-      margin-bottom: 0.6rem;
     }
     &__icon {
       width: 2.2rem;
@@ -311,9 +320,15 @@
     &__title {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
+      width: 13rem;
     }
     &__price {
       font-size: 1.2rem;
+      display: none;
+    }
+    &__bot {
+      margin-top: 0.6rem;
+      display: none;
     }
     &__tags {
       gap: 0.2rem;

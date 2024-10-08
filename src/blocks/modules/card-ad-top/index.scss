@@ -2,6 +2,8 @@
   margin-bottom: 4.8rem;
   &__top {
     margin-bottom: 1.6rem;
+  }
+  &__inner {
     .card-ad-top__tag .my-tag--no-price {
       display: none;
     }
@@ -138,6 +140,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+    &__inner {
       .card-ad-top__tag .my-tag--no-price {
         display: inline-flex;
       }

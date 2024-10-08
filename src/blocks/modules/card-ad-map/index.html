@@ -121,7 +121,7 @@
 
           // Добавляем метку на найденное место
           foundPlacemark = new ymaps.Placemark(coordinates, {
-            balloonContent: 'Найденное место'
+            balloonContent: ''
           }, {
             hideIconOnBalloonOpen: false,
             balloonOffset: [0, -20],
@@ -152,10 +152,9 @@
           var distance = ymaps.coordSystem.geo.getDistance(coordinates, coord);
           myMap.setBounds(myMap.geoObjects.getBounds(), {
             checkZoomRange: true, // Позволяет учитывать диапазон зума
-            zoomMargin: 50        // Отступы от краев карты в пикселях
+            zoomMargin: 20        // Отступы от краев карты в пикселях
           });
           // Открываем балун найденного места
-          foundPlacemark.balloon.open();
 
           const distMeters = Math.round(distance);
           // Выводим расстояние в метрах
