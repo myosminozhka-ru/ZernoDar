@@ -5498,19 +5498,20 @@ a {
 }
 
 .review-list__warning {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   margin-left: auto;
   color: #8C8C8C;
-  width: 2.4rem;
-  height: 2.4rem;
   flex-shrink: 0;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .review-list__warning svg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
 }
 
 .review-list__item {
@@ -6408,6 +6409,50 @@ a {
   font-size: 2rem;
   padding: 1.7rem 3.3rem;
   border-radius: 2rem;
+}
+
+.content-404--fav .content-404__mtitle {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.content-404--fav .content-404__text {
+  font-size: 1.6rem;
+}
+
+.content-404--fav .content-404__icon {
+  width: 7.7rem;
+}
+
+.content-404--search {
+  padding-top: 0rem;
+}
+
+.content-404--search .content-404__inner {
+  width: 100%;
+  padding: 0 3.2rem;
+  align-items: flex-start;
+}
+
+.content-404--search .content-404__mtitle {
+  font-size: 2.4rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.content-404--search .content-404__text {
+  font-size: 1.8rem;
+  text-align: left;
+}
+
+.content-404--search .content-404__icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content-404--search .content-404__icon img {
+  width: 21rem;
 }
 
 .links-404 {
@@ -12473,7 +12518,7 @@ a {
   .review-list__head {
     display: block;
     position: relative;
-    padding-right: 3rem;
+    padding-right: 15rem;
   }
 
   .review-list__head .user-head {
@@ -12484,11 +12529,19 @@ a {
     display: none;
   }
 
-  .review-list__warning,
   .review-list__edit {
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  .review-list__warning {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+  }
+
+  .review-list__warning svg {
     width: 2rem;
     height: 2rem;
   }
@@ -12522,6 +12575,10 @@ a {
 
   .review-list__answers {
     padding-left: 1.6rem;
+  }
+
+  .review-list__answers .review-list__head {
+    padding-right: 3rem;
   }
 
   .review-list__rating {
@@ -13206,6 +13263,42 @@ a {
     font-size: 1.6rem;
     padding: 1.4rem 2.8rem;
     border-radius: 1.2rem;
+  }
+
+  .content-404--fav .content-404__mtitle {
+    font-size: 1.8rem;
+  }
+
+  .content-404--fav .content-404__text {
+    font-size: 1.2rem;
+  }
+
+  .content-404--fav .content-404__icon {
+    width: 4.3rem;
+  }
+
+  .content-404--fav .btn9 {
+    font-size: 1.4rem;
+  }
+
+  .content-404--search {
+    padding-top: 0rem;
+  }
+
+  .content-404--search .content-404__inner {
+    padding: 0 2.4rem;
+  }
+
+  .content-404--search .content-404__mtitle {
+    font-size: 1.8rem;
+  }
+
+  .content-404--search .content-404__text {
+    font-size: 1.2rem;
+  }
+
+  .content-404--search .content-404__icon img {
+    width: 19rem;
   }
 
   .links-404 {
@@ -17451,12 +17544,36 @@ a {
     padding: 1.6rem;
   }
 
+  .review-list__head {
+    padding-right: 11.8rem;
+  }
+
   .review-list .user-rating__ave-date {
     font-size: 1.2rem;
   }
 
   .review-list__content {
     font-size: 1.4rem;
+  }
+
+  .review-list__warning {
+    position: absolute;
+    right: 0;
+    top: 1.1rem;
+    font-size: 1.2rem;
+  }
+
+  .review-list__warning svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .review-list__answers {
+    padding-left: 1.6rem;
+  }
+
+  .review-list__answers .review-list__head {
+    padding-right: 3rem;
   }
 
   .review-list__like {
@@ -17965,6 +18082,47 @@ a {
     font-size: 1.4rem;
     padding: 1.1rem 2.8rem;
     border-radius: 0.8rem;
+  }
+
+  .content-404--fav .content-404__mtitle {
+    font-size: 1.6rem;
+  }
+
+  .content-404--fav .content-404__text {
+    font-size: 1rem;
+  }
+
+  .content-404--fav .content-404__icon {
+    width: 3.7rem;
+  }
+
+  .content-404--fav .btn9 {
+    font-size: 1.2rem;
+  }
+
+  .content-404--search {
+    padding-top: 0rem;
+  }
+
+  .content-404--search .content-404__inner {
+    padding: 0 1.6rem;
+    gap: 1.6rem;
+  }
+
+  .content-404--search .content-404__mtitle {
+    font-size: 1.6rem;
+  }
+
+  .content-404--search .content-404__text {
+    font-size: 1.2rem;
+  }
+
+  .content-404--search .content-404__icon {
+    margin-top: 3.2rem;
+  }
+
+  .content-404--search .content-404__icon img {
+    width: 18.6rem;
   }
 
   .first-screen {

@@ -551,23 +551,36 @@ https://cdn.jsdelivr.net/npm/suggestions-jquery@22.6.0/dist/css/suggestions.min.
 
 
 <div class="main-wrapper">
-  <div class="content-404">
-  <div class="content-404__inner">
-    <div class="content-404__mtitle">Нет результатов поиска</div>
-    <div class="content-404__text">Попробуйте изменить запрос или перейти в каталог объявлений.</div>
-    <a href="/catalog/predlozhenie/" class="btn9">Перейти в каталог</a>
+  <div class="brc">
+  <div class="container container--full">
+    <div class="brc__inner">
+      <ul class="brc__list">
+        <li>
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#left-circle"></use>
+          </svg>
+          <a href="/">Главная</a>
+        </li>
+        
+          <li>
+            <a href="#" class="link">Поиск</a>
+          </li>
+        
+      </ul>
+      <!-- <div class="brc__arrow">
+        <svg>
+          <use xlink:href="img/sprites/sprite.svg#curve-arrow-right"></use>
+        </svg>
+      </div> -->
+    </div>
   </div>
 </div>
-<div class="links-404">
-  <div class="container">
-    <div class="links-404__inner">
-      <div class="links-404__title">Возможно вам будет интересно:</div>
-      <ul class="links-404__list">
-        <li><a href="#">Компании</a></li>
-        <li><a href="#">О нас</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Название одной из новостей</a></li>
-      </ul>
+  <div class="content-404 content-404--search">
+  <div class="content-404__inner">
+    <div class="content-404__mtitle">Ничего не найдено по запросу “Пшеница 4 класса в Уральской области”</div>
+    <div class="content-404__text">Попробуйте поискать по-другому или сократить запрос</div>
+    <div class="content-404__icon">
+      <img src="img/search-empty.svg" alt="">
     </div>
   </div>
 </div>
