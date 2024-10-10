@@ -13,7 +13,6 @@ function hasMouseSupport() {
 // ==== copy start
 class Copy {
   constructor() {
-    this.nodes = document.querySelectorAll('[data-copy-trigger]')
     this.textarea = document.querySelector('#urlCopy')
     this.init()
   }
@@ -22,28 +21,55 @@ class Copy {
     this.copyHandler()
   }
   copy(id) {
-
+    let text = ''
     if (id) {
-      const text = document.querySelector(`[data-copy-text=${id}]`)
-
-      this.textarea.innerHTML = text.textContent
+      const el = document.querySelector(`[data-copy-text=${id}]`);
+      text = el.textContent
+      this.textarea.innerHTML = el.textContent;
     } else {
       this.textarea.innerHTML = window.location.href;
     }
+    // this.textarea.focus();
     this.textarea.select();
-    document.execCommand("copy");
+
+    if (navigator.clipboard && window.isSecureContext) {
+        // Используем Clipboard API
+        navigator.clipboard.writeText(text).then(function() {
+            console.log('Текст скопирован в буфер обмена!');
+        }, function(err) {
+            console.error('Ошибка при копировании текста: ', err);
+        });
+    } else {
+
+        try {
+            document.execCommand('copy');
+            console.log('Текст скопирован в буфер обмена (фоллбэк)!');
+        } catch (err) {
+            console.error('Ошибка при копировании текста (фоллбэк): ', err);
+        }
+    }
   }
   copyHandler() {
-    this.nodes.forEach(el => {
-      el.addEventListener('click', () => {
-        const id = el.getAttribute('data-copy-trigger')
-        this.copy(id)
-        this.alert()
-      })
+    const that = this
+    $(document).on('click', '[data-copy-trigger]', function() {
+      const id = $(this).attr('data-copy-trigger')
+      that.copy(id)
+      that.inform(id, $(this))
     })
   }
-  alert() {
-    alert('Скопировано!')
+  inform(id, jq) {
+    let inform = $(`[data-copy-inform=${id}]`)
+    let text = ''
+    if (inform.length) {
+      text = inform.text()
+    } else {
+      inform = jq
+      text = jq.text()
+    }
+    inform.text('Скопировано!')
+    setTimeout(function() {
+      inform.text(text)
+    }, 2000);
   }
 }
 // ==== copy end
@@ -88,21 +114,43 @@ function hideShowBlock(element, button) {
 
 // modal start
 class Modal {
-  constructor(name, scrollLock = true) {
+  constructor(name, scrollLock = true, type = 'modal') {
     this.name = name;
     this.scrollLock = scrollLock;
     this.modal = document.querySelector(`[data-modal="${name}"]`);
+    this.textPlace = null;
     this.callbackClose = null;
+    this.type = type;
     this.init();
   }
   init() {
     if (this.modal) {
       this.content = this.modal.querySelector(".modal__content");
+      this.textPlace = this.modal.querySelector(`[data-text-title]`);
       this.openHendler();
       this.closeHendler();
+      // if (this.type === 'confirm') {
+      //   this.showCustomConfirm()
+      // }
     }
   }
-  open() {
+  showCustomConfirm() {
+    return new Promise((resolve, reject) => {
+        this.modal.querySelector(`[data-confirm-yes]`).onclick = () => {
+            resolve(true);
+            this.close()
+        };
+
+        this.modal.querySelector(`[data-confirm-no]`).onclick = () => {
+            resolve(false);
+            this.close()
+        };
+    });
+  }
+  open(text) {
+    if (text) {
+      this.textPlace.innerHTML = text;
+    }
     window.lastZIndexModal = window.lastZIndexModal
       ? window.lastZIndexModal + 1
       : 150;
@@ -132,15 +180,19 @@ class Modal {
     this.modal
       ? this.modal.addEventListener("click", (e) => {
         if (e.target.classList.contains("close-x")) {
-          this.close();
+          if (this.type !== 'confirm') {
+            this.close();
+          }
         }
       })
       : null;
     this.modal
       ? this.modal
         .querySelector("button.close-x")
-        .addEventListener("click", (e) => {
-          this.close();
+        ?.addEventListener("click", (e) => {
+          if (this.type !== 'confirm') {
+            this.close();
+          }
         })
       : null;
   }
@@ -198,12 +250,26 @@ function phoneMask(selector) {
   const inputs = document.querySelectorAll(selector);
   const instances = [];
   inputs.forEach((el) => {
-    instances.push(IMask(el, { mask: "+{7 }000-000-00-00" }));
+    instances.push(IMask(el, { mask: "+{7 }(000)-000-00-00" })); // +7 (XXX)-XXX-XX-XX
   });
 
   return instances;
 }
 // ==== tel mask end
+
+// ==== inn mask start
+function innMask(selector) {
+  const inputs = document.querySelectorAll(selector);
+  const instances = [];
+  inputs.forEach((el) => {
+    instances.push(IMask(el, {
+      mask: /^\d{0,12}$/
+     }));
+  });
+
+  return instances;
+}
+// ==== inn mask end
 
 // ==== Header start
 class Header {
@@ -716,6 +782,18 @@ function review() {
     targetSection.addClass('active')
   });
 
+  if ($('.base-tab__item--tab').length && !$('.base-tab__item--tab').hasClass('active')) {
+    if (mediaQuery.matches) {
+      if (!$('.base-tab__block--tab').eq(0).hasClass('base-tab__block--modal')) {
+        $('.base-tab__item--tab').eq(0).addClass('active')
+        $('.base-tab__block--tab').eq(0).addClass('active')
+      }
+    } else {
+      $('.base-tab__item--tab').eq(0).addClass('active')
+      $('.base-tab__block--tab').eq(0).addClass('active')
+    }
+  }
+
   $(document).on('click', ' .review-list__to-answer .review-to-answer', function (e) {
     const target = e.target
     const open = $(this).find('.review-to-answer__open .btn3')[0]
@@ -828,6 +906,21 @@ function firstScreen() {
 
 // ==== partners start
 function partners() {
+  const slider = document.querySelector('.partners-slider__wrapper'); // контейнер слайдера
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.partners-slider__slide'); // все слайды
+
+  const minSlides = 12; // минимальное количество слайдов
+
+  if (slides.length < minSlides) {
+      const slidesToAdd = minSlides - slides.length; // количество слайдов, которые нужно добавить
+
+      for (let i = 0; i < slidesToAdd; i++) {
+          const duplicateSlide = slides[i % slides.length].cloneNode(true); // клонирование слайдов
+          slider.appendChild(duplicateSlide); // добавление клона в слайдер
+      }
+  }
   const swiper = new Swiper('.partners-slider__slider', {
     loop: true,
     slidesPerView: 3,
@@ -838,6 +931,7 @@ function partners() {
     },
     breakpoints: {
       840: {
+        loop: true,
         slidesPerView: 'auto',
         grid: {
           rows: 1,
@@ -1543,6 +1637,42 @@ function groupElementsByPosition(selector) {
 window.autoHeightInputWrap = autoHeightInputWrap;
 // ==== auto height input-wrap end
 
+// ==== tooltip start
+$('.helptip').tooltip({
+  classes: {
+    "ui-tooltip": "ui-corner-all ui-widget-shadow ui-helptip"
+  }
+});
+$('.header__act').tooltip({
+  classes: {
+    "ui-tooltip": "ui-corner-all ui-widget-shadow ui-helptip--count-add"
+  }
+});
+// if (hasMouseSupport()) {
+//   $('.helptip').tooltip({
+//     trigger: 'hover',
+//     classes: {
+//       "ui-tooltip": "helptip"
+//     }
+//   });
+// } else {
+//   $('.helptip').tooltip({
+//     trigger: 'click',
+//     classes: {
+//       "ui-tooltip": "helptip"
+//     }
+//   });
+// }
+// ==== tooltip end
+
+// ндс
+$('.my-input-one-checkbox').on('click', function() {
+  const val = $(this).attr('data-checked') == 'true' ? true : false;
+  $(this).attr('data-checked', !val)
+  $(this).html(!val ? 'С НДС' : 'без НДС');
+  $('[data-checked-nds]').prop('checked', !val);
+})
+// ндс
 
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
@@ -1632,18 +1762,23 @@ addEventListener("DOMContentLoaded", () => {
     ratingModal: new Modal("rating"),
     sentToModerationModal: new Modal("sent-to-moderation"),
     modalMessageWait: new Modal("modalMessageWait"),
+    modalMessageStatusUpdated: new Modal("modalMessageStatusUpdated"),
     sortCompamyModal: new Modal("sort-compamy"),
     newsSubsModal: new Modal("news-subs"),
     modalReviewComplaint: new Modal("review-complaint"),
     modalMakeReview: new Modal("modalMakeReview"),
     modalPersonalTariff: new Modal("modalPersonalTariff"),
     modalVerifyAccount: new Modal("modalVerifyAccount"),
+    modalConfirm: new Modal("modalConfirm", true, 'confirm'),
+    modalConfirmRemoveCard: new Modal("modalConfirmRemoveCard", true, 'confirm'),
     modalTariffPayNotification: new Modal("modalTariffPayNotification"),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     mapFilter: new Sidebar('mapFilter', '.app'),
     copy: new Copy(),
+    innMasks: innMask(".inn-input"),
   };
+  //window.octo.modalConfirm.open()
 
   function debounce(func, delay) {
     let timeoutId;
@@ -1656,6 +1791,77 @@ addEventListener("DOMContentLoaded", () => {
       }, delay);
     };
   }
+
+  // $(document).on('click', '.payment-card__add, .payment-card__remove', function(e) {
+  //     e.preventDefault();
+  //     // Получаем выбранное значение
+  //     var autopaymentStatus = $(this).data('value');
+
+  //     var data = {
+  //         type: 'change_data',
+  //         value: autopaymentStatus,
+  //     }
+
+  //     window.octo.modalConfirmRemoveCard.open()
+  //     octo.modalConfirmRemoveCard.showCustomConfirm().then((result) => {
+  //         if (result) {
+  //           console.log('ajaxRequest', data);
+  //         } else {
+  //             console.log("Отменено!");
+  //         }
+  //     });
+
+  // });
+  // let previousRadio = $('input[name="autopayment"]:checked');
+  // $('input[name="autopayment"]').change(function (e) { 
+  //   e.preventDefault();
+
+  //   var autopaymentStatus = $(this).val();
+  //   var data = {
+  //       type: 'change_status',
+  //       value: autopaymentStatus,
+  //   }
+
+  //   if (autopaymentStatus === 'N') {
+  //     window.octo.modalConfirm.open()
+  //     octo.modalConfirm.showCustomConfirm().then((result) => {
+  //       if (result) {
+  //           console.log('ajaxRequest 1', data);
+  //           window.octo.modalMessageStatusUpdated.open("отключен")
+  //       } else {
+  //           console.log("Отменено!");
+  //           $(this).prop('checked', false);
+  //           if (previousRadio) {
+  //             previousRadio.prop('checked', true);
+  //           }
+  //       }
+  //     });
+  //   } else if (autopaymentStatus === 'Y') {
+  //     previousRadio = $(this);
+  //     console.log('ajaxRequest 2', data);
+  //     window.octo.modalMessageStatusUpdated.open("включен")
+  //   }
+  // });
+
+  // $('#autopay').on('change', function(e) {
+  //   console.log(e.target.checked);
+    
+  //   if (!e.target.checked) {
+  //     window.octo.modalConfirm.open()
+  //     octo.modalConfirm.showCustomConfirm().then((result) => {
+  //       if (result) {
+  //           window.octo.modalMessageStatusUpdated.open()
+  //           e.target.checked = false
+  //       } else {
+  //           console.log("Отменено!");
+  //           e.target.checked = true
+  //       }
+  //     });
+  //   } else {
+  //     console.log('unchecked');
+  //   }
+  // })
+
   // window.octo.catalogSidebar.onChangeRangeCurrent(debounce(function (data) {
   //   // в data данные текущего ползунка
   //   console.log(data)

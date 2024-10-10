@@ -842,7 +842,8 @@ a {
   gap: 0.4rem;
 }
 
-.my-tag svg {
+.my-tag svg,
+.my-tag i {
   width: 2.4rem;
   height: 2.4rem;
   object-fit: contain;
@@ -871,6 +872,18 @@ a {
 
 .my-tag--green svg {
   color: #2fa51c;
+}
+
+.my-tag--no-price {
+  background-color: #ECF4ED;
+  font-weight: 600;
+  gap: 0.7rem;
+  white-space: nowrap;
+}
+
+.my-tag--no-price svg {
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
 .my-tag--red {
@@ -1047,6 +1060,10 @@ a {
   width: 100%;
 }
 
+.btn3--confirm {
+  width: 10rem;
+}
+
 .btn4 {
   display: inline-flex;
   align-items: center;
@@ -1211,7 +1228,7 @@ a {
 .btn9 {
   font-weight: 500;
   color: #ffffff;
-  padding: 1.4rem 3.1rem;
+  padding: 1.2rem 2.3rem;
   border-radius: 1.6rem;
   display: inline-flex;
   align-items: center;
@@ -1629,6 +1646,24 @@ a {
 
 .helptip__content {
   display: none;
+}
+
+.helptip[aria-describedby] .helptip__icon svg {
+  color: #0F582D;
+}
+
+.ui-helptip {
+  border: none !important;
+  box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
+}
+
+.ui-helptip--count-add {
+  font-size: 1.5rem;
+  background-color: #F8F1EC;
+  border-radius: 10rem;
+  padding: 1rem 1.2rem;
+  box-shadow: none;
+  border: none !important;
 }
 
 .btn {
@@ -2567,16 +2602,18 @@ a {
   transition: color 200ms;
 }
 
-.user-contact__link:hover {
+.user-contact a.user-contact__link {
+  color: #0084CF;
+}
+
+.user-contact a.user-contact__link:hover,
+.user-contact button.user-contact__link:hover {
   text-decoration: underline;
 }
 
-.user-contact__link:hover svg {
+.user-contact a.user-contact__link:hover svg,
+.user-contact button.user-contact__link:hover svg {
   color: #2C2C31;
-}
-
-.user-contact a.user-contact__link {
-  color: #0084CF;
 }
 
 .to-seller {
@@ -2595,7 +2632,7 @@ a {
   font-size: 2rem;
   font-weight: 500;
   color: #ffffff;
-  padding: 2.7rem 3.2rem;
+  padding: 1.8rem 3rem;
   border-radius: 2rem;
   display: inline-flex;
   align-items: center;
@@ -2624,8 +2661,8 @@ a {
 }
 
 .to-favourite svg {
-  width: 4.6rem;
-  height: 4.6rem;
+  width: 3rem;
+  height: 3rem;
   object-fit: contain;
   color: transparent;
 }
@@ -2641,7 +2678,7 @@ a {
 }
 
 .to-favourite--sm {
-  padding: 1.3rem;
+  padding: 1.14rem;
   border-radius: 1.6rem;
 }
 
@@ -2717,7 +2754,8 @@ a {
 .ui-selectmenu-menu-border .ui-widget.ui-widget-content {
   border: none;
   border-radius: 2rem;
-  overflow: hidden;
+  overflow: auto;
+  max-height: 40rem;
   background-color: #ffffff;
   box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
   border: none;
@@ -2812,9 +2850,9 @@ a {
 
 .ui-selectmenu-menu-mini .ui-widget.ui-widget-content,
 .ui-selectmenu-menu-filter .ui-widget.ui-widget-content {
-  border: none;
   border-radius: 2rem;
-  overflow: hidden;
+  overflow: auto;
+  max-height: 40rem;
   background-color: #ffffff;
   box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
   border: none;
@@ -2863,6 +2901,37 @@ a {
   background-color: #ECF0F4;
 }
 
+.suggestions-wrapper {
+  padding: 0.6rem 0;
+}
+
+.suggestions-suggestions {
+  border-radius: 2rem;
+  overflow: auto;
+  max-height: 40rem;
+  background-color: #ffffff;
+  box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
+  border: none;
+}
+
+.suggestions-hint {
+  padding: 1rem 2.4rem;
+  font-size: 1.8rem;
+  color: #2C2C31;
+}
+
+.suggestions-suggestion {
+  padding: 2.4rem;
+  font-size: 1.8rem;
+  color: #2C2C31;
+  position: relative;
+  cursor: pointer;
+}
+
+.suggestions-suggestion:hover {
+  background-color: #ECF0F4;
+}
+
 .favourite-tooltip {
   padding: 1rem;
   font-size: 1.6rem;
@@ -2882,8 +2951,8 @@ a {
 }
 
 .veri + .edit-requisites__list .edit-requisites__value {
-  flex: 1;
-  text-align: right;
+  flex: 0;
+  white-space: nowrap;
 }
 
 .form-message-place {
@@ -2948,27 +3017,11 @@ a {
   gap: 0.8rem;
 }
 
-.header__act-count {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 1.8rem;
-  min-width: 1.8rem;
-  border-radius: 2rem;
-  background-color: #0F582D;
-  color: #FFF;
-  padding: 0.1rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-}
-
 .header__act {
   width: 5rem;
   height: 5rem;
   padding: 1.2rem;
+  position: relative;
 }
 
 .header__act svg {
@@ -3002,6 +3055,28 @@ a {
 
 .header__burger-wrap {
   display: none;
+}
+
+.header__act-count,
+.header__count-adds {
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background-color: #FCB040;
+  position: absolute;
+  right: 0.3rem;
+  top: 0.2rem;
+  z-index: 2;
+  font-size: 1.2rem;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header__act-count {
+  background-color: #0F582D;
 }
 
 .nav {
@@ -3457,6 +3532,10 @@ a {
   margin-bottom: 2.4rem;
 }
 
+.modal__top--single {
+  margin-bottom: 0;
+}
+
 .modal__title {
   font-weight: 500;
   font-size: 2rem;
@@ -3520,6 +3599,19 @@ a {
 .modal--center .modal__top::before {
   content: "";
   display: inline-block;
+}
+
+.modal--confirm .modal__top {
+  justify-content: center;
+}
+
+.modal--confirm .modal__top::before,
+.modal--confirm .modal__top::after {
+  display: none;
+}
+
+.modal--confirm .modal__inner {
+  min-width: auto;
 }
 
 .modal[data-modal=sent-to-moderation] .modal__title,
@@ -3646,6 +3738,22 @@ a {
   margin-bottom: 1.6rem;
 }
 
+.modalConfirm {
+  width: 50rem;
+}
+
+.modalConfirm__title {
+  margin-bottom: 2.4rem;
+}
+
+.modalConfirm__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+}
+
 .modal--modalVerifyAccount .modal__title {
   text-align: center;
 }
@@ -3698,6 +3806,10 @@ a {
 
 .card-ad-top__top {
   margin-bottom: 1.6rem;
+}
+
+.card-ad-top__inner .card-ad-top__tag .my-tag--no-price {
+  display: none;
 }
 
 .card-ad-top__img,
@@ -3855,6 +3967,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 2.4rem;
 }
 
@@ -4064,38 +4177,27 @@ a {
   padding: 1.3rem 1.6rem;
 }
 
-.card-ad-map .suggestions-suggestions {
+.card-ad-map .suggestions-wrapper {
   min-width: 57.2rem;
   position: absolute;
   left: 0;
   top: 100%;
-  background-color: #F8F8F8;
-  border-radius: 2rem;
-  padding: 1rem;
-  font-size: 1.5rem;
 }
 
-.card-ad-map .suggestions-suggestion {
-  margin-bottom: 0.8rem;
-  cursor: pointer;
-}
-
-.card-ad-map .suggestions-suggestion:last-child {
-  margin-bottom: 0;
-}
-
-.card-ad-map .suggestions-hint {
-  font-size: 1.2rem;
+.card-ad-map .suggestions-suggestion:empty {
+  display: none;
 }
 
 .map-popup {
   font-family: "TRY Grtsk";
+  min-width: 20rem;
+  max-width: 30rem;
+  min-height: 7rem;
 }
 
 .map-popup__top {
   display: flex;
   gap: 0.8rem;
-  margin-bottom: 1.6rem;
 }
 
 .map-popup__icon {
@@ -4108,11 +4210,20 @@ a {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 0.8rem;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 18rem;
 }
 
 .map-popup__price {
   font-size: 2rem;
   font-weight: 700;
+}
+
+.map-popup__bot {
+  margin-top: 1.6rem;
 }
 
 .map-popup__tags {
@@ -4557,10 +4668,20 @@ a {
   overflow: hidden;
 }
 
-.checkbox-list input:checked + i {
+.checkbox-list input:checked ~ i {
   background-color: #0F582D;
   border-color: #0F582D;
   background-image: url(../img/sprites/checkbox-green.svg);
+}
+
+.checkbox-list input:disabled + span {
+  color: #bfc5c6;
+  pointer-events: none;
+}
+
+.checkbox-list input:disabled ~ i {
+  border-color: #bfc5c6;
+  pointer-events: none;
 }
 
 .filter-range .irs--flat,
@@ -4922,7 +5043,7 @@ a {
   display: inline-block;
 }
 
-.card__title:hover {
+.card a.card__title:hover {
   text-decoration: underline;
 }
 
@@ -6102,6 +6223,10 @@ a {
   font-size: 1.4rem;
 }
 
+.contact-feedback__police a:hover {
+  text-decoration: underline;
+}
+
 .contact-requisites {
   margin-bottom: 6rem;
 }
@@ -6470,7 +6595,7 @@ a {
 }
 
 .partners-slider__slide img {
-  height: 4rem;
+  height: 8rem;
   width: auto;
 }
 
@@ -6941,6 +7066,10 @@ a {
 .faq-form__disclaimer {
   width: 67rem;
   font-size: 1.4rem;
+}
+
+.faq-form__disclaimer a:hover {
+  text-decoration: underline;
 }
 
 .faq-form__button {
@@ -8738,6 +8867,7 @@ a {
   display: block;
   text-align: center;
   color: #0084cf;
+  cursor: pointer;
 }
 
 .registration-code__resend-code[disabled=disabled] {
@@ -8745,10 +8875,18 @@ a {
   pointer-events: none;
 }
 
+.registration-code .error {
+  text-align: center;
+}
+
 .registration-code__agreement {
   display: flex;
   align-items: center;
   margin-bottom: 3.4rem;
+}
+
+.registration-code__agreement a:hover {
+  text-decoration: underline;
 }
 
 .registration-code input[type=checkbox] {
@@ -9177,6 +9315,33 @@ a {
   height: 23.1rem;
 }
 
+.my-input-one-checkbox-wrap {
+  position: relative;
+}
+
+.my-input-one-checkbox-wrap .my-input__input {
+  padding-right: 10rem;
+}
+
+.my-input-one-checkbox {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border-radius: 1.2rem;
+  padding: 1rem 1.8rem;
+  font-size: 1.4rem;
+  border: 0.1rem solid #ECF0F4;
+  cursor: pointer;
+}
+
+.my-input-one-checkbox[data-checked=true] {
+  background-color: #0084CF;
+  color: #ffffff;
+  border: 0.1rem solid #0084CF;
+}
+
 .my-select {
   display: inline-block;
   position: relative;
@@ -9539,10 +9704,33 @@ a {
   display: none;
 }
 
+.app__loader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  z-index: 80;
+}
+
+.app__loader img {
+  width: 24rem;
+  height: 24rem;
+  object-fit: contain;
+}
+
 .app-map #map-search {
   height: calc(100vh - 24rem);
   border-radius: 2rem;
   overflow: hidden;
+}
+
+.app-map #map-search *[class$=carousel__content] .map-popup {
+  min-height: 12.5rem;
 }
 
 .app-map__img {
@@ -9864,6 +10052,11 @@ a {
     padding: 0.8rem 1.2rem;
   }
 
+  .my-tag--no-price svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
   .tag1 {
     font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
@@ -9921,7 +10114,7 @@ a {
 
   .btn9 {
     font-size: 1.8rem;
-    padding: 1.8rem 3.2rem;
+    padding: 1.5rem 2rem;
     border-radius: 1.6rem;
   }
 
@@ -10231,7 +10424,7 @@ a {
   }
 
   .to-favourite--sm {
-    padding: 1.8rem;
+    padding: 1.47rem;
   }
 
   .to-favourite--sm svg {
@@ -10317,6 +10510,29 @@ a {
     left: 1.8rem;
   }
 
+  .suggestions-wrapper {
+    padding: 1.2rem 0;
+  }
+
+  .suggestions-suggestions {
+    border-radius: 1.6rem;
+    box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
+  }
+
+  .suggestions-hint {
+    padding: 0.5rem 1.8rem;
+    font-size: 1.4rem;
+  }
+
+  .suggestions-suggestion {
+    padding: 1.8rem;
+    font-size: 1.4rem;
+  }
+
+  .suggestions-suggestion:hover {
+    background-color: #ECF0F4;
+  }
+
   .veri + .edit-requisites__list {
     padding: 2.4rem;
   }
@@ -10361,12 +10577,6 @@ a {
     margin-left: auto;
   }
 
-  .header__act-count {
-    height: 1.6rem;
-    min-width: 1.6rem;
-    font-size: 1.1rem;
-  }
-
   .header__act {
     width: 4rem;
     height: 4rem;
@@ -10375,6 +10585,15 @@ a {
 
   .header__act.trig-open-search.hide {
     display: inline-block;
+  }
+
+  .header__act-count,
+  .header__count-adds {
+    min-width: 1.8rem;
+    height: 1.8rem;
+    right: 0.1rem;
+    top: 0.1rem;
+    font-size: 1rem;
   }
 
   .header__add-btn {
@@ -10832,6 +11051,14 @@ a {
     font-size: 1.4rem;
   }
 
+  .modalConfirm {
+    width: 100%;
+  }
+
+  .modalConfirm__title {
+    font-size: 1.4rem;
+  }
+
   .modalTariffPayNotification {
     width: 100%;
   }
@@ -10880,6 +11107,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .card-ad-top__inner .card-ad-top__tag .my-tag--no-price {
+    display: inline-flex;
   }
 
   .card-ad-top__title {
@@ -11081,7 +11312,6 @@ a {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding-left: 1.6rem;
     margin-bottom: 2.4rem;
   }
 
@@ -11119,6 +11349,7 @@ a {
     display: inline-block;
     width: 2rem;
     height: 2rem;
+    margin-left: 1.8rem;
   }
 
   .card-ad-map__calc {
@@ -11146,21 +11377,24 @@ a {
     padding: 0;
   }
 
-  .card-ad-map .suggestions-suggestions {
+  .card-ad-map .suggestions-wrapper {
     min-width: 100%;
-    border-radius: 0.8rem;
-    padding: 1rem;
-    font-size: 1.4rem;
     position: static;
+    padding: 0;
   }
 
-  .card-ad-map .suggestions-hint {
-    font-size: 1rem;
+  .card-ad-map .suggestions-suggestions {
+    box-shadow: none;
+  }
+
+  .map-popup {
+    min-width: 10rem;
+    max-width: 20rem;
+    min-height: auto;
   }
 
   .map-popup__top {
     gap: 0.2rem;
-    margin-bottom: 0.6rem;
   }
 
   .map-popup__icon {
@@ -11171,10 +11405,17 @@ a {
   .map-popup__title {
     font-size: 1.2rem;
     margin-bottom: 0.2rem;
+    width: 13rem;
   }
 
   .map-popup__price {
     font-size: 1.2rem;
+    display: none;
+  }
+
+  .map-popup__bot {
+    margin-top: 0.6rem;
+    display: none;
   }
 
   .map-popup__tags {
@@ -11892,6 +12133,7 @@ a {
   .card--map .card__data ul {
     gap: 1.6rem;
     margin: 0;
+    max-height: 10.92rem;
   }
 
   .card--map .card__data li {
@@ -11908,7 +12150,11 @@ a {
   }
 
   .card--map .card__bot-right {
-    flex: row-reverse;
+    flex-direction: row-reverse;
+  }
+
+  .card--map .card__data-more {
+    display: none;
   }
 
   .card-user {
@@ -15155,6 +15401,10 @@ a {
     height: 15rem;
   }
 
+  .my-input-one-checkbox {
+    right: 1rem;
+  }
+
   .my-select {
     height: 5.4rem;
   }
@@ -15364,6 +15614,15 @@ a {
   .app-map #map-search {
     height: calc(100vh - 7.3rem);
     border-radius: 0;
+  }
+
+  .app-map #map-search *[class$=carousel__content] .map-popup {
+    min-height: 7.5rem;
+  }
+
+  .app-map #map-search *[class$=carousel__content] .map-popup__price,
+  .app-map #map-search *[class$=carousel__content] .map-popup__bot {
+    display: block;
   }
 
   .app-item {
@@ -16201,6 +16460,25 @@ a {
     left: 1.2rem;
   }
 
+  .suggestions-wrapper {
+    padding: 0.9rem 0;
+  }
+
+  .suggestions-suggestions {
+    border-radius: 1.2rem;
+    box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
+  }
+
+  .suggestions-hint {
+    padding: 0.3rem 1.6rem;
+    font-size: 1.2rem;
+  }
+
+  .suggestions-suggestion {
+    padding: 1.6rem;
+    font-size: 1.2rem;
+  }
+
   .header.open .header__inner {
     padding: 1.6rem 0;
   }
@@ -16224,16 +16502,19 @@ a {
     gap: 0.8rem;
   }
 
-  .header__act-count {
-    height: 1.3rem;
-    min-width: 1.3rem;
-    font-size: 1rem;
-  }
-
   .header__act {
     width: 2.4rem;
     height: 2.4rem;
     padding: 0.3rem;
+  }
+
+  .header__act-count,
+  .header__count-adds {
+    min-width: 1.5rem;
+    height: 1.5rem;
+    right: -0.3rem;
+    top: -0.3rem;
+    font-size: 0.8rem;
   }
 
   .header__burger-wrap {
@@ -16593,6 +16874,10 @@ a {
     font-size: 1.2rem;
   }
 
+  .modalConfirm__title {
+    font-size: 1.2rem;
+  }
+
   .card-ad-top {
     padding: 0 1.6rem;
   }
@@ -16671,10 +16956,6 @@ a {
     margin-bottom: 2.4rem;
   }
 
-  .card-ad-map__input {
-    padding-left: 0.8rem;
-  }
-
   .card-ad-map__input input {
     font-size: 1.2rem;
     padding: 0.8rem 0.8rem;
@@ -16690,6 +16971,7 @@ a {
   .card-ad-map__input svg {
     width: 1.7rem;
     height: 1.7rem;
+    margin-left: 1.5rem;
   }
 
   .card-ad-map__calc {
@@ -16980,6 +17262,10 @@ a {
 
   .card--map .card__title {
     max-height: 3.78rem;
+  }
+
+  .card--map .card__data ul {
+    max-height: 9.62rem;
   }
 
   .card-user {
@@ -18954,6 +19240,12 @@ a {
 
   .my-input__textarea--big2 {
     height: 12rem;
+  }
+
+  .my-input-one-checkbox {
+    right: 1rem;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
   }
 
   .my-select {
