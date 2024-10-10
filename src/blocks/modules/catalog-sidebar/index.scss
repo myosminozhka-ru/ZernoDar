@@ -531,10 +531,18 @@
     background-repeat: no-repeat;
     overflow: hidden;
   }
-  input:checked + i {
+  input:checked ~ i {
     background-color: $green;
     border-color: $green;
     background-image: url(../img/sprites/checkbox-green.svg);
+  }
+  input:disabled + span {
+    color: #bfc5c6;
+    pointer-events: none;
+  }
+  input:disabled ~ i {
+    border-color: #bfc5c6;
+    pointer-events: none;
   }
   @include tab {
     font-size: 1.6rem;

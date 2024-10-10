@@ -85,25 +85,14 @@
     border: 1px solid $lightgrey;
     padding: 1.3rem 1.6rem;
   }
-  .suggestions-suggestions {
+  .suggestions-wrapper {
     min-width: 57.2rem;
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #F8F8F8;
-    border-radius: 2rem;
-    padding: 1rem;
-    font-size: 1.5rem;
   }
-  .suggestions-suggestion {
-    margin-bottom: 0.8rem;
-    cursor: pointer;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .suggestions-hint {
-    font-size: 1.2rem;
+  .suggestions-suggestion:empty {
+    display: none;
   }
   @include tab {
     margin-bottom: 0;
@@ -154,7 +143,6 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding-left: 1.6rem;
       margin-bottom: 2.4rem;
       input {
         flex-grow: 1;
@@ -187,6 +175,7 @@
         display: inline-block;
         width: 2rem;
         height: 2rem;
+        margin-left: 1.8rem;
       }
     }
     &__calc {
@@ -211,15 +200,13 @@
       border: 0;
       padding: 0;
     }
-    .suggestions-suggestions {
+    .suggestions-wrapper {
       min-width: 100%;
-      border-radius: 0.8rem;
-      padding: 1rem;
-      font-size: 1.4rem;
       position: static;
+      padding: 0;
     }
-    .suggestions-hint {
-      font-size: 1rem;
+    .suggestions-suggestions {
+      box-shadow: none;
     }
   }
   @include mob {
@@ -241,7 +228,6 @@
       margin-bottom: 2.4rem;
     }
     &__input {
-      padding-left: 0.8rem;
       input {
         font-size: 1.2rem;
         padding: 0.8rem 0.8rem;
@@ -255,6 +241,7 @@
       svg {
         width: 1.7rem;
         height: 1.7rem;
+        margin-left: 1.5rem;
       }
     }
     &__calc {
@@ -273,10 +260,15 @@
 
 .map-popup {
   font-family: $main-font;
+  min-width: 20rem;
+  max-width: 30rem;
+  min-height: 7rem;
+  // &--tags {
+  //   min-height: 12.5rem;
+  // }
   &__top {
     display: flex;
     gap: 0.8rem;
-    margin-bottom: 1.6rem;
   }
   &__icon {
     width: 6.4rem;
@@ -287,10 +279,18 @@
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 0.8rem;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 18rem;
   }
   &__price {
     font-size: 2rem;
     font-weight: 700;
+  }
+  &__bot {
+    margin-top: 1.6rem;
   }
   &__tags {
     display: flex;
@@ -307,9 +307,11 @@
     }
   }
   @include tab {
+    min-width: 10rem;
+    max-width: 20rem;
+    min-height: auto;
     &__top {
       gap: 0.2rem;
-      margin-bottom: 0.6rem;
     }
     &__icon {
       width: 2.2rem;
@@ -318,9 +320,15 @@
     &__title {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
+      width: 13rem;
     }
     &__price {
       font-size: 1.2rem;
+      display: none;
+    }
+    &__bot {
+      margin-top: 0.6rem;
+      display: none;
     }
     &__tags {
       gap: 0.2rem;

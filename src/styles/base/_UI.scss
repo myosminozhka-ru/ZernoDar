@@ -91,7 +91,7 @@
   padding: 1.2rem 1.6rem;
   border-radius: 10rem;
   gap: 0.4rem;
-  svg {
+  svg, i {
     width: 2.4rem;
     height: 2.4rem;
     object-fit: contain;
@@ -115,6 +115,16 @@
       color: #2fa51c;
     }
   }
+  &--no-price {
+    background-color: $palegreen;
+    font-weight: 600;
+    gap: 0.7rem;
+    white-space: nowrap;
+    svg {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+  }
   &--red {
     background-color: $palered;
     svg {
@@ -133,6 +143,12 @@
   @include tab {
     font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
+    &--no-price {
+      svg {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
   }
   @include mob {
     font-size: 1.2rem;
@@ -333,6 +349,9 @@
   &--full {
     width: 100%;
   }
+  &--confirm {
+    width: 10rem;
+  }
   @include tab {
     padding: 1.2rem;
     font-size: 1.8rem;
@@ -512,7 +531,7 @@
 .btn9 {
   font-weight: 500;
   color: $white;
-  padding: 1.4rem 3.1rem;
+  padding: 1.2rem 2.3rem;
   border-radius: 1.6rem;
   display: inline-flex;
   align-items: center;
@@ -537,7 +556,7 @@
   }
   @include tab {
     font-size: 1.8rem;
-    padding: 1.8rem 3.2rem;
+    padding: 1.5rem 2rem;
     border-radius: 1.6rem;
     &--lg {
       padding-top: 2.2rem;
@@ -1014,8 +1033,24 @@
   &__content {
     display: none;
   }
+  &[aria-describedby] {
+    .helptip__icon svg {
+      color: #0F582D;
+    }
+  }
 }
-
+.ui-helptip {
+  border: none !important;
+  @include block-shodow3;
+  &--count-add {
+    font-size: 1.5rem;
+    background-color: $paleorange;
+    border-radius: 10rem;
+    padding: 1rem 1.2rem;
+    box-shadow: none;
+    border: none !important;
+  }
+}
 // .swiper-wrapper {
 //   height: auto;
 // }
@@ -2208,15 +2243,18 @@
       color: $darkgrey;
       transition: color 200ms;
     }
+  }
+  a.user-contact__link {
+    color: $linkblue;
+  }
+  a.user-contact__link,
+  button.user-contact__link {
     &:hover {
       text-decoration: underline;
       svg {
         color: $black;
       }
     }
-  }
-  a.user-contact__link {
-    color: $linkblue;
   }
   @include tab {
     font-size: 1.8rem;
@@ -2288,7 +2326,7 @@
   font-size: 2rem;
   font-weight: 500;
   color: $white;
-  padding: 2.7rem 3.2rem;
+  padding: 1.8rem 3rem;
   border-radius: 2rem;
   display: inline-flex;
   align-items: center;
@@ -2322,8 +2360,8 @@
     pointer-events: none;
   }
   svg {
-    width: 4.6rem;
-    height: 4.6rem;
+    width: 3rem;
+    height: 3rem;
     object-fit: contain;
     color: transparent;
   }
@@ -2336,7 +2374,7 @@
     }
   }
   &--sm {
-    padding: 1.3rem;
+    padding: 1.14rem;
     border-radius: 1.6rem;
     svg {
       width: 2.2rem;
@@ -2356,7 +2394,7 @@
       height: 2.4rem;
     }
     &--sm {
-      padding: 1.8rem;
+      padding: 1.47rem;
       svg {
         width: 2.4rem;
         height: 2.4rem;
@@ -2449,7 +2487,8 @@
   .ui-widget.ui-widget-content {
     border: none;
     border-radius: 2rem;
-    overflow: hidden;
+    overflow: auto;
+    max-height: 40rem;
     background-color: $white;
     box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
     border: none;
@@ -2580,9 +2619,9 @@
 .ui-selectmenu-menu-filter {
   padding: 0.6rem 0;
   .ui-widget.ui-widget-content {
-    border: none;
     border-radius: 2rem;
-    overflow: hidden;
+    overflow: auto;
+    max-height: 40rem;
     background-color: $white;
     box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
     border: none;
@@ -2683,6 +2722,74 @@
 }
 // mini end
 
+.suggestions-wrapper {
+  padding: 0.6rem 0;
+}
+.suggestions-suggestions {
+  border-radius: 2rem;
+  overflow: auto;
+  max-height: 40rem;
+  background-color: #ffffff;
+  box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
+  border: none;
+}
+.suggestions-hint {  
+  padding: 1rem 2.4rem;
+  font-size: 1.8rem;
+  color: #2C2C31;
+}
+.suggestions-suggestion {    
+  padding: 2.4rem;
+  font-size: 1.8rem;
+  color: #2C2C31;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    background-color: #ECF0F4;
+  }
+}
+
+@include tab {
+  .suggestions-wrapper {
+    padding: 1.2rem 0;
+  }
+  .suggestions-suggestions {
+    border-radius: 1.6rem;
+    box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
+  }
+  .suggestions-hint {  
+    padding: 0.5rem 1.8rem;
+    font-size: 1.4rem;
+  }
+  .suggestions-suggestion {
+    padding: 1.8rem;
+    font-size: 1.4rem;
+    &:hover {
+      background-color: #ECF0F4;
+    }
+  }
+
+}
+@include mob {
+  .suggestions-wrapper {
+    padding: 0.9rem 0;
+  }
+  .suggestions-suggestions {        
+    border-radius: 1.2rem;
+    box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
+  }
+  .suggestions-hint {  
+    padding: 0.3rem 1.6rem;
+    font-size: 1.2rem;
+  }
+  .suggestions-suggestion {
+    padding: 1.6rem;
+    font-size: 1.2rem;
+  }
+}
+
+
+
 .favourite-tooltip {
   padding: 1rem;
   font-size: 1.6rem;
@@ -2702,8 +2809,8 @@
     justify-content: space-between;
   }
   .edit-requisites__value {
-    flex: 1;
-    text-align: right;
+    flex: 0;
+    white-space: nowrap;
   }
   @include tab {
     padding: 2.4rem;

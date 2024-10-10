@@ -569,6 +569,39 @@
   }
 }
 
+.my-input-one-checkbox-wrap {
+  position: relative;
+  .my-input__input {
+    padding-right: 10rem;
+  }
+}
+
+.my-input-one-checkbox {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border-radius: 1.2rem;
+  padding: 1rem 1.8rem;
+  font-size: 1.4rem;
+  border: 0.1rem solid $paleblue;
+  cursor: pointer;
+  &[data-checked="true"] {
+    background-color: $linkblue;
+    color: $white;
+    border: 0.1rem solid $linkblue;
+  }
+  @include tab {
+    right: 1rem;
+  }
+  @include mob {
+    right: 1rem;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
 .my-select {
   display: inline-block;
   position: relative;
