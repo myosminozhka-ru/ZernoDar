@@ -79,6 +79,47 @@
     padding: 1.7rem 3.3rem;
     border-radius: 2rem;
   }
+  &--fav {
+    .content-404 {
+      &__mtitle {
+        font-size: 2.4rem;
+        font-weight: 500;
+      }
+      &__text {
+        font-size: 1.6rem;
+      }
+      &__icon {
+        width: 7.7rem;
+      }
+    }
+  }
+  &--search {
+    padding-top: 0rem;
+    .content-404 {
+      &__inner {
+        width: 100%;
+        padding: 0 3.2rem;
+        align-items: flex-start;
+      }
+      &__mtitle {
+        font-size: 2.4rem;
+        text-align: left;
+        font-weight: 500;
+      }
+      &__text {
+        font-size: 1.8rem;
+        text-align: left;
+      }
+      &__icon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+          width: 21rem;
+        }
+      }
+    }
+  }
   @include tab {
     margin-bottom: 4rem;
     padding-top: 4rem;
@@ -98,6 +139,41 @@
       padding: 1.4rem 2.8rem;
       border-radius: 1.2rem;
     }
+    &--fav {
+      .content-404 {
+        &__mtitle {
+          font-size: 1.8rem;
+        }
+        &__text {
+          font-size: 1.2rem;
+        }
+        &__icon {
+          width: 4.3rem;
+        }
+      }
+      .btn9 {
+        font-size: 1.4rem;
+      }
+    }
+    &--search {
+      padding-top: 0rem;
+      .content-404 {
+        &__inner {
+          padding: 0 2.4rem;
+        }
+        &__mtitle {
+          font-size: 1.8rem;
+        }
+        &__text {
+          font-size: 1.2rem;
+        }
+        &__icon {
+          img {
+            width: 19rem;
+          }
+        }
+      }
+    }
   }
   @include mob {
     margin-bottom: 4rem;
@@ -116,6 +192,43 @@
       font-size: 1.4rem;
       padding: 1.1rem 2.8rem;
       border-radius: 0.8rem;
+    }
+    &--fav {
+      .content-404 {
+        &__mtitle {
+          font-size: 1.6rem;
+        }
+        &__text {
+          font-size: 1rem;
+        }
+        &__icon {
+          width: 3.7rem;
+        }
+      }
+      .btn9 {
+        font-size: 1.2rem;
+      }
+    }
+    &--search {
+      padding-top: 0rem;
+      .content-404 {
+        &__inner {
+          padding: 0 1.6rem;
+          gap: 1.6rem;
+        }
+        &__mtitle {
+          font-size: 1.6rem;
+        }
+        &__text {
+          font-size: 1.2rem;
+        }
+        &__icon {
+          margin-top: 3.2rem;
+          img {
+            width: 18.6rem;
+          }
+        }
+      }
     }
   }
 }

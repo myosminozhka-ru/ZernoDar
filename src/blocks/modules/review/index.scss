@@ -208,14 +208,18 @@
     display: flex;
   }
   &__warning {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     margin-left: auto;
     color: $darkgrey;
-    width: 2.4rem;
-    height: 2.4rem;
     flex-shrink: 0;
     cursor: pointer;
+    white-space: nowrap;
     svg {
-      @include img-cover;
+      width: 2.4rem;
+      height: 2.4rem;
+      object-fit: contain;
     }
   }
   &__item {
@@ -286,7 +290,7 @@
     &__head {
       display: block;
       position: relative;
-      padding-right: 3rem;
+      padding-right: 15rem;
       .user-head {
         margin-bottom: 1.6rem;
         .user-rating {
@@ -294,13 +298,19 @@
         }
       }
     }
-    &__warning,
     &__edit {
       position: absolute;
       right: 0;
       top: 0;
-      width: 2rem;
-      height: 2rem;
+    }
+    &__warning {
+      position: absolute;
+      right: 0;
+      top: 1rem;
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
     }
     &__list {
       gap: 2.4rem;
@@ -325,6 +335,9 @@
     }
     &__answers {
       padding-left: 1.6rem;
+      .review-list__head {
+        padding-right: 3rem;
+      }
     }
     &__rating {
       display: flex;
@@ -339,11 +352,30 @@
     &__item {
       padding: 1.6rem;
     }
+    &__head {
+      padding-right: 11.8rem;
+    }
     .user-rating__ave-date {
       font-size: 1.2rem;
     }
     &__content {
       font-size: 1.4rem;
+    }
+    &__warning {
+      position: absolute;
+      right: 0;
+      top: 1.1rem;
+      font-size: 1.2rem;
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    &__answers {
+      padding-left: 1.6rem;
+      .review-list__head {
+        padding-right: 3rem;
+      }
     }
     &__like {
       font-size: 1.2rem;
