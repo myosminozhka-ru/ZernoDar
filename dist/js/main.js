@@ -1669,7 +1669,7 @@ $('.header__act').tooltip({
 $('.my-input-one-checkbox').on('click', function() {
   const val = $(this).attr('data-checked') == 'true' ? true : false;
   $(this).attr('data-checked', !val)
-  $(this).html(!val ? 'С НДС' : 'без НДС');
+  $(this).html(!val ? 'с НДС' : 'без НДС');
   $('[data-checked-nds]').prop('checked', !val);
 })
 // ндс
