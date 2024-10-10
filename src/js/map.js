@@ -124,6 +124,9 @@ addEventListener("DOMContentLoaded", () => {
   let geoObjects = new Map();
   let myMap;
   let clusterer;
+  let loadFirsttime = true;
+  var coordinates = null;
+  var zoom = 5;
   let onBoundsChange = debounce(function (e) {
     var result = myMap.getBounds();
     window.showWarehousesOnMap([
@@ -193,19 +196,25 @@ addEventListener("DOMContentLoaded", () => {
     }
   }, 1000);
 
-  function init() {
-
-    if (!document.querySelector("#map-search")) {
-      return;
+  function preInit() {
+    const idFound = document.querySelector("#map-search");
+    if (!idFound) {
+      return false;
     }
 
-    var coordinates = document.querySelector("#map-search").getAttribute("data-map-coordinates").split(',').map(c => +c),
+    coordinates = document.querySelector("#map-search").getAttribute("data-map-coordinates").split(',').map(c => +c),
       zoom = 5;
 
     if (!coordinates || !coordinates[0]) {
       coordinates = [56.326483, 44.006050];
       zoom = 5;
     }
+
+    return true;
+
+  }
+
+  function init() {
 
     // Инициализация карты
     myMap = new ymaps.Map("map-search", {
@@ -452,7 +461,9 @@ addEventListener("DOMContentLoaded", () => {
 
   // Инициализация карты
   try {
-    ymaps.ready(init);
+    if (preInit()) {
+      ymaps.ready(init);
+    }
   } catch (error) {
     console.log(error);
   }

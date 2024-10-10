@@ -2243,15 +2243,18 @@
       color: $darkgrey;
       transition: color 200ms;
     }
+  }
+  a.user-contact__link {
+    color: $linkblue;
+  }
+  a.user-contact__link,
+  button.user-contact__link {
     &:hover {
       text-decoration: underline;
       svg {
         color: $black;
       }
     }
-  }
-  a.user-contact__link {
-    color: $linkblue;
   }
   @include tab {
     font-size: 1.8rem;

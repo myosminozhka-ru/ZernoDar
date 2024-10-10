@@ -1665,6 +1665,15 @@ $('.header__act').tooltip({
 // }
 // ==== tooltip end
 
+// ндс
+$('.my-input-one-checkbox').on('click', function() {
+  const val = $(this).attr('data-checked') == 'true' ? true : false;
+  $(this).attr('data-checked', !val)
+  $(this).html(!val ? 'С НДС' : 'без НДС');
+  $('[data-checked-nds]').prop('checked', !val);
+})
+// ндс
+
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
   window.showMore = (all) => {
