@@ -1,40 +1,55 @@
 .cookies {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  bottom: 2rem;
+  left: 9.5rem;
   z-index: 1000;
-  width: 100%;
-  padding: 3.2rem;
-  background-color: $palegreen;
+  width: 75.4rem;
+  padding: 2.4rem 3.2rem;
+  background-color: $white;
+  border: 0.1rem solid $lightgrey;
+  border-radius: 2rem;
   &.hide {
     display: none;
   }
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     font-size: 1.8rem;
-    gap: 2.4rem;
     a {
+      color: $linkblue;
       &:hover {
         text-decoration: underline;
       }
     }
+  }
+  &__text {
+    margin-bottom: 2.4rem;
   }
   &__btn {
     flex-shrink: 0;
     white-space: nowrap;
   }
   @include tab {
+    left: 0;
+    bottom: 0;
     padding: 2.4rem;
+    width: 100%;
+    border-radius: 0;
     &__inner {
-      font-size: 1.7rem;
+      font-size: 1.6rem;
+    }
+    &__text {
+      margin-bottom: 2rem;
+    }
+    &__btn {
+      width: 100%;
     }
   }
   @include mob {
     padding: 1.6rem;
     &__inner {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+    }
+    &__text {
+      margin-bottom: 1.6rem;
     }
   }
 }

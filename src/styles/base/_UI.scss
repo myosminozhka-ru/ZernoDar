@@ -2162,13 +2162,16 @@
       height: 2.16rem;
     }
     &__stars::before {
-      top: 2%;
-      height: 95%;
-      width: 100%;
+      left: 1%;
+      top: 2.5%;
+      height: 92%;
+      width: 98%;
     }
     &__procent {
-      top: 2%;
-      height: 95%;
+      top: 2.5%;
+      height: 92%;
+      left: 1%;
+      max-width: 98%;
     }
     &--md {
       font-size: 1.8rem;
@@ -2189,13 +2192,12 @@
       height: 1.8rem;
     }
     &__stars::before {
-      top: 2%;
-      height: 95%;
-      width: 100%;
+      top: 2.5%;
+      height: 92%;
     }
     &__procent {
-      top: 2%;
-      height: 95%;
+      top: 2.5%;
+      height: 92%;
     }
     &--md {
       font-size: 1.8rem;
