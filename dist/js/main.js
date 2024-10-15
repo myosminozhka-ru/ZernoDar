@@ -119,6 +119,7 @@ class Modal {
     this.scrollLock = scrollLock;
     this.modal = document.querySelector(`[data-modal="${name}"]`);
     this.textPlace = null;
+    this.titlePlace = null;
     this.callbackClose = null;
     this.type = type;
     this.init();
@@ -126,7 +127,8 @@ class Modal {
   init() {
     if (this.modal) {
       this.content = this.modal.querySelector(".modal__content");
-      this.textPlace = this.modal.querySelector(`[data-text-title]`);
+      this.titlePlace = this.modal.querySelector(`[data-text-title]`);
+      this.textPlace = this.modal.querySelector(`[data-text]`);
       this.openHendler();
       this.closeHendler();
       // if (this.type === 'confirm') {
@@ -147,7 +149,10 @@ class Modal {
         };
     });
   }
-  open(text) {
+  open(title, text) {
+    if (title) {
+      this.titlePlace.innerHTML = title;
+    }
     if (text) {
       this.textPlace.innerHTML = text;
     }
@@ -1374,13 +1379,35 @@ function profile() {
 
 // ==== cookies start
 function cookies() {
-  if (localStorage.getItem('cookies') == 'true') {
+  const isPolicyAccepted = getCookie('privacy_policy_accepted');
+  if (isPolicyAccepted) {
     $('.cookies').addClass('hide')
+  } else {
+    $('.cookies').removeClass('hide')
   }
   $('.cookies__btn').on('click', function () {
     $('.cookies').addClass('hide')
-    localStorage.setItem('cookies', true)
+    setCookie('privacy_policy_accepted', 'true', 365);
   })
+  // Функция для установки куки
+  function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+  }
+  // Функция для получения куки по имени
+  function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        const parts = cookie.split('=');
+        const cookieName = parts[0].trim();
+        const cookieValue = parts[1];
+        if (cookieName === name) {
+            return cookieValue;
+        }
+    }
+    return null;
+  }
 }
 // ==== cookies end
 
@@ -1771,7 +1798,9 @@ addEventListener("DOMContentLoaded", () => {
     modalVerifyAccount: new Modal("modalVerifyAccount"),
     modalConfirm: new Modal("modalConfirm", true, 'confirm'),
     modalConfirmRemoveCard: new Modal("modalConfirmRemoveCard", true, 'confirm'),
+    modalConfirmRemoveItem: new Modal("modalConfirmRemoveItem", true, 'confirm'),
     modalTariffPayNotification: new Modal("modalTariffPayNotification"),
+    modalMessage: new Modal("modalMessage"),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     mapFilter: new Sidebar('mapFilter', '.app'),

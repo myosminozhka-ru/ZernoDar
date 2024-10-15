@@ -906,6 +906,10 @@ a {
   background-color: transparent;
 }
 
+.my-tag--border {
+  border: 0.1rem solid #2C2C31;
+}
+
 .tag1 {
   display: inline-flex;
   align-items: center;
@@ -3808,7 +3812,7 @@ a {
   margin-bottom: 1.6rem;
 }
 
-.card-ad-top__inner .card-ad-top__tag .my-tag--no-price {
+.card-ad-top__inner .only-on-mobile {
   display: none;
 }
 
@@ -4003,6 +4007,11 @@ a {
   box-shadow: 5.8rem 13.1rem 4rem 0 rgba(130, 118, 162, 0), 3.7rem 8.4rem 3.7rem 0 rgba(130, 118, 162, 0.01), 2.1rem 4.7rem 3.1rem 0 rgba(130, 118, 162, 0.05), 0.9rem 2.1rem 2.3rem 0 rgba(130, 118, 162, 0.09), 0.2rem 0.5rem 1.3rem 0 rgba(130, 118, 162, 0.1);
 }
 
+.card-ad-user-rating * {
+  word-break: unset;
+  overflow-wrap: unset;
+}
+
 .card-ad-user-rating__top {
   font-size: 1.8rem;
   display: flex;
@@ -4031,6 +4040,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  white-space: nowrap;
 }
 
 .card-ad-user-rating__rates svg {
@@ -4195,6 +4205,16 @@ a {
   min-height: 7rem;
 }
 
+.map-popup .my-tag--no-price {
+  padding: 0.8rem 1.4rem;
+  font-size: 1.6rem;
+}
+
+.map-popup .my-tag--no-price svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
 .map-popup__top {
   display: flex;
   gap: 0.8rem;
@@ -4214,7 +4234,7 @@ a {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 18rem;
+  width: 20rem;
 }
 
 .map-popup__price {
@@ -6322,12 +6342,14 @@ a {
 
 .cookies {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  bottom: 2rem;
+  left: 9.5rem;
   z-index: 1000;
-  width: 100%;
-  padding: 3.2rem;
-  background-color: #ECF4ED;
+  width: 75.4rem;
+  padding: 2.4rem 3.2rem;
+  background-color: #ffffff;
+  border: 0.1rem solid #E6E6E6;
+  border-radius: 2rem;
 }
 
 .cookies.hide {
@@ -6335,15 +6357,19 @@ a {
 }
 
 .cookies__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: 1.8rem;
-  gap: 2.4rem;
+}
+
+.cookies__inner a {
+  color: #0084CF;
 }
 
 .cookies__inner a:hover {
   text-decoration: underline;
+}
+
+.cookies__text {
+  margin-bottom: 2.4rem;
 }
 
 .cookies__btn {
@@ -7812,6 +7838,99 @@ a {
   object-fit: contain;
   flex-shrink: 0;
   margin-right: 1.2rem;
+}
+
+.auto-payment {
+  padding-left: 0rem;
+}
+
+.auto-payment__inner {
+  max-width: 90.9rem;
+}
+
+.auto-payment__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.2rem;
+}
+
+.auto-payment__head h2 {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.auto-payment__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.auto-payment__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.6rem;
+  padding: 3.2rem;
+  background: rgba(217, 217, 217, 0.2);
+}
+
+.auto-payment__tarif-name {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.auto-payment__end-date {
+  font-size: 1.6rem;
+}
+
+.auto-payment__price {
+  font-size: 1.8rem;
+}
+
+.auto-payment__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.auto-payment__icon {
+  width: 9rem;
+  height: 5.4rem;
+  flex-shrink: 0;
+}
+
+.auto-payment__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center right;
+}
+
+.auto-payment__change {
+  font-size: 1.8rem;
+  color: #0084CF;
+  margin-top: 1rem;
+}
+
+.auto-payment__remove {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.2rem 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 1.6rem;
+  border: 0.1rem solid #EEE;
+}
+
+.auto-payment__remove svg,
+.auto-payment__remove i {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .profile-edit__inner {
@@ -9778,6 +9897,11 @@ a {
   min-height: 12.5rem;
 }
 
+.app-map #map-search * {
+  word-break: unset;
+  overflow-wrap: unset;
+}
+
 .app-map__img {
   width: 100%;
   height: 100%;
@@ -10400,14 +10524,17 @@ a {
   }
 
   .user-rating__stars::before {
-    top: 2%;
-    height: 95%;
-    width: 100%;
+    left: 1%;
+    top: 2.5%;
+    height: 92%;
+    width: 98%;
   }
 
   .user-rating__procent {
-    top: 2%;
-    height: 95%;
+    top: 2.5%;
+    height: 92%;
+    left: 1%;
+    max-width: 98%;
   }
 
   .user-rating--md {
@@ -11154,7 +11281,7 @@ a {
     justify-content: space-between;
   }
 
-  .card-ad-top__inner .card-ad-top__tag .my-tag--no-price {
+  .card-ad-top__inner .only-on-mobile {
     display: inline-flex;
   }
 
@@ -11433,9 +11560,19 @@ a {
   }
 
   .map-popup {
-    min-width: 10rem;
+    min-width: 18rem;
     max-width: 20rem;
     min-height: auto;
+  }
+
+  .map-popup .my-tag--no-price {
+    padding: 0.8rem 1.1rem;
+    font-size: 1rem;
+  }
+
+  .map-popup .my-tag--no-price svg {
+    width: 1rem;
+    height: 1rem;
   }
 
   .map-popup__top {
@@ -12518,11 +12655,11 @@ a {
   .review-list__head {
     display: block;
     position: relative;
-    padding-right: 15rem;
   }
 
   .review-list__head .user-head {
     margin-bottom: 1.6rem;
+    padding-right: 15rem;
   }
 
   .review-list__head .user-head .user-rating {
@@ -12577,7 +12714,7 @@ a {
     padding-left: 1.6rem;
   }
 
-  .review-list__answers .review-list__head {
+  .review-list__answers .user-head {
     padding-right: 3rem;
   }
 
@@ -13214,11 +13351,23 @@ a {
   }
 
   .cookies {
+    left: 0;
+    bottom: 0;
     padding: 2.4rem;
+    width: 100%;
+    border-radius: 0;
   }
 
   .cookies__inner {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+  }
+
+  .cookies__text {
+    margin-bottom: 2rem;
+  }
+
+  .cookies__btn {
+    width: 100%;
   }
 
   .banner-404 {
@@ -14408,6 +14557,75 @@ a {
     width: 2.4rem;
     height: 2.4rem;
     margin-right: 0.8rem;
+  }
+
+  .auto-payment {
+    padding: 0 2.4rem;
+  }
+
+  .auto-payment__inner {
+    max-width: none;
+  }
+
+  .auto-payment__head {
+    margin-bottom: 2.4rem;
+  }
+
+  .auto-payment__head h2 {
+    font-size: 1.8rem;
+  }
+
+  .auto-payment__list {
+    gap: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .auto-payment__item {
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .auto-payment__item-info {
+    font-size: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .auto-payment__tarif-name {
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
+
+  .auto-payment__end-date {
+    font-size: 1.5rem;
+  }
+
+  .auto-payment__price {
+    font-size: 1.6rem;
+  }
+
+  .auto-payment__icon {
+    width: 9rem;
+    height: 6rem;
+  }
+
+  .auto-payment__change {
+    font-size: 1.8rem;
+    color: #0084CF;
+    margin-top: 1rem;
+  }
+
+  .auto-payment__remove {
+    padding: 1rem 1.4rem;
+    font-size: 1.4rem;
+  }
+
+  .auto-payment__remove svg,
+  .auto-payment__remove i {
+    width: 2.2rem;
+    height: 2.2rem;
   }
 
   .profile-edit__inner {
@@ -16426,14 +16644,13 @@ a {
   }
 
   .user-rating__stars::before {
-    top: 2%;
-    height: 95%;
-    width: 100%;
+    top: 2.5%;
+    height: 92%;
   }
 
   .user-rating__procent {
-    top: 2%;
-    height: 95%;
+    top: 2.5%;
+    height: 92%;
   }
 
   .user-rating--md {
@@ -17081,6 +17298,11 @@ a {
     font-size: 1.2rem;
   }
 
+  .map-popup .my-tag--no-price {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+  }
+
   .card-ad-relative__head {
     font-size: 1.2rem;
     padding: 3.2rem 1.6rem;
@@ -17544,7 +17766,7 @@ a {
     padding: 1.6rem;
   }
 
-  .review-list__head {
+  .review-list__head .user-head {
     padding-right: 11.8rem;
   }
 
@@ -17554,6 +17776,11 @@ a {
 
   .review-list__content {
     font-size: 1.4rem;
+  }
+
+  .review-list__edit {
+    width: 2rem;
+    height: 2rem;
   }
 
   .review-list__warning {
@@ -17572,7 +17799,7 @@ a {
     padding-left: 1.6rem;
   }
 
-  .review-list__answers .review-list__head {
+  .review-list__answers .user-head {
     padding-right: 3rem;
   }
 
@@ -18038,7 +18265,11 @@ a {
   }
 
   .cookies__inner {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .cookies__text {
+    margin-bottom: 1.6rem;
   }
 
   .banner-404 {
@@ -18700,6 +18931,60 @@ a {
     width: 2.4rem;
     height: 2.4rem;
     margin-right: 0.8rem;
+  }
+
+  .auto-payment {
+    padding: 0 1.6rem;
+  }
+
+  .auto-payment__head {
+    margin-bottom: 1.6rem;
+  }
+
+  .auto-payment__head h2 {
+    font-size: 1.7rem;
+  }
+
+  .auto-payment__list {
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .auto-payment__item-info {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .auto-payment__tarif-name {
+    font-size: 1.6rem;
+  }
+
+  .auto-payment__end-date {
+    font-size: 1.4rem;
+  }
+
+  .auto-payment__price {
+    font-size: 1.5rem;
+  }
+
+  .auto-payment__icon {
+    width: 9rem;
+    height: 6rem;
+  }
+
+  .auto-payment__change {
+    font-size: 1.6rem;
+  }
+
+  .auto-payment__remove {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .auto-payment__remove svg,
+  .auto-payment__remove i {
+    width: 2.2rem;
+    height: 2.2rem;
   }
 
   .profile-edit__inner {
