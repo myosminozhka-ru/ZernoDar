@@ -4,7 +4,7 @@
     margin-bottom: 1.6rem;
   }
   &__inner {
-    .card-ad-top__tag .my-tag--no-price {
+    .only-on-mobile {
       display: none;
     }
   }
@@ -142,7 +142,7 @@
       justify-content: space-between;
     }
     &__inner {
-      .card-ad-top__tag .my-tag--no-price {
+      .only-on-mobile {
         display: inline-flex;
       }
     }

@@ -290,9 +290,9 @@
     &__head {
       display: block;
       position: relative;
-      padding-right: 15rem;
       .user-head {
         margin-bottom: 1.6rem;
+        padding-right: 15rem;
         .user-rating {
           display: none;
         }
@@ -335,7 +335,7 @@
     }
     &__answers {
       padding-left: 1.6rem;
-      .review-list__head {
+      .user-head {
         padding-right: 3rem;
       }
     }
@@ -353,13 +353,19 @@
       padding: 1.6rem;
     }
     &__head {
-      padding-right: 11.8rem;
+      .user-head {
+        padding-right: 11.8rem;
+      }
     }
     .user-rating__ave-date {
       font-size: 1.2rem;
     }
     &__content {
       font-size: 1.4rem;
+    }
+    &__edit {
+      width: 2rem;
+      height: 2rem;
     }
     &__warning {
       position: absolute;
@@ -373,7 +379,7 @@
     }
     &__answers {
       padding-left: 1.6rem;
-      .review-list__head {
+      .user-head  {
         padding-right: 3rem;
       }
     }
