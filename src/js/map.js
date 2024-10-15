@@ -143,9 +143,9 @@ addEventListener("DOMContentLoaded", () => {
         id: '2',
         coordinates: [55.813376, 37.630301],
         name: "name 2",
-        price: "price 1",
+        price: "Договорная",
         icon: 'img/user-ava.png',
-        tags: [],
+        tags: ['Колчиество: не указано'],
         ownerHref: '/href',
       },
       {
@@ -161,7 +161,7 @@ addEventListener("DOMContentLoaded", () => {
         id: '4',
         coordinates: [55.750630, 37.674063],
         name: "name 4",
-        price: "price 1",
+        price: "Договорная",
         icon: 'img/first-screen1.jpg',
         tags: ["tag 1", "tag 1"],
         ownerHref: '/href',
@@ -177,6 +177,123 @@ addEventListener("DOMContentLoaded", () => {
       },
       {
         id: '6',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: ['Колчиество: не указано е указано', 'Колчиество: не указано'],
+        ownerHref: '/href',
+      },
+      {
+        id: '7',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '8',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "Договорная",
+        icon: 'img/first-screen1.jpg',
+        tags: ['Колчиество: не указано', 'Колчиество: не указано'],
+        ownerHref: '/href',
+      },
+      {
+        id: '9',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '10',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '11',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '12',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '13',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '14',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '15',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '16',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '17',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '18',
+        coordinates: [55.750630, 37.674063],
+        name: "name 4",
+        price: "",
+        icon: 'img/first-screen1.jpg',
+        tags: [],
+        ownerHref: '/href',
+      },
+      {
+        id: '19',
         coordinates: [55.750630, 37.674063],
         name: "name 4",
         price: "",
@@ -317,6 +434,16 @@ addEventListener("DOMContentLoaded", () => {
 
     // Обрабатываем новые объекты и добавляем их в кластер, если их еще нет
     newObjects.forEach((object) => {
+        let priceHtml = `<div class="map-popup__price">${object.price}</div>`;
+        if (object?.price && object.price.toLowerCase().trim() === 'договорная') {
+          priceHtml = `
+            <span class="my-tag my-tag--no-price">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#ruble"></use>
+              </svg>
+              Договорная
+            </span>`;
+        }
         if (!placemarksById[object.id]) {
             const placemark = new ymaps.Placemark(object.coordinates, {
                 id: object.id, // Присваиваем id как свойство метки
@@ -330,7 +457,7 @@ addEventListener("DOMContentLoaded", () => {
                       </div>
                       <div>
                         <a href="${object.ownerHref}" class="map-popup__title">${object.name}</a>
-                        <div class="map-popup__price">${object.price}</div>
+                        ${priceHtml}
                       </div>
                     </div>
                     ${object.tags.length ? '<div class="map-popup__bot"><div class="map-popup__tags">' : ''}

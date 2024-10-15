@@ -4,6 +4,10 @@
   border-radius: 2rem;
   background-color: $white;
   @include block-shadow1;
+  * {
+    word-break: unset;
+    overflow-wrap: unset;
+  }
   &__top {
     font-size: 1.8rem;
     display: flex;
@@ -28,6 +32,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
+    white-space: nowrap;
     svg {
       width: 2rem;
       height: 2rem;
