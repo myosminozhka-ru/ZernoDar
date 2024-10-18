@@ -8,6 +8,11 @@
     word-break: unset;
     overflow-wrap: unset;
   }
+  a.card-ad-user-rating__subtitle {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   &__top {
     font-size: 1.8rem;
     display: flex;

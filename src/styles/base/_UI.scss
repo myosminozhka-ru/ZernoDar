@@ -2835,3 +2835,64 @@
 .red-message {
   color: $red;
 }
+
+.preloader-more {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  &.display-none {
+    display: none;
+  }
+  &__inner {
+    width: 11.5rem;
+    height: 18rem;
+    position: relative;
+    overflow: hidden;
+  }
+  &__img-bgs {
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    z-index: 2;
+    width: 100%;
+    animation: preloader-more 1700ms linear 0ms infinite normal;
+  }
+  &__img {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    svg {
+      width: 100%;
+      height: 100%;    
+      transform: scale(1.01);
+    }
+  }
+  @include tab {
+    &__inner {
+      transform: scale(0.5);
+    }
+  }
+}
+
+@keyframes preloader-more {
+  0% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(49%);
+  }
+  65% {
+    transform: translateY(49%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
