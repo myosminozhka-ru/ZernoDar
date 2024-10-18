@@ -1,5 +1,11 @@
 .card-ad-relative {
   margin-bottom: 4.8rem;
+  &--left {
+    .card-ad-relative__tbody .card-ad-relative__td {
+      text-align: left;
+      justify-content: flex-start;
+    }
+  }
   &__head {
     display: flex;
     align-items: center;
