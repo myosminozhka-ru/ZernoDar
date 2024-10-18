@@ -1701,6 +1701,19 @@ $('.my-input-one-checkbox').on('click', function() {
 })
 // ндс
 
+// прелоадер more
+window.openPreloaderMore = function () {
+  $("#preloader-more1").css("display", "flex").hide().fadeIn(300);
+}
+window.closePreloaderMore = function () {
+  $("#preloader-more1").fadeOut(300, function() {
+    $(this).css("display", "none");
+  });
+}
+
+// прелоадер more
+
+
 // ***** invoke scripts start
 addEventListener("DOMContentLoaded", () => {
   window.showMore = (all) => {
