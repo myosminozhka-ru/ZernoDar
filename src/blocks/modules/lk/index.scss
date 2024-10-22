@@ -42,6 +42,11 @@
     }
   }
 }
+.security-wrapper {
+  @include tab {
+    padding-bottom: 4.5rem;
+  }
+}
 .lk-inner {
   width: 125rem;
   padding-top: 6.3rem;

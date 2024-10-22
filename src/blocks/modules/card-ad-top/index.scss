@@ -162,7 +162,9 @@
       display: inline-block;
       font-size: 2.2rem;
       font-weight: 500;
-      white-space: nowrap;
+      p {
+        white-space: nowrap;
+      }
     }
     &__date {
       display: none;
