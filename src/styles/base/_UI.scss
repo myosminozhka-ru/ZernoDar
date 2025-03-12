@@ -1210,6 +1210,12 @@
   }
   @include tab {
   }
+  &.swiper-button-disabled {
+    display: none;
+  }
+  &.swiper-button-lock {
+    pointer-events: none;
+  }
 }
 
 .slider-prev {
@@ -1301,6 +1307,9 @@
     &--progressbar {
       height: 0.2rem !important;
     }
+  }
+  &.swiper-pagination-lock {
+    display: none;
   }
 }
 
@@ -2738,12 +2747,12 @@
   box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
   border: none;
 }
-.suggestions-hint {  
+.suggestions-hint {
   padding: 1rem 2.4rem;
   font-size: 1.8rem;
   color: #2C2C31;
 }
-.suggestions-suggestion {    
+.suggestions-suggestion {
   padding: 2.4rem;
   font-size: 1.8rem;
   color: #2C2C31;
@@ -2762,7 +2771,7 @@
     border-radius: 1.6rem;
     box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
   }
-  .suggestions-hint {  
+  .suggestions-hint {
     padding: 0.5rem 1.8rem;
     font-size: 1.4rem;
   }
@@ -2779,11 +2788,11 @@
   .suggestions-wrapper {
     padding: 0.9rem 0;
   }
-  .suggestions-suggestions {        
+  .suggestions-suggestions {
     border-radius: 1.2rem;
     box-shadow: 0 0.9rem 3.5rem 0 rgba(23, 15, 73, 0.19);
   }
-  .suggestions-hint {  
+  .suggestions-hint {
     padding: 0.3rem 1.6rem;
     font-size: 1.2rem;
   }
@@ -2871,7 +2880,7 @@
     height: 100%;
     svg {
       width: 100%;
-      height: 100%;    
+      height: 100%;
       transform: scale(1.01);
     }
   }

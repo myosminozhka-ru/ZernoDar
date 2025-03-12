@@ -13,11 +13,18 @@
     "sourceType": "module"
   },
 
+  "globals": {
+    "$": "readonly",
+    "jQuery": "readonly"
+  },
+
   "rules": {
     // "indent": ["error", 4],
     "ident": "off",
     "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"]
+    "quotes": ["error", "single"],
+    "semi": "off",
+    "no-unused-vars": "warn"
+    //"semi": ["error", "always"]
   }
 }

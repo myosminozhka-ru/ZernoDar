@@ -1,26 +1,25 @@
-"use strict";
+'use strict';
 
-import { paths } from "../gulpfile.babel";
-import gulp from "gulp";
-import gulpif from "gulp-if";
-import rename from "gulp-rename";
-import dartsass from "sass";
-import gulpsass from "gulp-sass";
-import mincss from "gulp-clean-css";
-import groupmedia from "gulp-group-css-media-queries";
-import autoprefixer from "gulp-autoprefixer";
-import sourcemaps from "gulp-sourcemaps";
-import plumber from "gulp-plumber";
-import browsersync from "browser-sync";
-import debug from "gulp-debug";
-import yargs from "yargs";
-import vueStr from "./vue.js";
+import { paths } from '../gulpfile.babel';
+import gulp from 'gulp';
+import gulpif from 'gulp-if';
+//import rename from 'gulp-rename';
+import dartsass from 'sass';
+import gulpsass from 'gulp-sass';
+//import mincss from 'gulp-clean-css';
+import groupmedia from 'gulp-group-css-media-queries';
+//import autoprefixer from 'gulp-autoprefixer';
+import sourcemaps from 'gulp-sourcemaps';
+import plumber from 'gulp-plumber';
+import browsersync from 'browser-sync';
+import debug from 'gulp-debug';
+import yargs from 'yargs';
 
 const sass = gulpsass(dartsass);
 const argv = yargs.argv,
     production = !!argv.production;
 
-gulp.task("styles", () => {
+gulp.task('styles', () => {
 
     gulp.src(paths.styles.srcLibs)
     .pipe(gulp.dest(paths.styles.distLibs))
@@ -55,10 +54,10 @@ gulp.task("styles", () => {
         //     suffix: ".min"
         // })))
         .pipe(plumber.stop())
-        .pipe(gulpif(!production, sourcemaps.write("./maps/")))
+        .pipe(gulpif(!production, sourcemaps.write('./maps/')))
         .pipe(gulp.dest(paths.styles.dist))
         .pipe(debug({
-            "title": "CSS files"
+            'title': 'CSS files'
         }))
-        .on("end", browsersync.reload);
+        .on('end', browsersync.reload);
 });

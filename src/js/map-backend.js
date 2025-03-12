@@ -1,10 +1,10 @@
-addEventListener("DOMContentLoaded", () => {
-  const mediaQuery = window.matchMedia("(max-width: 1023px)");
+addEventListener('DOMContentLoaded', () => {
+  const mediaQuery = window.matchMedia('(max-width: 1023px)');
   // выпадашки select
   $('[data-select="name_44"]').selectmenu({
     classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-border",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+      'ui-selectmenu-button': 'ui-selectmenu-button-border',
+      'ui-selectmenu-menu': 'ui-selectmenu-menu-border'
     },
     change: function (event, ui) {
       console.log(event, ui);
@@ -13,8 +13,8 @@ addEventListener("DOMContentLoaded", () => {
 
   $('[data-select="name_77"]').selectmenu({
     classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-border",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+      'ui-selectmenu-button': 'ui-selectmenu-button-border',
+      'ui-selectmenu-menu': 'ui-selectmenu-menu-border'
     },
     change: function (event, ui) {
       console.log(event, ui);
@@ -29,7 +29,7 @@ addEventListener("DOMContentLoaded", () => {
   // фильтр модалка
   // открыть window.modalMapFilter.open()
   // закрыть window.modalMapFilter.close()
-  window.modalMapFilter = new Modal("modalMapFilter");
+  window.modalMapFilter = new Modal('modalMapFilter');
 
 
   // reset фильтра window.octo.mapFilter.resetFilter()
@@ -39,7 +39,7 @@ addEventListener("DOMContentLoaded", () => {
   window.mapSlider = new Swiper('.app-list__swiper', {
     loop: false,
     slidesPerView: 'auto',
-    direction: "horizontal",
+    direction: 'horizontal',
     freeMode: true,
     mousewheel: {
       enabled: true,
@@ -49,7 +49,7 @@ addEventListener("DOMContentLoaded", () => {
       100: {
         loop: false,
         slidesPerView: 'auto',
-        direction: "horizontal",
+        direction: 'horizontal',
         freeMode: true,
         mousewheel: {
           enabled: true,
@@ -59,7 +59,7 @@ addEventListener("DOMContentLoaded", () => {
       1024: {
         loop: false,
         slidesPerView: 'auto',
-        direction: "vertical",
+        direction: 'vertical',
         freeMode: true,
         mousewheel: {
           enabled: true,
@@ -88,7 +88,7 @@ addEventListener("DOMContentLoaded", () => {
                   </div>
                   <div class="map-popup__bot">
                     <div class="map-popup__tags">
-                      ${warehouse.tags.map(i => "<span>" + i + "</span>").reduce(
+                      ${warehouse.tags.map(i => '<span>' + i + '</span>').reduce(
           (accumulator, currentValue) => accumulator + currentValue,
           '',
         )}
@@ -96,7 +96,7 @@ addEventListener("DOMContentLoaded", () => {
                   </div>
                 </div>
               </div>
-            ` : ``
+            ` : ''
       }, {
         // Опции для кастомной иконки
         iconLayout: 'default#image',
@@ -211,11 +211,11 @@ addEventListener("DOMContentLoaded", () => {
   try {
     ymaps.ready(function () {
 
-      if (!document.querySelector("#map-search")) {
+      if (!document.querySelector('#map-search')) {
         return;
       }
-      
-      var coordinates = document.querySelector("#map-search").getAttribute("data-map-coordinates").split(',').map(c => +c),
+
+      var coordinates = document.querySelector('#map-search').getAttribute('data-map-coordinates').split(',').map(c => +c),
         zoom = 12;
 
       if (!coordinates || !coordinates[0]) {
@@ -223,7 +223,7 @@ addEventListener("DOMContentLoaded", () => {
         zoom = 10;
       }
 
-      const map = new ymaps.Map("map-search", {
+      const map = new ymaps.Map('map-search', {
         center: coordinates,
         zoom: zoom,
         controls: ['zoomControl', 'fullscreenControl']
@@ -252,7 +252,7 @@ addEventListener("DOMContentLoaded", () => {
       }, 1000));
     });
   } catch (error) {
-    
+
   }
 
 });

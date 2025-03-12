@@ -1,10 +1,10 @@
-addEventListener("DOMContentLoaded", () => {
-  const mediaQuery = window.matchMedia("(max-width: 1023px)");
+addEventListener('DOMContentLoaded', () => {
+  const mediaQuery = window.matchMedia('(max-width: 1023px)');
   // выпадашки select
   $('[data-select="name_44"]').selectmenu({
     classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-border",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+      'ui-selectmenu-button': 'ui-selectmenu-button-border',
+      'ui-selectmenu-menu': 'ui-selectmenu-menu-border'
     },
     change: function (event, ui) {
       console.log(event, ui);
@@ -13,8 +13,8 @@ addEventListener("DOMContentLoaded", () => {
 
   $('[data-select="name_77"]').selectmenu({
     classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-border",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+      'ui-selectmenu-button': 'ui-selectmenu-button-border',
+      'ui-selectmenu-menu': 'ui-selectmenu-menu-border'
     },
     change: function (event, ui) {
       console.log(event, ui);
@@ -23,13 +23,13 @@ addEventListener("DOMContentLoaded", () => {
 
   // скрыть footer
   if ($('.app').length) {
-    $('.footer').css({ display: 'none' })
+    $('.footer').css({ display: 'none' });
   }
 
   // фильтр модалка
   // открыть window.modalMapFilter.open()
   // закрыть window.modalMapFilter.close()
-  window.modalMapFilter = new Modal("modalMapFilter");
+  window.modalMapFilter = new Modal('modalMapFilter');
 
 
   // reset фильтра window.octo.mapFilter.resetFilter()
@@ -39,7 +39,7 @@ addEventListener("DOMContentLoaded", () => {
   window.mapSlider = new Swiper('.app-list__swiper', {
     loop: false,
     slidesPerView: 'auto',
-    direction: "horizontal",
+    direction: 'horizontal',
     freeMode: true,
     mousewheel: {
       enabled: true,
@@ -49,7 +49,7 @@ addEventListener("DOMContentLoaded", () => {
       100: {
         loop: false,
         slidesPerView: 'auto',
-        direction: "horizontal",
+        direction: 'horizontal',
         freeMode: true,
         mousewheel: {
           enabled: true,
@@ -59,7 +59,7 @@ addEventListener("DOMContentLoaded", () => {
       1024: {
         loop: false,
         slidesPerView: 'auto',
-        direction: "vertical",
+        direction: 'vertical',
         freeMode: true,
         mousewheel: {
           enabled: true,
@@ -85,17 +85,17 @@ addEventListener("DOMContentLoaded", () => {
       window.catalogMapSliderView(false);
       console.error(error);
     }
-  }
+  };
 
   $(document).on('click', '.app__sidbar', (e) => {
     if ($('.app__sidbar').is(e.target)) {
       window.catalogMapSliderView(false);
     }
-  })
+  });
 
   $(document).on('click', '.app__sidbar-open .btn3', (e) => {
     window.catalogMapSliderView(true);
-  })
+  });
 
   window.catalogMapSliderView = function (action) {
     if (action) {
@@ -105,7 +105,7 @@ addEventListener("DOMContentLoaded", () => {
       $('.app__sidbar').removeClass('open');
       $('.app__sidbar-open').removeClass('close');
     }
-  }
+  };
 
   // debounce функция, которая «откладывает» вызов другой функции до того момента, когда с последнего вызова пройдёт определённое количество времени
   function debounce(func, delay) {
@@ -133,17 +133,17 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '1',
         coordinates: [55.829544, 37.436152],
-        name: "name 1",
-        price: "150 000 Р/т без НДС",
+        name: 'name 1',
+        price: '150 000 Р/т без НДС',
         icon: 'img/first-screen1.jpg',
-        tags: ["tag 1", "tag 1"],
+        tags: ['tag 1', 'tag 1'],
         ownerHref: '/href',
       },
       {
         id: '2',
         coordinates: [55.813376, 37.630301],
-        name: "name 2",
-        price: "Договорная",
+        name: 'name 2',
+        price: 'Договорная',
         icon: 'img/user-ava.png',
         tags: ['Колчиество: не указано'],
         ownerHref: '/href',
@@ -151,35 +151,35 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '3',
         coordinates: [55.742848, 37.605283],
-        name: "Пшеница 2 класса в Новгородской области",
-        price: "price 1",
+        name: 'Пшеница 2 класса в Новгородской области',
+        price: 'price 1',
         icon: 'img/user-ava.png',
-        tags: ["tag 1", "tag 1"],
+        tags: ['tag 1', 'tag 1'],
         ownerHref: '/href',
       },
       {
         id: '4',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "Договорная",
+        name: 'name 4',
+        price: 'Договорная',
         icon: 'img/first-screen1.jpg',
-        tags: ["tag 1", "tag 1"],
+        tags: ['tag 1', 'tag 1'],
         ownerHref: '/href',
       },
       {
         id: '5',
         coordinates: [55.750630, 37.674063],
-        name: "Пшеница 2 класса в Новгородской области",
-        price: "price 1",
+        name: 'Пшеница 2 класса в Новгородской области',
+        price: 'price 1',
         icon: 'img/first-screen1.jpg',
-        tags: ["tag 1", "tag 1"],
+        tags: ['tag 1', 'tag 1'],
         ownerHref: '/href',
       },
       {
         id: '6',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "150 000 Р/т без НДС",
+        name: 'name 4',
+        price: '150 000 Р/т без НДС',
         icon: 'img/first-screen1.jpg',
         tags: ['Колчиество: не указано е указано', 'Колчиество: не указано'],
         ownerHref: '/href',
@@ -187,8 +187,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '7',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "150 000 Р/т без НДС",
+        name: 'name 4',
+        price: '150 000 Р/т без НДС',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -196,8 +196,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '8',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "Договорная",
+        name: 'name 4',
+        price: 'Договорная',
         icon: 'img/first-screen1.jpg',
         tags: ['Колчиество: не указано', 'Колчиество: не указано'],
         ownerHref: '/href',
@@ -205,8 +205,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '9',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -214,8 +214,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '10',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -223,8 +223,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '11',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -232,8 +232,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '12',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -241,8 +241,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '13',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -250,8 +250,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '14',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -259,8 +259,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '15',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -268,8 +268,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '16',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -277,8 +277,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '17',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -286,8 +286,8 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '18',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
@@ -295,14 +295,14 @@ addEventListener("DOMContentLoaded", () => {
       {
         id: '19',
         coordinates: [55.750630, 37.674063],
-        name: "name 4",
-        price: "",
+        name: 'name 4',
+        price: '',
         icon: 'img/first-screen1.jpg',
         tags: [],
         ownerHref: '/href',
       },
-    ])
-    
+    ]);
+
     if (result) {
       $('[data-name="ADDRESS_GEO_LAT"]').find('[data-min]').val(result[0][0]);
       $('[data-name="ADDRESS_GEO_LAT"]').find('[data-max]').val(result[1][0]);
@@ -314,12 +314,12 @@ addEventListener("DOMContentLoaded", () => {
   }, 1000);
 
   function preInit() {
-    const idFound = document.querySelector("#map-search");
+    const idFound = document.querySelector('#map-search');
     if (!idFound) {
       return false;
     }
 
-    coordinates = document.querySelector("#map-search").getAttribute("data-map-coordinates").split(',').map(c => +c),
+    coordinates = document.querySelector('#map-search').getAttribute('data-map-coordinates').split(',').map(c => +c),
       zoom = 5;
 
     if (!coordinates || !coordinates[0]) {
@@ -334,7 +334,7 @@ addEventListener("DOMContentLoaded", () => {
   function init() {
 
     // Инициализация карты
-    myMap = new ymaps.Map("map-search", {
+    myMap = new ymaps.Map('map-search', {
       center: coordinates,
       zoom: zoom,
       controls: []
@@ -365,7 +365,7 @@ addEventListener("DOMContentLoaded", () => {
       if (target.getGeoObjects) {
         // Получаем метки внутри кластера
         var geoObjects = target.getGeoObjects();
-        
+
         // Проверяем, что метки есть в кластере
         if (geoObjects.length > 0) {
             var firstPlacemark = geoObjects[0]; // Берём первую метку
@@ -374,7 +374,7 @@ addEventListener("DOMContentLoaded", () => {
               return geoObject.geometry.getCoordinates().toString() === geoObjects[0].geometry.getCoordinates().toString();
             });
             // Теперь можно использовать id первой метки
-            console.log("ID первой метки:", firstPlacemarkId);
+            console.log('ID первой метки:', firstPlacemarkId);
             if (!mediaQuery.matches && firstPlacemarkId && allSameCoordinates) {
               window.slideTo(firstPlacemarkId);
             }
@@ -386,13 +386,13 @@ addEventListener("DOMContentLoaded", () => {
               setTimeout(function() {
                   myMap.events.add('boundschange', onBoundsChange);
               }, 1500);
-            } else if (!allSameCoordinates && mediaQuery.matches) { // в мобиле если все координаты не равны 
+            } else if (!allSameCoordinates && mediaQuery.matches) { // в мобиле если все координаты не равны
               myMap.events.remove('boundschange', onBoundsChange);
               setTimeout(function() {
                   myMap.events.add('boundschange', onBoundsChange);
               }, 1500);
             } else if (allSameCoordinates) {
-              window.catalogMapSliderView(true)
+              window.catalogMapSliderView(true);
             }
         }
       }
@@ -401,14 +401,14 @@ addEventListener("DOMContentLoaded", () => {
     myMap.geoObjects.add(clusterer);
 
     // Отображаем начальные объекты
-    onBoundsChange()
+    onBoundsChange();
     myMap.events.add('boundschange', onBoundsChange);
   }
 
   // Функция для обновления карты с кластеризацией
   function updateMap(newObjects) {
     console.log('update');
-    
+
     // Создаём объект для хранения placemark по их id
     const placemarksById = {};
 
@@ -461,7 +461,7 @@ addEventListener("DOMContentLoaded", () => {
                       </div>
                     </div>
                     ${object.tags.length ? '<div class="map-popup__bot"><div class="map-popup__tags">' : ''}
-                        ${object.tags.length ? object.tags.map(i => "<span>" + i + "</span>").reduce(
+                        ${object.tags.length ? object.tags.map(i => '<span>' + i + '</span>').reduce(
                   (accumulator, currentValue) => accumulator + currentValue,
                   '',
                 ) : ''}
@@ -498,7 +498,7 @@ addEventListener("DOMContentLoaded", () => {
   }
 
 
-  window.showWarehousesOnMap = updateMap
+  window.showWarehousesOnMap = updateMap;
 
   // Функция проверки наличия объекта в массиве по id
   function isObjectInArray(obj, array) {
@@ -522,7 +522,7 @@ addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="map-popup__bot">
             <div class="map-popup__tags">
-              ${obj.tags.length ? obj.tags.map(i => "<span>" + i + "</span>").reduce(
+              ${obj.tags.length ? obj.tags.map(i => '<span>' + i + '</span>').reduce(
         (accumulator, currentValue) => accumulator + currentValue,
         '',
       ) : ''}
@@ -562,7 +562,7 @@ addEventListener("DOMContentLoaded", () => {
   }
 
   function startMapCatalogLoader() {
-    $('.app__loader').removeClass('hide')
+    $('.app__loader').removeClass('hide');
   }
 
   window.startMapCatalogLoader = startMapCatalogLoader;
@@ -570,10 +570,10 @@ addEventListener("DOMContentLoaded", () => {
   function finishMapCatalogLoader(timer) {
     if (timer) {
       setTimeout(function() {
-        $('.app__loader').addClass('hide')
-      }, timer)
+        $('.app__loader').addClass('hide');
+      }, timer);
     } else {
-      $('.app__loader').addClass('hide')
+      $('.app__loader').addClass('hide');
     }
   }
   window.finishMapCatalogLoader = finishMapCatalogLoader;
@@ -582,7 +582,7 @@ addEventListener("DOMContentLoaded", () => {
     oldObjects = [];
     geoObjects?.clear();
     clusterer?.removeAll();
-  }
+  };
 
   window.removeAllWarehousesOnMap = window.removeAllObjectFromMap;
 

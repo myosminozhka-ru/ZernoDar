@@ -5,7 +5,7 @@ window.showMore = () => {
 
 window.imagesFolderURL = window.location.href.includes('localhost') ? '' : window.location.origin + '/local/templates/zernodar/';
 
-const mediaQuery = window.matchMedia("(max-width: 1023px)");
+const mediaQuery = window.matchMedia('(max-width: 1023px)');
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 function hasMouseSupport() {
   return window.matchMedia('(pointer: fine)').matches;
@@ -13,7 +13,7 @@ function hasMouseSupport() {
 // ==== copy start
 class Copy {
   constructor() {
-    this.textarea = document.querySelector('#urlCopy')
+    this.textarea = document.querySelector('#urlCopy');
     this.init()
   }
   init() {
@@ -126,9 +126,9 @@ class Modal {
   }
   init() {
     if (this.modal) {
-      this.content = this.modal.querySelector(".modal__content");
-      this.titlePlace = this.modal.querySelector(`[data-text-title]`);
-      this.textPlace = this.modal.querySelector(`[data-text]`);
+      this.content = this.modal.querySelector('.modal__content');
+      this.titlePlace = this.modal.querySelector('[data-text-title]');
+      this.textPlace = this.modal.querySelector('[data-text]');
       this.openHendler();
       this.closeHendler();
       // if (this.type === 'confirm') {
@@ -138,12 +138,12 @@ class Modal {
   }
   showCustomConfirm() {
     return new Promise((resolve, reject) => {
-        this.modal.querySelector(`[data-confirm-yes]`).onclick = () => {
+        this.modal.querySelector('[data-confirm-yes]').onclick = () => {
             resolve(true);
             this.close()
         };
 
-        this.modal.querySelector(`[data-confirm-no]`).onclick = () => {
+        this.modal.querySelector('[data-confirm-no]').onclick = () => {
             resolve(false);
             this.close()
         };
@@ -159,32 +159,32 @@ class Modal {
     window.lastZIndexModal = window.lastZIndexModal
       ? window.lastZIndexModal + 1
       : 150;
-    this.modal ? (this.modal.style["z-index"] = window.lastZIndexModal) : null;
-    this.modal ? this.modal.classList.remove("hide") : null;
-    this.modal ? this.modal.classList.add("active") : null;
-    this.scrollLock ? document.body.classList.add("lock") : null;
+    this.modal ? (this.modal.style['z-index'] = window.lastZIndexModal) : null;
+    this.modal ? this.modal.classList.remove('hide') : null;
+    this.modal ? this.modal.classList.add('active') : null;
+    this.scrollLock ? document.body.classList.add('lock') : null;
   }
   close() {
     // this.modal ? this.modal.style['z-index'] = -150 : null;
-    this.modal ? this.modal.classList.remove("active") : null;
-    this.modal ? this.modal.classList.add("hide") : null;
-    this.scrollLock ? document.body.classList.remove("lock") : null;
+    this.modal ? this.modal.classList.remove('active') : null;
+    this.modal ? this.modal.classList.add('hide') : null;
+    this.scrollLock ? document.body.classList.remove('lock') : null;
     this.onCloseAction();
   }
   openHendler() {
     const name = this.name;
-    $(document).on("click", `[data-class="${name}"]`, (e) => {
+    $(document).on('click', `[data-class="${name}"]`, (e) => {
       this.open();
       const carElementId = this.modal.querySelector('[name="ELEMENT_ID"]');
       if (carElementId) {
-        carElementId.value = e.target.dataset.elementId || "";
+        carElementId.value = e.target.dataset.elementId || '';
       }
     });
   }
   closeHendler() {
     this.modal
-      ? this.modal.addEventListener("click", (e) => {
-        if (e.target.classList.contains("close-x")) {
+      ? this.modal.addEventListener('click', (e) => {
+        if (e.target.classList.contains('close-x')) {
           if (this.type !== 'confirm') {
             this.close();
           }
@@ -193,8 +193,8 @@ class Modal {
       : null;
     this.modal
       ? this.modal
-        .querySelector("button.close-x")
-        ?.addEventListener("click", (e) => {
+        .querySelector('button.close-x')
+        ?.addEventListener('click', (e) => {
           if (this.type !== 'confirm') {
             this.close();
           }
@@ -213,37 +213,37 @@ class Modal {
 // ==== more start
 function more(element, button, count = 1, parent, all) {
   $(parent + (all ? '' : ':not(.inited)')).each(function (idx, el) {
-    $(el).addClass("inited")
+    $(el).addClass('inited')
     let btn = $(el).find(button)
     let els = $(el).find(element)
 
     if (els.length <= count) {
-      btn.addClass("hide")
+      btn.addClass('hide')
       return;
     }
-    let btnStr = btn.children(".str").eq(0);
+    let btnStr = btn.children('.str').eq(0);
     let btnText = btnStr.text();
     let isOpen = false;
-    btn.on("click", function (e) {
-      isOpen = btn.hasClass("open") // $(this).find(button).hasClass("open")
-      btn.toggleClass("open");
+    btn.on('click', function (e) {
+      isOpen = btn.hasClass('open') // $(this).find(button).hasClass("open")
+      btn.toggleClass('open');
       if (isOpen) {
         btnStr.text(btnText);
-        start(els, "hide");
+        start(els, 'hide');
       } else {
-        start(els, "show");
-        btnStr.text("Свернуть");
+        start(els, 'show');
+        btnStr.text('Свернуть');
       }
     });
-    start(els, "hide");
+    start(els, 'hide');
   })
 
   function start(elements, make) {
     for (let index = count; index < elements.length; index++) {
-      if (make === "hide") {
-        elements.eq(index).addClass("hide");
+      if (make === 'hide') {
+        elements.eq(index).addClass('hide');
       } else {
-        elements.eq(index).removeClass("hide");
+        elements.eq(index).removeClass('hide');
       }
     }
   }
@@ -255,7 +255,7 @@ function phoneMask(selector) {
   const inputs = document.querySelectorAll(selector);
   const instances = [];
   inputs.forEach((el) => {
-    instances.push(IMask(el, { mask: "+{7 }(000)-000-00-00" })); // +7 (XXX)-XXX-XX-XX
+    instances.push(IMask(el, { mask: '+{7 }(000)-000-00-00' })); // +7 (XXX)-XXX-XX-XX
   });
 
   return instances;
@@ -298,26 +298,26 @@ class Header {
     // this.preloaderHandler()
   }
   static setHeaderPosition(pos) {
-    const localPosition = localStorage.getItem("headerPosition");
+    const localPosition = localStorage.getItem('headerPosition');
     if (pos === false) {
-      localStorage.setItem("headerPosition", pos);
-      $(".header").css({
+      localStorage.setItem('headerPosition', pos);
+      $('.header').css({
         position: '',
       })
     } else if (pos) {
-      localStorage.setItem("headerPosition", pos);
-      $(".header").css({
+      localStorage.setItem('headerPosition', pos);
+      $('.header').css({
         position: pos,
       })
     } else if (localPosition) {
-      $(".header").css({
+      $('.header').css({
         position: localPosition,
       })
     }
   }
   menuHandler() {
-    $(".header__burger").click(() => {
-      if ($(".header__burger").hasClass('active')) {
+    $('.header__burger').click(() => {
+      if ($('.header__burger').hasClass('active')) {
         this.close()
       } else {
         this.open()
@@ -416,8 +416,8 @@ class Header {
     //   $('.nav__item--demand svg').on('click' , this.navDropItemHandler.bind(this, "demand"))
     // }
 
-    $('.nav__item--supply').on('click', this.navDropItemHandler.bind(this, "supply"))
-    $('.nav__item--demand').on('click', this.navDropItemHandler.bind(this, "demand"))
+    $('.nav__item--supply').on('click', this.navDropItemHandler.bind(this, 'supply'))
+    $('.nav__item--demand').on('click', this.navDropItemHandler.bind(this, 'demand'))
 
     $(document).on('click', (event) => {
       if (
@@ -436,7 +436,7 @@ class Header {
       $(element).find('.nav-drop__title').each(function (index, arrow) {
         $(arrow).on('click', function (e) {
           if ($(e.target).is($(arrow).find('a.str'))) {
-            console.log("is");
+            console.log('is');
             e.preventDefault()
           }
           e.stopPropagation()
@@ -483,11 +483,11 @@ class Header {
     // Function to handle the event
     const handleMediaQueryChange = (event) => {
       if (event.matches) {
-        this.moveElementPlace("out")
-        this.moveNavBlocks("out")
+        this.moveElementPlace('out')
+        this.moveNavBlocks('out')
       } else {
-        this.moveElementPlace("home")
-        this.moveNavBlocks("home")
+        this.moveElementPlace('home')
+        this.moveNavBlocks('home')
       }
     }
 
@@ -497,12 +497,12 @@ class Header {
     // Initial check
     handleMediaQueryChange(mediaQuery);
   }
-  moveNavBlocks(direction = "home") {
-    if (direction == "home") {
+  moveNavBlocks(direction = 'home') {
+    if (direction == 'home') {
       $('.nav-drop').each(function (index, element) {
         $(element).find('.nav-drop__block').removeClass('open')
         $(element).find('.nav-drop__title').removeClass('active')
-        $(element).find(`.nav-drop__block:eq(0)`).addClass('open')
+        $(element).find('.nav-drop__block:eq(0)').addClass('open')
         $(element).find('.nav-drop__block').appendTo($(element).find('.nav-drop__right'))
 
       })
@@ -516,8 +516,8 @@ class Header {
       })
     }
   }
-  moveElementPlace(direction = "home") {
-    if (direction == "home") {
+  moveElementPlace(direction = 'home') {
+    if (direction == 'home') {
       $('.nav-drop--supply').appendTo($('.header'));
       $('.nav-drop--demand').appendTo($('.header'));
     } else {
@@ -567,12 +567,12 @@ class Sidebar {
     if (instance.target === 'from') {
       datas.id = instance.fromId
       datas.value = instance.old_from
-      datas.element = $("#" + instance.fromId)
+      datas.element = $('#' + instance.fromId)
       // console.log(instance.fromId + ': ' + instance.old_from);
     } else if (instance.target === 'to') {
       datas.id = instance.toId
       datas.value = instance.old_to
-      datas.element = $("#" + instance.toId)
+      datas.element = $('#' + instance.toId)
       // console.log(instance.toId + ': ' + instance.old_to);
     }
     return this.onChangeRangeCallback ? this.onChangeRangeCallback(datas) : datas;
@@ -617,7 +617,7 @@ class Sidebar {
       });
 
       // 2. Save instance to variable
-      const rangeInstance = $(inputRange).data("ionRangeSlider");
+      const rangeInstance = $(inputRange).data('ionRangeSlider');
       rangeInstance.toId = inputTo.id;
       rangeInstance.fromId = inputFrom.id;
 
@@ -631,7 +631,7 @@ class Sidebar {
         inputTo.value = rangeInstance.options.max
       }
 
-      const classNameHide = "visually-hidden";
+      const classNameHide = 'visually-hidden';
 
       placeholderFrom.addEventListener('click', () => {
         placeholderFrom.classList.add(classNameHide)
@@ -747,9 +747,9 @@ class Sidebar {
   }
 
   resetFilter() {
-    $(this.parentSelector + ' .catalog-sidebar').trigger("reset");
-    $(this.parentSelector + ' .catalog-head__top').trigger("reset");
-    $(this.parentSelector + ' .app-filter').trigger("reset");
+    $(this.parentSelector + ' .catalog-sidebar').trigger('reset');
+    $(this.parentSelector + ' .catalog-head__top').trigger('reset');
+    $(this.parentSelector + ' .app-filter').trigger('reset');
     this.resetRange()
   }
 
@@ -893,7 +893,7 @@ function article() {
 
 // ==== firstScreen start
 function firstScreen() {
-  const swiper = new Swiper('.first-screen__slider', {
+  new Swiper('.first-screen__slider', {
     loop: true,
     pagination: {
       el: '.slider-pag',
@@ -902,8 +902,9 @@ function firstScreen() {
       clickable: true,
     },
     navigation: {
-      nextEl: '.slider-next',
-      prevEl: '.slider-prev',
+      nextEl: '.first-screen__slider .slider-next',
+      prevEl: '.first-screen__slider .slider-prev',
+      lockClass: 'swiper-button-disabled'
     },
   });
 }
@@ -968,46 +969,46 @@ function mainAdvantages() {
 
 // ==== security start
 function security() {
-  const securityItems = document.querySelectorAll(".security__item");
+  const securityItems = document.querySelectorAll('.security__item');
 
   securityItems.forEach((item) => {
-    const toggleButton = item.querySelector(".security__toggle");
-    const cancelButton = item.querySelector(".security__button-cancel");
-    const body = item.querySelector(".security__body");
-    const infoSpan = item.querySelector(".security__info");
-    const labelMobile = item.querySelector(".security__label.label-mobile");
+    const toggleButton = item.querySelector('.security__toggle');
+    const cancelButton = item.querySelector('.security__button-cancel');
+    const body = item.querySelector('.security__body');
+    const infoSpan = item.querySelector('.security__info');
+    const labelMobile = item.querySelector('.security__label.label-mobile');
     const isPassword = item.classList.contains('security__item--password')
 
-    toggleButton.addEventListener("click", function () {
-      body.style.display = "block";
-      toggleButton.style.display = "none";
+    toggleButton.addEventListener('click', function () {
+      body.style.display = 'block';
+      toggleButton.style.display = 'none';
 
       if (isPassword) {
-        infoSpan.style.display = "none";
+        infoSpan.style.display = 'none';
       }
 
       if (
         isPassword &&
         !mediaQuery.matches
       ) {
-        labelMobile.style.display = "none";
+        labelMobile.style.display = 'none';
       }
     });
 
     if (cancelButton) {
-      cancelButton.addEventListener("click", function () {
-        body.style.display = "none";
-        toggleButton.style.display = "block";
+      cancelButton.addEventListener('click', function () {
+        body.style.display = 'none';
+        toggleButton.style.display = 'block';
 
-        if (infoSpan && infoSpan.textContent.includes("Обновлен месяц назад")) {
-          infoSpan.style.display = "block";
+        if (infoSpan && infoSpan.textContent.includes('Обновлен месяц назад')) {
+          infoSpan.style.display = 'block';
         }
 
         if (
           isPassword &&
           !mediaQuery.matches
         ) {
-          labelMobile.style.display = "block";
+          labelMobile.style.display = 'block';
         }
       });
     }
@@ -1017,39 +1018,39 @@ function security() {
 
 // ==== signupSwitch start
 function signupSwitch() {
-  const juridicalElement = document.getElementById("juridical");
-  const juridicalForm = document.getElementById("juridicalForm");
-  const physicalElement = document.getElementById("physical");
-  const physicalForm = document.getElementById("physicalForm");
+  const juridicalElement = document.getElementById('juridical');
+  const juridicalForm = document.getElementById('juridicalForm');
+  const physicalElement = document.getElementById('physical');
+  const physicalForm = document.getElementById('physicalForm');
 
   if (juridicalElement) {
-    juridicalElement.addEventListener("change", function () {
+    juridicalElement.addEventListener('change', function () {
       if (juridicalForm && physicalForm) {
-        juridicalForm.classList.add("registration__block--active");
-        physicalForm.classList.remove("registration__block--active");
+        juridicalForm.classList.add('registration__block--active');
+        physicalForm.classList.remove('registration__block--active');
       }
     });
   }
 
   if (physicalElement) {
-    physicalElement.addEventListener("change", function () {
+    physicalElement.addEventListener('change', function () {
       if (physicalForm && juridicalForm) {
-        physicalForm.classList.add("registration__block--active");
-        juridicalForm.classList.remove("registration__block--active");
+        physicalForm.classList.add('registration__block--active');
+        juridicalForm.classList.remove('registration__block--active');
       }
     });
   }
 
-  phoneMask(".phone-input");
+  phoneMask('.phone-input');
 
 
 
   // Extend the selectmenu widget with a unique name (customSelectmenu)
-  $.widget("custom.customSelectmenu", $.ui.selectmenu, {
+  $.widget('custom.customSelectmenu', $.ui.selectmenu, {
     _renderItem: function (ul, item) {
-      var li = $("<li>");
+      var li = $('<li>');
       if (item.disabled) {
-        li.addClass("ui-state-disabled");
+        li.addClass('ui-state-disabled');
       }
       // Custom rendering logic
       var wrapper = $('<div class="custom-item">');
@@ -1059,10 +1060,10 @@ function signupSwitch() {
     }
   });
 
-  $(".select--typeorg select").customSelectmenu({
+  $('.select--typeorg select').customSelectmenu({
     classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-typeorg",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-typeorg"
+      'ui-selectmenu-button': 'ui-selectmenu-button-typeorg',
+      'ui-selectmenu-menu': 'ui-selectmenu-menu-typeorg'
     }
   });
 
@@ -1413,11 +1414,11 @@ function cookies() {
 
 // ==== auth code start
 function authCode() {
-  const inputs = document.querySelectorAll(".code-input");
+  const inputs = document.querySelectorAll('.code-input');
 
   if (inputs.length > 0) {
     inputs.forEach((input, index) => {
-      input.addEventListener("input", () => {
+      input.addEventListener('input', () => {
         if (input.value.length === 1) {
           if (index !== inputs.length - 1) {
             inputs[index + 1].focus();
@@ -1425,21 +1426,21 @@ function authCode() {
         }
       });
 
-      input.addEventListener("keydown", (event) => {
-        if (event.key === "Backspace") {
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Backspace') {
           if (input.value.length === 0 && index !== 0) {
             inputs[index - 1].focus();
-            inputs[index - 1].value = "";
+            inputs[index - 1].value = '';
           } else {
-            input.value = "";
+            input.value = '';
           }
         } else if (event.key.length === 1 && /\d/.test(event.key)) {
-          input.value = "";
+          input.value = '';
         }
       });
     });
 
-    inputs[inputs.length - 1].addEventListener("input", () => {
+    inputs[inputs.length - 1].addEventListener('input', () => {
       if (inputs[inputs.length - 1].value.length === 1) {
         inputs[inputs.length - 1].blur();
       }
@@ -1449,13 +1450,13 @@ function authCode() {
 // ==== auth code end
 
 // ==== subscription start
-$(".custom-select").each(function(index, el)  {
+$('.custom-select').each(function(index, el)  {
   $(el).selectmenu({
     classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-mini",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-mini"
+      'ui-selectmenu-button': 'ui-selectmenu-button-mini',
+      'ui-selectmenu-menu': 'ui-selectmenu-menu-mini'
     },
-    appendTo: $(this).closest(".subs-mob__inner, .tariff-cards"),
+    appendTo: $(this).closest('.subs-mob__inner, .tariff-cards'),
     position: {
       my: 'center bottom',
       at: 'center top'
@@ -1469,14 +1470,14 @@ $(".custom-select").each(function(index, el)  {
 function publishTime() {
   $('[data-publish-select="publish-weekdays"]').selectmenu({
     classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-border",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+      'ui-selectmenu-button': 'ui-selectmenu-button-border',
+      'ui-selectmenu-menu': 'ui-selectmenu-menu-border'
     }
   });
   $('[data-publish-select="publish-time"]').selectmenu({
     classes: {
-      "ui-selectmenu-button": "ui-selectmenu-button-border",
-      "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+      'ui-selectmenu-button': 'ui-selectmenu-button-border',
+      'ui-selectmenu-menu': 'ui-selectmenu-menu-border'
     }
   });
   function changePublish(e, selector) {
@@ -1495,12 +1496,12 @@ function publishTime() {
       parent = $(e.target).closest('.add-ann-publish');
     }
     const id = $(parent).find('input').attr('id');
-    
+
     const siblings = $(parent).siblings('.add-ann-publish');
     siblings.removeClass('open')
     parent.addClass('open')
-    
-    $(`[data-publish-notification]`).addClass('hide')
+
+    $('[data-publish-notification]').addClass('hide')
     $(`[data-publish-notification="${id}"]`).removeClass('hide')
   }
   changePublish(null, '[name="PUBLISH"]')
@@ -1517,10 +1518,10 @@ function publishTime() {
 //   }
 // });
 
-$(".select--sort select").selectmenu({
+$('.select--sort select').selectmenu({
   classes: {
-    "ui-selectmenu-button": "ui-selectmenu-button-border",
-    "ui-selectmenu-menu": "ui-selectmenu-menu-border"
+    'ui-selectmenu-button': 'ui-selectmenu-button-border',
+    'ui-selectmenu-menu': 'ui-selectmenu-menu-border'
   }
 });
 // $(".filter__item .select select").selectmenu({
@@ -1548,7 +1549,7 @@ window.startTimeSMSCode = function (seconds) {
     const timeString = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 
     // Выводим результат в тег <p>
-    $("[data-timer]").text(timeString);
+    $('[data-timer]').text(timeString);
 
     // Останавливаем таймер, когда время закончится
     if (timeRemaining === 0) {
@@ -1586,7 +1587,7 @@ $(document).on('click', '[data-scroll-to]', function (e) {
       behavior: 'smooth' // Плавная прокрутка
     }) : null;
   } else {
-    $("html").animate({ scrollTop: 0 }, "slow");
+    $('html').animate({ scrollTop: 0 }, 'slow');
   }
 })
 // ==== scroll to data attr end
@@ -1667,12 +1668,12 @@ window.autoHeightInputWrap = autoHeightInputWrap;
 // ==== tooltip start
 $('.helptip').tooltip({
   classes: {
-    "ui-tooltip": "ui-corner-all ui-widget-shadow ui-helptip"
+    'ui-tooltip': 'ui-corner-all ui-widget-shadow ui-helptip'
   }
 });
 $('.header__act').tooltip({
   classes: {
-    "ui-tooltip": "ui-corner-all ui-widget-shadow ui-helptip--count-add"
+    'ui-tooltip': 'ui-corner-all ui-widget-shadow ui-helptip--count-add'
   }
 });
 // if (hasMouseSupport()) {
@@ -1703,11 +1704,11 @@ $('.my-input-one-checkbox').on('click', function() {
 
 // прелоадер more
 window.openPreloaderMore = function () {
-  $("#preloader-more1").css("display", "flex").hide().fadeIn(300);
+  $('#preloader-more1').css('display', 'flex').hide().fadeIn(300);
 }
 window.closePreloaderMore = function () {
-  $("#preloader-more1").fadeOut(300, function() {
-    $(this).css("display", "none");
+  $('#preloader-more1').fadeOut(300, function() {
+    $(this).css('display', 'none');
   });
 }
 
@@ -1715,59 +1716,59 @@ window.closePreloaderMore = function () {
 
 
 // ***** invoke scripts start
-addEventListener("DOMContentLoaded", () => {
+addEventListener('DOMContentLoaded', () => {
   window.showMore = (all) => {
     more(
-      "ul li",
-      ".card-ad-top__table-more .open-more2",
+      'ul li',
+      '.card-ad-top__table-more .open-more2',
       6,
-      ".card-ad-top__list"
+      '.card-ad-top__list'
     );
 
     more(
-      "tr",
-      ".card-ad-top__table-more .open-more",
+      'tr',
+      '.card-ad-top__table-more .open-more',
       4,
-      ".card-ad-top__table--harakteristitki"
+      '.card-ad-top__table--harakteristitki'
     );
 
     more(
-      ".card-ad-description__content ul li",
-      ".card-ad-description__more .open-more2",
+      '.card-ad-description__content ul li',
+      '.card-ad-description__more .open-more2',
       1,
-      ".card-ad-description"
+      '.card-ad-description'
     );
 
-    more(".edit-about__text-part", ".edit-about__more .open-more2", 1, ".edit-about");
+    more('.edit-about__text-part', '.edit-about__more .open-more2', 1, '.edit-about');
 
 
     more(
-      ".contact-requisites__item",
-      ".js-contact-requisites-open",
+      '.contact-requisites__item',
+      '.js-contact-requisites-open',
       7,
-      ".contact-requisites__inner"
+      '.contact-requisites__inner'
     );
 
     more(
-      ".switch-train li",
-      ".btn4",
+      '.switch-train li',
+      '.btn4',
       6,
-      ".catalog-update__top2",
+      '.catalog-update__top2',
       all
     );
 
     more(
-      ".card__data li",
-      ".card__bot .open-more3, .card__data .open-more2",
+      '.card__data li',
+      '.card__bot .open-more3, .card__data .open-more2',
       6,
-      ".catalog-update .card"
+      '.catalog-update .card'
     );
 
     more(
-      ".card__data li",
-      ".card__bot .open-more3, .card__data .open-more2",
+      '.card__data li',
+      '.card__bot .open-more3, .card__data .open-more2',
       5,
-      ".catalog-wrapper .card"
+      '.catalog-wrapper .card'
     );
 
   }
@@ -1776,12 +1777,12 @@ addEventListener("DOMContentLoaded", () => {
 
 
   hideShowBlock(
-    ".article .article__nav .article-nav__list",
-    ".article .article__nav .open-more2"
+    '.article .article__nav .article-nav__list',
+    '.article .article__nav .open-more2'
   );
 
   review();
-  cardAdRelative(".card-ad-relative");
+  cardAdRelative('.card-ad-relative');
   cardRatingModal();
   article();
   firstScreen();
@@ -1797,28 +1798,28 @@ addEventListener("DOMContentLoaded", () => {
   autoHeightInputWrap();
   window.octo = {
     header: new Header(),
-    textSellerModal: new Modal("text-seller"),
-    tabReqModal: new Modal("tab-req"),
-    ratingModal: new Modal("rating"),
-    sentToModerationModal: new Modal("sent-to-moderation"),
-    modalMessageWait: new Modal("modalMessageWait"),
-    modalMessageStatusUpdated: new Modal("modalMessageStatusUpdated"),
-    sortCompamyModal: new Modal("sort-compamy"),
-    newsSubsModal: new Modal("news-subs"),
-    modalReviewComplaint: new Modal("review-complaint"),
-    modalMakeReview: new Modal("modalMakeReview"),
-    modalPersonalTariff: new Modal("modalPersonalTariff"),
-    modalVerifyAccount: new Modal("modalVerifyAccount"),
-    modalConfirm: new Modal("modalConfirm", true, 'confirm'),
-    modalConfirmRemoveCard: new Modal("modalConfirmRemoveCard", true, 'confirm'),
-    modalConfirmRemoveItem: new Modal("modalConfirmRemoveItem", true, 'confirm'),
-    modalTariffPayNotification: new Modal("modalTariffPayNotification"),
-    modalMessage: new Modal("modalMessage"),
+    textSellerModal: new Modal('text-seller'),
+    tabReqModal: new Modal('tab-req'),
+    ratingModal: new Modal('rating'),
+    sentToModerationModal: new Modal('sent-to-moderation'),
+    modalMessageWait: new Modal('modalMessageWait'),
+    modalMessageStatusUpdated: new Modal('modalMessageStatusUpdated'),
+    sortCompamyModal: new Modal('sort-compamy'),
+    newsSubsModal: new Modal('news-subs'),
+    modalReviewComplaint: new Modal('review-complaint'),
+    modalMakeReview: new Modal('modalMakeReview'),
+    modalPersonalTariff: new Modal('modalPersonalTariff'),
+    modalVerifyAccount: new Modal('modalVerifyAccount'),
+    modalConfirm: new Modal('modalConfirm', true, 'confirm'),
+    modalConfirmRemoveCard: new Modal('modalConfirmRemoveCard', true, 'confirm'),
+    modalConfirmRemoveItem: new Modal('modalConfirmRemoveItem', true, 'confirm'),
+    modalTariffPayNotification: new Modal('modalTariffPayNotification'),
+    modalMessage: new Modal('modalMessage'),
     Sidebar: Sidebar,
     catalogSidebar: new Sidebar('catalogSidebar', '.catalog-wrapper'),
     mapFilter: new Sidebar('mapFilter', '.app'),
     copy: new Copy(),
-    innMasks: innMask(".inn-input"),
+    innMasks: innMask('.inn-input'),
   };
   //window.octo.modalConfirm.open()
 
@@ -1855,7 +1856,7 @@ addEventListener("DOMContentLoaded", () => {
 
   // });
   // let previousRadio = $('input[name="autopayment"]:checked');
-  // $('input[name="autopayment"]').change(function (e) { 
+  // $('input[name="autopayment"]').change(function (e) {
   //   e.preventDefault();
 
   //   var autopaymentStatus = $(this).val();
@@ -1887,7 +1888,7 @@ addEventListener("DOMContentLoaded", () => {
 
   // $('#autopay').on('change', function(e) {
   //   console.log(e.target.checked);
-    
+
   //   if (!e.target.checked) {
   //     window.octo.modalConfirm.open()
   //     octo.modalConfirm.showCustomConfirm().then((result) => {
@@ -1928,7 +1929,7 @@ addEventListener("DOMContentLoaded", () => {
   //     const currentValue = data.input.val();
   //     console.log(currentValue);
   //     // currentValue - текущее значение ползунка
-  //     // тут можно вызвать функция ajax для передачи данных карты/фильтра на бэк 
+  //     // тут можно вызвать функция ajax для передачи данных карты/фильтра на бэк
   //   },
   // });
 });

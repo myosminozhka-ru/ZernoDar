@@ -1,27 +1,26 @@
-"use strict";
+'use strict';
 
-import { paths } from "../gulpfile.babel";
-import gulp from "gulp";
-import svg from "gulp-svg-sprite";
-import debug from "gulp-debug";
-import browsersync from "browser-sync";
-import vueStr from "./vue.js";
+import { paths } from '../gulpfile.babel';
+import gulp from 'gulp';
+import svg from 'gulp-svg-sprite';
+import debug from 'gulp-debug';
+import browsersync from 'browser-sync';
 
-gulp.task("sprites", () => {
+gulp.task('sprites', () => {
     return gulp.src(paths.sprites.src)
         .pipe(svg({
             shape: {
-                dest: "intermediate-svg"
+                dest: 'intermediate-svg'
             },
             mode: {
                 stack: {
-                    sprite: "../sprite.svg"
+                    sprite: '../sprite.svg'
                 }
             }
         }))
         .pipe(gulp.dest(paths.sprites.dist))
         .pipe(debug({
-            "title": "Sprites"
+            'title': 'Sprites'
         }))
-        .on("end", browsersync.reload);
+        .on('end', browsersync.reload);
 });
