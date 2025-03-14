@@ -48,3 +48,5 @@ _config.yml
 node_modules
 package-lock.json
 dist
+.pnp.cjs
+.pnp.loader.mjs
