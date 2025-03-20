@@ -687,8 +687,13 @@
         font-size: 1.6rem;
         font-weight: 500;
       }
-      &.active .nav-drop__arrow{
-        transform: rotate(270deg);
+      &.active {
+        .nav-drop__arrow{
+          transform: rotate(270deg);
+        }
+        .str {
+          cursor: default;
+        }
       }
     }
     &__icon {

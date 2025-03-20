@@ -85,7 +85,7 @@
       padding-left: 1.6rem;
       padding-right: 1.6rem;
       padding-bottom: 0.8rem;
-      margin-bottom: 0rem;
+      margin-bottom: 0;
     }
     &__pag {
       margin-bottom: 2.4rem;
@@ -106,6 +106,7 @@
   &__mtitle {
     font-size: 2rem;
     font-weight: 500;
+    margin-top: 1rem;
     margin-bottom: 3.7rem;
   }
   &__btns {
@@ -387,19 +388,31 @@
   width: auto;
   align-items: flex-start;
   gap: 0.5rem;
-  padding: 0.8rem;
+  padding: 0.85rem;
   background-color: #ecf0f4;
   color: #0084cf;
   border-radius: 1.6rem;
-  svg {
-    width: 2rem;
+  &::before {
+    content: '';
+    display: block;
+    min-width: 2rem;
+    max-width: 2rem;
     height: 2rem;
-    flex-shrink: 0;
-    object-fit: contain;
+    background-color: currentColor;
+    mask: url(../img/sprites/caution-sign-circle.svg) center / contain no-repeat ;
   }
   &--orange {
     color: $orange;
     background-color: $paleorange;
+  }
+  &--orange-dark {
+    color: #a56f20;
+    background-color: $paleorange;
+  }
+  &--changed {
+    span:not(.active) {
+      display: none;
+    }
   }
   @include tab {
     font-size: 1.4rem;

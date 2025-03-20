@@ -638,7 +638,6 @@
   justify-content: center;
   text-align: center;
   background-color: $orange;
-  color: $white;
   transition: background 200ms;
   &:hover {
     background-color: #ff9b08;
@@ -1148,7 +1147,6 @@
       background-color: #dcefe0;
     }
     &:disabled {
-      color: $green;
       opacity: 0.6;
       color: $grey;
       background-color: rgba($color: #ffffff, $alpha: 0);
@@ -1954,7 +1952,6 @@
       padding: 0.4rem;
       border-radius: 0.8rem;
       background-color: $grey-light;
-      margin-bottom: 1rem;
       margin-bottom: 0.8rem;
     }
     &__value {
@@ -2465,7 +2462,6 @@
       height: 2rem;
       object-fit: contain;
       flex-shrink: 0;
-      display: inline-block;
     }
   }
 }
@@ -2505,7 +2501,6 @@
     max-height: 40rem;
     background-color: $white;
     box-shadow: 0 1.2rem 4.6rem 0 rgba(23, 15, 73, 0.19);
-    border: none;
   }
   .ui-menu-item {
     position: relative;
@@ -2867,8 +2862,8 @@
   }
   &__img-bgs {
     position: absolute;
-    left: 0%;
-    bottom: 0%;
+    left: 0;
+    bottom: 0;
     z-index: 2;
     width: 100%;
     animation: preloader-more 1700ms linear 0ms infinite normal;
