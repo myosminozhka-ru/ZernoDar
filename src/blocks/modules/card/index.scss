@@ -117,7 +117,7 @@
         }
       }
       &__bot-right {
-        
+
       }
       &__data {
         .helptip {
@@ -249,7 +249,7 @@
       dd {
         text-align: right;
       }
-  
+
     }
     &__data-more {
       display: flex;
@@ -326,7 +326,7 @@
           }
         }
         &__bot-right {
-          
+
         }
       }
     }
@@ -431,7 +431,7 @@
       dd {
         text-align: right;
       }
-  
+
     }
     &__top-right {
       padding: 2.4rem 1.6rem;
@@ -490,6 +490,7 @@
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+    height: 100%;
   }
   &__description {
     h3 {
@@ -510,6 +511,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    margin-top: auto;
   }
   &__cont-title {
     font-size: 2rem;

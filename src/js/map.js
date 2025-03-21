@@ -562,7 +562,7 @@ addEventListener('DOMContentLoaded', () => {
   }
 
   function startMapCatalogLoader() {
-    $('.app__loader').removeClass('hide');
+    $('.preloader').removeClass('hide');
   }
 
   window.startMapCatalogLoader = startMapCatalogLoader;
@@ -570,10 +570,10 @@ addEventListener('DOMContentLoaded', () => {
   function finishMapCatalogLoader(timer) {
     if (timer) {
       setTimeout(function() {
-        $('.app__loader').addClass('hide');
+        $('.preloader').addClass('hide');
       }, timer);
     } else {
-      $('.app__loader').addClass('hide');
+      $('.preloader').addClass('hide');
     }
   }
   window.finishMapCatalogLoader = finishMapCatalogLoader;

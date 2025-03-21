@@ -42,24 +42,6 @@
   &__sidbar-open {
     display: none;
   }
-  &__loader {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(4px);
-    z-index: 80;
-    img {
-      width: 24rem;
-      height: 24rem;
-      object-fit: contain;
-      
-    }
-  }
   @include tab {
     padding: 0;
     height: calc(100vh - 7.3rem);
@@ -84,7 +66,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 70;    
+      z-index: 70;
       display: flex;
       flex-direction: column;
       transform: translateY(120%);
@@ -138,8 +120,6 @@
 }
 
 .app-map {
-  &__map {
-  }
   #map-search {
     height: calc(100vh - 24rem);
     border-radius: 2rem;
@@ -339,7 +319,7 @@
       dd {
         text-align: right;
       }
-  
+
     }
     &__bot {
       border-top: none;
@@ -496,11 +476,11 @@
       display: block;
       .filter {
         width: 100%;
-        border-bottom: 1px solid #e6e6e6;        
+        border-bottom: 1px solid #e6e6e6;
         margin-bottom: 2.4rem;
         padding-bottom: 2.4rem;
         &:last-child {
-          border-bottom: none;        
+          border-bottom: none;
           margin-bottom: 0;
           padding-bottom: 0;
         }
@@ -513,7 +493,7 @@
     }
 
     &__switch {
-      border-top: 1px solid #e6e6e6; 
+      border-top: 1px solid #e6e6e6;
       padding-top: 2.4rem;
       margin-bottom: 2.4rem;
     }
@@ -523,7 +503,7 @@
     }
 
     &__category {
-      border-bottom: 1px solid #e6e6e6; 
+      border-bottom: 1px solid #e6e6e6;
       padding-bottom: 2.4rem;
       margin-bottom: 2.4rem;
     }
